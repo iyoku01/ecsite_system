@@ -52,12 +52,9 @@
 
     <div class=".container-fluid">
         <div class="row">
+            <!-- 共通ヘッダー -->
             <div class="col-xs-12">
-
-                <header>
-                    <h2 class="text-center bg-primary">TOPページ</h2>
-                </header>
-
+                <jsp:include page="header.jsp" flush="true" />
             </div>
         </div>
         <div class="row">
