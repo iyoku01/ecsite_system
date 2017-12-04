@@ -838,8 +838,8 @@
                   <constraint>
                     <height>-1</height>
                     <width>-1</width>
-                    <x>640</x>
-                    <y>87</y>
+                    <x>666</x>
+                    <y>112</y>
                   </constraint>
                   <sourceConnections>
                     <net.java.amateras.db.visual.model.ForeignKeyModel reference="../../.."/>
@@ -1074,7 +1074,7 @@
   </children>
   <dommains/>
   <dialectName>MySQL</dialectName>
-  <logicalMode>false</logicalMode>
+  <logicalMode>true</logicalMode>
   <jarFile>C:\Users\ica\Downloads\JAVA\workspace\mysql-connector-java-5.1.27-bin.jar</jarFile>
   <jdbcDriver>com.mysql.jdbc.Driver</jdbcDriver>
   <jdbcUrl>jdbc:mysql://localhost/ecsite_db</jdbcUrl>
