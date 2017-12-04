@@ -2,7 +2,7 @@ package database;
 
 /* Code Generator Information.
  * generator Version 1.0.0 release 2007/10/10
- * generated Date Fri Dec 01 10:26:35 JST 2017
+ * generated Date Mon Dec 04 11:18:17 JST 2017
  */
 import java.io.Serializable;
 
@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @version 1.0 
  * history 
  * Symbol	Date		Person		Note
- * [1]		2017/12/01	ica		Generated.
+ * [1]		2017/12/04	ica		Generated.
  */
 public class Recommend_tblVo implements Serializable{
 
