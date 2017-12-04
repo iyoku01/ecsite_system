@@ -23,16 +23,15 @@ public class SearchControl extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("Windows-31J");
-
+        String dispatchUrl = null;
         try {
             Action ac = new TopSelect();
-            ac.execute(request, response);
+            dispatchUrl = ac.execute(request, response);
         } catch (Exception e) {
             request.setAttribute("message", "å¥àˆïsñæÇÃÉGÉâÅ[Ç≈Ç∑");
             e.printStackTrace();
         }
 
-        String dispatchUrl = "/top.jsp";
         request.getRequestDispatcher(dispatchUrl).forward(request, response);
     }
 

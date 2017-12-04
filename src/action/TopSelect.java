@@ -11,7 +11,7 @@ import database.Category_tblVo;
 
 public class TopSelect implements Action {
 
-    public void execute(HttpServletRequest request, HttpServletResponse response) {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
 
         try (EcsiteDao dao = new EcsiteDao()) {
             //カテゴリー
@@ -24,5 +24,7 @@ public class TopSelect implements Action {
         } catch (SQLException | ClassNotFoundException e) {
             request.setAttribute("message", "JDBC のエラーです : " + e.getMessage());
         }
+
+        return "/top.jsp";
     }
 }
