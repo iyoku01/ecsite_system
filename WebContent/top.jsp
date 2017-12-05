@@ -51,12 +51,11 @@
 <body class="bg-info">
 
     <div class=".container-fluid">
-        <div class="row">
-            <!-- 共通ヘッダー -->
-            <div class="col-xs-12">
-                <jsp:include page="header.jsp" flush="true" />
-            </div>
+        <!-- 共通ヘッダー -->
+        <div class="col-xs-12">
+            <jsp:include page="header.jsp" flush="true" />
         </div>
+
         <div class="row">
             <div class="col-xs-4">
 
@@ -92,18 +91,9 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-xs-12">
-                <p>--- デバッグ用情報 ---</p>
-
-                <p>リクエスト変数の一覧</p>
-                <c:forEach var="i" items="${pageContext.request.attributeNames}" varStatus="st">
-                    <tr>
-                        <td>${i}</td>
-                    </tr>
-                </c:forEach>
-
-            </div>
+        <!-- 共通フッター -->
+        <div class="col-xs-12">
+            <jsp:include page="footer.jsp" flush="true" />
         </div>
     </div>
 </body>
