@@ -2,5 +2,5 @@
 <!DOCTYPE html>
 
 <header>
-    <h2 class="text-center bg-primary">[]共通ヘッダ]TOPページ</h2>
+    <h2 class="text-center bg-primary">[共通ヘッダ]TOPページ</h2>
 </header>
