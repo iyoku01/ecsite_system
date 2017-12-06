@@ -2,9 +2,8 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <!DOCTYPE html>
 
-<div class="row">
+
     <header>
-    <a href=SearchControl><h3>[WATAZONƒƒS‰æ‘œ]</h3></a>
+    <a href=TopControl><h3>[WATAZONƒƒS‰æ‘œ]</h3></a>
     </header>
-</div>
 
