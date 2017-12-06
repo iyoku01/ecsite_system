@@ -8,31 +8,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import action.Action;
-import action.TopSelect;
-
-/**
- * Servlet implementation class SearchControl
+/***
+ * 購入完了
+ * @author 伊能
+ *
  */
-@WebServlet("/SearchControl")
-public class SearchControl extends HttpServlet {
+@WebServlet("/PurchaseComp")
+public class PurchaseComp extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("Windows-31J");
-        String dispatchUrl = null;
-        try {
-            Action ac = new TopSelect();
-            dispatchUrl = ac.execute(request, response);
-        } catch (Exception e) {
-            request.setAttribute("message", "原因不明のエラーです");
-            e.printStackTrace();
-        }
 
-        request.getRequestDispatcher(dispatchUrl).forward(request, response);
+        request.setAttribute("order_id", "10001");
+        request.getRequestDispatcher("PurchaseComp.jsp").forward(request, response);
     }
 
     /**
