@@ -2,7 +2,7 @@
 
 /* html‚ÌÃŞÌ«ÙÄ‚Ìİ’è‚ğØ¾¯Ä */
 html, body, div, span,
-h1, h2,  h4, h5, h6, p, blockquote, pre,
+h1,h2,h3 , h4, h5, h6, p, blockquote, pre,
 dl, dt, dd, ol, ul, li,
 table, caption, tbody, tfoot, thead, tr, th, td {
   margin: 0;
@@ -23,15 +23,39 @@ header{
     background-color:#555555;
     height:70px;
     width:100%;
-    margin:-120px auto;
+
     }
 
 .white{
     background-color:#ffffff;
-    height:150px;
+    height:100px;
     width:80%;
-    margin:100px auto;
+    margin:30px auto 0px;
     text-align:center;
     padding:10px;
+    font-size:30px;
+    line-height:40px;
+}
+.white h2{
+     line-height:50px;
+}
+.top{
+    margin:40px;
+    text-align:center;
+    font-size:25px;
+    width: 250px;
+    height: 50px;
+    background-color:orange;
+}
+
+.text-danger{
+    text-align:center;
+    color:red;
+}
+
+.center{
+    margin:auto;
+    text-align:center;
+}
 
 }

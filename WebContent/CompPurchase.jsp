@@ -16,9 +16,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<link
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"
-    rel="stylesheet">
+ <%--<link
+   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"
+    rel="stylesheet"> --%>
 <!--[if lt IE 9]>
     <script src="html5shiv.js"></script>
     <script src="respond.min.js"></script>
@@ -38,17 +38,30 @@
     <!-- 共通ヘッダー -->
 
 
-    <div class="col-xs-12">
+
         <jsp:include page="header_logoOnly.jsp" flush="true" />
-    </div>
+
+<%
+//--- 表示用のダミー値をセット ---
 
 
+    ArrayList<Order_tblVo> entList = new ArrayList<Order_tblVo>();
+    Order_tblVo ent;
+
+    ent = new Order_tblVo();
+    ent.setOrder_id(11111);
+    entList.add(ent);
+
+
+    request.setAttribute("order_id", entList);
+
+ %>
      <!-- pageー -->
 
     <div class="white">
 
-            <h3>お買い上げいただき誠にありがとうございました。</h3>
-            <h3>購入番号：（番号持ってくる）</h3>
+            <h2>お買い上げいただき誠にありがとうございました。<br>
+           購入番号：（改装工事中）</h2>
 
     </div>
 
@@ -57,7 +70,9 @@
 
 
 
-<INPUT TYPE="submit" VALUE="トップページに戻る">
+
+<div class="center" ><INPUT TYPE="submit"  VALUE="トップページに戻る"class="top"></div>
+
 
 
 
@@ -66,7 +81,7 @@
     <div class="col-xs-12">
         <jsp:include page="footer.jsp" flush="true" />
     </div>
-    </div>
+
 
 </body>
 </html>
