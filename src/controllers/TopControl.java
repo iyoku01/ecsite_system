@@ -12,10 +12,10 @@ import action.Action;
 import action.TopSelect;
 
 /**
- * Servlet implementation class SearchControl
+ * Servlet implementation class TopControl
  */
-@WebServlet("/SearchControl")
-public class SearchControl extends HttpServlet {
+@WebServlet("/TopControl")
+public class TopControl extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
