@@ -26,18 +26,18 @@ header{
 
     }
 
-.white{
-    background-color:#ffffff;
-    height:100px;
+
+
+h2{
+     line-height:50px;
+      background-color:#ffffff;
+    height:10%;
     width:80%;
     margin:30px auto 0px;
     text-align:center;
     padding:10px;
     font-size:30px;
     line-height:40px;
-}
-.white h2{
-     line-height:50px;
 }
 .top{
     margin:40px;
