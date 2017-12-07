@@ -9,9 +9,10 @@ import java.util.ArrayList;
 
 import database.Category_tblVo;
 import database.Hard_tblVo;
+import database.ListTop;
 import database.Product_mstVo;
-import database.Product_pic_tblVo;
 import database.Recommend_tblVo;
+import database.TopProductDto;
 
 /***
  * Dao
@@ -76,13 +77,17 @@ public class EcsiteDao implements AutoCloseable {
      * @return
      * @throws SQLException
      */
-    public ArrayList<Hard_tblVo> getHardList() throws
+    public ArrayList<Hard_tblVo> getHardList(String hard_id) throws
             SQLException {
         System.out.println("\n/// getHardList()");
 
         String sql =
-                "SELECT * FROM hard_tbl" +
-                        " ORDER BY hard_id";
+                "SELECT * FROM hard_tbl";
+
+        if (hard_id != null) {
+            sql += " WHERE hard_id=" + hard_id;
+        }
+        sql += " ORDER BY hard_id";
 
         ArrayList<Hard_tblVo> entList = new ArrayList<Hard_tblVo>();
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
@@ -132,14 +137,61 @@ public class EcsiteDao implements AutoCloseable {
      * @return
      * @throws SQLException
      */
-    /*
-    public ArrayList<DtoTopProduct> getProductList(String hard_id, String category_id, String convention_word)
+    public ArrayList<ListTop> getProductList(String hard_id, String category_id, String convention_word)
             throws SQLException {
         System.out.println("\n/// getProductList()");
 
-        return entList;
+        ArrayList<ListTop> list;
+        String sql = "SELECT";
+
+        if (convention_word != null) {
+            sql += " * FROM product_pic_tbl JOIN conversion_tbl ON product_pic_tbl.product_id=conversion_tbl.product_id"
+                    + " JOIN product_mst ON product_pic_tbl.product_id=product_mst.product_id WHERE"
+                    + " conversion_word LIKE '%" + convention_word + "%'";
+        } else {
+            sql += " product_mst.product_id,product_name,price,stocks,comment,hard_id,category_id,ave_eval,pic_file FROM"
+                    + " product_pic_tbl join product_mst ON product_pic_tbl.product_id=product_mst.product_id WHERE hard_id=?";
+        }
+        if (category_id != null) {
+            sql += "category_id=" + category_id;
+        }
+        sql += " GROUP BY product_mst.product_id ORDER BY product_mst.product_id DESC";
+
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+
+            list = new ArrayList<ListTop>();
+            ArrayList<Hard_tblVo> hardList = getHardList(hard_id);
+
+            for (Hard_tblVo hard : hardList) {
+                ListTop top = new ListTop();
+                top.setHard_id(hard.getHard_id());
+                top.setHard_name(hard.getHard_name());
+                if (hard_id != null) {
+                    pstatement.setInt(1, hard.getHard_id());
+                }
+                System.out.println("--- sql = " + pstatement);
+                ResultSet rs = pstatement.executeQuery();
+                ArrayList<TopProductDto> tpdList = new ArrayList<TopProductDto>();
+
+                while (rs.next()) {
+                    TopProductDto tpd = new TopProductDto();
+                    tpd.setProduct_id(rs.getInt("product_id"));
+                    tpd.setProduct_name(rs.getString("product_name"));
+                    tpd.setPrice(rs.getInt("price"));
+                    tpd.setStocks(rs.getInt("stocks"));
+                    tpd.setComment(rs.getString("comment"));
+                    tpd.setHard_id(rs.getInt("hard_id"));
+                    tpd.setCategory_id(rs.getInt("category_id"));
+                    tpd.setAve_eval(rs.getInt("ave_eval"));
+                    tpd.setPic_file(rs.getString("pic_file"));
+                    tpdList.add(tpd);
+                }
+                top.setTpd(tpdList);
+                list.add(top);
+            }
+        }
+        return list;
     }
-    */
 
     /***
      * 指定した商品IDのレコードを商品マスタから取得
@@ -147,7 +199,7 @@ public class EcsiteDao implements AutoCloseable {
      * @return
      * @throws SQLException
      */
-    public Product_mstVo getProductmust(int product_id) throws
+    public Product_mstVo getProduct(String product_id) throws
             SQLException {
         System.out.println("\n/// getProductmust()");
 
@@ -155,7 +207,7 @@ public class EcsiteDao implements AutoCloseable {
         String sql = "SELECT * FROM product_must WHERE product_id=?";
 
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
-            pstatement.setInt(1, product_id);
+            pstatement.setString(1, product_id);
             System.out.println("--- sql = " + pstatement);
             ResultSet rs = pstatement.executeQuery();
             if (rs.next()) {
@@ -170,34 +222,4 @@ public class EcsiteDao implements AutoCloseable {
         }
         return ent;
     }
-
-    /***
-     * 商品詳細画面の画像取得※ロゴまで取得している※要修正※
-     * @param product_id
-     * @return
-     * @throws SQLException
-     */
-    public ArrayList<Product_pic_tblVo> getPictureList(int product_id) throws
-            SQLException {
-        System.out.println("\n/// getPIctureList()");
-
-        String sql = "SELECT * product pic_tbl from product_id=?";
-
-        ArrayList<Product_pic_tblVo> entList = new ArrayList<Product_pic_tblVo>();
-        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
-            pstatement.setInt(1, product_id);
-            System.out.println("--- sql = " + pstatement);
-            ResultSet rs = pstatement.executeQuery();
-            while (rs.next()) {
-                Product_pic_tblVo ent = new Product_pic_tblVo();
-                ent.setProduct_id(rs.getInt("product_id"));
-                ent.setPic_category(rs.getInt("pic_category"));
-                ent.setPic_number(rs.getInt("pic_number"));
-                ent.setPic_file(rs.getString("pic_file"));
-                entList.add(ent);
-            }
-        }
-        return entList;
-    }
-
 }
