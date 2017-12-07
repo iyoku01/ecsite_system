@@ -62,9 +62,7 @@
     </table>
 
     小計（商品〇点):￥〇〇(税込）
-    <a href=TopControl> <INPUT TYPE="submit" VALUE="レジに進む" class="top">
-
-    </a>
+    <INPUT TYPE="submit" VALUE="レジに進む" class="cartbotton">
 </div>
 
 
