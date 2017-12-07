@@ -9,8 +9,7 @@ import java.util.ArrayList;
 
 import database.Category_tblVo;
 import database.Hard_tblVo;
-import database.Product_mstVo;
-import database.Product_pic_tblVo;
+import database.ProductDetailDto;
 import database.Recommend_tblVo;
 
 /***
@@ -147,15 +146,17 @@ public class EcsiteDao implements AutoCloseable {
      * @return
      * @throws SQLException
      */
-    public Product_mstVo getProductmust(int product_id) throws
+    public ProductDetailDto getProductDetail(String product_id) throws
             SQLException {
-        System.out.println("\n/// getProductmust()");
+        System.out.println("\n/// getProductDetail()");
 
-        Product_mstVo ent = new Product_mstVo();
-        String sql = "SELECT * FROM product_must WHERE product_id=?";
+        ProductDetailDto ent = new ProductDetailDto();
+        String sql = "SELECT * FROM product_mst" +
+                " JOIN product_pic_tbl ON product_mst.product_id = product_pic_tbl.product_id " +
+                " WHERE product_pic_tbl.pic_category=1 AND product_mst.product_id=?";
 
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
-            pstatement.setInt(1, product_id);
+            pstatement.setString(1, product_id);
             System.out.println("--- sql = " + pstatement);
             ResultSet rs = pstatement.executeQuery();
             if (rs.next()) {
@@ -166,35 +167,34 @@ public class EcsiteDao implements AutoCloseable {
                 ent.setComment(rs.getString("comment"));
                 ent.setHard_id(rs.getInt("hard_id"));
                 ent.setCategory_id(rs.getInt("category_id"));
+                ent.setAve_eval(rs.getInt("ave_eval"));
+                ent.setReview_count(rs.getInt("review_count"));
+                ent.setMainPic_file(rs.getString("pic_file"));
             }
         }
         return ent;
     }
 
     /***
-     * ¤•iÚ×‰æ–Ê‚Ì‰æ‘œæ“¾¦ƒƒS‚Ü‚Åæ“¾‚µ‚Ä‚¢‚é¦—vC³¦
+     * ¤•i‚Ì‰æ‘œæ“¾
      * @param product_id
+     * @param pic_category ƒƒS‰æ‘œ‚O@ƒƒCƒ“‰æ‘œ‚P@ƒTƒu‰æ‘œ‚Q
      * @return
      * @throws SQLException
      */
-    public ArrayList<Product_pic_tblVo> getPictureList(int product_id) throws
+    public ArrayList<String> getProductSubPicList(String product_id) throws
             SQLException {
-        System.out.println("\n/// getPIctureList()");
+        System.out.println("\n/// getProductPicList()");
 
-        String sql = "SELECT * product pic_tbl from product_id=?";
+        String sql = "SELECT * FROM product_pic_tbl WHERE product_id=? AND pic_category=2 ORDER BY pic_number";
 
-        ArrayList<Product_pic_tblVo> entList = new ArrayList<Product_pic_tblVo>();
+        ArrayList<String> entList = new ArrayList<String>();
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
-            pstatement.setInt(1, product_id);
+            pstatement.setString(1, product_id);
             System.out.println("--- sql = " + pstatement);
             ResultSet rs = pstatement.executeQuery();
             while (rs.next()) {
-                Product_pic_tblVo ent = new Product_pic_tblVo();
-                ent.setProduct_id(rs.getInt("product_id"));
-                ent.setPic_category(rs.getInt("pic_category"));
-                ent.setPic_number(rs.getInt("pic_number"));
-                ent.setPic_file(rs.getString("pic_file"));
-                entList.add(ent);
+                entList.add(rs.getString("pic_file"));
             }
         }
         return entList;

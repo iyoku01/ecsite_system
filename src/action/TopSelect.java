@@ -1,5 +1,6 @@
 package action;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -11,7 +12,7 @@ import database.Category_tblVo;
 
 public class TopSelect implements Action {
 
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         try (EcsiteDao dao = new EcsiteDao()) {
             //ÉJÉeÉSÉäÅ[
