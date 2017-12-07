@@ -385,7 +385,7 @@
                                   <size>1</size>
                                   <notNull>false</notNull>
                                   <primaryKey>false</primaryKey>
-                                  <description>未発送=1/発送済=0</description>
+                                  <description>未発送=0/発送済=1</description>
                                   <autoIncrement>false</autoIncrement>
                                   <defaultValue>1</defaultValue>
                                 </net.java.amateras.db.visual.model.ColumnModel>
@@ -1074,7 +1074,7 @@
   </children>
   <dommains/>
   <dialectName>MySQL</dialectName>
-  <logicalMode>true</logicalMode>
+  <logicalMode>false</logicalMode>
   <jarFile>C:\Users\ica\Downloads\JAVA\workspace\mysql-connector-java-5.1.27-bin.jar</jarFile>
   <jdbcDriver>com.mysql.jdbc.Driver</jdbcDriver>
   <jdbcUrl>jdbc:mysql://localhost/ecsite_db</jdbcUrl>

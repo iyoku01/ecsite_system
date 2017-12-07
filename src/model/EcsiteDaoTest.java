@@ -60,7 +60,7 @@ public class EcsiteDaoTest {
     public void testGetProductList() {
         try (EcsiteDao dao = new EcsiteDao()) {
             ArrayList<ListTop> entList;
-            entList = dao.getProductList("2", null, null);
+            entList = dao.getProductList(null, null, "ƒ‚");
             for (ListTop ent : entList) {
                 ArrayList<TopProductDto> list = ent.getTpd();
                 for (TopProductDto entity : list) {
