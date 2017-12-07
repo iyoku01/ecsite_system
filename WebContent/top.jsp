@@ -30,6 +30,21 @@
     ent.setPrice(9600);
     entList.add(ent);
     request.setAttribute("productList", entList);
+ /*
+    //商品
+    if ( request.getAttribute("productList") != null) {
+        ArrayList<ListTop> productList = (ArrayList<ListTop>)request.getAttribute("productList");
+    } else {
+        //該当商品が無い場合のメッセージ
+        String topMessage = (String)request.getAttribute("topMessage");
+    }
+    //ハード
+     ArrayList<Hard_tblVo> hardList = (ArrayList<Hard_tblVo>)request.getAttribute("hardList");
+    //カテゴリー
+    ArrayList<Category_tblVo> categoryList = (ArrayList<Category_tblVo>)request.getAttribute("categoryList");
+    //おすすめ商品
+     ArrayList<Recommend_tblVo> recommendList = (ArrayList<Recommend_tblVo>)request.getAttribute("recommendList");
+ */
 %>
 
 
