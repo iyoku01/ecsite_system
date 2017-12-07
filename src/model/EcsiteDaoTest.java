@@ -10,7 +10,7 @@ import database.Category_tblVo;
 import database.Hard_tblVo;
 import database.ListTop;
 import database.Recommend_tblVo;
-import database.TopProductDto;
+import database.ProductTopDto;
 
 public class EcsiteDaoTest {
 
@@ -62,8 +62,8 @@ public class EcsiteDaoTest {
             ArrayList<ListTop> entList;
             entList = dao.getProductList(null, null, "ƒ‚");
             for (ListTop ent : entList) {
-                ArrayList<TopProductDto> list = ent.getTpd();
-                for (TopProductDto entity : list) {
+                ArrayList<ProductTopDto> list = ent.getTpd();
+                for (ProductTopDto entity : list) {
                     System.out.println(entity.getProduct_id());
                     System.out.println(entity.getProduct_name());
                     System.out.println(entity.getPrice());

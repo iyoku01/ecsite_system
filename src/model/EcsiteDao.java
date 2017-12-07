@@ -12,7 +12,7 @@ import database.Hard_tblVo;
 import database.ListTop;
 import database.Product_mstVo;
 import database.Recommend_tblVo;
-import database.TopProductDto;
+import database.ProductTopDto;
 
 /***
  * Dao
@@ -171,10 +171,10 @@ public class EcsiteDao implements AutoCloseable {
                 pstatement.setInt(1, hard.getHard_id());
                 System.out.println("--- sql = " + pstatement);
                 ResultSet rs = pstatement.executeQuery();
-                ArrayList<TopProductDto> tpdList = new ArrayList<TopProductDto>();
+                ArrayList<ProductTopDto> tpdList = new ArrayList<ProductTopDto>();
 
                 while (rs.next()) {
-                    TopProductDto tpd = new TopProductDto();
+                    ProductTopDto tpd = new ProductTopDto();
                     tpd.setProduct_id(rs.getInt("product_id"));
                     tpd.setProduct_name(rs.getString("product_name"));
                     tpd.setPrice(rs.getInt("price"));

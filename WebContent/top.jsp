@@ -18,21 +18,17 @@
 
 <%
     //--- 表示用のダミー値をセット ---
-
     //商品
     ArrayList<Product_mstVo> entList = new ArrayList<Product_mstVo>();
     Product_mstVo ent;
-
     ent = new Product_mstVo();
     ent.setProduct_name("どこかのゲーム");
     ent.setPrice(8800);
     entList.add(ent);
-
     ent = new Product_mstVo();
     ent.setProduct_name("なんかのゲーム");
     ent.setPrice(9600);
     entList.add(ent);
-
     request.setAttribute("productList", entList);
 %>
 

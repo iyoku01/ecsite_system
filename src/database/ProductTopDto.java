@@ -1,7 +1,7 @@
 package database;
 
 //トップ画面の商品リスト用のdto
-public class TopProductDto {
+public class ProductTopDto {
     private int product_id;
     private String product_name;
     private int price;

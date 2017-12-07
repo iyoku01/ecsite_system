@@ -40,7 +40,7 @@ public class TopSelect implements Action {
             if (topList.get(0).getTpd() != null) {
                 request.setAttribute("productList", topList);
             } else {
-                request.setAttribute("topmessage", "ˆê’v‚·‚é¤•i‚ª‚ ‚è‚Ü‚¹‚ñ");
+                request.setAttribute("topMessage", "ŠY“–‚Ì¤•i‚ª‚ ‚è‚Ü‚¹‚ñ");
             }
         } catch (NumberFormatException e) {
             request.setAttribute("message", "”’l‚ğ“ü—Í‚µ‚Ä‰º‚³‚¢");
