@@ -82,7 +82,8 @@ CREATE TABLE product_mst(
 		comment                       		TEXT		 NULL  COMMENT 'コメント',
 		hard_id                       		INT(10)		 NULL  COMMENT 'ハードID',
 		category_id                   		INT(10)		 NULL  COMMENT 'カテゴリーID',
-		ave_eval                      		INT(10)		 NULL  COMMENT '平均評価',
+		ave_eval                      		FLOAT(10)		 NULL  COMMENT '平均評価',
+		review_count                  		MEDIUMINT(10)		 NULL  COMMENT 'レビュー数',
   FOREIGN KEY (category_id) REFERENCES category_tbl (category_id),
   FOREIGN KEY (hard_id) REFERENCES hard_tbl (hard_id)
 ) COMMENT='商品マスタ';
@@ -141,6 +142,7 @@ CREATE INDEX index_key ON product_mst (category_id);
 CREATE INDEX index_key ON review_tbl (product_id);
 
 
+
 /*###########################################################################
  # データINSERT
  ############################################################################*/
@@ -168,11 +170,11 @@ INSERT INTO ecsite_db.personal_mst ( user_id, password, name, nickname, phone, p
 
 
 /* product_mst */
-INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, stocks, comment, hard_id, category_id, ave_eval ) VALUES (1,'CALL OF DUTY WWⅡ',7900,999,'オスス&<>''\nメ1',2,3,0);
-INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, stocks, comment, hard_id, category_id, ave_eval ) VALUES (2,'MONSTER HUNTER WORLD',8980,999,'オススメ2',2,2,0);
-INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, stocks, comment, hard_id, category_id, ave_eval ) VALUES (3,'A列車で行こうEXP.',7800,999,'オススメ3',2,4,0);
-INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, stocks, comment, hard_id, category_id, ave_eval ) VALUES (4,'Splatoon2',5980,999,'オススメ4',1,2,0);
-INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, stocks, comment, hard_id, category_id, ave_eval ) VALUES (5,'Xenoblade2',7980,999,'オススメ5',1,1,0);
+INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, stocks, comment, hard_id, category_id, ave_eval, review_count ) VALUES (1,'CALL OF DUTY WWⅡ',7900,999,'オスス&<>''\nメ1',2,3,1,11);
+INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, stocks, comment, hard_id, category_id, ave_eval, review_count ) VALUES (2,'MONSTER HUNTER WORLD',8980,999,'オススメ2',2,2,2,12);
+INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, stocks, comment, hard_id, category_id, ave_eval, review_count ) VALUES (3,'A列車で行こうEXP.',7800,999,'オススメ3',2,4,3,13);
+INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, stocks, comment, hard_id, category_id, ave_eval, review_count ) VALUES (4,'Splatoon2',5980,999,'オススメ4',1,2,4,14);
+INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, stocks, comment, hard_id, category_id, ave_eval, review_count ) VALUES (5,'Xenoblade2',7980,999,'オススメ5',1,1,5,15);
 
 
 
