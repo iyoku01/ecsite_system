@@ -141,34 +141,34 @@ public class EcsiteDao implements AutoCloseable {
             throws SQLException {
         System.out.println("\n/// getProductList()");
 
-        ArrayList<ListTop> list;
+        ArrayList<ListTop> topList;
         String sql = "SELECT";
 
         if (convention_word != null) {
             sql += " * FROM product_pic_tbl JOIN conversion_tbl ON product_pic_tbl.product_id=conversion_tbl.product_id"
-                    + " JOIN product_mst ON product_pic_tbl.product_id=product_mst.product_id WHERE"
-                    + " conversion_word LIKE '%" + convention_word + "%'";
+                    + " JOIN product_mst ON product_pic_tbl.product_id=product_mst.product_id"
+                    + " WHERE (hard_id,pic_category) IN (SELECT ?,0 FROM product_mst GROUP BY product_id)"
+                    + "AND conversion_word LIKE '%" + convention_word + "%'";
         } else {
             sql += " product_mst.product_id,product_name,price,stocks,comment,hard_id,category_id,ave_eval,pic_file FROM"
-                    + " product_pic_tbl join product_mst ON product_pic_tbl.product_id=product_mst.product_id WHERE hard_id=?";
+                    + " product_pic_tbl join product_mst ON product_pic_tbl.product_id=product_mst.product_id"
+                    + " WHERE (hard_id,pic_category) IN (SELECT ?,0 FROM product_mst GROUP BY product_id)";
         }
         if (category_id != null) {
-            sql += "category_id=" + category_id;
+            sql += " AND category_id=" + category_id;
         }
         sql += " GROUP BY product_mst.product_id ORDER BY product_mst.product_id DESC";
 
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
 
-            list = new ArrayList<ListTop>();
+            topList = new ArrayList<ListTop>();
             ArrayList<Hard_tblVo> hardList = getHardList(hard_id);
 
             for (Hard_tblVo hard : hardList) {
                 ListTop top = new ListTop();
                 top.setHard_id(hard.getHard_id());
                 top.setHard_name(hard.getHard_name());
-                if (hard_id != null) {
-                    pstatement.setInt(1, hard.getHard_id());
-                }
+                pstatement.setInt(1, hard.getHard_id());
                 System.out.println("--- sql = " + pstatement);
                 ResultSet rs = pstatement.executeQuery();
                 ArrayList<TopProductDto> tpdList = new ArrayList<TopProductDto>();
@@ -187,10 +187,10 @@ public class EcsiteDao implements AutoCloseable {
                     tpdList.add(tpd);
                 }
                 top.setTpd(tpdList);
-                list.add(top);
+                topList.add(top);
             }
         }
-        return list;
+        return topList;
     }
 
     /***
