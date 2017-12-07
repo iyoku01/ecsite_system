@@ -46,7 +46,16 @@
     <table>
         <tr>
             <td>商品画像 商品名</td>
-            <td>値段 個数(プルダウンつける)
+            <td>値段 個数
+
+            <form>
+<select name="kibun">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+</select></form>
+
             <INPUT TYPE="submit" VALUE="削除">
             </td>
         </tr>
