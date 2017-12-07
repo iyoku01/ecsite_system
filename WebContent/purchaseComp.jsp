@@ -55,9 +55,9 @@
 
 
 
-
+<a href=TopControl>
 <div class="center" ><INPUT TYPE="submit"  VALUE="トップページに戻る"class="top"></div>
-
+</a>
 
 
 
