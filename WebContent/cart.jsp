@@ -16,7 +16,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/style.css">
- <%--<link
+<%--<link
    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"
     rel="stylesheet"> --%>
 <!--[if lt IE 9]>
@@ -29,7 +29,7 @@
     src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <!-- Bootstrap End -->
 
-<title>購入完了</title>
+<title>カート</title>
 </head>
 <body>
 
@@ -39,25 +39,23 @@
 
 
 
-        <jsp:include page="header_logoOnly.jsp" flush="true" />
+    <jsp:include page="header.jsp" flush="true" />
 
-     <!-- pageー -->
+    <!-- pageー -->
 
+    <table>
+        <tr>
+            <td>商品画像 商品名</td>
+            <td>値段 個数(プルダウンつける)
 
+            </td>
+        </tr>
+    </table>
 
-            <h2>お買い上げいただき誠にありがとうございました。<br>
-           購入番号：（${order_id}）</h2>
+    小計（商品〇点):￥〇〇(税込）
+    <a href=TopControl> <INPUT TYPE="submit" VALUE="レジに進む" class="top">
 
-
-
-
-    <p class="text-danger">※購入番号はお問い合わせ時に必要になりますので大切に保管ください</p>
-
-
-
-<a href=TopControl>
-<div class="center" ><INPUT TYPE="submit"  VALUE="トップページに戻る"class="top"></div>
-</a>
+    </a>
 
 
 

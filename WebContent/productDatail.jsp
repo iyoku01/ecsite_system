@@ -12,30 +12,21 @@
 <head>
 <META charset="Windows-31J">
 
+<!-- Bootstrap Start -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--[if lt IE 9]>
+    <script src="html5shiv.js"></script>
+    <script src="respond.min.js"></script>
+<![endif]-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<!-- Bootstrap End -->
 
-<title>TOPページ</title>
+<title>商品詳細ページ</title>
 </head>
-
-<%
-    //--- 表示用のダミー値をセット ---
-
-    //商品
-    ArrayList<Product_mstVo> entList = new ArrayList<Product_mstVo>();
-    Product_mstVo ent;
-
-    ent = new Product_mstVo();
-    ent.setProduct_name("どこかのゲーム");
-    ent.setPrice(8800);
-    entList.add(ent);
-
-    ent = new Product_mstVo();
-    ent.setProduct_name("なんかのゲーム");
-    ent.setPrice(9600);
-    entList.add(ent);
-
-    request.setAttribute("productList", entList);
-%>
-
 
 <body class="bg-info">
 
@@ -73,7 +64,40 @@
                 </div>
 
             </div>
-        </div>
+    <!-- メイン画像 -->
+    <div></div>
+    <!-- サブ画像 -->
+    <div></div>
+
+    <!-- 商品タイトル -->
+    <div class="productTitle">
+        <%="商品タイトル" %>
+    </div>
+    <!-- レビュー画面リンク -->
+    <a href="review.jsp"><%="？" %>のカスタマーレビュー</a>
+
+    <!-- 金額表示 -->
+    \<%="5000" %>在庫あり
+
+    <!-- 購入数選択 -->
+    <select name="購入数">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select>
+    <!-- ↑後で変数にする -->
+
+    <input type="submit" name="名前" value="カートに入れる">
+
+    <!-- 商品説明 -->
+    <div class="productDatail">
+        <%="商品説明" %>
+    </div>
+
+    <!-- 社長レビュー -->
+    <div class="pReview">
+        <%="社長レビュー" %>
+    </div>
         <div class="row">
             <div class="col-xs-12">
                 <p class="bg-danger">${message}</p>
@@ -86,4 +110,3 @@
         </div>
     </div>
 </body>
-</html>
