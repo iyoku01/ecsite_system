@@ -32,7 +32,7 @@
 <title>w“üŠ®—¹</title>
 </head>
 <body>
-
+<div class="bodygray">
 
 
     <!-- ‹¤’Êƒwƒbƒ_[ -->
@@ -67,6 +67,6 @@
         <jsp:include page="footer.jsp" flush="true" />
     </div>
 
-
+</div>
 </body>
 </html>

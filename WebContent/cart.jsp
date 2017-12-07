@@ -32,7 +32,7 @@
 <title>カート</title>
 </head>
 <body>
-
+<div class="bodywhite">
 
 
     <!-- 共通ヘッダー -->
@@ -42,12 +42,12 @@
     <jsp:include page="header.jsp" flush="true" />
 
     <!-- pageー -->
-
+<div class ="cart">
     <table>
         <tr>
             <td>商品画像 商品名</td>
             <td>値段 個数(プルダウンつける)
-
+            <INPUT TYPE="submit" VALUE="削除">
             </td>
         </tr>
     </table>
@@ -56,7 +56,7 @@
     <a href=TopControl> <INPUT TYPE="submit" VALUE="レジに進む" class="top">
 
     </a>
-
+</div>
 
 
 
@@ -65,6 +65,6 @@
         <jsp:include page="footer.jsp" flush="true" />
     </div>
 
-
+</div>
 </body>
 </html>
