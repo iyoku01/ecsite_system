@@ -996,6 +996,22 @@
                 <autoIncrement>false</autoIncrement>
                 <defaultValue></defaultValue>
               </net.java.amateras.db.visual.model.ColumnModel>
+              <net.java.amateras.db.visual.model.ColumnModel>
+                <columnName>review_count</columnName>
+                <logicalName>レビュー数</logicalName>
+                <columnType class="net.java.amateras.db.dialect.ColumnType">
+                  <name>MEDIUMINT</name>
+                  <logicalName>整数</logicalName>
+                  <supportSize>true</supportSize>
+                  <type>4</type>
+                </columnType>
+                <size>10</size>
+                <notNull>false</notNull>
+                <primaryKey>false</primaryKey>
+                <description></description>
+                <autoIncrement>false</autoIncrement>
+                <defaultValue></defaultValue>
+              </net.java.amateras.db.visual.model.ColumnModel>
             </columns>
             <indices>
               <net.java.amateras.db.visual.model.IndexModel>
