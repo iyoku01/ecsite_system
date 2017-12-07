@@ -14,11 +14,14 @@ table,caption, tbody, tfoot, thead, tr, th, td {
   vertical-align: baseline;
 }
 
-body{
+.bodygray{
   background-color:#EEEEEE;
   color:#333333;
 }
-
+.bodywhite{
+  background-color:#FFFFFF;
+  color:#333333;
+}
 header{
     background-color:#555555;
     height:70px;
@@ -85,9 +88,22 @@ h2{
     margin:auto;
     text-align:center;
 }
-table{
+
+.cart{
+    margin:auto;
+    text-align:center;
+
+
+}
+.cart table{
     border:1px solid black;
+    margin:100px auto 20px;
+    text-align:center;
+    border-collapse:collapse;
+
     }
-td{
+.cart td{
     border:1px solid black;
+    padding:30px;
+
 }

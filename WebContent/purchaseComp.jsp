@@ -32,7 +32,7 @@
 <title>購入完了</title>
 </head>
 <body>
-
+<div class="bodygray">
 
 
     <!-- 共通ヘッダー -->
@@ -46,7 +46,7 @@
 
 
             <h2>お買い上げいただき誠にありがとうございました。<br>
-           購入番号：（${order_id}）</h2>
+           購入番号：${order_id}</h2>
 
 
 
@@ -67,6 +67,6 @@
         <jsp:include page="footer.jsp" flush="true" />
     </div>
 
-
+</div>
 </body>
 </html>
