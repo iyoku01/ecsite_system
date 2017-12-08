@@ -9,9 +9,9 @@ import org.junit.Test;
 import database.Category_tblVo;
 import database.Hard_tblVo;
 import database.ListTop;
+import database.ProductTopDto;
 import database.Product_mstVo;
 import database.Recommend_tblVo;
-import database.ProductTopDto;
 
 public class EcsiteDaoTest {
 
@@ -63,22 +63,48 @@ public class EcsiteDaoTest {
     }
 
     @Test
-    public void testGetProductList() {
+    public void testGetProductListAll() {
         try (EcsiteDao dao = new EcsiteDao()) {
             ArrayList<ListTop> entList;
-            entList = dao.getProductList(null, null, "ƒ‚");
+            entList = dao.getProductListAll(dao.getHardList(null));
             for (ListTop ent : entList) {
                 ArrayList<ProductTopDto> list = ent.getTpd();
                 for (ProductTopDto entity : list) {
-                    System.out.println(entity.getProduct_id());
-                    System.out.println(entity.getProduct_name());
-                    System.out.println(entity.getPrice());
-                    System.out.println(entity.getStocks());
-                    System.out.println(entity.getComment());
-                    System.out.println(entity.getHard_id());
-                    System.out.println(entity.getCategory_id());
-                    System.out.println(entity.getAve_eval());
-                    System.out.println(entity.getPic_file());
+                    System.out.println(entity);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void testGetProductListById() {
+        try (EcsiteDao dao = new EcsiteDao()) {
+            ArrayList<ListTop> entList;
+            entList = dao.getProductListById(dao.getHardList(null), "2", "3");
+            for (ListTop ent : entList) {
+                ArrayList<ProductTopDto> list = ent.getTpd();
+                for (ProductTopDto entity : list) {
+                    System.out.println(entity);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void testGetProductListByWord() {
+        try (EcsiteDao dao = new EcsiteDao()) {
+            ArrayList<ListTop> entList;
+            entList = dao.getProductListByWord(dao.getHardList(null), "ƒ‚");
+            for (ListTop ent : entList) {
+                ArrayList<ProductTopDto> list = ent.getTpd();
+                for (ProductTopDto entity : list) {
+                    System.out.println(entity);
                 }
             }
         } catch (Exception e) {

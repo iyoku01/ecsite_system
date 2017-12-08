@@ -37,7 +37,13 @@ public class TopSelect implements Action {
             request.setAttribute("recommendList", recommendList);
             //è§ïiàÍóó
             ArrayList<ListTop> topList;
-            topList = dao.getProductList(hard_id, category_id, search);
+            if (hard_id == null && category_id == null && search == null) {
+                topList = dao.getProductListAll(hardList);
+            } else if (search != null) {
+                topList = dao.getProductListByWord(hardList, search);
+            } else {
+                topList = dao.getProductListById(hardList, hard_id, category_id);
+            }
             if (topList.get(0).getTpd() != null) {
                 request.setAttribute("productList", topList);
             } else {

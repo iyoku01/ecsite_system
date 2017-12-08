@@ -32,18 +32,31 @@
     request.setAttribute("productList", entList);
  /*
     //商品
-    if ( request.getAttribute("productList") != null) {
-        ArrayList<ListTop> productList = (ArrayList<ListTop>)request.getAttribute("productList");
-    } else {
-        //該当商品が無い場合のメッセージ
-        String topMessage = (String)request.getAttribute("topMessage");
-    }
+      "productList"
+         -ArrayList<ListTop>
+          "ListTop"
+              -hard_id
+              -hard_name
+              -ArrayList<ProductTopDto>
+                "ProductTopDto"
+                    -product_id
+                    -product_name
+                    -その他…
+     //該当商品が無い場合のメッセージ
+     "topMessage"
+       -topMessage
     //ハード
-     ArrayList<Hard_tblVo> hardList = (ArrayList<Hard_tblVo>)request.getAttribute("hardList");
+     "hardList"
+       -hard_id
+       -hard_name
     //カテゴリー
-    ArrayList<Category_tblVo> categoryList = (ArrayList<Category_tblVo>)request.getAttribute("categoryList");
+    "categoryList"
+      -category_id
+      -category_name
     //おすすめ商品
-     ArrayList<Recommend_tblVo> recommendList = (ArrayList<Recommend_tblVo>)request.getAttribute("recommendList");
+     "recommendList"
+       -product_id
+       -recommend_pic(pic_file)
  */
 %>
 

@@ -84,4 +84,29 @@ public class ProductTopDto {
         this.pic_file = pic_file;
     }
 
+    public String toString() {
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("[Product_mstVo:");
+        buffer.append(" product_id: ");
+        buffer.append(product_id);
+        buffer.append(" product_name: ");
+        buffer.append(product_name);
+        buffer.append(" price: ");
+        buffer.append(price);
+        buffer.append(" stocks: ");
+        buffer.append(stocks);
+        buffer.append(" comment: ");
+        buffer.append(comment);
+        buffer.append(" hard_id: ");
+        buffer.append(hard_id);
+        buffer.append(" category_id: ");
+        buffer.append(category_id);
+        buffer.append(" ave_eval: ");
+        buffer.append(ave_eval);
+        buffer.append(" pic_file: ");
+        buffer.append(pic_file);
+        buffer.append("]");
+        return buffer.toString();
+    }
+
 }
