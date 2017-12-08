@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=Windows-31J"%>
 <!DOCTYPE html>
-
+<head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
 <div class="row">
     <header>
         <h3>

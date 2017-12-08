@@ -23,7 +23,7 @@ public class PurchaseComp extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         request.setAttribute("order_id", "10001");
-        request.getRequestDispatcher("PurchaseComp.jsp").forward(request, response);
+        request.getRequestDispatcher("purchaseComp.jsp").forward(request, response);
     }
 
     /**

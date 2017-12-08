@@ -4,7 +4,7 @@
 html, body, div, span,
 h1,h2,h3 , h4, h5, h6, p, blockquote, pre,
 dl, dt, dd, ol, ul, li,
-table, caption, tbody, tfoot, thead, tr, th, td {
+table,caption, tbody, tfoot, thead, tr, th, td {
   margin: 0;
   padding: 0;
   border: 0;
@@ -14,30 +14,61 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   vertical-align: baseline;
 }
 
-body{
+.bodygray{
   background-color:#EEEEEE;
   color:#333333;
 }
-
+.bodywhite{
+  background-color:#FFFFFF;
+  color:#333333;
+}
 header{
     background-color:#555555;
     height:70px;
     width:100%;
-
     }
+header h3{
+    font-size:30px;
+}
+.col-xs-1{
+      top:20px;
+      left:20px;
+      width:160px;
+      height:60px;
+      position:absolute;
+}
 
-.white{
-    background-color:#ffffff;
-    height:100px;
+.col-xs-6{
+
+      top:40px;
+      left:200px;
+      width:370px;
+      height:40px;
+      position:absolute;
+}
+.col-xs-5{
+      top:40px;
+      left:500px;
+      width:370px;
+      height:40px;
+      position:absolute;
+}
+
+.input-group-addon{
+        color:#000000;
+        background-color:#e2e2e2;
+}
+
+h2{
+     line-height:50px;
+      background-color:#ffffff;
+    height:10%;
     width:80%;
     margin:30px auto 0px;
     text-align:center;
     padding:10px;
     font-size:30px;
     line-height:40px;
-}
-.white h2{
-     line-height:50px;
 }
 .top{
     margin:40px;
@@ -57,5 +88,22 @@ header{
     margin:auto;
     text-align:center;
 }
+
+.cart{
+    margin:auto;
+    text-align:center;
+
+
+}
+.cart table{
+    border:1px solid black;
+    margin:100px auto 20px;
+    text-align:center;
+    border-collapse:collapse;
+
+    }
+.cart td{
+    border:1px solid black;
+    padding:30px;
 
 }

@@ -8,8 +8,10 @@ import org.junit.Test;
 
 import database.Category_tblVo;
 import database.Hard_tblVo;
+import database.ListTop;
 import database.Product_mstVo;
 import database.Recommend_tblVo;
+import database.TopProductDto;
 
 public class EcsiteDaoTest {
 
@@ -31,7 +33,12 @@ public class EcsiteDaoTest {
     public void testGetHardList() {
         try (EcsiteDao dao = new EcsiteDao()) {
             ArrayList<Hard_tblVo> entList;
-            entList = dao.getHardList();
+            entList = dao.getHardList(null);
+            for (Hard_tblVo ent : entList) {
+                System.out.println(ent);
+            }
+
+            entList = dao.getHardList("1");
             for (Hard_tblVo ent : entList) {
                 System.out.println(ent);
             }
@@ -56,7 +63,32 @@ public class EcsiteDaoTest {
     }
 
     @Test
-    public void testGetProduct() {
+    public void testGetProductList() {
+        try (EcsiteDao dao = new EcsiteDao()) {
+            ArrayList<ListTop> entList;
+            entList = dao.getProductList(null, null, "ƒ‚");
+            for (ListTop ent : entList) {
+                ArrayList<TopProductDto> list = ent.getTpd();
+                for (TopProductDto entity : list) {
+                    System.out.println(entity.getProduct_id());
+                    System.out.println(entity.getProduct_name());
+                    System.out.println(entity.getPrice());
+                    System.out.println(entity.getStocks());
+                    System.out.println(entity.getComment());
+                    System.out.println(entity.getHard_id());
+                    System.out.println(entity.getCategory_id());
+                    System.out.println(entity.getAve_eval());
+                    System.out.println(entity.getPic_file());
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void testGetProductDetail() {
         try (EcsiteDao dao = new EcsiteDao()) {
             Product_mstVo ent = dao.getProductDetail("1");
             System.out.println(ent);
