@@ -6,9 +6,10 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!-- El End -->
 
-<div class="row">
-    <div class="col-xs-12">
-        <h5 class="text-center bg-primary">[共通フッター] デバッグ用情報</h5>
+        <br>
+        <p>---------------------------------------------------------------</p>
+        <p>[共通フッター] デバッグ用情報</p>
+        <p>---------------------------------------------------------------</p>
 
         <p>パラメタ変数の一覧</p>
         <div class="table-responsive">
@@ -42,7 +43,4 @@
                 </c:forEach>
             </table>
         </div>
-
-        <p>
-    </div>
-</div>
+        <br>

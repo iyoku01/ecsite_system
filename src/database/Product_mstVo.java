@@ -2,7 +2,7 @@ package database;
 
 /* Code Generator Information.
  * generator Version 1.0.0 release 2007/10/10
- * generated Date Mon Dec 04 11:18:16 JST 2017
+ * generated Date Thu Dec 07 16:05:32 JST 2017
  */
 import java.io.Serializable;
 
@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @version 1.0 
  * history 
  * Symbol	Date		Person		Note
- * [1]		2017/12/04	ica		Generated.
+ * [1]		2017/12/07	ica		Generated.
  */
 public class Product_mstVo implements Serializable{
 
@@ -54,9 +54,14 @@ public class Product_mstVo implements Serializable{
 	private int category_id;
 
 	/**
-	 * •½‹Ï•]‰¿:float(12)
+	 * •½‹Ï•]‰¿:int(10)
 	 */
-	private float ave_eval;
+	private int ave_eval;
+
+	/**
+	 * ƒŒƒrƒ…[”:int(10)
+	 */
+	private int review_count;
 
 	/**
 	* Constractor
@@ -99,9 +104,13 @@ public class Product_mstVo implements Serializable{
 
 	public void setCategory_id(int category_id){ this.category_id = category_id; }
 
-	public float getAve_eval(){ return this.ave_eval; }
+	public int getAve_eval(){ return this.ave_eval; }
 
-	public void setAve_eval(float ave_eval){ this.ave_eval = ave_eval; }
+	public void setAve_eval(int ave_eval){ this.ave_eval = ave_eval; }
+
+	public int getReview_count(){ return this.review_count; }
+
+	public void setReview_count(int review_count){ this.review_count = review_count; }
 
 	public String toString(){
 		StringBuffer buffer = new StringBuffer();
@@ -122,6 +131,8 @@ public class Product_mstVo implements Serializable{
 		buffer.append(category_id);
 		buffer.append(" ave_eval: ");
 		buffer.append(ave_eval);
+		buffer.append(" review_count: ");
+		buffer.append(review_count);
 		buffer.append("]");
 		return buffer.toString();
 	}

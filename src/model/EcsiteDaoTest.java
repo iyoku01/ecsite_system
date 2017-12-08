@@ -9,6 +9,7 @@ import org.junit.Test;
 import database.Category_tblVo;
 import database.Hard_tblVo;
 import database.ListTop;
+import database.Product_mstVo;
 import database.Recommend_tblVo;
 import database.ProductTopDto;
 
@@ -33,6 +34,11 @@ public class EcsiteDaoTest {
         try (EcsiteDao dao = new EcsiteDao()) {
             ArrayList<Hard_tblVo> entList;
             entList = dao.getHardList(null);
+            for (Hard_tblVo ent : entList) {
+                System.out.println(ent);
+            }
+
+            entList = dao.getHardList("1");
             for (Hard_tblVo ent : entList) {
                 System.out.println(ent);
             }
@@ -74,6 +80,31 @@ public class EcsiteDaoTest {
                     System.out.println(entity.getAve_eval());
                     System.out.println(entity.getPic_file());
                 }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void testGetProductDetail() {
+        try (EcsiteDao dao = new EcsiteDao()) {
+            Product_mstVo ent = dao.getProductDetail("1");
+            System.out.println(ent);
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void testGetProductPicList() {
+        try (EcsiteDao dao = new EcsiteDao()) {
+            ArrayList<String> entList;
+            entList = dao.getProductSubPicList("1");
+            for (String ent : entList) {
+                System.out.println(ent);
             }
         } catch (Exception e) {
             e.printStackTrace();

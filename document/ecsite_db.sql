@@ -24,31 +24,31 @@ DROP TABLE IF EXISTS category_tbl;
 /* テーブル名: カテゴリーテーブル */
 /**********************************/
 CREATE TABLE category_tbl(
-		category_id                   		INT(10)		 NOT NULL		 PRIMARY KEY COMMENT 'カテゴリーID',
-		category_name                 		VARCHAR(20)		 NULL  COMMENT 'カテゴリー名'
+        category_id                   		INT(10)		 NOT NULL		 PRIMARY KEY COMMENT 'カテゴリーID',
+        category_name                 		VARCHAR(20)		 NULL  COMMENT 'カテゴリー名'
 ) COMMENT='カテゴリーテーブル';
 
 /**********************************/
 /* テーブル名: 個人情報マスタ */
 /**********************************/
 CREATE TABLE personal_mst(
-		user_id                       		CHAR(10)		 NOT NULL		 PRIMARY KEY COMMENT 'ユーザーID',
-		password                      		VARCHAR(24)		 NULL  COMMENT 'パスワード',
-		name                          		VARCHAR(30)		 NULL  COMMENT '名前',
-		nickname                      		VARCHAR(20)		 NULL  COMMENT 'ニックネーム',
-		phone                         		CHAR(12)		 NULL  COMMENT '電話番号',
-		postal_code                   		CHAR(7)		 NULL  COMMENT '郵便番号',
-		address                       		VARCHAR(50)		 NULL  COMMENT '住所'
+        user_id                       		CHAR(10)		 NOT NULL		 PRIMARY KEY COMMENT 'ユーザーID',
+        password                      		VARCHAR(24)		 NULL  COMMENT 'パスワード',
+        name                          		VARCHAR(30)		 NULL  COMMENT '名前',
+        nickname                      		VARCHAR(20)		 NULL  COMMENT 'ニックネーム',
+        phone                         		CHAR(12)		 NULL  COMMENT '電話番号',
+        postal_code                   		CHAR(7)		 NULL  COMMENT '郵便番号',
+        address                       		VARCHAR(50)		 NULL  COMMENT '住所'
 ) COMMENT='個人情報マスタ';
 
 /**********************************/
 /* テーブル名: 注文テーブル */
 /**********************************/
 CREATE TABLE order_tbl(
-		order_id                      		INT(10)		 NOT NULL		 PRIMARY KEY AUTO_INCREMENT COMMENT '注文番号',
-		user_id                       		CHAR(10)		 NULL  COMMENT 'ユーザー名',
-		date                          		DATETIME		 NULL  COMMENT '注文日時',
-		shipping                      		BIT		 DEFAULT 1		 NULL  COMMENT '発送フラグ',
+        order_id                      		INT(10)		 NOT NULL		 PRIMARY KEY AUTO_INCREMENT COMMENT '注文番号',
+        user_id                       		CHAR(10)		 NULL  COMMENT 'ユーザー名',
+        date                          		DATETIME		 NULL  COMMENT '注文日時',
+        shipping                      		BIT		 DEFAULT 1		 NULL  COMMENT '発送フラグ',
   FOREIGN KEY (user_id) REFERENCES personal_mst (user_id)
 ) COMMENT='注文テーブル';
 
@@ -56,9 +56,9 @@ CREATE TABLE order_tbl(
 /* テーブル名: 注文内容テーブル */
 /**********************************/
 CREATE TABLE order_product_tbl(
-		order_id                      		INT(10)		 NOT NULL COMMENT '注文番号',
-		product_id                    		INT(10)		 NOT NULL COMMENT '商品番号',
-		number                        		INT(10)		 NULL  COMMENT '個数',
+        order_id                      		INT(10)		 NOT NULL COMMENT '注文番号',
+        product_id                    		INT(10)		 NOT NULL COMMENT '商品番号',
+        number                        		INT(10)		 NULL  COMMENT '個数',
   PRIMARY KEY (order_id, product_id),
   FOREIGN KEY (order_id) REFERENCES order_tbl (order_id)
 ) COMMENT='注文内容テーブル';
@@ -67,23 +67,23 @@ CREATE TABLE order_product_tbl(
 /* テーブル名: ハードテーブル */
 /**********************************/
 CREATE TABLE hard_tbl(
-		hard_id                       		INT(10)		 NULL 		 PRIMARY KEY COMMENT 'ハードID',
-		hard_name                     		VARCHAR(20)		 NULL  COMMENT 'ハード名'
+        hard_id                       		INT(10)		 NULL 		 PRIMARY KEY COMMENT 'ハードID',
+        hard_name                     		VARCHAR(20)		 NULL  COMMENT 'ハード名'
 ) COMMENT='ハードテーブル';
 
 /**********************************/
 /* テーブル名: 商品マスタ */
 /**********************************/
 CREATE TABLE product_mst(
-		product_id                    		INT(10)		 NOT NULL		 PRIMARY KEY COMMENT '商品ID',
-		product_name                  		VARCHAR(30)		 NULL  COMMENT '商品名',
-		price                         		INT(10)		 NULL  COMMENT '金額',
-		stocks                        		MEDIUMINT(10)		 NULL  COMMENT '在庫数',
-		comment                       		TEXT		 NULL  COMMENT 'コメント',
-		hard_id                       		INT(10)		 NULL  COMMENT 'ハードID',
-		category_id                   		INT(10)		 NULL  COMMENT 'カテゴリーID',
-		ave_eval                      		FLOAT(10)		 NULL  COMMENT '平均評価',
-		review_count                  		MEDIUMINT(10)		 NULL  COMMENT 'レビュー数',
+        product_id                    		INT(10)		 NOT NULL		 PRIMARY KEY COMMENT '商品ID',
+        product_name                  		VARCHAR(30)		 NULL  COMMENT '商品名',
+        price                         		INT(10)		 NULL  COMMENT '金額',
+        stocks                        		MEDIUMINT(10)		 NULL  COMMENT '在庫数',
+        comment                       		TEXT		 NULL  COMMENT 'コメント',
+        hard_id                       		INT(10)		 NULL  COMMENT 'ハードID',
+        category_id                   		INT(10)		 NULL  COMMENT 'カテゴリーID',
+        ave_eval                      		FLOAT(10)		 NULL  COMMENT '平均評価',
+        review_count                  		MEDIUMINT(10)		 NULL  COMMENT 'レビュー数',
   FOREIGN KEY (category_id) REFERENCES category_tbl (category_id),
   FOREIGN KEY (hard_id) REFERENCES hard_tbl (hard_id)
 ) COMMENT='商品マスタ';
@@ -92,12 +92,12 @@ CREATE TABLE product_mst(
 /* テーブル名: レビューテーブル */
 /**********************************/
 CREATE TABLE review_tbl(
-		review_id                     		INT(10)		 NOT NULL		 PRIMARY KEY AUTO_INCREMENT COMMENT 'レビューID',
-		product_id                    		INT(10)		 NULL  COMMENT '商品ID',
-		user_id                       		VARCHAR(10)		 NULL  COMMENT 'ユーザーID',
-		evaluation                    		INT(1)		 NULL  COMMENT '評価',
-		review                        		TEXT		 NULL  COMMENT 'レビュー',
-		date                          		DATETIME		 NULL  COMMENT 'レビュー日時',
+        review_id                     		INT(10)		 NOT NULL		 PRIMARY KEY AUTO_INCREMENT COMMENT 'レビューID',
+        product_id                    		INT(10)		 NULL  COMMENT '商品ID',
+        user_id                       		VARCHAR(10)		 NULL  COMMENT 'ユーザーID',
+        evaluation                    		INT(1)		 NULL  COMMENT '評価',
+        review                        		TEXT		 NULL  COMMENT 'レビュー',
+        date                          		DATETIME		 NULL  COMMENT 'レビュー日時',
   FOREIGN KEY (product_id) REFERENCES product_mst (product_id),
   FOREIGN KEY (user_id) REFERENCES personal_mst (user_id)
 ) COMMENT='レビューテーブル';
@@ -106,8 +106,8 @@ CREATE TABLE review_tbl(
 /* テーブル名: 商品別名テーブル */
 /**********************************/
 CREATE TABLE conversion_tbl(
-		product_id                    		INT(10)		 NULL 		 PRIMARY KEY COMMENT '商品ID',
-		conversion_word               		TEXT		 NULL  COMMENT '商品別名',
+        product_id                    		INT(10)		 NULL 		 PRIMARY KEY COMMENT '商品ID',
+        conversion_word               		TEXT		 NULL  COMMENT '商品別名',
   FOREIGN KEY (product_id) REFERENCES product_mst (product_id)
 ) COMMENT='商品別名テーブル';
 
@@ -115,8 +115,8 @@ CREATE TABLE conversion_tbl(
 /* テーブル名: おすすめ商品テーブル */
 /**********************************/
 CREATE TABLE recommend_tbl(
-		product_id                    		INT(10)		 NULL 		 PRIMARY KEY COMMENT '商品ID',
-		recommend_pic                 		VARCHAR(255)		 NULL  COMMENT 'おすすめ商品画像ファイル名',
+        product_id                    		INT(10)		 NULL 		 PRIMARY KEY COMMENT '商品ID',
+        recommend_pic                 		VARCHAR(255)		 NULL  COMMENT 'おすすめ商品画像ファイル名',
   FOREIGN KEY (product_id) REFERENCES product_mst (product_id)
 ) COMMENT='おすすめ商品テーブル';
 
@@ -124,10 +124,10 @@ CREATE TABLE recommend_tbl(
 /* テーブル名: 商品画像テーブル */
 /**********************************/
 CREATE TABLE product_pic_tbl(
-		product_id                    		INT(10)		 NULL  COMMENT '商品ID',
-		pic_category                  		INT(10)		 NULL  COMMENT '画像カテゴリ',
-		pic_number                    		INT(10)		 NULL  COMMENT 'サブ画像表示順',
-		pic_file                      		VARCHAR(255)		 NULL  COMMENT '画像ファイル名',
+        product_id                    		INT(10)		 NULL  COMMENT '商品ID',
+        pic_category                  		INT(10)		 NULL  COMMENT '画像カテゴリ',
+        pic_number                    		INT(10)		 NULL  COMMENT 'サブ画像表示順',
+        pic_file                      		VARCHAR(255)		 NULL  COMMENT '画像ファイル名',
   PRIMARY KEY (product_id, pic_category, pic_number),
   FOREIGN KEY (product_id) REFERENCES product_mst (product_id)
 ) COMMENT='商品画像テーブル';
@@ -182,10 +182,10 @@ INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, stocks, com
 INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,0,0,'\img\logo\COD.jpg');
 INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,1,0,'\img\main\COD.jpg');
 INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,2,1,'\img\sub\COD_Sub.jpg');
-INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,2,2,'\img\sub\COD_Sub.jpg');
-INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,2,3,'\img\sub\COD_Sub.jpg');
-INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,2,4,'\img\sub\COD_Sub.jpg');
-INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,2,5,'\img\sub\COD_Sub.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,2,2,'\img\sub\COD_Sub2.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,2,3,'\img\sub\COD_Sub3.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,2,4,'\img\sub\COD_Sub4.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,2,5,'\img\sub\COD_Sub5.jpg');
 INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (2,0,0,'\img\logo\MHW_rogo.jpg');
 INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (2,1,0,'\img\main\MHW.jpg');
 INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (2,2,1,'\img\sub\MHW_Sub.jsp');
