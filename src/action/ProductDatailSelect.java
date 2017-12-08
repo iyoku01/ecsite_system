@@ -16,13 +16,13 @@ public class ProductDatailSelect implements Action {
 
         try (EcsiteDao dao = new EcsiteDao()) {
             request.setAttribute("product", dao.getProductDetail(product_id));
-            request.setAttribute("product_pic_main", dao.getProductSubPicList(product_id));
+            request.setAttribute("productPicSub", dao.getProductSubPicList(product_id));
         } catch (NumberFormatException e) {
             request.setAttribute("message", "”’l‚ğ“ü—Í‚µ‚Ä‰º‚³‚¢");
         } catch (SQLException | ClassNotFoundException e) {
             request.setAttribute("message", "JDBC ‚ÌƒGƒ‰[‚Å‚· : " + e.getMessage());
         }
 
-        return "/top.jsp";
+        return "productDetail.jsp";
     }
 }

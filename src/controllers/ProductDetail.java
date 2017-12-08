@@ -16,7 +16,7 @@ import action.ProductDatailSelect;
  * @author ˆÉ”\
  *
  */
-@WebServlet("/ProductDetailDto")
+@WebServlet("/ProductDetail")
 public class ProductDetail extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
