@@ -17,24 +17,26 @@
 </head>
 
 <%
-    //--- 表示用のダミー値をセット ---
-
-    //商品
-    ArrayList<Product_mstVo> entList = new ArrayList<Product_mstVo>();
-    Product_mstVo ent;
-
-    ent = new Product_mstVo();
-    ent.setProduct_name("どこかのゲーム");
-    ent.setPrice(8800);
-    entList.add(ent);
-
-    ent = new Product_mstVo();
-    ent.setProduct_name("なんかのゲーム");
-    ent.setPrice(9600);
-    entList.add(ent);
-
-    request.setAttribute("productList", entList);
+    /*
+        //--- 表示用のダミー値をセット ---
+        //商品
+        ArrayList<Product_mstVo> entList = new ArrayList<Product_mstVo>();
+        Product_mstVo ent;
+        ent = new Product_mstVo();
+        ent.setProduct_name("どこかのゲーム");
+        ent.setPrice(8800);
+        entList.add(ent);
+        ent = new Product_mstVo();
+        ent.setProduct_name("なんかのゲーム");
+        ent.setPrice(9600);
+        entList.add(ent);
+        request.setAttribute("productList", entList);
+    */
 %>
+
+
+
+
 
 
 <body class="bg-info">
@@ -44,6 +46,44 @@
         <div class="col-xs-12">
             <jsp:include page="header.jsp" flush="true" />
         </div>
+
+        <!--
+    このdivの範囲がAttributeの値の取り出しになります
+     表示に役立てて頂ければと思います
+     -->
+        <div class="row">
+            <a href=http://localhost:8080/ecsite_system/TopControl>サンプルURL</a>
+            カテゴリー
+            <c:forEach var="i" items="${categoryList}" varStatus="st">
+                    <p>${i.category_name}</p>
+            </c:forEach>
+            ハード
+            <c:forEach var="i" items="${hardList}" varStatus="st">
+                    <p>${i.hard_name}</p>
+            </c:forEach>
+            おすすめ商品
+            <c:forEach var="i" items="${recommendList}" varStatus="st">
+                    <p>${i.product_id}</p>
+                    <p>${i.recommend_pic}</p>
+            </c:forEach>
+            商品リスト ※表示に使わない値は消してください
+            <c:forEach var="j" items="${productList}">
+                <p>${j.hard_id}</p>
+                <p>${j.hard_name}</p>
+                <c:forEach var="i" items="${j.tpd}">
+                    <p>${i.product_id}</p>
+                    <p>${i.product_name}</p>
+                    <p>${i.price}</p>
+                    <p>${i.stocks}</p>
+                    <p>${i.comment}</p>
+                    <p>${i.hard_id}</p>
+                    <p>${i.category_id}</p>
+                    <p>${i.ave_eval}</p>
+                    <p>${i.pic_file}</p>
+                </c:forEach>
+            </c:forEach>
+        </div>
+
 
         <div class="row">
             <div class="col-xs-4">
@@ -65,8 +105,7 @@
                     <table class="table table-hover">
                         <c:forEach var="i" items="${productList}" varStatus="st">
                             <tr>
-                                <td>${i.product_name}</td>
-                                <td>${i.price}</td>
+
                             </tr>
                         </c:forEach>
                     </table>

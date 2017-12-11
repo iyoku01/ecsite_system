@@ -13,8 +13,8 @@ import database.Category_tblVo;
 import database.Hard_tblVo;
 import database.ListTop;
 import database.ProductDetailDto;
+import database.ProductTopDto;
 import database.Recommend_tblVo;
-import database.TopProductDto;
 
 /***
  * Dao
@@ -133,39 +133,26 @@ public class EcsiteDao implements AutoCloseable {
     }
 
     /***
-     * トップ画面用の商品IDとロゴ画像の取得
-     * @param hard_id ハードID
-     * @param category_id カテゴリーID
-     * @param convention_word 商品検索文言
+     * トップ画面用の商品詳細とロゴ画像の取得(全て)
+     * @param hardList ハードテーブル
      * @return 商品リストを返す
      * @throws SQLException
      */
-    public ArrayList<ListTop> getProductList(String hard_id, String category_id, String convention_word)
+    public ArrayList<ListTop> getProductListAll(ArrayList<Hard_tblVo> hardList)
             throws SQLException {
-        System.out.println("\n/// getProductList()");
+        System.out.println("\n/// getProductListAll()");
 
         ArrayList<ListTop> topList;
         String sql = "SELECT";
 
-        if (convention_word != null) {
-            sql += " * FROM product_pic_tbl JOIN conversion_tbl ON product_pic_tbl.product_id=conversion_tbl.product_id"
-                    + " JOIN product_mst ON product_pic_tbl.product_id=product_mst.product_id"
-                    + " WHERE (hard_id,pic_category) IN (SELECT ?,0 FROM product_mst GROUP BY product_id)"
-                    + "AND conversion_word LIKE '%" + convention_word + "%'";
-        } else {
-            sql += " product_mst.product_id,product_name,price,stocks,comment,hard_id,category_id,ave_eval,pic_file FROM"
-                    + " product_pic_tbl join product_mst ON product_pic_tbl.product_id=product_mst.product_id"
-                    + " WHERE (hard_id,pic_category) IN (SELECT ?,0 FROM product_mst GROUP BY product_id)";
-        }
-        if (category_id != null) {
-            sql += " AND category_id=" + category_id;
-        }
-        sql += " GROUP BY product_mst.product_id ORDER BY product_mst.product_id DESC";
+        sql += " product_mst.product_id,product_name,price,stocks,comment,hard_id,category_id,ave_eval,pic_file FROM"
+                + " product_pic_tbl join product_mst ON product_pic_tbl.product_id=product_mst.product_id"
+                + " WHERE (hard_id,pic_category) IN (SELECT ?,0 FROM product_mst GROUP BY product_id)"
+                + " GROUP BY product_mst.product_id ORDER BY product_mst.product_id DESC";
 
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
 
             topList = new ArrayList<ListTop>();
-            ArrayList<Hard_tblVo> hardList = getHardList(hard_id);
 
             for (Hard_tblVo hard : hardList) {
                 ListTop top = new ListTop();
@@ -174,26 +161,115 @@ public class EcsiteDao implements AutoCloseable {
                 pstatement.setInt(1, hard.getHard_id());
                 System.out.println("--- sql = " + pstatement);
                 ResultSet rs = pstatement.executeQuery();
-                ArrayList<TopProductDto> tpdList = new ArrayList<TopProductDto>();
-
-                while (rs.next()) {
-                    TopProductDto tpd = new TopProductDto();
-                    tpd.setProduct_id(rs.getInt("product_id"));
-                    tpd.setProduct_name(rs.getString("product_name"));
-                    tpd.setPrice(rs.getInt("price"));
-                    tpd.setStocks(rs.getInt("stocks"));
-                    tpd.setComment(rs.getString("comment"));
-                    tpd.setHard_id(rs.getInt("hard_id"));
-                    tpd.setCategory_id(rs.getInt("category_id"));
-                    tpd.setAve_eval(rs.getInt("ave_eval"));
-                    tpd.setPic_file(rs.getString("pic_file"));
-                    tpdList.add(tpd);
-                }
+                ArrayList<ProductTopDto> tpdList = setProductTopDto(rs);
                 top.setTpd(tpdList);
                 topList.add(top);
             }
         }
         return topList;
+    }
+
+    /***
+     * トップ画面用の商品詳細とロゴ画像の取得(カテゴリー検索)
+     * @param hardList ハードテーブル
+     * @param hard_id ハードID
+     * @param category_id カテゴリーID
+     * @return 商品リストを返す
+     * @throws SQLException
+     */
+    public ArrayList<ListTop> getProductListById(ArrayList<Hard_tblVo> hardList, String hard_id, String category_id)
+            throws SQLException {
+        System.out.println("\n/// getProductListById()");
+
+        ArrayList<ListTop> topList;
+        String sql = "SELECT";
+
+        sql += " product_mst.product_id,product_name,price,stocks,comment,hard_id,category_id,ave_eval,pic_file FROM"
+                + " product_pic_tbl join product_mst ON product_pic_tbl.product_id=product_mst.product_id"
+                + " WHERE (hard_id,pic_category) IN (SELECT ?,0 FROM product_mst GROUP BY product_id)";
+
+        if (category_id != null) {
+            sql += " AND category_id=" + category_id;
+        }
+        sql += " GROUP BY product_mst.product_id ORDER BY product_mst.product_id DESC";
+
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            topList = new ArrayList<ListTop>();
+            for (Hard_tblVo hard : hardList) {
+                ListTop top = new ListTop();
+                top.setHard_id(hard.getHard_id());
+                top.setHard_name(hard.getHard_name());
+                pstatement.setInt(1, hard.getHard_id());
+                System.out.println("--- sql = " + pstatement);
+                ResultSet rs = pstatement.executeQuery();
+                ArrayList<ProductTopDto> tpdList = setProductTopDto(rs);
+                top.setTpd(tpdList);
+                topList.add(top);
+            }
+        }
+        return topList;
+    }
+
+    /***
+     * トップ画面用の商品詳細とロゴ画像の取得(ワード検索)
+     * @param hardList ハードテーブル
+     * @param convention_word 検索ワード
+     * @return 商品リストを返す
+     * @throws SQLException
+     */
+    public ArrayList<ListTop> getProductListByWord(ArrayList<Hard_tblVo> hardList, String convention_word)
+            throws SQLException {
+        System.out.println("\n/// getProductListByWord()");
+
+        ArrayList<ListTop> topList;
+        String sql = "SELECT";
+
+        sql += " * FROM product_pic_tbl JOIN conversion_tbl ON product_pic_tbl.product_id=conversion_tbl.product_id"
+                + " JOIN product_mst ON product_pic_tbl.product_id=product_mst.product_id"
+                + " WHERE (hard_id,pic_category) IN (SELECT ?,0 FROM product_mst GROUP BY product_id)"
+                + "AND conversion_word LIKE '%" + convention_word + "%'"
+                + " GROUP BY product_mst.product_id ORDER BY product_mst.product_id DESC";
+
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            topList = new ArrayList<ListTop>();
+            for (Hard_tblVo hard : hardList) {
+                ListTop top = new ListTop();
+                top.setHard_id(hard.getHard_id());
+                top.setHard_name(hard.getHard_name());
+                pstatement.setInt(1, hard.getHard_id());
+                System.out.println("--- sql = " + pstatement);
+                ResultSet rs = pstatement.executeQuery();
+                ArrayList<ProductTopDto> tpdList = setProductTopDto(rs);
+                top.setTpd(tpdList);
+                topList.add(top);
+            }
+        }
+        return topList;
+    }
+
+    /***
+     * 便利アイテム getProductList～で使用
+     * @param rs sqlの実行結果
+     * @return ハード毎の商品リストを返す
+     * @throws SQLException
+     */
+    private ArrayList<ProductTopDto> setProductTopDto(ResultSet rs) throws SQLException {
+        ArrayList<ProductTopDto> tpdList = new ArrayList<ProductTopDto>();
+        while (rs.next()) {
+            ProductTopDto tpd = new ProductTopDto();
+            tpd.setProduct_id(rs.getInt("product_id"));
+            tpd.setProduct_name(rs.getString("product_name"));
+            tpd.setPrice(rs.getInt("price"));
+            tpd.setStocks(rs.getInt("stocks"));
+            tpd.setComment(rs.getString("comment"));
+            tpd.setHard_id(rs.getInt("hard_id"));
+            tpd.setCategory_id(rs.getInt("category_id"));
+            tpd.setAve_eval(rs.getInt("ave_eval"));
+            tpd.setPic_file(rs.getString("pic_file"));
+            tpdList.add(tpd);
+        }
+        return tpdList;
+
     }
 
     /***
