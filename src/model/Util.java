@@ -111,7 +111,10 @@ public class Util {
                     .replaceAll("<", "&lt;")
                     .replaceAll(">", "&gt;")
                     .replaceAll("\"", "&quot;")
-                    .replaceAll("'", "&#39;");
+                    .replaceAll("'", "&#39;")
+                    .replaceAll("\r\n", "<br>")
+                    .replaceAll("\r", "<br>")
+                    .replaceAll("\n", "<br>");
 
     }
 
@@ -128,7 +131,8 @@ public class Util {
                     .replaceAll("&quot;", "\"")
                     .replaceAll("&gt;", ">")
                     .replaceAll("&lt;", "<")
-                    .replaceAll("&amp;", "&");
+                    .replaceAll("&amp;", "&")
+                    .replaceAll("<br>", "\r\n");
     }
 
 }

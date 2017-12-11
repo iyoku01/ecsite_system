@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
  * @author ˆÉ”\
  *
  */
-@WebServlet("/PurchaseComp")
-public class PurchaseComp extends HttpServlet {
+@WebServlet("/PurchaseCompControl")
+public class PurchaseCompControl extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
