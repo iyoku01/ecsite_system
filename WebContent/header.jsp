@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="col-xs-5">
-                    <a href=CartControl>Cart</a> / <a href=http://localhost:8080/ecsite_system/login.jsp>Login</a> / <a href=MyPageControl>Mypage</a>
+                    <a href=CartControl>Cart</a> / <a href=http://localhost:8080/ecsite_system/login.jsp>Login</a> / <a href=LogoutControl>Logout</a>/<a href=MyPageControl>Mypage</a>
                 </div>
             </form>
         </h3>
