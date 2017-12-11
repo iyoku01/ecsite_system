@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import database.Category_tblVo;
 import database.Hard_tblVo;
 import database.ListTop;
+import database.Personal_mstVo;
 import database.ProductDetailDto;
 import database.ProductTopDto;
 import database.Recommend_tblVo;
@@ -144,9 +145,9 @@ public class EcsiteDao implements AutoCloseable {
         String sql = "SELECT";
 
         sql += " product_mst.product_id,product_name,price,stocks,comment,hard_id,category_id,ave_eval,pic_file FROM"
-                + " product_pic_tbl join product_mst ON product_pic_tbl.product_id=product_mst.product_id"
+                + " product_mst join product_pic_tbl ON product_mst.product_id=product_PIc_tbl.product_id"
                 + " WHERE (hard_id,pic_category) IN (SELECT ?,0 FROM product_mst GROUP BY product_id)"
-                + " GROUP BY product_mst.product_id ORDER BY product_mst.product_id DESC";
+                + " ORDER BY product_mst.product_id DESC";
 
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
 
@@ -183,13 +184,13 @@ public class EcsiteDao implements AutoCloseable {
         String sql = "SELECT";
 
         sql += " product_mst.product_id,product_name,price,stocks,comment,hard_id,category_id,ave_eval,pic_file FROM"
-                + " product_pic_tbl join product_mst ON product_pic_tbl.product_id=product_mst.product_id"
+                + " product_mst join product_pic_tbl ON product_mst.product_id=product_pic_tbl.product_id"
                 + " WHERE (hard_id,pic_category) IN (SELECT ?,0 FROM product_mst GROUP BY product_id)";
 
         if (category_id != null) {
             sql += " AND category_id=" + category_id;
         }
-        sql += " GROUP BY product_mst.product_id ORDER BY product_mst.product_id DESC";
+        sql += " ORDER BY product_mst.product_id DESC";
 
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
             topList = new ArrayList<ListTop>();
@@ -222,11 +223,11 @@ public class EcsiteDao implements AutoCloseable {
         ArrayList<ListTop> topList;
         String sql = "SELECT";
 
-        sql += " * FROM product_pic_tbl JOIN conversion_tbl ON product_pic_tbl.product_id=conversion_tbl.product_id"
-                + " JOIN product_mst ON product_pic_tbl.product_id=product_mst.product_id"
+        sql += " * FROM product_mst JOIN conversion_tbl ON product_mst.product_id=conversion_tbl.product_id"
+                + " JOIN product_pic_tbl ON product_pic_tbl.product_id=product_mst.product_id"
                 + " WHERE (hard_id,pic_category) IN (SELECT ?,0 FROM product_mst GROUP BY product_id)"
-                + "AND conversion_word LIKE '%" + convention_word + "%'"
-                + " GROUP BY product_mst.product_id ORDER BY product_mst.product_id DESC";
+                + " AND conversion_word LIKE '%" + convention_word + "%'"
+                + " ORDER BY product_mst.product_id DESC";
 
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
             topList = new ArrayList<ListTop>();
@@ -306,6 +307,39 @@ public class EcsiteDao implements AutoCloseable {
     }
 
     /***
+     * 個人情報の取得
+     * @param user_id
+     * @param password
+     * @return
+     * @throws SQLException
+     */
+    public Personal_mstVo getPersonal(String user_id) throws
+            SQLException {
+        System.out.println("\n/// getPersonal()");
+
+        Personal_mstVo ent = null;
+        String sql = "SELECT user_id,password,name,nickname,phone,postal_code,address FROM personal_mst"
+                + " WHERE user_id=?";
+
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            pstatement.setString(1, user_id);
+            System.out.println("--- sql = " + pstatement);
+            ResultSet rs = pstatement.executeQuery();
+            if (rs.next()) {
+                ent = new Personal_mstVo();
+                ent.setUser_id(rs.getString("user_id"));
+                ent.setPassword(rs.getString("password"));
+                ent.setName(rs.getString("name"));
+                ent.setNickname(rs.getString("nickname"));
+                ent.setPhone(rs.getString("phone"));
+                ent.setPostal_code(rs.getString("postal_code"));
+                ent.setAddress(rs.getString("address"));
+            }
+        }
+        return ent;
+    }
+
+    /***
      * 商品サブ画像のリストを返す
      * @param product_id 商品ID
      * @return 商品サブ画像のリストを返す
@@ -329,4 +363,41 @@ public class EcsiteDao implements AutoCloseable {
         return entList;
     }
 
+    /***
+     * 個人情報登録
+     * @param user_id
+     * @param password
+     * @param name
+     * @param nickname
+     * @param phone
+     * @param postal_code
+     * @param address
+     * @throws SQLException
+     */
+    public void insertPersonalData(String user_id, String password, String name, String nickname, String phone,
+            String postal_code, String address)
+            throws SQLException {
+        System.out.println("\n/// insertPersonalData()");
+
+    }
+
+    public boolean login(String user_id, String password) throws SQLException {
+        System.out.println("\n/// login()");
+        boolean personal = false;
+
+        String sql =
+                "SELECT user_id FROM personal_mst WHERE user_id =? AND password =?";
+
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            pstatement.setString(1, user_id);
+            pstatement.setString(2, password);
+            System.out.println("--- sql = " + pstatement);
+            ResultSet rs = pstatement.executeQuery();
+
+            if (rs.next()) {
+                personal = true;
+            }
+        }
+        return personal;
+    }
 }

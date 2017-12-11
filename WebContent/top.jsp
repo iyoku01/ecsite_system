@@ -53,20 +53,20 @@
      -->
         <div class="row">
             <a href=http://localhost:8080/ecsite_system/TopControl>サンプルURL</a>
-            カテゴリー
+            カテゴリー---------------------------------------------------------------------------------------------
             <c:forEach var="i" items="${categoryList}" varStatus="st">
                     <p>${i.category_name}</p>
             </c:forEach>
-            ハード
+            ハード----------------------------------------------------------------------------------------------------
             <c:forEach var="i" items="${hardList}" varStatus="st">
                     <p>${i.hard_name}</p>
             </c:forEach>
-            おすすめ商品
+            おすすめ商品-------------------------------------------------------------------------------------------
             <c:forEach var="i" items="${recommendList}" varStatus="st">
                     <p>${i.product_id}</p>
                     <p>${i.recommend_pic}</p>
             </c:forEach>
-            商品リスト ※表示に使わない値は消してください
+            商品リスト ※表示に使わない値は消してください----------------------------------------
             <c:forEach var="j" items="${productList}">
                 <p>${j.hard_id}</p>
                 <p>${j.hard_name}</p>
