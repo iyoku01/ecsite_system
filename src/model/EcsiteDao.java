@@ -1,5 +1,7 @@
 package model;
 
+import static model.Util.*;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -295,7 +297,7 @@ public class EcsiteDao implements AutoCloseable {
                 ent.setProduct_name(rs.getString("product_name"));
                 ent.setPrice(rs.getInt("price"));
                 ent.setStocks(rs.getInt("stocks"));
-                ent.setComment(rs.getString("comment"));
+                ent.setComment(escapeHtml(rs.getString("comment")));
                 ent.setHard_id(rs.getInt("hard_id"));
                 ent.setCategory_id(rs.getInt("category_id"));
                 ent.setAve_eval(rs.getInt("ave_eval"));
