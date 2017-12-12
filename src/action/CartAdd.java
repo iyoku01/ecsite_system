@@ -41,7 +41,7 @@ public class CartAdd implements Action {
             request.setAttribute("message", "JDBC ‚ÌƒGƒ‰[‚Å‚· : " + e.getMessage());
         }
 
-        return "CartControl";
+        return "Cart.Control";
     }
 
     /***

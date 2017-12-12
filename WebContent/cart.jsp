@@ -19,7 +19,7 @@
     <p>---------------------------------------------------------------</p>
     <p>- 値取得サンプル</p>
     <p>---------------------------------------------------------------</p>
-    <a href=http://localhost:8080/ecsite_system/CartControl>サンプルURL</a>
+    <a href=http://localhost:8080/ecsite_system/Cart.Control>サンプルURL</a>
     <c:forEach var="i" items="${cartList}">
         <p>${i}</p>
     </c:forEach>
@@ -50,7 +50,7 @@
                                         </c:if>>${status.index}</option>
                                 </c:forEach>
                         </select>
-                            <form action="CartDeleteControl" method="get">
+                            <form action="CartDelete.Control" method="get">
                                 <!-- 商品ID（隠し項目） -->
                                 <input type="hidden" name="product_id" value="${i.product_id}"> <INPUT TYPE="submit" VALUE="削除">
                             </form>
@@ -59,7 +59,7 @@
                 </c:forEach>
             </table>
 
-            小計（商品${sumBuy_count}点):￥${sumPrice}(税込） <a href=TopControl> <INPUT TYPE="submit" VALUE="レジに進む" class="top">
+            小計（商品${sumBuy_count}点):￥${sumPrice}(税込） <a href=Top.Control> <INPUT TYPE="submit" VALUE="レジに進む" class="top">
 
             </a>
         </div>

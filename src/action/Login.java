@@ -33,7 +33,7 @@ public class Login implements Action {
         } catch (SQLException | ClassNotFoundException e) {
             request.setAttribute("message", "JDBC ÇÃÉGÉâÅ[Ç≈Ç∑ : " + e.getMessage());
         }
-        return "TopControl";
+        return "Top.Control";
     }
 
 }

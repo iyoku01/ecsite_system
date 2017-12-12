@@ -20,7 +20,7 @@
     <p>---------------------------------------------------------------</p>
     <p>- 値取得サンプル</p>
     <p>---------------------------------------------------------------</p>
-    <a href=http://localhost:8080/ecsite_system/ProductDetailControl?product_id=1>サンプルURL</a>
+    <a href=http://localhost:8080/ecsite_system/ProductDetail.Control?product_id=1>サンプルURL</a>
     <p>${product.product_id}</p>
     <p>${product.product_name}</p>
     <p>${product.price}</p>
@@ -61,7 +61,7 @@
     <!-- 金額表示 -->
     ${product.price} 在庫あり
 
-    <form action="CartAddControl" method="get">
+    <form action="CartAdd.Control" method="get">
         <!-- 商品ID（隠し項目） -->
         <input type="hidden" name="product_id" value="${product.product_id}">
 

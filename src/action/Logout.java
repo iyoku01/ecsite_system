@@ -15,7 +15,7 @@ public class Logout implements Action {
         HttpSession session = request.getSession(true);
         session.removeAttribute("user_id");
 
-        return "TopControl";
+        return "Top.Control";
     }
 
 }

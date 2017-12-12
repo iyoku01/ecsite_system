@@ -40,7 +40,7 @@ public class CartDelete implements Action {
             request.setAttribute("message", "JDBC ‚ÌƒGƒ‰[‚Å‚· : " + e.getMessage());
         }
 
-        return "CartControl";
+        return "Cart.Control";
     }
 
 }

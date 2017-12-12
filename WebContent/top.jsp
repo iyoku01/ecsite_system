@@ -52,7 +52,7 @@
      表示に役立てて頂ければと思います
      -->
         <div class="row">
-            <a href=http://localhost:8080/ecsite_system/TopControl>サンプルURL</a>
+            <a href=http://localhost:8080/ecsite_system/Top.Control>サンプルURL</a>
             カテゴリー---------------------------------------------------------------------------------------------
             <c:forEach var="i" items="${categoryList}" varStatus="st">
                     <p>${i.category_name}</p>
@@ -80,7 +80,7 @@
                     <p>${i.hard_id}</p>
                     <p>${i.category_id}</p>
                     <p>${i.ave_eval}</p>
-                    <p><a href=ProductDetailControl?product_id=${i.product_id}><img src="${i.pic_file}">${i.pic_file}</a></p>
+                    <p><a href=ProductDetail.Control?product_id=${i.product_id}><img src="${i.pic_file}">${i.pic_file}</a></p>
                     <p>------------------------------------------------------------------------</p>
                 </c:forEach>
             </c:forEach>
