@@ -70,7 +70,7 @@ h2{
     font-size:30px;
     line-height:40px;
 }
-.top{
+.purchaseComp INPUT{
     margin:40px;
     text-align:center;
     font-size:25px;
@@ -105,5 +105,12 @@ h2{
 .cart td{
     border:1px solid black;
     padding:30px;
-
+}
+.cartbotton{
+    margin:40px;
+    text-align:center;
+    font-size:25px;
+    width: 200px;
+    height: 50px;
+    background-color:orange;
 }

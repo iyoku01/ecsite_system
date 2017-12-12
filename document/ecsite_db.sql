@@ -181,6 +181,7 @@ INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, info, stock
 
 /*product_pic_tbl*/
 INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,0,0,'\\img\\logo\\COD.jpg');
+<<<<<<< HEAD
 INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,1,0,'\\img\\main\\COD.jpg');
 INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,2,1,'\\img\\sub\\COD_Sub.jpg');
 INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,2,2,'\\img\\sub\\COD_Sub2.jpg');
@@ -199,6 +200,26 @@ INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pi
 INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (5,0,0,'\\img\\logo\\xenoblade2_logo.jpg');
 INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (5,1,0,'\\img\\main\\Xenoblade2.jpg');
 INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (5,2,1,'\\img\\sub\\Xenoblade2_Sub.jsp');
+=======
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,1,0,'\img\main\COD.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,2,1,'\img\sub\COD_Sub.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,2,2,'\img\sub\COD_Sub2.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,2,3,'\img\sub\COD_Sub3.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,2,4,'\img\sub\COD_Sub4.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,2,5,'\img\sub\COD_Sub5.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (2,0,0,'\img\logo\MHW_rogo.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (2,1,0,'\img\main\MHW.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (2,2,1,'\img\sub\MHW_Sub.jsp');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (3,0,0,'\img\logo\Arextusixya_logo.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (3,1,0,'\img\main\Arextusixya.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (3,2,1,'\img\sub\Arextusixya_Sub.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (4,0,0,'\img\logo\Splatoon2_logo.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (4,1,0,'\img\main\Splatoon2.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (4,2,1,'\img\sub\Splatoon2_Sub.jsp');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (5,0,0,'\img\logo\xenoblade2_logo.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (5,1,0,'\img\main\Xenoblade2.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (5,2,1,'\img\sub\Xenoblade2_Sub.jsp');
+>>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
 
 
 /*conversion_tbl*/
