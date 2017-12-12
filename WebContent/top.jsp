@@ -80,7 +80,7 @@
                     <p>${i.hard_id}</p>
                     <p>${i.category_id}</p>
                     <p>${i.ave_eval}</p>
-                    <p><a href=http://localhost:8080/ecsite_system/ProductDetailControl?product_id=${i.product_id}>${i.pic_file}</a></p>
+                    <p><a href=ProductDetailControl?product_id=${i.product_id}><img src="${i.pic_file}">${i.pic_file}</a></p>
                     <p>------------------------------------------------------------------------</p>
                 </c:forEach>
             </c:forEach>
@@ -122,9 +122,7 @@
         </div>
 
         <!-- 共通フッター -->
-        <div class="col-xs-12">
-            <jsp:include page="footer.jsp" flush="true" />
-        </div>
+        <jsp:include page="footer.jsp" flush="true" />
     </div>
 </body>
 </html>

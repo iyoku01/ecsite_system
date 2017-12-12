@@ -285,6 +285,7 @@ public class EcsiteDao implements AutoCloseable {
 
         ProductDetailDto ent = new ProductDetailDto();
         String sql = "SELECT * FROM product_mst" +
+                " JOIN hard_tbl ON product_mst.hard_id = hard_tbl.hard_id " +
                 " JOIN product_pic_tbl ON product_mst.product_id = product_pic_tbl.product_id " +
                 " WHERE product_pic_tbl.pic_category=1 AND product_mst.product_id=?";
 
@@ -296,6 +297,7 @@ public class EcsiteDao implements AutoCloseable {
                 ent.setProduct_id(rs.getInt("product_id"));
                 ent.setProduct_name(rs.getString("product_name"));
                 ent.setPrice(rs.getInt("price"));
+                ent.setInfo(rs.getString("info"));
                 ent.setStocks(rs.getInt("stocks"));
                 ent.setComment(escapeHtml(rs.getString("comment")));
                 ent.setHard_id(rs.getInt("hard_id"));
@@ -303,6 +305,7 @@ public class EcsiteDao implements AutoCloseable {
                 ent.setAve_eval(rs.getInt("ave_eval"));
                 ent.setReview_count(rs.getInt("review_count"));
                 ent.setMainPic_file(rs.getString("pic_file"));
+                ent.setHard_name(rs.getString("hard_name"));
             }
         }
         return ent;
