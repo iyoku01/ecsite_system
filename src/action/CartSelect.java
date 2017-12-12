@@ -50,6 +50,9 @@ public class CartSelect implements Action {
             request.setAttribute("cartList", cartList);
             request.setAttribute("sumBuy_count", new Integer(sumBuy_count));
             request.setAttribute("sumPrice", new Integer(sumPrice));
+            if (cartList.isEmpty()) {
+                request.setAttribute("message", "カートに商品がありません");
+            }
 
         } catch (NumberFormatException e) {
             request.setAttribute("message", "数値を入力して下さい");
@@ -57,6 +60,6 @@ public class CartSelect implements Action {
             request.setAttribute("message", "JDBC のエラーです : " + e.getMessage());
         }
 
-        return "cartMap.jsp";
+        return "cart.jsp";
     }
 }

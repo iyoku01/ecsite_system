@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import model.EcsiteDao;
 
-public class CartAdd implements Action {
+public class CartDelete implements Action {
 
     private Map<Integer, Integer> cartMap; //カート内の商品<商品ID, 個数>
 
@@ -21,7 +21,6 @@ public class CartAdd implements Action {
 
         try (EcsiteDao dao = new EcsiteDao()) {
             int product_id = Integer.parseInt(request.getParameter("product_id"));
-            int buy_count = Integer.parseInt(request.getParameter("buy_count"));
 
             //セッション変数よりカートを取得
             HttpSession session = request.getSession();
@@ -30,8 +29,8 @@ public class CartAdd implements Action {
                 cartMap = new LinkedHashMap<Integer, Integer>(); //LinkedHashMap k=vを入れた順番に並ぶ
             }
 
-            //カートに商品を追加する
-            addCart(product_id, buy_count);
+            //カートの商品を削除する
+            cartMap.remove(product_id);
             session.setAttribute("cartMap", cartMap);
         } catch (NumberFormatException e) {
             request.setAttribute("message", "数値を入力して下さい");
@@ -40,19 +39,6 @@ public class CartAdd implements Action {
         }
 
         return "CartControl";
-    }
-
-    /***
-     * カートに商品を追加する
-     * ※同一商品IDの個数は合算される
-     * @param productId 商品ID
-     * @param num 商品数
-     */
-    private void addCart(int productId, int num) {
-        if (cartMap.containsKey(productId)) {
-            num += cartMap.get(productId);
-        }
-        cartMap.put(productId, num);
     }
 
 }

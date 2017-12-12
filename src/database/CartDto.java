@@ -47,4 +47,10 @@ public class CartDto {
         this.buy_count = buy_count;
     }
 
+    @Override
+    public String toString() {
+        return "CartDto [product_id=" + product_id + ", product_name=" + product_name + ", price=" + price
+                + ", mainPic_file=" + mainPic_file + ", buy_count=" + buy_count + "]";
+    }
+
 }
