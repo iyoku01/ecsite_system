@@ -38,7 +38,7 @@ CREATE TABLE personal_mst(
         nickname                      		VARCHAR(20)		 NULL  COMMENT 'ニックネーム',
         phone                         		CHAR(12)		 NULL  COMMENT '電話番号',
         postal_code                   		CHAR(7)		 NULL  COMMENT '郵便番号',
-        address                       		VARCHAR(30)		 NULL  COMMENT '住所'
+        address                       		VARCHAR(50)		 NULL  COMMENT '住所'
 ) COMMENT='個人情報マスタ';
 
 /**********************************/
