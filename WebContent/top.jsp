@@ -79,7 +79,8 @@
                     <p>${i.hard_id}</p>
                     <p>${i.category_id}</p>
                     <p>${i.ave_eval}</p>
-                    <p>${i.pic_file}</p>
+                    <p><a href=http://localhost:8080/ecsite_system/ProductDetailControl?product_id=${i.product_id}>${i.pic_file}</a></p>
+                    <p>------------------------------------------------------------------------</p>
                 </c:forEach>
             </c:forEach>
         </div>

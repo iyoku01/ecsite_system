@@ -22,6 +22,7 @@
     <input type=submit value=ƒƒOƒCƒ“>
 </form>
 
+<a href=http://localhost:8080/ecsite_system/newMemberRegist.jsp>V‹K‰ïˆõ“o˜^</a>
 
 
 
