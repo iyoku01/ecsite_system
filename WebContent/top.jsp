@@ -65,6 +65,7 @@
             <c:forEach var="i" items="${recommendList}" varStatus="st">
                     <p>${i.product_id}</p>
                     <p>${i.recommend_pic}</p>
+                    <img src="${i.recommend_pic}">
             </c:forEach>
             商品リスト ※表示に使わない値は消してください----------------------------------------
             <c:forEach var="j" items="${productList}">
