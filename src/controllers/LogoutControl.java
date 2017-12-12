@@ -8,22 +8,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import action.Action;
+import action.Logout;
+
 /***
- * 購入完了
- * @author 伊能
+ * ログアウト
+ * @author 竹原
  *
  */
-@WebServlet("/PurchaseComp")
-public class PurchaseComp extends HttpServlet {
+@WebServlet("/LogoutControl")
+public class LogoutControl extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        request.setAttribute("order_id", "10001");
-        request.getRequestDispatcher("purchaseComp.jsp").forward(request, response);
+        doPost(request, response);
     }
 
     /**
@@ -31,7 +32,15 @@ public class PurchaseComp extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
             IOException {
-        // TODO Auto-generated method stub
+        request.setCharacterEncoding("Windows-31J");
+        String dispatchUrl = null;
+        try {
+            Action ac = new Logout();
+            dispatchUrl = ac.execute(request, response);
+        } catch (Exception e) {
+            request.setAttribute("message", "原因不明のエラーです");
+            e.printStackTrace();
+        }
+        request.getRequestDispatcher(dispatchUrl).forward(request, response);
     }
-
 }

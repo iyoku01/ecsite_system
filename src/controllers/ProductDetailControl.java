@@ -9,34 +9,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
-import action.TopSelect;
+import action.ProductDatailSelect;
 
 /***
- * トップ画面
+ * 商品詳細
  * @author 伊能
  *
  */
-@WebServlet("/TopControl")
-public class TopControl extends HttpServlet {
+@WebServlet("/ProductDetailControl")
+public class ProductDetailControl extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        doPost(request, response);
-    }
-
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-     */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
-            IOException {
         request.setCharacterEncoding("Windows-31J");
+        System.out.println("\n/// doGet");
+        System.out.println("getServletPath = " + request.getServletPath());
+        System.out.println("getQueryString = " + request.getQueryString());
+
         String dispatchUrl = null;
         try {
-            Action ac = new TopSelect();
+            Action ac = new ProductDatailSelect();
             dispatchUrl = ac.execute(request, response);
         } catch (Exception e) {
             request.setAttribute("message", "原因不明のエラーです");

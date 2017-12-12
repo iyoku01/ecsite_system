@@ -12,66 +12,63 @@
 <head>
 <META charset="Windows-31J">
 
-<!-- Bootstrap Start -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<%--<link
-   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"
-    rel="stylesheet"> --%>
-<!--[if lt IE 9]>
-    <script src="html5shiv.js"></script>
-    <script src="respond.min.js"></script>
-<![endif]-->
-<script
-    src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script
-    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<!-- Bootstrap End -->
-
 <title>カート</title>
 </head>
 <body>
-<div class="bodywhite">
+    <!--
+    <p>---------------------------------------------------------------</p>
+    <p>- 値取得サンプル</p>
+    <p>---------------------------------------------------------------</p>
+    <a href=http://localhost:8080/ecsite_system/CartControl>サンプルURL</a>
+    <c:forEach var="i" items="${cartList}">
+        <p>${i}</p>
+    </c:forEach>
+    <p>${sumBuy_count}</p>
+    <p>${sumPrice}</p>
+    <p>${cartMap}</p>
+    <p>${message}</p>
+    <p>---------------------------------------------------------------</p>
+     -->
+    <div class="bodywhite">
 
+        <!-- 購入数のドロップダウンの最大値 -->
+        <c:set var="BUY_COUNT_MAX" value="9" />
 
-    <!-- 共通ヘッダー -->
+        <!-- 共通ヘッダー -->
+        <jsp:include page="header.jsp" flush="true" />
 
+        <div class="cart">
+            <p>${message}</p>
+            <table>
+                <c:forEach var="i" items="${cartList}">
+                    <tr>
+                        <td>商品画像${i.mainPic_file} 商品名${i.product_name}</td>
+                        <td>値段${i.price} 個数${i.buy_count} <!-- 購入数選択 --> <select name="buy_count">
+                                <c:forEach begin="1" end="${BUY_COUNT_MAX}" varStatus="status">
+                                    <option value="${status.index}" <c:if test="${status.index == i.buy_count}" >
+                                        selected
+                                        </c:if>>${status.index}</option>
+                                </c:forEach>
+                        </select>
+                            <form action="CartDeleteControl" method="get">
+                                <!-- 商品ID（隠し項目） -->
+                                <input type="hidden" name="product_id" value="${i.product_id}"> <INPUT TYPE="submit" VALUE="削除">
+                            </form>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
 
+            小計（商品${sumBuy_count}点):￥${sumPrice}(税込） <a href=TopControl> <INPUT TYPE="submit" VALUE="レジに進む" class="top">
 
-    <jsp:include page="header.jsp" flush="true" />
+            </a>
+        </div>
 
-    <!-- pageー -->
-<div class ="cart">
-    <table>
-        <tr>
-            <td>商品画像 商品名</td>
-            <td>値段 個数
+        <!-- 共通フッター -->
+        <div class="col-xs-12">
+            <jsp:include page="footer.jsp" flush="true" />
+        </div>
 
-            <form>
-<select name="kibun">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-</select></form>
-
-            <INPUT TYPE="submit" VALUE="削除">
-            </td>
-        </tr>
-    </table>
-
-    小計（商品〇点):￥〇〇(税込）
-    <INPUT TYPE="submit" VALUE="レジに進む" class="cartbotton">
-</div>
-
-
-
-    <!-- 共通フッター -->
-    <div class="col-xs-12">
-        <jsp:include page="footer.jsp" flush="true" />
     </div>
-
-</div>
 </body>
 </html>

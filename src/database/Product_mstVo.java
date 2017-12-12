@@ -2,7 +2,7 @@ package database;
 
 /* Code Generator Information.
  * generator Version 1.0.0 release 2007/10/10
- * generated Date Thu Dec 07 16:05:32 JST 2017
+ * generated Date Tue Dec 12 12:23:44 JST 2017
  */
 import java.io.Serializable;
 
@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @version 1.0 
  * history 
  * Symbol	Date		Person		Note
- * [1]		2017/12/07	ica		Generated.
+ * [1]		2017/12/12	ica		Generated.
  */
 public class Product_mstVo implements Serializable{
 
@@ -32,6 +32,11 @@ public class Product_mstVo implements Serializable{
 	 * ‹àŠz:int(10)
 	 */
 	private int price;
+
+	/**
+	 * ¤•ià–¾:text(65535)
+	 */
+	private String info;
 
 	/**
 	 * İŒÉ”:mediumint(7)
@@ -54,12 +59,12 @@ public class Product_mstVo implements Serializable{
 	private int category_id;
 
 	/**
-	 * •½‹Ï•]‰¿:int(10)
+	 * •½‹Ï•]‰¿:float(12)
 	 */
-	private int ave_eval;
+	private float ave_eval;
 
 	/**
-	 * ƒŒƒrƒ…[”:int(10)
+	 * ƒŒƒrƒ…[”:mediumint(7)
 	 */
 	private int review_count;
 
@@ -88,6 +93,10 @@ public class Product_mstVo implements Serializable{
 
 	public void setPrice(int price){ this.price = price; }
 
+	public String getInfo(){ return this.info; }
+
+	public void setInfo(String info){ this.info = info; }
+
 	public int getStocks(){ return this.stocks; }
 
 	public void setStocks(int stocks){ this.stocks = stocks; }
@@ -104,9 +113,9 @@ public class Product_mstVo implements Serializable{
 
 	public void setCategory_id(int category_id){ this.category_id = category_id; }
 
-	public int getAve_eval(){ return this.ave_eval; }
+	public float getAve_eval(){ return this.ave_eval; }
 
-	public void setAve_eval(int ave_eval){ this.ave_eval = ave_eval; }
+	public void setAve_eval(float ave_eval){ this.ave_eval = ave_eval; }
 
 	public int getReview_count(){ return this.review_count; }
 
@@ -121,6 +130,8 @@ public class Product_mstVo implements Serializable{
 		buffer.append(product_name);
 		buffer.append(" price: ");
 		buffer.append(price);
+		buffer.append(" info: ");
+		buffer.append(info);
 		buffer.append(" stocks: ");
 		buffer.append(stocks);
 		buffer.append(" comment: ");

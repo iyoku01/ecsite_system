@@ -39,11 +39,11 @@ public class UtilTest {
 
     @Test
     public void testEscapeHtml() {
-        assertEquals("a&amp;b&lt;c&gt;d/e&#39;f", escapeHtml("a&b<c>d/e'f"));
+        assertEquals("a&amp;b&lt;c&gt;d/e&#39;f<br>g<br>h<br>i", escapeHtml("a&b<c>d/e'f\r\ng\nh\ri"));
     }
 
     @Test
     public void testUnescapeHtml() {
-        assertEquals("a&b<c>d/e'f", unescapeHtml("a&amp;b&lt;c&gt;d/e&#39;f"));
+        assertEquals("a&b<c>d/e'f\r\ng", unescapeHtml("a&amp;b&lt;c&gt;d/e&#39;f<br>g"));
     }
 }

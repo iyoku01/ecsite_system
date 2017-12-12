@@ -1,7 +1,7 @@
 package database;
 
 //トップ画面の商品リスト用のdto
-public class TopProductDto {
+public class ProductTopDto {
     private int product_id;
     private String product_name;
     private int price;
@@ -82,6 +82,31 @@ public class TopProductDto {
 
     public void setPic_file(String pic_file) {
         this.pic_file = pic_file;
+    }
+
+    public String toString() {
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("[Product_mstVo:");
+        buffer.append(" product_id: ");
+        buffer.append(product_id);
+        buffer.append(" product_name: ");
+        buffer.append(product_name);
+        buffer.append(" price: ");
+        buffer.append(price);
+        buffer.append(" stocks: ");
+        buffer.append(stocks);
+        buffer.append(" comment: ");
+        buffer.append(comment);
+        buffer.append(" hard_id: ");
+        buffer.append(hard_id);
+        buffer.append(" category_id: ");
+        buffer.append(category_id);
+        buffer.append(" ave_eval: ");
+        buffer.append(ave_eval);
+        buffer.append(" pic_file: ");
+        buffer.append(pic_file);
+        buffer.append("]");
+        return buffer.toString();
     }
 
 }

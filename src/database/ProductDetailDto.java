@@ -1,7 +1,7 @@
 package database;
 
 public class ProductDetailDto extends Product_mstVo {
-    String mainPic_file; //ƒƒCƒ“‰æ‘œ
+    private String mainPic_file; //ƒƒCƒ“‰æ‘œ
 
     public String getMainPic_file() {
         return mainPic_file;
