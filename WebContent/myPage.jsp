@@ -16,6 +16,10 @@
 </head>
 <body>
 
+
+<a href=http://localhost:8080/ecsite_system/memberInfoChange.jsp>‰ïˆõî•ñ‚ğ•ÏX‚·‚é</a>
+
+
 ŒÂlî•ñ‚Ìæ“¾
 <div class="row">
      <p>${personalData.user_id}</p>
@@ -27,6 +31,9 @@
     <p>${personalData.address}</p>
 
 </div>
+
+
+
 
 </body>
 </html>

@@ -17,7 +17,7 @@
 <body>
 
 <form action="LoginControl">
-   <p>ユーザーID <input type=text name=user_id></p>
+   <p>ユーザーID<input type=text name=user_id></p>
    <p>パスワード<input type=text name=password></p>
     <input type=submit value=ログイン>
 </form>

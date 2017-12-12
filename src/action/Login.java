@@ -18,8 +18,10 @@ public class Login implements Action {
             String user_id = request.getParameter("user_id");
             String password = request.getParameter("password");
 
+            //入力されたIDとパスワードに一致するレコードがDBに存在するか判定
             boolean personal = dao.login(user_id, password);
             if (personal) {
+                //存在していればセッション変数user_idを登録
                 HttpSession session = request.getSession();
                 session.setAttribute("user_id", user_id);
             } else {

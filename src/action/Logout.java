@@ -11,6 +11,7 @@ public class Logout implements Action {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
+        //ƒZƒbƒVƒ‡ƒ“•Ï”user_id‚ğíœ
         HttpSession session = request.getSession(true);
         session.removeAttribute("user_id");
 

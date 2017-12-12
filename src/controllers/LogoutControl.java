@@ -24,6 +24,14 @@ public class LogoutControl extends HttpServlet {
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request, response);
+    }
+
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+            IOException {
         request.setCharacterEncoding("Windows-31J");
         String dispatchUrl = null;
         try {
@@ -33,16 +41,6 @@ public class LogoutControl extends HttpServlet {
             request.setAttribute("message", "å¥àˆïsñæÇÃÉGÉâÅ[Ç≈Ç∑");
             e.printStackTrace();
         }
-
         request.getRequestDispatcher(dispatchUrl).forward(request, response);
     }
-
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-     */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
-            IOException {
-        // TODO Auto-generated method stub
-    }
-
 }

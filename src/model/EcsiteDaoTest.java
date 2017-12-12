@@ -163,4 +163,26 @@ public class EcsiteDaoTest {
         }
     }
 
+    @Test
+    public void testCheckId() {
+        try (EcsiteDao dao = new EcsiteDao()) {
+            boolean exist;
+            exist = dao.checkId("takehara");
+            System.out.println(exist);
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void testInsertPersonalData() {
+        try (EcsiteDao dao = new EcsiteDao()) {
+            dao.insertPersonalData("hatano", "saki", "’|", "‚½‚¯", "08000000000", "1670000", "•Ÿ“‡");
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail(e.getMessage());
+        }
+    }
+
 }

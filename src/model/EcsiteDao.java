@@ -381,8 +381,59 @@ public class EcsiteDao implements AutoCloseable {
             throws SQLException {
         System.out.println("\n/// insertPersonalData()");
 
+        String sql = "INSERT INTO ecsite_db.personal_mst ( user_id, password, name, nickname, phone, postal_code, address )"
+                + " VALUES (?,?,?,?,?,?,?)";
+
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            pstatement.setString(1, user_id);
+            pstatement.setString(2, password);
+            pstatement.setString(3, name);
+            pstatement.setString(4, nickname);
+            pstatement.setString(5, phone);
+            pstatement.setString(6, postal_code);
+            pstatement.setString(7, address);
+            pstatement.executeUpdate();
+        }
     }
 
+    /***
+     * 登録情報の更新
+     * @param user_id
+     * @param password
+     * @param name
+     * @param nickname
+     * @param phone
+     * @param postal_code
+     * @param address
+     * @throws SQLException
+     */
+    public void upData(String user_id, String password, String name, String nickname, String phone,
+            String postal_code, String address)
+            throws SQLException {
+        System.out.println("\n/// insertPersonalData()");
+
+        String sql = "UPDATA personal_mst SET"
+                + " password=?, name=?, nickname=?, phone=?, postal_code=?,address=? WHERE user_id=?";
+
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            pstatement.setString(1, password);
+            pstatement.setString(2, name);
+            pstatement.setString(3, nickname);
+            pstatement.setString(4, phone);
+            pstatement.setString(5, postal_code);
+            pstatement.setString(6, address);
+            pstatement.setString(7, user_id);
+            pstatement.executeUpdate();
+        }
+    }
+
+    /***
+     * ログイン用データベースとの照合
+     * @param user_id
+     * @param password
+     * @return 入力されたIDとパスワードがデータベースに存在すればtrue、そうでなければfalse
+     * @throws SQLException
+     */
     public boolean login(String user_id, String password) throws SQLException {
         System.out.println("\n/// login()");
         boolean personal = false;
@@ -398,6 +449,30 @@ public class EcsiteDao implements AutoCloseable {
 
             if (rs.next()) {
                 personal = true;
+            }
+        }
+        return personal;
+    }
+
+    /***
+     * 登録用IDの重複チェック
+     * @param user_id
+     * @return IDがすでにDBに登録されていればfalse 無ければtrue
+     * @throws SQLException
+     */
+    public boolean checkId(String user_id) throws SQLException {
+        System.out.println("\n/// checkId()");
+        boolean personal = true;
+
+        String sql =
+                "SELECT user_id FROM personal_mst WHERE user_id =?";
+
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            pstatement.setString(1, user_id);
+            System.out.println("--- sql = " + pstatement);
+            ResultSet rs = pstatement.executeQuery();
+            if (rs.next()) {
+                personal = false;
             }
         }
         return personal;

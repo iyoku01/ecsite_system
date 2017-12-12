@@ -17,10 +17,12 @@ public class PersonalDataSelect implements Action {
         String destination = "/myPage.jsp";
         try (EcsiteDao dao = new EcsiteDao()) {
 
+            //セッション変数user_idの有無を確認
             HttpSession session = request.getSession();
             String user_id = (String) session.getAttribute("user_id");
 
             if (user_id != null) {
+                //存在していれば(ログインが済んでいれば)個人情報を取得
                 Personal_mstVo personalData = dao.getPersonal(user_id);
                 if (personalData != null) {
                     request.setAttribute("personalData", personalData);
@@ -28,6 +30,7 @@ public class PersonalDataSelect implements Action {
                     request.setAttribute("message", "原因不明のエラーです");
                 }
             } else {
+                //存在していなければログイン画面へ
                 destination = "/login.jsp";
             }
         } catch (NumberFormatException e) {
