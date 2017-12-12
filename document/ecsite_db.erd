@@ -504,8 +504,13 @@
                           <net.java.amateras.db.visual.model.ColumnModel>
                             <columnName>address</columnName>
                             <logicalName>住所</logicalName>
-                            <columnType class="net.java.amateras.db.dialect.ColumnType" reference="../../net.java.amateras.db.visual.model.ColumnModel[3]/columnType"/>
-                            <size>50</size>
+                            <columnType class="net.java.amateras.db.dialect.ColumnType">
+                              <name>VARCHAR</name>
+                              <logicalName>文字列</logicalName>
+                              <supportSize>true</supportSize>
+                              <type>12</type>
+                            </columnType>
+                            <size>30</size>
                             <notNull>false</notNull>
                             <primaryKey>false</primaryKey>
                             <description></description>
@@ -932,6 +937,22 @@
                 <defaultValue></defaultValue>
               </net.java.amateras.db.visual.model.ColumnModel>
               <net.java.amateras.db.visual.model.ColumnModel>
+                <columnName>info</columnName>
+                <logicalName>商品説明</logicalName>
+                <columnType class="net.java.amateras.db.dialect.ColumnType">
+                  <name>TEXT</name>
+                  <logicalName>文字列</logicalName>
+                  <supportSize>false</supportSize>
+                  <type>12</type>
+                </columnType>
+                <size>10</size>
+                <notNull>false</notNull>
+                <primaryKey>false</primaryKey>
+                <description></description>
+                <autoIncrement>false</autoIncrement>
+                <defaultValue></defaultValue>
+              </net.java.amateras.db.visual.model.ColumnModel>
+              <net.java.amateras.db.visual.model.ColumnModel>
                 <columnName>stocks</columnName>
                 <logicalName>在庫数</logicalName>
                 <columnType class="net.java.amateras.db.dialect.ColumnType">
@@ -1090,7 +1111,7 @@
   </children>
   <dommains/>
   <dialectName>MySQL</dialectName>
-  <logicalMode>false</logicalMode>
+  <logicalMode>true</logicalMode>
   <jarFile>C:\Users\ica\Downloads\JAVA\workspace\mysql-connector-java-5.1.27-bin.jar</jarFile>
   <jdbcDriver>com.mysql.jdbc.Driver</jdbcDriver>
   <jdbcUrl>jdbc:mysql://localhost/ecsite_db</jdbcUrl>

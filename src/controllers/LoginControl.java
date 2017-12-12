@@ -9,15 +9,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
-import action.TopSelect;
+import action.Login;
 
 /***
- * トップ画面
- * @author 伊能
+ * ログイン
+ * @author 竹原
  *
  */
-@WebServlet("/TopControl")
-public class TopControl extends HttpServlet {
+@WebServlet("/LoginControl")
+public class LoginControl extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -36,7 +36,7 @@ public class TopControl extends HttpServlet {
         request.setCharacterEncoding("Windows-31J");
         String dispatchUrl = null;
         try {
-            Action ac = new TopSelect();
+            Action ac = new Login();
             dispatchUrl = ac.execute(request, response);
         } catch (Exception e) {
             request.setAttribute("message", "原因不明のエラーです");

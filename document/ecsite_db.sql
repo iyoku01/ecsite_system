@@ -78,6 +78,7 @@ CREATE TABLE product_mst(
         product_id                    		INT(10)		 NOT NULL		 PRIMARY KEY COMMENT '商品ID',
         product_name                  		VARCHAR(30)		 NULL  COMMENT '商品名',
         price                         		INT(10)		 NULL  COMMENT '金額',
+        info                       		TEXT		 NULL  COMMENT '商品説明',
         stocks                        		MEDIUMINT(10)		 NULL  COMMENT '在庫数',
         comment                       		TEXT		 NULL  COMMENT 'コメント',
         hard_id                       		INT(10)		 NULL  COMMENT 'ハードID',

@@ -9,22 +9,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
-import action.TopSelect;
+import action.Logout;
 
 /***
- * トップ画面
- * @author 伊能
+ * ログアウト
+ * @author 竹原
  *
  */
-@WebServlet("/TopControl")
-public class TopControl extends HttpServlet {
+@WebServlet("/LogoutControl")
+public class LogoutControl extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         doPost(request, response);
     }
 
@@ -36,14 +35,12 @@ public class TopControl extends HttpServlet {
         request.setCharacterEncoding("Windows-31J");
         String dispatchUrl = null;
         try {
-            Action ac = new TopSelect();
+            Action ac = new Logout();
             dispatchUrl = ac.execute(request, response);
         } catch (Exception e) {
             request.setAttribute("message", "原因不明のエラーです");
             e.printStackTrace();
         }
-
         request.getRequestDispatcher(dispatchUrl).forward(request, response);
     }
-
 }
