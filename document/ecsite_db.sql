@@ -179,7 +179,7 @@ INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, stocks, com
 
 
 /*product_pic_tbl*/
-INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,0,0,'\img\logo\COD.jpg');
+INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,0,0,'\\img\\logo\\COD.jpg');
 INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,1,0,'\img\main\COD.jpg');
 INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,2,1,'\img\sub\COD_Sub.jpg');
 INSERT INTO ecsite_db.product_pic_tbl ( product_id, pic_category, pic_number, pic_file ) VALUES (1,2,2,'\img\sub\COD_Sub2.jpg');
