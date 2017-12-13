@@ -26,39 +26,18 @@ header{
     background-color:#555555;
     height:70px;
     width:100%;
-    }
+}
 header h3{
     font-size:30px;
 }
-.col-xs-1{
-      top:20px;
-      left:20px;
-      width:160px;
-      height:60px;
-      position:absolute;
+div.kensaku{
+        width:100%;
+    font-size:25px;
+    color:#ffff;
+    top: 10px;
+    left: 200px;
+    position:absolute;
 }
-
-.col-xs-6{
-
-      top:40px;
-      left:200px;
-      width:370px;
-      height:40px;
-      position:absolute;
-}
-.col-xs-5{
-      top:40px;
-      left:500px;
-      width:370px;
-      height:40px;
-      position:absolute;
-}
-
-.input-group-addon{
-        color:#000000;
-        background-color:#e2e2e2;
-}
-
 h2{
      line-height:50px;
       background-color:#ffffff;
