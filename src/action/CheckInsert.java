@@ -20,10 +20,10 @@ public class CheckInsert implements Action {
             String user_id = request.getParameter("user_id");
 
             if (dao.checkId(user_id)) {
-                destination = "registConf.jsp";
+                destination = "memberAddConf.jsp";
             } else {
                 request.setAttribute("message", "‚»‚ÌID‚ÍŠù‚É“o˜^‚³‚ê‚Ä‚¢‚Ü‚·");
-                destination = "newMemberRegist.jsp";
+                destination = "memberAdd.jsp";
             }
 
         } catch (NumberFormatException e) {

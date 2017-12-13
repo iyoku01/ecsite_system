@@ -17,7 +17,7 @@
 <body>
 
 
-    <form action="http://localhost:8080/ecsite_system/registChangeConf.jsp"
+    <form action="http://localhost:8080/ecsite_system/memberUpdateConf.jsp"
         method="post">
         <p>ユーザーID：<%=session.getAttribute("user_id")%></p>
         <p>パスワード<input type=text name=password></p>
