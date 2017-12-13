@@ -397,6 +397,7 @@ public class EcsiteDao implements AutoCloseable {
             pstatement.setString(5, phone);
             pstatement.setString(6, postal_code);
             pstatement.setString(7, address);
+            System.out.println("--- sql = " + pstatement);
             pstatement.executeUpdate();
         }
     }
@@ -417,7 +418,7 @@ public class EcsiteDao implements AutoCloseable {
             throws SQLException {
         System.out.println("\n/// insertPersonalData()");
 
-        String sql = "UPDATA personal_mst SET"
+        String sql = "UPDATE ecsite_db.personal_mst SET"
                 + " password=?, name=?, nickname=?, phone=?, postal_code=?,address=? WHERE user_id=?";
 
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
