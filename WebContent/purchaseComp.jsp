@@ -42,7 +42,7 @@
         <jsp:include page="header_logoOnly.jsp" flush="true" />
 
      <!-- pageー -->
-
+<div class="purchaseComp">
 
 
             <h2>お買い上げいただき誠にありがとうございました。<br>
@@ -55,8 +55,8 @@
 
 
 
-<a href=TopControl>
-<div class="center" ><INPUT TYPE="submit"  VALUE="トップページに戻る"class="top"></div>
+<a href=Top.Control>
+<div class="center" ><INPUT TYPE="submit"  VALUE="トップページに戻る"></div>
 </a>
 
 
@@ -66,7 +66,7 @@
     <div class="col-xs-12">
         <jsp:include page="footer.jsp" flush="true" />
     </div>
-
+</div>
 </div>
 </body>
 </html>

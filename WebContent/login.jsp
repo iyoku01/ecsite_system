@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<form action="LoginControl">
+<form action="Login.Control">
    <p>ユーザーID<input type=text name=user_id></p>
    <p>パスワード<input type=text name=password></p>
     <input type=submit value=ログイン>

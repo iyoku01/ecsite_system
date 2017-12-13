@@ -12,122 +12,76 @@
 <head>
 <META charset="Windows-31J">
 
-<!-- Bootstrap Start -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
-<!--[if lt IE 9]>
-    <script src="html5shiv.js"></script>
-    <script src="respond.min.js"></script>
-<![endif]-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<!-- Bootstrap End -->
-
-<title>商品詳細ページ</title>
+<title>商品詳細</title>
 </head>
 
-<body class="bg-info">
+<body>
+    <!--
+    <p>---------------------------------------------------------------</p>
+    <p>- 値取得サンプル</p>
+    <p>---------------------------------------------------------------</p>
+    <a href=http://localhost:8080/ecsite_system/ProductDetail.Control?product_id=1>サンプルURL</a>
+    <p>${product.product_id}</p>
+    <p>${product.product_name}</p>
+    <p>${product.price}</p>
+    <p>${product.stocks}</p>
+    <p>${product.comment}</p>
+    <p>${product.hard_id}</p>
+    <p>${product.category_id}</p>
+    <p>${product.ave_eval}</p>
+    <p>${product.review_count}</p>
+    <p>${product.mainPic_file}</p>
+    <c:forEach var="i" items="${productPicSub}">
+        <p>${i}</p>
+    </c:forEach>
+    <p>---------------------------------------------------------------</p>
+ -->
 
-    <div class=".container-fluid">
-        <!-- 共通ヘッダー -->
-        <div class="col-xs-12">
-            <jsp:include page="header.jsp" flush="true" />
-        </div>
+    <!-- 購入数のドロップダウンの最大値 -->
+    <c:set var="BUY_COUNT_MAX" value="9" />
 
-        <div class="row">
-            <p>---------------------------------------------------------------</p>
-            <a href=http://localhost:8080/ecsite_system/ProductDetail?product_id=1>サンプルURL</a>
-            <p>${product.product_id}</p>
-            <p>${product.product_name}</p>
-            <p>${product.price}</p>
-            <p>${product.stocks}</p>
-            <p>${product.comment}</p>
-            <p>${product.hard_id}</p>
-            <p>${product.category_id}</p>
-            <p>${product.ave_eval}</p>
-            <p>${product.review_count}</p>
-            <p>${product.mainPic_file}</p>
-            <c:forEach var="i" items="${productPicSub}" varStatus="st">
-                <br>${i}</td>
+    <!-- 共通ヘッダー -->
+    <jsp:include page="header.jsp" flush="true" />
+
+    <!-- メイン画像 -->
+    ${product.mainPic_file}
+    <img src="${product.mainPic_file}" width="400" height="300">
+    <!-- サブ画像 -->
+    <c:forEach var="i" items="${productPicSub}">
+        <p>${i}</p>
+        <img src="${i}" width="200" height="130">
+    </c:forEach>
+
+    <!-- 商品タイトル -->
+    <div class="productTitle">${product.product_name}</div>
+    <p>${product.hard_name}</p>
+    <!-- レビュー画面リンク -->
+    <a href="review.jsp"><%="？"%>のカスタマーレビュー</a>
+
+    <!-- 金額表示 -->
+    ${product.price} 在庫あり
+
+    <form action="CartAdd.Control" method="get">
+        <!-- 商品ID（隠し項目） -->
+        <input type="hidden" name="product_id" value="${product.product_id}">
+
+        <!-- 購入数選択 -->
+        <select name="buy_count">
+            <c:forEach begin="1" end="${BUY_COUNT_MAX}" varStatus="status">
+                <option value="${status.index}">${status.index}</option>
             </c:forEach>
-            <p>---------------------------------------------------------------</p>
-        </div>
+        </select> <input type="submit" value="カートに入れる">
+    </form>
 
-
-        <div class="row">
-            <div class="col-xs-4">
-
-                <!-- カテゴリー -->
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <c:forEach var="i" items="${categoryList}" varStatus="st">
-                            <tr>
-                                <td>${i.category_name}</td>
-                            </tr>
-                        </c:forEach>
-                    </table>
-                </div>
-            </div>
-            <div class="col-xs-8">
-                <!-- 商品 -->
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <c:forEach var="i" items="${productList}" varStatus="st">
-                            <tr>
-                                <td>${i.product_name}</td>
-                                <td>${i.price}</td>
-                            </tr>
-                        </c:forEach>
-                    </table>
-                </div>
-
-            </div>
-            <!-- メイン画像 -->
-            <div></div>
-            <!-- サブ画像 -->
-            <div></div>
-
-            <!-- 商品タイトル -->
-            <div class="productTitle">
-                <%="商品タイトル"%>
-            </div>
-            <!-- レビュー画面リンク -->
-            <a href="review.jsp"><%="？"%>のカスタマーレビュー</a>
-
-            <!-- 金額表示 -->
-            \<%="5000"%>在庫あり
-
-            <!-- 購入数選択 -->
-            <select name="購入数">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-            </select>
-            <!-- ↑後で変数にする -->
-
-            <input type="submit" name="名前" value="カートに入れる">
-
-            <!-- 商品説明 -->
-            <div class="productDatail">
-                <%="商品説明"%>
-            </div>
-
-            <!-- 社長レビュー -->
-            <div class="pReview">
-                <%="社長レビュー"%>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <p class="bg-danger">${message}</p>
-                </div>
-            </div>
-
-            <!-- 共通フッター -->
-            <div class="col-xs-12">
-                <jsp:include page="footer.jsp" flush="true" />
-            </div>
-        </div>
+    <!-- 商品説明 -->
+    <div class="productDatail">
+        ${product.info}
     </div>
+
+    <!-- 店長コメント -->
+    <div class="pReview">${product.comment}</div>
+    <p>${message}</p>
+
+    <!-- 共通フッター -->
+    <jsp:include page="footer.jsp" flush="true" />
 </body>

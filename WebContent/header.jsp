@@ -6,9 +6,9 @@
 <div class="row">
     <header>
         <h3>
-            <form action="TopControl" method="post" class="form-group">
+            <form action="Top.Control" method="post" class="form-group">
                 <div class="col-xs-1">
-                    <a href=TopControl>Top</a>
+                    <a href=Top.Control>Top</a>
                 </div>
                 <div class="col-xs-6">
                     <div class="input-group">
@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="col-xs-5">
-                    <a href=CartControl>Cart</a> / <a href=http://localhost:8080/ecsite_system/login.jsp>Login</a> / <a href=LogoutControl>Logout</a>/<a href=MyPageControl>Mypage</a>
+                    <a href=Cart.Control>Cart</a> / <a href=http://localhost:8080/ecsite_system/login.jsp>Login</a> / <a href=Logout.Control>Logout</a>/<a href=MyPage.Control>Mypage</a>
                 </div>
             </form>
         </h3>

@@ -52,7 +52,7 @@
      表示に役立てて頂ければと思います
      -->
         <div class="row">
-            <a href=http://localhost:8080/ecsite_system/TopControl>サンプルURL</a>
+            <a href=http://localhost:8080/ecsite_system/Top.Control>サンプルURL</a>
             カテゴリー---------------------------------------------------------------------------------------------
             <c:forEach var="i" items="${categoryList}" varStatus="st">
                     <p>${i.category_name}</p>
@@ -65,6 +65,7 @@
             <c:forEach var="i" items="${recommendList}" varStatus="st">
                     <p>${i.product_id}</p>
                     <p>${i.recommend_pic}</p>
+                    <img src="${i.recommend_pic}">
             </c:forEach>
             商品リスト ※表示に使わない値は消してください----------------------------------------
             <c:forEach var="j" items="${productList}">
@@ -81,7 +82,7 @@
                     <p>${i.hard_id}</p>
                     <p>${i.category_id}</p>
                     <p>${i.ave_eval}</p>
-                    <p><a href=http://localhost:8080/ecsite_system/ProductDetailControl?product_id=${i.product_id}>${i.pic_file}</a></p>
+                    <p><a href=ProductDetail.Control?product_id=${i.product_id}><img src="${i.pic_file}">${i.pic_file}</a></p>
                     <p>------------------------------------------------------------------------</p>
                 </c:forEach>
             </c:forEach>
@@ -123,9 +124,7 @@
         </div>
 
         <!-- 共通フッター -->
-        <div class="col-xs-12">
-            <jsp:include page="footer.jsp" flush="true" />
-        </div>
+        <jsp:include page="footer.jsp" flush="true" />
     </div>
 </body>
 </html>

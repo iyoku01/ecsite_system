@@ -1,5 +1,7 @@
 package action;
 
+import static model.Constants.*;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -29,7 +31,7 @@ public class CartSelect implements Action {
 
             //セッション変数よりカートを取得
             HttpSession session = request.getSession();
-            cartMap = (Map<Integer, Integer>) session.getAttribute("cartMap");
+            cartMap = (Map<Integer, Integer>) session.getAttribute(SESSION_CART_MAP);
             if (cartMap == null) {
                 cartMap = new LinkedHashMap<Integer, Integer>(); //LinkedHashMap k=vを入れた順番に並ぶ
             }
@@ -50,6 +52,9 @@ public class CartSelect implements Action {
             request.setAttribute("cartList", cartList);
             request.setAttribute("sumBuy_count", new Integer(sumBuy_count));
             request.setAttribute("sumPrice", new Integer(sumPrice));
+            if (cartList.isEmpty()) {
+                request.setAttribute("message", "カートに商品がありません");
+            }
 
         } catch (NumberFormatException e) {
             request.setAttribute("message", "数値を入力して下さい");
@@ -57,6 +62,6 @@ public class CartSelect implements Action {
             request.setAttribute("message", "JDBC のエラーです : " + e.getMessage());
         }
 
-        return "cartMap.jsp";
+        return "cart.jsp";
     }
 }
