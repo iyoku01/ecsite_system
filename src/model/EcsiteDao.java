@@ -197,15 +197,17 @@ public class EcsiteDao implements AutoCloseable {
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
             topList = new ArrayList<ListTop>();
             for (Hard_tblVo hard : hardList) {
-                ListTop top = new ListTop();
-                top.setHard_id(hard.getHard_id());
-                top.setHard_name(hard.getHard_name());
-                pstatement.setInt(1, hard.getHard_id());
-                System.out.println("--- sql = " + pstatement);
-                ResultSet rs = pstatement.executeQuery();
-                ArrayList<ProductTopDto> tpdList = setProductTopDto(rs);
-                top.setTpd(tpdList);
-                topList.add(top);
+                if (hard.getHard_id() == Integer.parseInt(hard_id)) {
+                    ListTop top = new ListTop();
+                    top.setHard_id(hard.getHard_id());
+                    top.setHard_name(hard.getHard_name());
+                    pstatement.setString(1, hard_id);
+                    System.out.println("--- sql = " + pstatement);
+                    ResultSet rs = pstatement.executeQuery();
+                    ArrayList<ProductTopDto> tpdList = setProductTopDto(rs);
+                    top.setTpd(tpdList);
+                    topList.add(top);
+                }
             }
         }
         return topList;
@@ -407,7 +409,7 @@ public class EcsiteDao implements AutoCloseable {
      * @param address
      * @throws SQLException
      */
-    public void upData(String user_id, String password, String name, String nickname, String phone,
+    public void updataPersonalData(String user_id, String password, String name, String nickname, String phone,
             String postal_code, String address)
             throws SQLException {
         System.out.println("\n/// insertPersonalData()");

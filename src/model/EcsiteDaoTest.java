@@ -96,7 +96,7 @@ public class EcsiteDaoTest {
     public void testGetProductListById() {
         try (EcsiteDao dao = new EcsiteDao()) {
             ArrayList<ListTop> entList;
-            entList = dao.getProductListById(dao.getHardList(null), "2", "3");
+            entList = dao.getProductListById(dao.getHardList(null), "2", null);
             for (ListTop ent : entList) {
                 ArrayList<ProductTopDto> list = ent.getTpd();
                 for (ProductTopDto entity : list) {

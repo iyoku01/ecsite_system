@@ -19,8 +19,8 @@ public class TopSelect implements Action {
 
         try (EcsiteDao dao = new EcsiteDao()) {
 
-            String hard_id = request.getParameter("hard");
-            String category_id = request.getParameter("category");
+            String hard_id = request.getParameter("hard_id");
+            String category_id = request.getParameter("category_id");
             String search = request.getParameter("search");
 
             //カテゴリー
@@ -44,7 +44,7 @@ public class TopSelect implements Action {
             } else {
                 topList = dao.getProductListById(hardList, hard_id, category_id);
             }
-            if (topList.get(0).getTpd() != null) {
+            if (!(topList.isEmpty())) {
                 request.setAttribute("productList", topList);
             } else {
                 request.setAttribute("topMessage", "該当の商品がありません");
