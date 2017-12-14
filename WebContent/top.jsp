@@ -12,119 +12,77 @@
 <head>
 <META charset="Windows-31J">
 
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<!-- スライドショー Start -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/jquery.bxslider.min.js"></script>
+<link href="css/jquery.bxslider.css" rel="stylesheet" />
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.bxslider').bxSlider({
+            auto : true,
+        });
+    });
+</script>
+<!-- スライドショー End -->
+
 
 <title>TOPページ</title>
 </head>
 
-<%
-    /*
-        //--- 表示用のダミー値をセット ---
-        //商品
-        ArrayList<Product_mstVo> entList = new ArrayList<Product_mstVo>();
-        Product_mstVo ent;
-        ent = new Product_mstVo();
-        ent.setProduct_name("どこかのゲーム");
-        ent.setPrice(8800);
-        entList.add(ent);
-        ent = new Product_mstVo();
-        ent.setProduct_name("なんかのゲーム");
-        ent.setPrice(9600);
-        entList.add(ent);
-        request.setAttribute("productList", entList);
-    */
-%>
-
-
-
-
-
 
 <body class="bg-info">
 
-    <div class=".container-fluid">
-        <!-- 共通ヘッダー -->
-        <div class="col-xs-12">
-            <jsp:include page="header.jsp" flush="true" />
-        </div>
+    <!-- 共通ヘッダー -->
+    <jsp:include page="header.jsp" flush="true" />
 
-        <!--
-    このdivの範囲がAttributeの値の取り出しになります
-     表示に役立てて頂ければと思います
-     -->
-        <div class="row">
-            <a href=http://localhost:8080/ecsite_system/Top.Control>サンプルURL</a>
-            カテゴリー---------------------------------------------------------------------------------------------
-            <c:forEach var="i" items="${categoryList}" varStatus="st">
-                    <p>${i.category_name}</p>
-            </c:forEach>
-            ハード----------------------------------------------------------------------------------------------------
-            <c:forEach var="i" items="${hardList}" varStatus="st">
-                    <p><a href=http://localhost:8080/ecsite_system/TopControl?hard_id=${i.hard_id}>${i.hard_name}</a></p>
-            </c:forEach>
-            おすすめ商品-------------------------------------------------------------------------------------------
-            <c:forEach var="i" items="${recommendList}" varStatus="st">
-                    <p>${i.product_id}</p>
-                    <p>${i.recommend_pic}</p>
-                    <img src="${i.recommend_pic}">
-            </c:forEach>
-            商品リスト ※表示に使わない値は消してください----------------------------------------
-            <c:forEach var="j" items="${productList}">
-                 <p>------------------------------</p>
-                <p>${j.hard_id}</p>
-                <p>${j.hard_name}</p>
-                <p>------------------------------</p>
-                <c:forEach var="i" items="${j.tpd}">
-                    <p>${i.product_id}</p>
-                    <p>${i.product_name}</p>
-                    <p>${i.price}</p>
-                    <p>${i.stocks}</p>
-                    <p>${i.comment}</p>
-                    <p>${i.hard_id}</p>
-                    <p>${i.category_id}</p>
-                    <p>${i.ave_eval}</p>
-                    <p><a href=ProductDetail.Control?product_id=${i.product_id}><img src="${i.pic_file}">${i.pic_file}</a></p>
-                    <p>------------------------------------------------------------------------</p>
-                </c:forEach>
-            </c:forEach>
-        </div>
+    <a href=http://localhost:8080/ecsite_system/Top.Control>サンプルURL</a>
 
 
-        <div class="row">
-            <div class="col-xs-4">
+    <p>おすすめ商品-------------------------------------------------------------------------------------------</p>
+    <ul class="bxslider">
+        <c:forEach var="i" items="${recommendList}" varStatus="st">
+            <li><a href=ProductDetail.Control?product_id=${i.product_id}><img title="product_id = ${i.product_id}" alt="" src="${i.recommend_pic}" width="590" height="300" /></a></li>
+        </c:forEach>
+    </ul>
 
-                <!-- カテゴリー -->
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <c:forEach var="i" items="${categoryList}" varStatus="st">
-                            <tr>
-                                <td>${i.category_name}</td>
-                            </tr>
-                        </c:forEach>
-                    </table>
-                </div>
-            </div>
-            <div class="col-xs-8">
-                <!-- 商品 -->
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <c:forEach var="i" items="${productList}" varStatus="st">
-                            <tr>
 
-                            </tr>
-                        </c:forEach>
-                    </table>
-                </div>
+    <p>カテゴリー---------------------------------------------------------------------------------------------</p>
+    <c:forEach var="i" items="${categoryList}" varStatus="st">
+        <p>${i.category_name}</p>
+    </c:forEach>
+    <p>ハード----------------------------------------------------------------------------------------------------</p>
+    <c:forEach var="i" items="${hardList}" varStatus="st">
+        <p>
+            <a href=http://localhost:8080/ecsite_system/Top.Control?hard_id=${i.hard_id}>${i.hard_name}</a>
+        </p>
+    </c:forEach>
+    <p>商品リスト ※表示に使わない値は消してください----------------------------------------</p>
+    <c:forEach var="j" items="${productList}">
+        <p>------------------------------</p>
+        <p>${j.hard_id}</p>
+        <p>${j.hard_name}</p>
+        <p>------------------------------</p>
+        <c:forEach var="i" items="${j.tpd}">
+            <p>${i.product_id}</p>
+            <p>${i.product_name}</p>
+            <p>${i.price}</p>
+            <p>${i.stocks}</p>
+            <p>${i.comment}</p>
+            <p>${i.hard_id}</p>
+            <p>${i.category_id}</p>
+            <p>${i.ave_eval}</p>
+            <p>
+                <a href=ProductDetail.Control?product_id=${i.product_id}><img src="${i.pic_file}">${i.pic_file}</a>
+            </p>
+            <p>------------------------------------------------------------------------</p>
+        </c:forEach>
+    </c:forEach>
 
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <p class="bg-danger">${message}</p>
-            </div>
-        </div>
+    <p>${message}</p>
 
-        <!-- 共通フッター -->
-        <jsp:include page="footer.jsp" flush="true" />
-    </div>
+    <!-- 共通フッター -->
+    <jsp:include page="footer.jsp" flush="true" />
 </body>
 </html>
