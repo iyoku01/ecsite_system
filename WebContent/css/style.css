@@ -150,3 +150,37 @@ h2 {
     height: 50px;
     background-color: orange;
 }
+.membotton{
+    margin:40px;
+    text-align:center;
+    font-size:15px;
+    width: 100px;
+    height: 30px;
+    background-color:orange;
+	float:left;
+}
+
+.membotton2{
+    margin:40px;
+    text-align:center;
+    font-size:15px;
+    width: 100px;
+    height: 30px;
+    background-color:gray;
+	float:left;
+}
+.memUpcon{
+	text-align:center;
+	line-height: 300%;
+}
+
+.formcenter{
+	margin:10px auto;
+	width: 370px;
+
+}
+.memborder{
+	clear: both;
+
+}
+
