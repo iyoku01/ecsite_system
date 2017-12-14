@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.EcsiteDao;
 
-public class CheckInsert implements Action {
+public class PersonalIdCheck implements Action {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
