@@ -14,7 +14,7 @@ import action.Action;
 import action.CartAdd;
 import action.CartSelect;
 import action.CheckInsert;
-import action.InsertPersonalData;
+import action.PersonalDataInsert;
 import action.Login;
 import action.Logout;
 import action.PersonalDataSelect;
@@ -53,7 +53,7 @@ public class ControlServlet extends HttpServlet {
         controllerMap.put("/MyPage.Control", new PersonalDataSelect());
         controllerMap.put("/ProductDetail.Control", new ProductDatailSelect());
         controllerMap.put("/CheckId.Control", new CheckInsert());
-        controllerMap.put("/Regist.Control", new InsertPersonalData());
+        controllerMap.put("/Regist.Control", new PersonalDataInsert());
 
         controllerMap.put("/PurchaseComp.Control", new CartAdd());
         controllerMap.put("/Purchase.Control", new CartAdd());
