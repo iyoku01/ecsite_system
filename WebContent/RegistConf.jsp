@@ -29,7 +29,7 @@
     src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <!-- Bootstrap End -->
 
-<title>НwУ№КоЧ╣</title>
+<title>РVЛKУoШ^КоЧ╣</title>
 </head>
 <body>
 <div class="bodygray">

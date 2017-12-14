@@ -16,36 +16,13 @@
 <title>TOPページ</title>
 </head>
 
-<%
-    /*
-        //--- 表示用のダミー値をセット ---
-        //商品
-        ArrayList<Product_mstVo> entList = new ArrayList<Product_mstVo>();
-        Product_mstVo ent;
-        ent = new Product_mstVo();
-        ent.setProduct_name("どこかのゲーム");
-        ent.setPrice(8800);
-        entList.add(ent);
-        ent = new Product_mstVo();
-        ent.setProduct_name("なんかのゲーム");
-        ent.setPrice(9600);
-        entList.add(ent);
-        request.setAttribute("productList", entList);
-    */
-%>
+
+<body>
 
 
-
-
-
-
-<body class="bg-info">
-
-    <div class=".container-fluid">
         <!-- 共通ヘッダー -->
         <div class="col-xs-12">
             <jsp:include page="header.jsp" flush="true" />
-        </div>
 
         <!--
     このdivの範囲がAttributeの値の取り出しになります
