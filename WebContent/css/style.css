@@ -1,100 +1,155 @@
 @charset "shift_jis";
 
 /* htmlÇÃ√ﬁÃ´ŸƒÇÃê›íËÇÿæØƒ */
-html, body, div, span,
-h1,h2,h3 , h4, h5, h6, p, blockquote, pre,
-dl, dt, dd, ol, ul, li,
-table,caption, tbody, tfoot, thead, tr, th, td {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-style:normal;
-  font-weight: normal;
-  font-size: 100%;
-  vertical-align: baseline;
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,caption,tbody,tfoot,thead,tr,th,td
+    {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 100%;
+    vertical-align: baseline;
 }
 
-.bodygray{
-  background-color:#EEEEEE;
-  color:#333333;
+.bodygray {
+    background-color: #EEEEEE;
+    color: #333333;
 }
-.bodywhite{
-  background-color:#FFFFFF;
-  color:#333333;
+
+.bodywhite {
+    background-color: #FFFFFF;
+    color: #333333;
 }
-header{
-    background-color:#555555;
-    height:70px;
-    width:100%;
+
+header {
+    background-color: #555555;
+    height: 70px;
+    width: 100%;
+
 }
-header h3{
-    font-size:30px;
+
+header a:link {
+    color: #fff;
+     text-decoration: none;
 }
-div.kensaku{
-        width:100%;
-    font-size:25px;
-    color:#ffff;
+
+header a:visited {
+    color: #fff;
+     text-decoration: none;
+}
+
+header h3 {
+    font-size: 30px;
+}
+
+.kensaku {
+    position: absolute;
+    background-color: #d2d2d2;
+    left: 180px;
+    top: 22px;
+    width: 45px;
+    border-radius: 5px 0px 0px 5px;
+    text-align: center;
+}
+
+#form1 {
+    position: absolute;
+}
+
+#search {
+    position: absolute;
+    width: 182px;
+    height: 16px;
+    background: #fff;
+    border: none;
+    padding: 4px;
+    color: #000;
+    left: 222px;
+    top: -55px;
+}
+
+#searchAction {
+    position: absolute;
+    top: -55px;
+    left: 412px;
+    max-width: 24px;
+    background-color: #ffc107;
+    border-radius: 0px 5px 5px 0px;
+}
+
+#menu {
     top: 10px;
-    left: 200px;
-    position:absolute;
+    left: 450px;
+    position: absolute;
 }
-h2{
-     line-height:50px;
-      background-color:#ffffff;
-    height:10%;
-    width:80%;
-    margin:30px auto 0px;
-    text-align:center;
-    padding:10px;
-    font-size:30px;
-    line-height:40px;
+
+#menu img {
+    width: 30px;
 }
-.purchaseComp INPUT{
-    margin:40px;
-    text-align:center;
-    font-size:25px;
+
+#cartSuu {
+        top: -5px;
+    left: 7px;
+    position: absolute;
+}
+
+h2 {
+    line-height: 50px;
+    background-color: #ffffff;
+    height: 10%;
+    width: 80%;
+    margin: 30px auto 0px;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    line-height: 40px;
+}
+
+.purchaseComp INPUT {
+    margin: 40px;
+    text-align: center;
+    font-size: 25px;
     width: 250px;
     height: 50px;
-    background-color:orange;
+    background-color: orange;
 }
 
-.text-danger{
-    text-align:center;
-    color:red;
+.text-danger {
+    text-align: center;
+    color: red;
 }
 
-.center{
-    margin:auto;
-    text-align:center;
+.center {
+    margin: auto;
+    text-align: center;
 }
 
-.cart{
-    margin:auto;
-    text-align:center;
-
-
-}
-.cart table{
-    border:1px solid black;
-    margin:100px auto 20px;
-    text-align:center;
-    border-collapse:collapse;
-
-    }
-.cart td{
-    border:1px solid black;
-    padding:30px;
+.cart {
+    margin: auto;
+    text-align: center;
 }
 
-.cartbotton{
-    margin:40px;
-    text-align:center;
-    font-size:25px;
+.cart table {
+    border: 1px solid black;
+    margin: 100px auto 20px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.cart td {
+    border: 1px solid black;
+    padding: 30px;
+}
+
+.cartbotton {
+    margin: 40px;
+    text-align: center;
+    font-size: 25px;
     width: 200px;
     height: 50px;
-    background-color:orange;
+    background-color: orange;
 }
-
 .membotton{
     margin:40px;
     text-align:center;
