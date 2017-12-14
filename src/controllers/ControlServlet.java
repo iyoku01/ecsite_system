@@ -12,12 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.CartAdd;
+import action.CartDelete;
 import action.CartSelect;
+import action.CheckInsert;
+import action.PersonalDataInsert;
 import action.Login;
 import action.Logout;
 import action.PersonalDataSelect;
 import action.ProductDatailSelect;
 import action.TopSelect;
+import exception.NotFoundServletException;
 
 //@WebServlet("/ControlServlet")
 @WebServlet(urlPatterns = { "*.Control" })
@@ -45,11 +49,13 @@ public class ControlServlet extends HttpServlet {
 
         controllerMap.put("/Cart.Control", new CartSelect());
         controllerMap.put("/CartAdd.Control", new CartAdd());
-        controllerMap.put("/CartDelete.Control", new Login());
+        controllerMap.put("/CartDelete.Control", new CartDelete());
         controllerMap.put("/Login.Control", new Login());
         controllerMap.put("/Logout.Control", new Logout());
         controllerMap.put("/MyPage.Control", new PersonalDataSelect());
         controllerMap.put("/ProductDetail.Control", new ProductDatailSelect());
+        controllerMap.put("/CheckId.Control", new CheckInsert());
+        controllerMap.put("/Regist.Control", new PersonalDataInsert());
 
         controllerMap.put("/PurchaseComp.Control", new CartAdd());
         controllerMap.put("/Purchase.Control", new CartAdd());
@@ -57,18 +63,20 @@ public class ControlServlet extends HttpServlet {
         controllerMap.put("/Top.Control", new TopSelect());
 
         //振分け
-        Action ac = null;
+        Action action = null;
         String dispatchUrl = "error.jsp";
         String servletPath = request.getServletPath();
-        if (controllerMap.containsKey(servletPath)) {
-            ac = controllerMap.get(servletPath);
-            try {
-                dispatchUrl = ac.execute(request, response);
-            } catch (Exception e) {
-                request.setAttribute("message", "原因不明のエラーです");
+        try {
+            if (controllerMap.containsKey(servletPath)) {
+                action = controllerMap.get(servletPath);
+            } else {
+                throw new NotFoundServletException(servletPath);
             }
-        } else {
-            request.setAttribute("message", "指定したサーブレットが見つかりません = " + servletPath);
+            dispatchUrl = action.execute(request, response);
+        } catch (NotFoundServletException e) {
+            request.setAttribute("message", "指定したサーブレットが見つかりません = " + e.getMessage());
+        } catch (Exception e) {
+            request.setAttribute("message", "原因不明のエラーです");
         }
         request.getRequestDispatcher(dispatchUrl).forward(request, response);
     }

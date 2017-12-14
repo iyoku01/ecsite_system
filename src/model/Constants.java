@@ -10,5 +10,6 @@ public class Constants {
 
     //session•Ï”–¼
     public static final String SESSION_CART_MAP = "cartMap";
+    public static final String SESSION_USER_ID = "user_id";
 
 }

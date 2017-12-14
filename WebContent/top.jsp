@@ -36,7 +36,7 @@
             </c:forEach>
             ハード----------------------------------------------------------------------------------------------------
             <c:forEach var="i" items="${hardList}" varStatus="st">
-                    <p><a href=http://localhost:8080/ecsite_system/TopControl?hard_id=${i.hard_id}>${i.hard_name}</a></p>
+                    <p><a href=http://localhost:8080/ecsite_system/Top.Control?hard_id=${i.hard_id}>${i.hard_name}</a></p>
             </c:forEach>
             おすすめ商品-------------------------------------------------------------------------------------------
             <c:forEach var="i" items="${recommendList}" varStatus="st">
