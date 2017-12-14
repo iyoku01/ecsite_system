@@ -5,7 +5,7 @@
 </head>
 <div class="row">
     <header>
-  <h3>
+
   <form action="Top.Control" method="post" class="form-group">
       <a href="Top.Control">
       <img src="img\CompanyLogo\watazon_logo.png" alt="Šé‹ÆƒƒS"  height=70px >
@@ -19,7 +19,7 @@
 
       </div>
     </form>
-</h3>
+
 </header>
 </div>
 
