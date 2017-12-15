@@ -254,11 +254,14 @@ INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (8, 'ƒyƒ‹ƒ
 
 
 /*recommend_tbl*/
-INSERT INTO ecsite_db.recommend_tbl ( product_id, recommend_pic ) VALUES (1,'img\\reccomend\\COD_image.png');
-INSERT INTO ecsite_db.recommend_tbl ( product_id, recommend_pic ) VALUES (2,'img\\reccomend\\MHW.jpg');
-INSERT INTO ecsite_db.recommend_tbl ( product_id, recommend_pic ) VALUES (3,'img\\reccomend\\Arextusixya.jpg');
-INSERT INTO ecsite_db.recommend_tbl ( product_id, recommend_pic ) VALUES (4,'img\\reccomend\\Splatoopn2.jpg');
-INSERT INTO ecsite_db.recommend_tbl ( product_id, recommend_pic ) VALUES (5,'img\\reccomend\\Xenoblade2.jpg');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (1, 'img\\reccomend\\COD2_image.png');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (2, 'img\\reccomend\\FF15_image.jpg');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (3, 'img\\reccomend\\DQ11_image.png');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (4, 'img\\reccomend\\Splatoopn2_image.jpg');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (5, 'img\\reccomend\\Xenoblade2_image.jpg');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (6, 'img\\reccomend\\MarioCart8_image.png');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (7, 'img\\reccomend\\Mario_image.png');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (8, 'img\\reccomend\\Persona5_image.jpg');
 
 
 /*order_tbl*/
