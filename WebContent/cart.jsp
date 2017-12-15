@@ -13,11 +13,34 @@
 <title>カート</title>
 </head>
 <body>
+<<<<<<< HEAD
+=======
+
+
+   <%--  <!-- pageー -->
+
+
+    <p>---------------------------------------------------------------</p>
+    <p>- 値取得サンプル</p>
+    <p>---------------------------------------------------------------</p>
+    <a href=http://localhost:8080/ecsite_system/Cart.Control>サンプルURL</a>
+    <c:forEach var="i" items="${cartList}">
+        <p>${i}</p>
+    </c:forEach>
+    <p>${sumBuy_count}</p>
+    <p>${sumPrice}</p>
+    <p>${cartMap}</p>
+    <p>${message}</p>
+    <p>${cartMap.size()}</p>
+    <p>---------------------------------------------------------------</p>
+
+
+>>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
     <div class="bodywhite">
 
         <!-- 購入数のドロップダウンの最大値 -->
         <c:set var="BUY_COUNT_MAX" value="9" />
-
+--%>
         <!-- 共通ヘッダー -->
         <jsp:include page="header.jsp" flush="true" />
 

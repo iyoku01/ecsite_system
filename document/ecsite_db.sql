@@ -153,12 +153,13 @@ INSERT INTO ecsite_db.hard_tbl ( hard_id, hard_name ) VALUES (1,'Nintendo Switch
 INSERT INTO ecsite_db.hard_tbl ( hard_id, hard_name ) VALUES (2,'PlayStation4');
 
 /* category_tbl */
-INSERT INTO ecsite_db.category_tbl ( category_id, category_name ) VALUES (1,'RPG');
-INSERT INTO ecsite_db.category_tbl ( category_id, category_name ) VALUES (2,'アクション');
-INSERT INTO ecsite_db.category_tbl ( category_id, category_name ) VALUES (3,'シューティング');
-INSERT INTO ecsite_db.category_tbl ( category_id, category_name ) VALUES (4,'シミュレーション・ストラテジー');
-INSERT INTO ecsite_db.category_tbl ( category_id, category_name ) VALUES (5,'アドベンチャー');
-INSERT INTO ecsite_db.category_tbl ( category_id, category_name ) VALUES (6,'その他');
+INSERT INTO `category_tbl` (`category_id`, `category_name`) VALUES (1, 'RPG');
+INSERT INTO `category_tbl` (`category_id`, `category_name`) VALUES (2, 'アクション');
+INSERT INTO `category_tbl` (`category_id`, `category_name`) VALUES (3, 'シューティング');
+INSERT INTO `category_tbl` (`category_id`, `category_name`) VALUES (4, 'シミュレーション・ストラテジー');
+INSERT INTO `category_tbl` (`category_id`, `category_name`) VALUES (5, 'アドベンチャー');
+INSERT INTO `category_tbl` (`category_id`, `category_name`) VALUES (6, 'レース');
+INSERT INTO `category_tbl` (`category_id`, `category_name`) VALUES (8, 'その他');
 
 
 /* personal_mst */
@@ -171,41 +172,85 @@ INSERT INTO ecsite_db.personal_mst ( user_id, password, name, nickname, phone, p
 
 
 /* product_mst */
-INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, info, stocks, comment, hard_id, category_id, ave_eval, review_count ) VALUES (1,'CALL OF DUTY WWⅡ',7900,'商品説明<1>',999,'オスス&<>''\r\nメ1',2,3,1,11);
-INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, info, stocks, comment, hard_id, category_id, ave_eval, review_count ) VALUES (2,'MONSTER HUNTER WORLD',8980,'商品説明<2>',999,'オススメ2',2,2,2,12);
-INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, info, stocks, comment, hard_id, category_id, ave_eval, review_count ) VALUES (3,'A列車で行こうEXP.',7800,'商品説明<3>',999,'オススメ3',2,4,3,13);
-INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, info, stocks, comment, hard_id, category_id, ave_eval, review_count ) VALUES (4,'Splatoon2',5980,'商品説明<4>',999,'オススメ4',1,2,4,14);
-INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, info, stocks, comment, hard_id, category_id, ave_eval, review_count ) VALUES (5,'Xenoblade2',7980,'商品説明<5>',999,'オススメ5',1,1,5,15);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (1, 'CALL OF DUTY WWⅡ', 7900, '「Call of Duty: WWII」はシリーズの原点に回帰――第二次世界大戦を舞台に、圧倒的な新世代のゲーム体験を味わえます。D-デイにノルマンディーに上陸し、史上最も大規模な戦争が繰り広げられたヨーロッパ各地の戦場で生き抜きます。従来の地に足のついたCall of Dutyの戦闘、仲間との絆、過酷な戦争を体感しましょう。', 999, '■店長コメント　戦争だーーーーーーーーーーーー！！！打て打てうてぇええあああああ！！！！', 2, 3, 1, 11);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (2, 'FINAL FANTASY 15', 8980, 'どこまでも広がる世界、どこまでも行ける世界：　広大な世界を自由に動き回って探索、攻略ができる「オープンワールド」形式を採用。時間経過、天候の変化により、世界の状況はリアルタイムで変化す る。笑い声が響く街並み、鳥たちが舞う草原、鬱蒼とした森、深く暗い洞窟──。目的地への移動も、世界の探索も全てプレイヤーの意志に委ねられます。', 999, '■店長コメント　圧倒的なグラフィック。音楽はとても素晴らしいです。でも、でも・・・肝心なストーリー部分が省略されている部分が多く、DLCでようやく話が繋がった感じ・・・製品版でストーリーが分かるようにしてほしかったです。', 2, 2, 2, 12);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (3, 'DRAGON QUEST 11', 7800, '「ドラゴンクエスト」シリーズ11番目となる本編最新作は、シリーズの原点に立ち返り「勇者」の冒険を描いた物語。PlayStation (R) 4、ニンテンドー3DSの2つのプラットフォームで展開される、“懐かしさ"と“新しさ"を兼ね備えた、シリーズの「新たなる原点」となる11番目の冒険、『ドラゴンクエストXI』が、今ここに始まる。', 999, '■店長コメント　アバーーーーーーーーーーーーーン。ストラーーーーーーーーーーーーーーーーーーーーッシュ(/・ω・)/！！！！', 2, 4, 3, 13);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (4, 'スプラトゥーン2', 5980, 'イカしたやつらがイカした進化！ガチで塗りあう時がきた！2017年7月21日（金）発売、Nintendo Switchソフト『スプラトゥーン2』', 999, '■店長コメント　イカしてる(/・ω・)/？', 1, 2, 4, 14);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (5, 'Xenoblade2', 7980, '行こう、楽園へ！', 999, '■店長コメント　ゼノギアスは楽しかったなぁ・・・人肉缶詰工場はトラウマ・・・', 1, 1, 5, 15);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (6, 'マリオカートデラックス8', 5980, '『マリオカート8』は、任天堂より2014年5月29日に発売されたWii U用ゲームソフト。家庭用向けのマリオカートシリーズとしては8作目にあたる。 ', 999, '■店長コメント　はっきり言おう。私はマリオカートがめちゃくちゃ下手くそなのです・・・', 1, 6, 1, 16);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (7, 'スーパーマリオオデッセイ', 5980, 'クッパとピーチ姫のウェディングを阻止するため、マリオが不思議な帽子キャッピーと一緒に世界中を冒険する3Dアクションゲーム。', 999, '■店長コメント　随所に任天堂らしさが散りばめられておりとても楽しいです☆ただ長時間やっていると目が疲れます。。。', 1, 2, 2, 17);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (8, 'ペルソナ5', 8800, '前作『ペルソナ４』から約8年。｢ペルソナ｣シリーズのナンバリング最新作であるPlayStaion4ソフトウェア『ペルソナ５』が、ついに発売。', 999, '■店長コメント　独特な世界観とかデザインとかハマる人にはハマるでしょうねぇ・・・( ^ω^ )', 2, 1, 3, 18);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 
 /*product_pic_tbl*/
-INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (1, 0, 0, 'img\\logo\\COD_logo.jpg');
-INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (1, 1, 0, 'img\\main\\COD.jpg');
-INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (1, 2, 1, 'img\\sub\\COD_Sub.jpg');
-INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (1, 2, 2, 'img\\sub\\COD_Sub2.jpg');
-INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (1, 2, 3, 'img\\sub\\COD_Sub3.jpg');
-INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (1, 2, 4, 'img\\sub\\COD_Sub4.jpg');
-INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (1, 2, 5, 'img\\sub\\COD_Sub5.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (1, 0, 0, 'img\\logo\\COD2_logo.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (1, 1, 0, 'img\\main\\COD2_main.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (1, 2, 1, 'img\\sub\\COD2_Sub.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (1, 2, 2, 'img\\sub\\COD2_Sub2.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (1, 2, 3, 'img\\sub\\COD2_Sub3.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (1, 2, 4, 'img\\sub\\COD2_Sub4.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (1, 2, 5, 'img\\sub\\COD2_Sub5.jpg');
 INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (2, 0, 0, 'img\\logo\\FF15_logo.jpg');
-INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (2, 1, 0, 'img\\main\\MHW.jpg');
-INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (2, 2, 1, 'img\\sub\\MHW_Sub.jsp');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (2, 1, 0, 'img\\main\\FF15_main.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (2, 2, 1, 'img\\sub\\FF15_Sub.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (2, 2, 2, 'img\\sub\\FF15_Sub2.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (2, 2, 3, 'img\\sub\\FF15_Sub3.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (2, 2, 4, 'img\\sub\\FF15_Sub4.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (2, 2, 5, 'img\\sub\\FF15_Sub5.jpg');
 INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (3, 0, 0, 'img\\logo\\DQ11_logo.png');
-INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (3, 1, 0, 'img\\main\\Arextusixya.jpg');
-INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (3, 2, 1, 'img\\sub\\Arextusixya_Sub.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (3, 1, 0, 'img\\main\\DQ11_main.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (3, 2, 1, 'img\\sub\\DQ11_Sub.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (3, 2, 2, 'img\\sub\\DQ11_Sub2.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (3, 2, 3, 'img\\sub\\DQ11_Sub3.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (3, 2, 4, 'img\\sub\\DQ11_Sub4.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (3, 2, 5, 'img\\sub\\DQ11_Sub5.jpg');
 INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (4, 0, 0, 'img\\logo\\Splatoon2_logo.png');
-INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (4, 1, 0, 'img\\main\\Splatoon2.jpg');
-INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (4, 2, 1, 'img\\sub\\Splatoon2_Sub.jsp');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (4, 1, 0, 'img\\main\\Splatoon2_main.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (4, 2, 1, 'img\\sub\\Splatoon2_Sub.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (4, 2, 2, 'img\\sub\\Splatoon2_Sub2.png');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (4, 2, 3, 'img\\sub\\Splatoon2_Sub3.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (4, 2, 4, 'img\\sub\\Splatoon2_Sub4.png');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (4, 2, 5, 'img\\sub\\Splatoon2_Sub5.png');
 INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (5, 0, 0, 'img\\logo\\Xenoblade2_logo.jpg');
-INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (5, 1, 0, 'img\\main\\Xenoblade2.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (5, 1, 0, 'img\\main\\Xenoblade2_main.jpg');
 INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (5, 2, 1, 'img\\sub\\Xenoblade2_Sub.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (5, 2, 2, 'img\\sub\\Xenoblade2_Sub2.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (5, 2, 3, 'img\\sub\\Xenoblade2_Sub3.PNG');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (5, 2, 4, 'img\\sub\\Xenoblade2_Sub4.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (5, 2, 5, 'img\\sub\\Xenoblade2_Sub5.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (6, 0, 0, 'img\\logo\\MarioCart8_logo.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (6, 1, 0, 'img\\main\\MarioCart8_main.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (6, 2, 1, 'img\\sub\\MarioCart8_Sub.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (6, 2, 2, 'img\\sub\\MarioCart8_Sub2.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (6, 2, 3, 'img\\sub\\MarioCart8_Sub3.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (6, 2, 4, 'img\\sub\\MarioCart8_Sub4.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (6, 2, 5, 'img\\sub\\MarioCart8_Sub5.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (7, 0, 0, 'img\\logo\\Mario_logo.png');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (7, 1, 0, 'img\\main\\Mario_main.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (7, 2, 1, 'img\\sub\\Mario_Sub.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (7, 2, 2, 'img\\sub\\Mario_Sub2.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (7, 2, 3, 'img\\sub\\Mario_Sub3.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (7, 2, 4, 'img\\sub\\Mario_Sub4.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (7, 2, 5, 'img\\sub\\Mario_Sub5.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (8, 0, 0, 'img\\logo\\Persona5_logo.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (8, 1, 0, 'img\\main\\Persona5_main.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (8, 2, 1, 'img\\sub\\Persona5_Sub.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (8, 2, 2, 'img\\sub\\Persona5_Sub2.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (8, 2, 3, 'img\\sub\\Persona5_Sub3.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (8, 2, 4, 'img\\sub\\Persona5_Sub4.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (8, 2, 5, 'img\\sub\\Persona5_Sub5.jpg');
 
 
 /*conversion_tbl*/
-INSERT INTO ecsite_db.conversion_tbl ( product_id, conversion_word ) VALUES (1,'COD CODWW2 コールオブデューティー CALLOFDUTYWWⅡ');
-INSERT INTO ecsite_db.conversion_tbl ( product_id, conversion_word ) VALUES (2,'MHW モンスターハンターワールド モンハンワールド MONSTERHUNTERWORLD');
-INSERT INTO ecsite_db.conversion_tbl ( product_id, conversion_word ) VALUES (3,'A列車で行こうExp. A列車');
-INSERT INTO ecsite_db.conversion_tbl ( product_id, conversion_word ) VALUES (4,'Splatoon2 スプラトゥーン2 イカ');
-INSERT INTO ecsite_db.conversion_tbl ( product_id, conversion_word ) VALUES (5,'ゼノブレイド２ Xenoblade2');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (1, 'COD CODWW2 コールオブデューティー CALLOFDUTYWWⅡ');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (2, 'FF15  ファイナルファンタジー15　FINAL FANTASY 15');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (3, 'DQ11　ドラゴンクエスト11　DRAGON QUEST 11');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (4, 'Splatoon2 スプラトゥーン2');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (5, 'ゼノブレイド２ Xenoblade2');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (6, 'マリオカートデラックス8  Mario Cart Deluxe8');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (7, 'スーパーマリオオデッセイ　Super Mario Odyssey');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (8, 'ペルソナ5　Persona5');
 
 
 /*recommend_tbl*/

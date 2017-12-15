@@ -15,6 +15,11 @@
 </head>
 <body>
 
+<header>
+    <a href=Top.Control></a>
+    </header>
+
+
     <%
         String user_id = request.getParameter("user_id");
     %>

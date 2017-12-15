@@ -30,6 +30,7 @@ public class PersonalDataInsert implements Action {
                 dao.updataPersonalData(user_id, password, name, nickname, phone, postal_code, address);
             } else {
                 dao.insertPersonalData(user_id, password, name, nickname, phone, postal_code, address);
+                session.setAttribute("user_id", user_id);
             }
 
         } catch (NumberFormatException e) {

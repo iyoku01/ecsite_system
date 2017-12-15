@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 import database.Category_tblVo;
 import database.Hard_tblVo;
-import database.ListTop;
 import database.Personal_mstVo;
 import database.ProductDetailDto;
 import database.ProductTopDto;
@@ -139,11 +138,11 @@ public class EcsiteDao implements AutoCloseable {
      * @return 商品リストを返す
      * @throws SQLException
      */
-    public ArrayList<ListTop> getProductListAll(ArrayList<Hard_tblVo> hardList)
+    public ArrayList<ProductTopDto> getProductListAll(int hard_id)
             throws SQLException {
         System.out.println("\n/// getProductListAll()");
 
-        ArrayList<ListTop> topList;
+        ArrayList<ProductTopDto> ptdList = new ArrayList<ProductTopDto>();
         String sql = "SELECT";
 
         sql += " product_mst.product_id,product_name,price,stocks,comment,hard_id,category_id,ave_eval,pic_file FROM"
@@ -153,21 +152,16 @@ public class EcsiteDao implements AutoCloseable {
 
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
 
-            topList = new ArrayList<ListTop>();
+            pstatement.setInt(1, hard_id);
+            System.out.println("--- sql = " + pstatement);
+            ResultSet rs = pstatement.executeQuery();
 
-            for (Hard_tblVo hard : hardList) {
-                ListTop top = new ListTop();
-                top.setHard_id(hard.getHard_id());
-                top.setHard_name(hard.getHard_name());
-                pstatement.setInt(1, hard.getHard_id());
-                System.out.println("--- sql = " + pstatement);
-                ResultSet rs = pstatement.executeQuery();
-                ArrayList<ProductTopDto> tpdList = setProductTopDto(rs);
-                top.setTpd(tpdList);
-                topList.add(top);
+            while (rs.next()) {
+                ProductTopDto ptd = setProductTopDto(rs);
+                ptdList.add(ptd);
             }
         }
-        return topList;
+        return ptdList;
     }
 
     /***
@@ -178,11 +172,11 @@ public class EcsiteDao implements AutoCloseable {
      * @return 商品リストを返す
      * @throws SQLException
      */
-    public ArrayList<ListTop> getProductListById(ArrayList<Hard_tblVo> hardList, String hard_id, String category_id)
+    public ArrayList<ProductTopDto> getProductListById(int hard_number, String hard_id, String category_id)
             throws SQLException {
         System.out.println("\n/// getProductListById()");
 
-        ArrayList<ListTop> topList;
+        ArrayList<ProductTopDto> ptdList = new ArrayList<ProductTopDto>();
         String sql = "SELECT";
 
         sql += " product_mst.product_id,product_name,price,stocks,comment,hard_id,category_id,ave_eval,pic_file FROM"
@@ -195,22 +189,17 @@ public class EcsiteDao implements AutoCloseable {
         sql += " ORDER BY product_mst.product_id DESC";
 
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
-            topList = new ArrayList<ListTop>();
-            for (Hard_tblVo hard : hardList) {
-                if (hard.getHard_id() == Integer.parseInt(hard_id)) {
-                    ListTop top = new ListTop();
-                    top.setHard_id(hard.getHard_id());
-                    top.setHard_name(hard.getHard_name());
-                    pstatement.setString(1, hard_id);
-                    System.out.println("--- sql = " + pstatement);
-                    ResultSet rs = pstatement.executeQuery();
-                    ArrayList<ProductTopDto> tpdList = setProductTopDto(rs);
-                    top.setTpd(tpdList);
-                    topList.add(top);
+            if (hard_number == Integer.parseInt(hard_id)) {
+                pstatement.setString(1, hard_id);
+                System.out.println("--- sql = " + pstatement);
+                ResultSet rs = pstatement.executeQuery();
+                while (rs.next()) {
+                    ProductTopDto ptd = setProductTopDto(rs);
+                    ptdList.add(ptd);
                 }
             }
         }
-        return topList;
+        return ptdList;
     }
 
     /***
@@ -220,34 +209,29 @@ public class EcsiteDao implements AutoCloseable {
      * @return 商品リストを返す
      * @throws SQLException
      */
-    public ArrayList<ListTop> getProductListByWord(ArrayList<Hard_tblVo> hardList, String convention_word)
+    public ArrayList<ProductTopDto> getProductListByWord(int hard_number, String convention_word)
             throws SQLException {
         System.out.println("\n/// getProductListByWord()");
 
-        ArrayList<ListTop> topList;
-        String sql = "SELECT";
+        ArrayList<ProductTopDto> ptdList = new ArrayList<ProductTopDto>();
 
-        sql += " * FROM product_mst JOIN conversion_tbl ON product_mst.product_id=conversion_tbl.product_id"
+        String sql = "SELECT  * FROM product_mst JOIN conversion_tbl ON product_mst.product_id=conversion_tbl.product_id"
                 + " JOIN product_pic_tbl ON product_pic_tbl.product_id=product_mst.product_id"
                 + " WHERE (hard_id,pic_category) IN (SELECT ?,0 FROM product_mst GROUP BY product_id)"
                 + " AND conversion_word LIKE '%" + convention_word + "%'"
                 + " ORDER BY product_mst.product_id DESC";
 
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
-            topList = new ArrayList<ListTop>();
-            for (Hard_tblVo hard : hardList) {
-                ListTop top = new ListTop();
-                top.setHard_id(hard.getHard_id());
-                top.setHard_name(hard.getHard_name());
-                pstatement.setInt(1, hard.getHard_id());
-                System.out.println("--- sql = " + pstatement);
-                ResultSet rs = pstatement.executeQuery();
-                ArrayList<ProductTopDto> tpdList = setProductTopDto(rs);
-                top.setTpd(tpdList);
-                topList.add(top);
+
+            pstatement.setInt(1, hard_number);
+            System.out.println("--- sql = " + pstatement);
+            ResultSet rs = pstatement.executeQuery();
+            while (rs.next()) {
+                ProductTopDto ptd = setProductTopDto(rs);
+                ptdList.add(ptd);
             }
         }
-        return topList;
+        return ptdList;
     }
 
     /***
@@ -256,23 +240,18 @@ public class EcsiteDao implements AutoCloseable {
      * @return ハード毎の商品リストを返す
      * @throws SQLException
      */
-    private ArrayList<ProductTopDto> setProductTopDto(ResultSet rs) throws SQLException {
-        ArrayList<ProductTopDto> tpdList = new ArrayList<ProductTopDto>();
-        while (rs.next()) {
-            ProductTopDto tpd = new ProductTopDto();
-            tpd.setProduct_id(rs.getInt("product_id"));
-            tpd.setProduct_name(rs.getString("product_name"));
-            tpd.setPrice(rs.getInt("price"));
-            tpd.setStocks(rs.getInt("stocks"));
-            tpd.setComment(rs.getString("comment"));
-            tpd.setHard_id(rs.getInt("hard_id"));
-            tpd.setCategory_id(rs.getInt("category_id"));
-            tpd.setAve_eval(rs.getInt("ave_eval"));
-            tpd.setPic_file(rs.getString("pic_file"));
-            tpdList.add(tpd);
-        }
-        return tpdList;
-
+    private ProductTopDto setProductTopDto(ResultSet rs) throws SQLException {
+        ProductTopDto tpd = new ProductTopDto();
+        tpd.setProduct_id(rs.getInt("product_id"));
+        tpd.setProduct_name(rs.getString("product_name"));
+        tpd.setPrice(rs.getInt("price"));
+        tpd.setStocks(rs.getInt("stocks"));
+        tpd.setComment(rs.getString("comment"));
+        tpd.setHard_id(rs.getInt("hard_id"));
+        tpd.setCategory_id(rs.getInt("category_id"));
+        tpd.setAve_eval(rs.getInt("ave_eval"));
+        tpd.setPic_file(rs.getString("pic_file"));
+        return tpd;
     }
 
     /***
@@ -286,10 +265,11 @@ public class EcsiteDao implements AutoCloseable {
         System.out.println("\n/// getProductDetail()");
 
         ProductDetailDto ent = new ProductDetailDto();
-        String sql = "SELECT * FROM product_mst" +
-                " JOIN hard_tbl ON product_mst.hard_id = hard_tbl.hard_id " +
-                " JOIN product_pic_tbl ON product_mst.product_id = product_pic_tbl.product_id " +
-                " WHERE product_pic_tbl.pic_category=1 AND product_mst.product_id=?";
+        String sql = "SELECT * FROM product_mst"
+                + " JOIN hard_tbl ON product_mst.hard_id = hard_tbl.hard_id "
+                + " JOIN product_pic_tbl ON product_mst.product_id = product_pic_tbl.product_id"
+                + " WHERE product_pic_tbl.pic_category=1 AND product_mst.product_id=?"
+                + " ORDER BY product_mst.product_id";
 
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
             pstatement.setString(1, product_id);
@@ -299,7 +279,7 @@ public class EcsiteDao implements AutoCloseable {
                 ent.setProduct_id(rs.getInt("product_id"));
                 ent.setProduct_name(rs.getString("product_name"));
                 ent.setPrice(rs.getInt("price"));
-                ent.setInfo(rs.getString("info"));
+                ent.setInfo(escapeHtml(rs.getString("info")));
                 ent.setStocks(rs.getInt("stocks"));
                 ent.setComment(escapeHtml(rs.getString("comment")));
                 ent.setHard_id(rs.getInt("hard_id"));
