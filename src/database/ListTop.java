@@ -7,7 +7,7 @@ public class ListTop {
     //トップ用のDtoTopProductをハード毎に保持する為のクラス
     private int hard_id;
     private String hard_name;
-    private ArrayList<ProductTopDto> tpd;
+    private ArrayList<ProductTopDto> ptd;
 
     public int getHard_id() {
         return hard_id;
@@ -26,11 +26,11 @@ public class ListTop {
     }
 
     public ArrayList<ProductTopDto> getTpd() {
-        return tpd;
+        return ptd;
     }
 
-    public void setTpd(ArrayList<ProductTopDto> tpd) {
-        this.tpd = tpd;
+    public void setPtd(ArrayList<ProductTopDto> ptd) {
+        this.ptd = ptd;
     }
 
 }

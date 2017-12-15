@@ -8,7 +8,6 @@ import org.junit.Test;
 
 import database.Category_tblVo;
 import database.Hard_tblVo;
-import database.ListTop;
 import database.Personal_mstVo;
 import database.ProductTopDto;
 import database.Product_mstVo;
@@ -78,13 +77,10 @@ public class EcsiteDaoTest {
     @Test
     public void testGetProductListAll() {
         try (EcsiteDao dao = new EcsiteDao()) {
-            ArrayList<ListTop> entList;
-            entList = dao.getProductListAll(dao.getHardList(null));
-            for (ListTop ent : entList) {
-                ArrayList<ProductTopDto> list = ent.getTpd();
-                for (ProductTopDto entity : list) {
-                    System.out.println(entity);
-                }
+            ArrayList<ProductTopDto> entList;
+            entList = dao.getProductListAll(1);
+            for (ProductTopDto entity : entList) {
+                System.out.println(entity);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -95,13 +91,10 @@ public class EcsiteDaoTest {
     @Test
     public void testGetProductListById() {
         try (EcsiteDao dao = new EcsiteDao()) {
-            ArrayList<ListTop> entList;
-            entList = dao.getProductListById(dao.getHardList(null), "2", null);
-            for (ListTop ent : entList) {
-                ArrayList<ProductTopDto> list = ent.getTpd();
-                for (ProductTopDto entity : list) {
-                    System.out.println(entity);
-                }
+            ArrayList<ProductTopDto> entList;
+            entList = dao.getProductListById(1, "1", null);
+            for (ProductTopDto entity : entList) {
+                System.out.println(entity);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -112,13 +105,10 @@ public class EcsiteDaoTest {
     @Test
     public void testGetProductListByWord() {
         try (EcsiteDao dao = new EcsiteDao()) {
-            ArrayList<ListTop> entList;
-            entList = dao.getProductListByWord(dao.getHardList(null), "ƒ‚");
-            for (ListTop ent : entList) {
-                ArrayList<ProductTopDto> list = ent.getTpd();
-                for (ProductTopDto entity : list) {
-                    System.out.println(entity);
-                }
+            ArrayList<ProductTopDto> entList;
+            entList = dao.getProductListByWord(2, "ƒ‚");
+            for (ProductTopDto entity : entList) {
+                System.out.println(entity);
             }
         } catch (Exception e) {
             e.printStackTrace();
