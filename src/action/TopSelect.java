@@ -36,18 +36,26 @@ public class TopSelect implements Action {
             recommendList = dao.getRecommendList();
             request.setAttribute("recommendList", recommendList);
             //商品一覧
-            ArrayList<ListTop> productList;
-            if (hard_id == null && category_id == null && search == null) {
-                productList = dao.getProductListAll(hardList);
-            } else if (search != null) {
-                productList = dao.getProductListByWord(hardList, search);
-            } else {
-                productList = dao.getProductListById(hardList, hard_id, category_id);
+            ArrayList<ListTop> hardProductList = new ArrayList<ListTop>();
+            for (Hard_tblVo hard : hardList) {
+                ListTop hardProduct = new ListTop();
+                hardProduct.setHard_id(hard.getHard_id());
+                hardProduct.setHard_name(hard.getHard_name());
+                if (hard_id == null && category_id == null && search == null) {
+                    hardProduct.setPtd(dao.getProductListAll(hard.getHard_id()));
+                } else if (search != null) {
+                    hardProduct.setPtd(dao.getProductListByWord(hard.getHard_id(), search));
+                } else {
+                    hardProduct.setPtd(dao.getProductListById(hard.getHard_id(), hard_id, category_id));
+                }
+                if (!(hardProduct.getTpd().isEmpty())) {
+                    hardProductList.add(hardProduct);
+                }
             }
-            if (!(productList.isEmpty())) {
-                request.setAttribute("productList", productList);
+            if (hardProductList.isEmpty()) {
+                request.setAttribute("message", "該当の商品がありません");
             } else {
-                request.setAttribute("topMessage", "該当の商品がありません");
+                request.setAttribute("productList", hardProductList);
             }
         } catch (NumberFormatException e) {
             request.setAttribute("message", "数値を入力して下さい");
