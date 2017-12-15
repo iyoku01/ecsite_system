@@ -22,7 +22,7 @@
     <input type=submit value=ログイン>
 </form>
 
-<a href=http://localhost:8080/ecsite_system/newMemberRegist.jsp>新規会員登録</a>
+<a href=http://localhost:8080/ecsite_system/memberAdd.jsp>新規会員登録</a>
 
 
 

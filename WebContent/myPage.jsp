@@ -17,7 +17,7 @@
 <body>
 
 
-<a href=http://localhost:8080/ecsite_system/memberInfoChange.jsp>‰ïˆõî•ñ‚ð•ÏX‚·‚é</a>
+<a href=http://localhost:8080/ecsite_system/memberUpdate.jsp>‰ïˆõî•ñ‚ð•ÏX‚·‚é</a>
 
 
 ŒÂlî•ñ‚ÌŽæ“¾
