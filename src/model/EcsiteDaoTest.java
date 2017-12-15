@@ -220,7 +220,7 @@ public class EcsiteDaoTest {
     @Test
     public void testInsertReview() {
         try (EcsiteDao dao = new EcsiteDao()) {
-            dao.insertReview(1, "takehara", "’|", 5, "‚Æ‚Ä‚à‚Æ‚Ä‚à–Ê”’‚©‚Á‚½‚Å‚·");
+            dao.insertReview("1", "takehara", "’|", "5", "‚Æ‚Ä‚à‚Æ‚Ä‚à–Ê”’‚©‚Á‚½‚Å‚·");
         } catch (Exception e) {
             e.printStackTrace();
             fail(e.getMessage());

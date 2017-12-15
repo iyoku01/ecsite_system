@@ -173,14 +173,14 @@ INSERT INTO ecsite_db.personal_mst ( user_id, password, name, nickname, phone, p
 
 
 /* product_mst */
-INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (1, 'CALL OF DUTY WW‡U', 7900, 'uCall of Duty: WWIIv‚ÍƒVƒŠ[ƒY‚ÌŒ´“_‚É‰ñ‹A\\‘æ“ñŸ¢ŠE‘åí‚ğ•‘‘ä‚ÉAˆ³“|“I‚ÈV¢‘ã‚ÌƒQ[ƒ€‘ÌŒ±‚ğ–¡‚í‚¦‚Ü‚·BD-ƒfƒC‚Éƒmƒ‹ƒ}ƒ“ƒfƒB[‚Éã—¤‚µAjãÅ‚à‘å‹K–Í‚Èí‘ˆ‚ªŒJ‚èL‚°‚ç‚ê‚½ƒˆ[ƒƒbƒpŠe’n‚Ìíê‚Å¶‚«”²‚«‚Ü‚·B]—ˆ‚Ì’n‚É‘«‚Ì‚Â‚¢‚½Call of Duty‚Ìí“¬A’‡ŠÔ‚Æ‚ÌãJA‰ß“‚Èí‘ˆ‚ğ‘ÌŠ´‚µ‚Ü‚µ‚å‚¤B', 999, 'ƒIƒXƒXƒ1', 2, 3, 1, 11);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (1, 'CALL OF DUTY WW‡U', 7900, 'uCall of Duty: WWIIv‚ÍƒVƒŠ[ƒY‚ÌŒ´“_‚É‰ñ‹A\\‘æ“ñŸ¢ŠE‘åí‚ğ•‘‘ä‚ÉAˆ³“|“I‚ÈV¢‘ã‚ÌƒQ[ƒ€‘ÌŒ±‚ğ–¡‚í‚¦‚Ü‚·BD-ƒfƒC‚Éƒmƒ‹ƒ}ƒ“ƒfƒB[‚Éã—¤‚µAjãÅ‚à‘å‹K–Í‚Èí‘ˆ‚ªŒJ‚èL‚°‚ç‚ê‚½ƒˆ[ƒƒbƒpŠe’n‚Ìíê‚Å¶‚«”²‚«‚Ü‚·B]—ˆ‚Ì’n‚É‘«‚Ì‚Â‚¢‚½Call of Duty‚Ìí“¬A’‡ŠÔ‚Æ‚ÌãJA‰ß“‚Èí‘ˆ‚ğ‘ÌŠ´‚µ‚Ü‚µ‚å‚¤B', 999, '‚¸‚Ç[[[[[‚ñI‚¿‚ã‚Ç[[[[[‚ñII‚Î‚Î‚Î‚Î[[[[[‚ñIII', 2, 3, 1, 11);
 INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (2, 'FINAL FANTASY 15', 8980, '‚Ç‚±‚Ü‚Å‚àL‚ª‚é¢ŠEA‚Ç‚±‚Ü‚Å‚às‚¯‚é¢ŠEF@L‘å‚È¢ŠE‚ğ©—R‚É“®‚«‰ñ‚Á‚Ä’TõAU—ª‚ª‚Å‚«‚éuƒI[ƒvƒ“ƒ[ƒ‹ƒhvŒ`®‚ğÌ—pBŠÔŒo‰ßA“VŒó‚Ì•Ï‰»‚É‚æ‚èA¢ŠE‚Ìó‹µ‚ÍƒŠƒAƒ‹ƒ^ƒCƒ€‚Å•Ï‰»‚· ‚éBÎ‚¢º‚ª‹¿‚­ŠX•À‚İA’¹‚½‚¿‚ª•‘‚¤‘Œ´AŸT‘“‚Æ‚µ‚½XA[‚­ˆÃ‚¢“´ŒA„Ÿ„ŸB–Ú“I’n‚Ö‚ÌˆÚ“®‚àA¢ŠE‚Ì’Tõ‚à‘S‚ÄƒvƒŒƒCƒ„[‚ÌˆÓu‚ÉˆÏ‚Ë‚ç‚ê‚Ü‚·B', 999, 'ˆ³“|“I‚ÈƒOƒ‰ƒtƒBƒbƒNB‰¹Šy‚Í‚Æ‚Ä‚à‘f°‚ç‚µ‚¢‚Å‚·B‚Å‚àA‚Å‚àEEEŠÌS‚ÈƒXƒg[ƒŠ[•”•ª‚ªÈ—ª‚³‚ê‚Ä‚¢‚é•”•ª‚ª‘½‚­ADLC‚Å‚æ‚¤‚â‚­˜b‚ªŒq‚ª‚Á‚½Š´‚¶EEE»•i”Å‚ÅƒXƒg[ƒŠ[‚ª•ª‚©‚é‚æ‚¤‚É‚µ‚Ä‚Ù‚µ‚©‚Á‚½‚Å‚·B', 2, 2, 2, 12);
-INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (3, 'DRAGON QUEST 11', 7800, 'uƒhƒ‰ƒSƒ“ƒNƒGƒXƒgvƒVƒŠ[ƒY11”Ô–Ú‚Æ‚È‚é–{•ÒÅVì‚ÍAƒVƒŠ[ƒY‚ÌŒ´“_‚É—§‚¿•Ô‚èu—EÒv‚Ì–`Œ¯‚ğ•`‚¢‚½•¨ŒêBPlayStation (R) 4Aƒjƒ“ƒeƒ“ƒh[3DS‚Ì2‚Â‚Ìƒvƒ‰ƒbƒgƒtƒH[ƒ€‚Å“WŠJ‚³‚ê‚éAg‰ù‚©‚µ‚³"‚ÆgV‚µ‚³"‚ğŒ“‚Ë”õ‚¦‚½AƒVƒŠ[ƒY‚ÌuV‚½‚È‚éŒ´“_v‚Æ‚È‚é11”Ô–Ú‚Ì–`Œ¯Awƒhƒ‰ƒSƒ“ƒNƒGƒXƒgXIx‚ªA¡‚±‚±‚Én‚Ü‚éB', 999, 'ƒIƒXƒXƒ3', 2, 4, 3, 13);
-INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (4, 'ƒXƒvƒ‰ƒgƒD[ƒ“2', 5980, 'ƒCƒJ‚µ‚½‚â‚Â‚ç‚ªƒCƒJ‚µ‚½i‰»IƒKƒ`‚Å“h‚è‚ ‚¤‚ª‚«‚½I2017”N7Œ21“úi‹àj”­”„ANintendo Switchƒ\ƒtƒgwƒXƒvƒ‰ƒgƒD[ƒ“2x', 999, 'ƒCƒJ‚µ‚Ä‚é(/EƒÖE)/', 1, 2, 4, 14);
-INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (5, 'Xenoblade2', 7980, 's‚±‚¤AŠy‰€‚ÖI', 999, 'ƒIƒXƒXƒ5', 1, 1, 5, 15);
-INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (6, 'ƒ}ƒŠƒIƒJ[ƒgƒfƒ‰ƒbƒNƒX8', 5980, 'wƒ}ƒŠƒIƒJ[ƒg8x‚ÍA”C“V“°‚æ‚è2014”N5Œ29“ú‚É”­”„‚³‚ê‚½Wii U—pƒQ[ƒ€ƒ\ƒtƒgB‰Æ’ë—pŒü‚¯‚Ìƒ}ƒŠƒIƒJ[ƒgƒVƒŠ[ƒY‚Æ‚µ‚Ä‚Í8ì–Ú‚É‚ ‚½‚éB ', 999, 'ƒIƒXƒXƒ6', 1, 6, 1, 16);
-INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (7, 'ƒX[ƒp[ƒ}ƒŠƒIƒIƒfƒbƒZƒC', 5980, 'ƒNƒbƒp‚Æƒs[ƒ`•P‚ÌƒEƒFƒfƒBƒ“ƒO‚ğ‘j~‚·‚é‚½‚ßAƒ}ƒŠƒI‚ª•sv‹c‚È–XqƒLƒƒƒbƒs[‚Æˆê‚É¢ŠE’†‚ğ–`Œ¯‚·‚é3DƒAƒNƒVƒ‡ƒ“ƒQ[ƒ€B', 999, 'ƒIƒXƒXƒ7', 1, 2, 2, 17);
-INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (8, 'ƒyƒ‹ƒ\ƒi5', 8800, '‘Oìwƒyƒ‹ƒ\ƒi‚Sx‚©‚ç–ñ8”NB¢ƒyƒ‹ƒ\ƒi£ƒVƒŠ[ƒY‚Ìƒiƒ“ƒoƒŠƒ“ƒOÅVì‚Å‚ ‚éPlayStaion4ƒ\ƒtƒgƒEƒFƒAwƒyƒ‹ƒ\ƒi‚Tx‚ªA‚Â‚¢‚É”­”„B', 999, 'ƒIƒXƒXƒ8', 2, 1, 3, 18);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (3, 'DRAGON QUEST 11', 7800, 'uƒhƒ‰ƒSƒ“ƒNƒGƒXƒgvƒVƒŠ[ƒY11”Ô–Ú‚Æ‚È‚é–{•ÒÅVì‚ÍAƒVƒŠ[ƒY‚ÌŒ´“_‚É—§‚¿•Ô‚èu—EÒv‚Ì–`Œ¯‚ğ•`‚¢‚½•¨ŒêBPlayStation (R) 4Aƒjƒ“ƒeƒ“ƒh[3DS‚Ì2‚Â‚Ìƒvƒ‰ƒbƒgƒtƒH[ƒ€‚Å“WŠJ‚³‚ê‚éAg‰ù‚©‚µ‚³"‚ÆgV‚µ‚³"‚ğŒ“‚Ë”õ‚¦‚½AƒVƒŠ[ƒY‚ÌuV‚½‚È‚éŒ´“_v‚Æ‚È‚é11”Ô–Ú‚Ì–`Œ¯Awƒhƒ‰ƒSƒ“ƒNƒGƒXƒgXIx‚ªA¡‚±‚±‚Én‚Ü‚éB', 999, 'ƒAƒo[[[[[[[[[[[[[ƒ“ƒXƒgƒ‰[[[[[[[[[[[[[[[[[[[[ƒbƒVƒ…(/EƒÖE)/IIII', 2, 4, 3, 13);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (4, 'ƒXƒvƒ‰ƒgƒD[ƒ“2', 5980, 'ƒCƒJ‚µ‚½‚â‚Â‚ç‚ªƒCƒJ‚µ‚½i‰»IƒKƒ`‚Å“h‚è‚ ‚¤‚ª‚«‚½I2017”N7Œ21“úi‹àj”­”„ANintendo Switchƒ\ƒtƒgwƒXƒvƒ‰ƒgƒD[ƒ“2x', 999, 'ƒCƒJ‚µ‚Ä‚é(/EƒÖE)/H', 1, 2, 4, 14);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (5, 'Xenoblade2', 7980, 's‚±‚¤AŠy‰€‚ÖI', 999, 'ƒ[ƒmƒMƒAƒX‚ÍŠy‚µ‚©‚Á‚½‚È‚ŸEEEl“÷ŠÊ‹lHê‚Íƒgƒ‰ƒEƒ}EEE', 1, 1, 5, 15);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (6, 'ƒ}ƒŠƒIƒJ[ƒgƒfƒ‰ƒbƒNƒX8', 5980, 'wƒ}ƒŠƒIƒJ[ƒg8x‚ÍA”C“V“°‚æ‚è2014”N5Œ29“ú‚É”­”„‚³‚ê‚½Wii U—pƒQ[ƒ€ƒ\ƒtƒgB‰Æ’ë—pŒü‚¯‚Ìƒ}ƒŠƒIƒJ[ƒgƒVƒŠ[ƒY‚Æ‚µ‚Ä‚Í8ì–Ú‚É‚ ‚½‚éB ', 999, '‚Í‚Á‚«‚èŒ¾‚¨‚¤B„‚Íƒ}ƒŠƒIƒJ[ƒg‚ª‚ß‚¿‚á‚­‚¿‚á‰ºè‚­‚»‚È‚Ì‚Å‚·EEE', 1, 6, 1, 16);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (7, 'ƒX[ƒp[ƒ}ƒŠƒIƒIƒfƒbƒZƒC', 5980, 'ƒNƒbƒp‚Æƒs[ƒ`•P‚ÌƒEƒFƒfƒBƒ“ƒO‚ğ‘j~‚·‚é‚½‚ßAƒ}ƒŠƒI‚ª•sv‹c‚È–XqƒLƒƒƒbƒs[‚Æˆê‚É¢ŠE’†‚ğ–`Œ¯‚·‚é3DƒAƒNƒVƒ‡ƒ“ƒQ[ƒ€B', 999, 'Š‚É”C“V“°‚ç‚µ‚³‚ªU‚è‚Î‚ß‚ç‚ê‚Ä‚¨‚è‚Æ‚Ä‚àŠy‚µ‚¢‚Å‚·™‚½‚¾’·ŠÔ‚â‚Á‚Ä‚¢‚é‚Æ–Ú‚ª”æ‚ê‚Ü‚·BBB', 1, 2, 2, 17);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (8, 'ƒyƒ‹ƒ\ƒi5', 8800, '‘Oìwƒyƒ‹ƒ\ƒi‚Sx‚©‚ç–ñ8”NB¢ƒyƒ‹ƒ\ƒi£ƒVƒŠ[ƒY‚Ìƒiƒ“ƒoƒŠƒ“ƒOÅVì‚Å‚ ‚éPlayStaion4ƒ\ƒtƒgƒEƒFƒAwƒyƒ‹ƒ\ƒi‚Tx‚ªA‚Â‚¢‚É”­”„B', 999, '“Æ“Á‚È¢ŠEŠÏ‚Æ‚©ƒfƒUƒCƒ“‚Æ‚©ƒnƒ}‚él‚É‚Íƒnƒ}‚é‚Å‚µ‚å‚¤‚Ë‚¥EEE( ^ƒÖ^ )', 2, 1, 3, 18);
 INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 
@@ -255,11 +255,14 @@ INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (8, 'ƒyƒ‹ƒ
 
 
 /*recommend_tbl*/
-INSERT INTO ecsite_db.recommend_tbl ( product_id, recommend_pic ) VALUES (1,'img\\reccomend\\COD_image.png');
-INSERT INTO ecsite_db.recommend_tbl ( product_id, recommend_pic ) VALUES (2,'img\\reccomend\\MHW.jpg');
-INSERT INTO ecsite_db.recommend_tbl ( product_id, recommend_pic ) VALUES (3,'img\\reccomend\\Arextusixya.jpg');
-INSERT INTO ecsite_db.recommend_tbl ( product_id, recommend_pic ) VALUES (4,'img\\reccomend\\Splatoopn2.jpg');
-INSERT INTO ecsite_db.recommend_tbl ( product_id, recommend_pic ) VALUES (5,'img\\reccomend\\Xenoblade2.jpg');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (1, 'img\\reccomend\\COD2_image.png');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (2, 'img\\reccomend\\FF15_image.jpg');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (3, 'img\\reccomend\\DQ11_image.png');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (4, 'img\\reccomend\\Splatoopn2_image.jpg');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (5, 'img\\reccomend\\Xenoblade2_image.jpg');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (6, 'img\\reccomend\\MarioCart8_image.png');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (7, 'img\\reccomend\\Mario_image.png');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (8, 'img\\reccomend\\Persona5_image.jpg');
 
 
 /*order_tbl*/

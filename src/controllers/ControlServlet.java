@@ -20,6 +20,7 @@ import action.OrderHistorySelect;
 import action.PersonalDataInsert;
 import action.PersonalDataSelect;
 import action.PersonalIdCheck;
+import action.ProductBuySelect;
 import action.ProductDatailSelect;
 import action.ReviewDataInsert;
 import action.ReviewDataSelect;
@@ -63,7 +64,7 @@ public class ControlServlet extends HttpServlet {
         controllerMap.put("/ReviewSelect.Control", new ReviewDataSelect());
         controllerMap.put("/ReviewWrite.Control", new ReviewDataInsert());
 
-        controllerMap.put("/PurchaseComp.Control", new CartAdd());
+        controllerMap.put("/productBuyConf.Control", new ProductBuySelect());
         controllerMap.put("/Purchase.Control", new CartAdd());
 
         controllerMap.put("/Top.Control", new TopSelect());
@@ -82,6 +83,7 @@ public class ControlServlet extends HttpServlet {
         } catch (NotFoundServletException e) {
             request.setAttribute("message", "指定したサーブレットが見つかりません = " + e.getMessage());
         } catch (Exception e) {
+            e.printStackTrace();
             request.setAttribute("message", "原因不明のエラーです");
         }
         request.getRequestDispatcher(dispatchUrl).forward(request, response);

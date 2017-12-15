@@ -570,18 +570,18 @@ public class EcsiteDao implements AutoCloseable {
         return reviewList;
     }
 
-    public void insertReview(int product_id, String user_id, String nickname, int evaluation, String review)
+    public void insertReview(String product_id, String user_id, String nickname, String evaluation, String review)
             throws SQLException {
         System.out.println("\n/// insertReview()");
 
-        String sql = "INSERT INTO ecsite_db.review_tbl (review_id, product_id, user_id, nickname, evaluation, review, date)"
-                + " VALUES (MAX(review)+1,?,?,?,?,?,now())";
+        String sql = "INSERT INTO ecsite_db.review_tbl (product_id, user_id, nickname, evaluation, review, date)"
+                + " VALUES (?,?,?,?,?,now())";
 
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
-            pstatement.setInt(1, product_id);
+            pstatement.setString(1, product_id);
             pstatement.setString(2, user_id);
             pstatement.setString(3, nickname);
-            pstatement.setInt(4, evaluation);
+            pstatement.setString(4, evaluation);
             pstatement.setString(5, review);
             System.out.println("--- sql = " + pstatement);
             pstatement.executeUpdate();
