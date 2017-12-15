@@ -18,7 +18,7 @@
 <header>
     <a href=Top.Control></a>
     </header>
-
+<div class="bodygray">
 
     <%
         String user_id = request.getParameter("user_id");
@@ -41,7 +41,7 @@
     <%
         String address = request.getParameter("address");
     %>
-
+<div class="memUpcon">
     <p>
         ユーザーID：<%=user_id%></p>
     <p>
@@ -56,7 +56,7 @@
         郵便番号：<%=postal_code%></p>
     <p>
         住所：<%=address%></p>
-
+<div class="formcenter">
     <form action="Regist.Control" method="post">
         <input type=hidden name=user_id value=<%=user_id%>>
         <input type=hidden name=password value=<%=password%>>
@@ -68,7 +68,9 @@
         <input type=submit
             value=登録>
     </form>
-
+</div>
+</div>
+<div class="memborder">
     <!-- 共通フッター -->
     <jsp:include page="footer.jsp" flush="true" />
 

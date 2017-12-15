@@ -1,6 +1,4 @@
 <%@ page contentType="text/html; charset=Windows-31J"%>
-<%@ page import="database.*"%>
-<%@ page import="java.util.*"%>
 
 <!-- El Start -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
