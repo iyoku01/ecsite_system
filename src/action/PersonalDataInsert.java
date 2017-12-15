@@ -40,6 +40,6 @@ public class PersonalDataInsert implements Action {
             System.out.println("šSQLEx CNFEx" + e);
         }
 
-        return "Top.Control";
+        return "MyPage.Control";
     }
 }

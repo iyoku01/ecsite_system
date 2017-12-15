@@ -96,6 +96,7 @@ CREATE TABLE review_tbl(
         review_id                     		INT(10)		 NOT NULL		 PRIMARY KEY AUTO_INCREMENT COMMENT 'レビューID',
         product_id                    		INT(10)		 NULL  COMMENT '商品ID',
         user_id                       		VARCHAR(10)		 NULL  COMMENT 'ユーザーID',
+        nickname                       		VARCHAR(20)		 NULL  COMMENT 'ニックネーム',
         evaluation                    		INT(1)		 NULL  COMMENT '評価',
         review                        		TEXT		 NULL  COMMENT 'レビュー',
         date                          		DATETIME		 NULL  COMMENT 'レビュー日時',

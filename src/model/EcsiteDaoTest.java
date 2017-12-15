@@ -8,10 +8,12 @@ import org.junit.Test;
 
 import database.Category_tblVo;
 import database.Hard_tblVo;
+import database.HistoryDto;
 import database.Personal_mstVo;
 import database.ProductTopDto;
 import database.Product_mstVo;
 import database.Recommend_tblVo;
+import database.Review_tblVo;
 
 public class EcsiteDaoTest {
 
@@ -169,6 +171,56 @@ public class EcsiteDaoTest {
     public void testInsertPersonalData() {
         try (EcsiteDao dao = new EcsiteDao()) {
             dao.insertPersonalData("hatano", "saki", "’|", "‚½‚¯", "08000000000", "1670000", "•Ÿ“‡");
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void testGetHistoryList() {
+        try (EcsiteDao dao = new EcsiteDao()) {
+            ArrayList<HistoryDto> entList;
+            entList = dao.getHistoryList("takehara");
+            for (HistoryDto ent : entList) {
+                System.out.println(ent);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void testCheckWriteReview() {
+        try (EcsiteDao dao = new EcsiteDao()) {
+            boolean writeReview;
+            writeReview = dao.checkWriteReview("takehara", "2");
+            System.out.println(writeReview);
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void testGetReviewList() {
+        try (EcsiteDao dao = new EcsiteDao()) {
+            ArrayList<Review_tblVo> entList;
+            entList = dao.getReviewList("3");
+            for (Review_tblVo ent : entList) {
+                System.out.println(ent);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void testInsertReview() {
+        try (EcsiteDao dao = new EcsiteDao()) {
+            dao.insertReview(1, "takehara", "’|", 5, "‚Æ‚Ä‚à‚Æ‚Ä‚à–Ê”’‚©‚Á‚½‚Å‚·");
         } catch (Exception e) {
             e.printStackTrace();
             fail(e.getMessage());

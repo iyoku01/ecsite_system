@@ -14,12 +14,15 @@ import action.Action;
 import action.CartAdd;
 import action.CartDelete;
 import action.CartSelect;
-import action.PersonalIdCheck;
-import action.PersonalDataInsert;
 import action.Login;
 import action.Logout;
+import action.OrderHistorySelect;
+import action.PersonalDataInsert;
 import action.PersonalDataSelect;
+import action.PersonalIdCheck;
 import action.ProductDatailSelect;
+import action.ReviewDataInsert;
+import action.ReviewDataSelect;
 import action.TopSelect;
 import exception.NotFoundServletException;
 
@@ -56,6 +59,9 @@ public class ControlServlet extends HttpServlet {
         controllerMap.put("/ProductDetail.Control", new ProductDatailSelect());
         controllerMap.put("/CheckId.Control", new PersonalIdCheck());
         controllerMap.put("/Regist.Control", new PersonalDataInsert());
+        controllerMap.put("/OrderHistory.Control", new OrderHistorySelect());
+        controllerMap.put("/ReviewSelect.Control", new ReviewDataSelect());
+        controllerMap.put("/ReviewWrite.Control", new ReviewDataInsert());
 
         controllerMap.put("/PurchaseComp.Control", new CartAdd());
         controllerMap.put("/Purchase.Control", new CartAdd());
