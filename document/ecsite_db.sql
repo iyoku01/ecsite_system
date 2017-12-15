@@ -171,11 +171,15 @@ INSERT INTO ecsite_db.personal_mst ( user_id, password, name, nickname, phone, p
 
 
 /* product_mst */
-INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, info, stocks, comment, hard_id, category_id, ave_eval, review_count ) VALUES (1,'CALL OF DUTY WWⅡ',7900,'商品説明<1>',999,'オスス&<>''\r\nメ1',2,3,1,11);
-INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, info, stocks, comment, hard_id, category_id, ave_eval, review_count ) VALUES (2,'MONSTER HUNTER WORLD',8980,'商品説明<2>',999,'オススメ2',2,2,2,12);
-INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, info, stocks, comment, hard_id, category_id, ave_eval, review_count ) VALUES (3,'A列車で行こうEXP.',7800,'商品説明<3>',999,'オススメ3',2,4,3,13);
-INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, info, stocks, comment, hard_id, category_id, ave_eval, review_count ) VALUES (4,'Splatoon2',5980,'商品説明<4>',999,'オススメ4',1,2,4,14);
-INSERT INTO ecsite_db.product_mst ( product_id, product_name, price, info, stocks, comment, hard_id, category_id, ave_eval, review_count ) VALUES (5,'Xenoblade2',7980,'商品説明<5>',999,'オススメ5',1,1,5,15);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (1, 'CALL OF DUTY WWⅡ', 7900, '商品説明<1>', 999, 'オススメ1', 2, 3, 1, 11);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (2, 'FINAL FANTASY 15', 8980, '商品説明<2>', 999, 'オススメ2', 2, 2, 2, 12);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (3, 'DRAGON QUEST 11', 7800, '商品説明<3>', 999, 'オススメ3', 2, 4, 3, 13);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (4, 'スプラトゥーン2', 5980, '商品説明<4>', 999, 'オススメ4', 1, 2, 4, 14);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (5, 'Xenoblade2', 7980, '商品説明<5>', 999, 'オススメ5', 1, 1, 5, 15);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (6, 'マリオカートデラックス8', 5980, '商品説明<6>', 999, 'オススメ6', 1, 6, 1, 16);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (7, 'スーパーマリオオデッセイ', 5980, '商品説明<7>', 999, 'オススメ7', 1, 2, 2, 17);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (8, 'ペルソナ5', 8800, '商品説明<8>', 999, 'オススメ8', 2, 1, 3, 18);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 
 /*product_pic_tbl*/
