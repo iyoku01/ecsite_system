@@ -26,7 +26,7 @@
         </form>
         <div id="menu">
             <img src="img\Header\cart.png"> <a
-                href=Cart.Control id="cartSuu">${cartMap.size()}</a>/
+                href=Cart.Control id="cartSuu">${cart.sumBuyCount}</a>/
             <c:if test="${empty user_id }">
                 <a href=login.jsp>V‹K“o˜^/ƒƒOƒCƒ“</a>
             </c:if>
