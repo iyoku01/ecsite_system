@@ -9,7 +9,7 @@ public class Constants {
     }
 
     //sessionïœêîñº
-    public static final String SESSION_CART_MAP = "cartMap";
+    public static final String SESSION_CART = "cart";
     public static final String SESSION_USER_ID = "user_id";
 
 }
