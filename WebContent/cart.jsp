@@ -13,9 +13,11 @@
 <title>カート</title>
 </head>
 <body>
-
     <!-- 共通ヘッダー -->
     <jsp:include page="header.jsp" flush="true" />
+
+    <!-- 購入数のドロップダウンの最大値 -->
+    <c:set var="BUY_COUNT_MAX" value="9" />
 
     <div class="cart">
         <p>${message}</p>
