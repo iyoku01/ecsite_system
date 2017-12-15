@@ -153,12 +153,13 @@ INSERT INTO ecsite_db.hard_tbl ( hard_id, hard_name ) VALUES (1,'Nintendo Switch
 INSERT INTO ecsite_db.hard_tbl ( hard_id, hard_name ) VALUES (2,'PlayStation4');
 
 /* category_tbl */
-INSERT INTO ecsite_db.category_tbl ( category_id, category_name ) VALUES (1,'RPG');
-INSERT INTO ecsite_db.category_tbl ( category_id, category_name ) VALUES (2,'アクション');
-INSERT INTO ecsite_db.category_tbl ( category_id, category_name ) VALUES (3,'シューティング');
-INSERT INTO ecsite_db.category_tbl ( category_id, category_name ) VALUES (4,'シミュレーション・ストラテジー');
-INSERT INTO ecsite_db.category_tbl ( category_id, category_name ) VALUES (5,'アドベンチャー');
-INSERT INTO ecsite_db.category_tbl ( category_id, category_name ) VALUES (6,'その他');
+INSERT INTO `category_tbl` (`category_id`, `category_name`) VALUES (1, 'RPG');
+INSERT INTO `category_tbl` (`category_id`, `category_name`) VALUES (2, 'アクション');
+INSERT INTO `category_tbl` (`category_id`, `category_name`) VALUES (3, 'シューティング');
+INSERT INTO `category_tbl` (`category_id`, `category_name`) VALUES (4, 'シミュレーション・ストラテジー');
+INSERT INTO `category_tbl` (`category_id`, `category_name`) VALUES (5, 'アドベンチャー');
+INSERT INTO `category_tbl` (`category_id`, `category_name`) VALUES (6, 'レース');
+INSERT INTO `category_tbl` (`category_id`, `category_name`) VALUES (8, 'その他');
 
 
 /* personal_mst */
@@ -171,14 +172,14 @@ INSERT INTO ecsite_db.personal_mst ( user_id, password, name, nickname, phone, p
 
 
 /* product_mst */
-INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (1, 'CALL OF DUTY WWⅡ', 7900, '商品説明<1>', 999, 'オススメ1', 2, 3, 1, 11);
-INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (2, 'FINAL FANTASY 15', 8980, '商品説明<2>', 999, 'オススメ2', 2, 2, 2, 12);
-INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (3, 'DRAGON QUEST 11', 7800, '商品説明<3>', 999, 'オススメ3', 2, 4, 3, 13);
-INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (4, 'スプラトゥーン2', 5980, '商品説明<4>', 999, 'オススメ4', 1, 2, 4, 14);
-INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (5, 'Xenoblade2', 7980, '商品説明<5>', 999, 'オススメ5', 1, 1, 5, 15);
-INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (6, 'マリオカートデラックス8', 5980, '商品説明<6>', 999, 'オススメ6', 1, 6, 1, 16);
-INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (7, 'スーパーマリオオデッセイ', 5980, '商品説明<7>', 999, 'オススメ7', 1, 2, 2, 17);
-INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (8, 'ペルソナ5', 8800, '商品説明<8>', 999, 'オススメ8', 2, 1, 3, 18);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (1, 'CALL OF DUTY WWⅡ', 7900, '「Call of Duty: WWII」はシリーズの原点に回帰――第二次世界大戦を舞台に、圧倒的な新世代のゲーム体験を味わえます。D-デイにノルマンディーに上陸し、史上最も大規模な戦争が繰り広げられたヨーロッパ各地の戦場で生き抜きます。従来の地に足のついたCall of Dutyの戦闘、仲間との絆、過酷な戦争を体感しましょう。', 999, 'オススメ1', 2, 3, 1, 11);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (2, 'FINAL FANTASY 15', 8980, 'どこまでも広がる世界、どこまでも行ける世界：　広大な世界を自由に動き回って探索、攻略ができる「オープンワールド」形式を採用。時間経過、天候の変化により、世界の状況はリアルタイムで変化す る。笑い声が響く街並み、鳥たちが舞う草原、鬱蒼とした森、深く暗い洞窟──。目的地への移動も、世界の探索も全てプレイヤーの意志に委ねられます。', 999, '圧倒的なグラフィック。音楽はとても素晴らしいです。でも、でも・・・肝心なストーリー部分が省略されている部分が多く、DLCでようやく話が繋がった感じ・・・製品版でストーリーが分かるようにしてほしかったです。', 2, 2, 2, 12);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (3, 'DRAGON QUEST 11', 7800, '「ドラゴンクエスト」シリーズ11番目となる本編最新作は、シリーズの原点に立ち返り「勇者」の冒険を描いた物語。PlayStation (R) 4、ニンテンドー3DSの2つのプラットフォームで展開される、“懐かしさ"と“新しさ"を兼ね備えた、シリーズの「新たなる原点」となる11番目の冒険、『ドラゴンクエストXI』が、今ここに始まる。', 999, 'オススメ3', 2, 4, 3, 13);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (4, 'スプラトゥーン2', 5980, 'イカしたやつらがイカした進化！ガチで塗りあう時がきた！2017年7月21日（金）発売、Nintendo Switchソフト『スプラトゥーン2』', 999, 'イカしてる(/・ω・)/', 1, 2, 4, 14);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (5, 'Xenoblade2', 7980, '行こう、楽園へ！', 999, 'オススメ5', 1, 1, 5, 15);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (6, 'マリオカートデラックス8', 5980, '『マリオカート8』は、任天堂より2014年5月29日に発売されたWii U用ゲームソフト。家庭用向けのマリオカートシリーズとしては8作目にあたる。 ', 999, 'オススメ6', 1, 6, 1, 16);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (7, 'スーパーマリオオデッセイ', 5980, 'クッパとピーチ姫のウェディングを阻止するため、マリオが不思議な帽子キャッピーと一緒に世界中を冒険する3Dアクションゲーム。', 999, 'オススメ7', 1, 2, 2, 17);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (8, 'ペルソナ5', 8800, '前作『ペルソナ４』から約8年。｢ペルソナ｣シリーズのナンバリング最新作であるPlayStaion4ソフトウェア『ペルソナ５』が、ついに発売。', 999, 'オススメ8', 2, 1, 3, 18);
 INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 
@@ -242,11 +243,14 @@ INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_
 
 
 /*conversion_tbl*/
-INSERT INTO ecsite_db.conversion_tbl ( product_id, conversion_word ) VALUES (1,'COD CODWW2 コールオブデューティー CALLOFDUTYWWⅡ');
-INSERT INTO ecsite_db.conversion_tbl ( product_id, conversion_word ) VALUES (2,'MHW モンスターハンターワールド モンハンワールド MONSTERHUNTERWORLD');
-INSERT INTO ecsite_db.conversion_tbl ( product_id, conversion_word ) VALUES (3,'A列車で行こうExp. A列車');
-INSERT INTO ecsite_db.conversion_tbl ( product_id, conversion_word ) VALUES (4,'Splatoon2 スプラトゥーン2 イカ');
-INSERT INTO ecsite_db.conversion_tbl ( product_id, conversion_word ) VALUES (5,'ゼノブレイド２ Xenoblade2');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (1, 'COD CODWW2 コールオブデューティー CALLOFDUTYWWⅡ');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (2, 'FF15  ファイナルファンタジー15　FINAL FANTASY 15');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (3, 'DQ11　ドラゴンクエスト11　DRAGON QUEST 11');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (4, 'Splatoon2 スプラトゥーン2');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (5, 'ゼノブレイド２ Xenoblade2');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (6, 'マリオカートデラックス8  Mario Cart Deluxe8');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (7, 'スーパーマリオオデッセイ　Super Mario Odyssey');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (8, 'ペルソナ5　Persona5');
 
 
 /*recommend_tbl*/
