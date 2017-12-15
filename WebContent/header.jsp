@@ -26,9 +26,9 @@
         </form>
         <div id="menu">
             <img src="img\Header\cart.png"> <a
-                href=http://localhost:8080/ecsite_system/login.jsp id="cartSuu">${cartMap.size()}</a>/
+                href=Cart.Control id="cartSuu">${cartMap.size()}</a>/
             <c:if test="${empty user_id }">
-                <a href=http://localhost:8080/ecsite_system/login.jsp>新規登録/ログイン</a>
+                <a href=login.jsp>新規登録/ログイン</a>
             </c:if>
             <c:if test="${!empty user_id }">
                 <a href=Logout.Control>ログアウト</a>
