@@ -17,6 +17,7 @@
 <body>
 
  <header>
+ <a href=Top.Control></a>
  </header>
 <div class="bodygray">
 
@@ -58,6 +59,7 @@
      <p>上記の情報でお間違いはございませんでしょうか</p>
 
    <div class="formcenter">
+   
     <form action="memberUpdate.jsp" method="post">
             <input type=hidden name=password value=<%=password%>>
             <input type=hidden name=name value=<%=name%>>
@@ -89,7 +91,7 @@
 <div class="memborder">
     <!-- 共通フッター -->
     <jsp:include page="footer.jsp" flush="true" />
-<div>
+</div>
 </div>
 </body>
 </html>

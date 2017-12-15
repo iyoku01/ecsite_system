@@ -10,6 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <META charset="Windows-31J">
 <title>新規登録確認</title>
 </head>
@@ -56,7 +57,25 @@
         郵便番号：<%=postal_code%></p>
     <p>
         住所：<%=address%></p>
+
+        <p>上記の情報でお間違いはございませんでしょうか</p>
+
 <div class="formcenter">
+
+     <form action="memberUpdate.jsp" method="post">
+            <input type=hidden name=password value=<%=password%>>
+            <input type=hidden name=name value=<%=name%>>
+            <input type=hidden name=nickname value=<%=nickname%>>
+            <input type=hidden name=phone value=<%=phone%>>
+            <input type=hidden name=postal_code value=<%=postal_code%>>
+            <input type=hidden name=address value=<%=address%>>
+
+            <input class="membotton2"type=submit value=修正>
+
+</form>
+
+
+
     <form action="Regist.Control" method="post">
         <input type=hidden name=user_id value=<%=user_id%>>
         <input type=hidden name=password value=<%=password%>>
@@ -65,14 +84,20 @@
         <input type=hidden name=phone value=<%=phone%>>
         <input type=hidden name=postal_code value=<%=postal_code%>>
         <input type=hidden name=address value=<%=address%>>
-        <input type=submit
-            value=登録>
+        <input class="membotton" type=submit value=登録>
+
+
+
+
+
+
     </form>
 </div>
 </div>
 <div class="memborder">
     <!-- 共通フッター -->
     <jsp:include page="footer.jsp" flush="true" />
-
+</div>
+</div>
 </body>
 </html>
