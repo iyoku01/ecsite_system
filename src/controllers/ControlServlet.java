@@ -14,11 +14,12 @@ import action.Action;
 import action.CartAdd;
 import action.CartDelete;
 import action.CartSelect;
-import action.PersonalIdCheck;
-import action.PersonalDataInsert;
 import action.Login;
 import action.Logout;
+import action.PersonalDataInsert;
 import action.PersonalDataSelect;
+import action.PersonalIdCheck;
+import action.ProductBuySelect;
 import action.ProductDatailSelect;
 import action.TopSelect;
 import exception.NotFoundServletException;
@@ -57,7 +58,7 @@ public class ControlServlet extends HttpServlet {
         controllerMap.put("/CheckId.Control", new PersonalIdCheck());
         controllerMap.put("/Regist.Control", new PersonalDataInsert());
 
-        controllerMap.put("/PurchaseComp.Control", new CartAdd());
+        controllerMap.put("/productBuyConf.Control", new ProductBuySelect());
         controllerMap.put("/Purchase.Control", new CartAdd());
 
         controllerMap.put("/Top.Control", new TopSelect());
@@ -76,6 +77,7 @@ public class ControlServlet extends HttpServlet {
         } catch (NotFoundServletException e) {
             request.setAttribute("message", "指定したサーブレットが見つかりません = " + e.getMessage());
         } catch (Exception e) {
+            e.printStackTrace();
             request.setAttribute("message", "原因不明のエラーです");
         }
         request.getRequestDispatcher(dispatchUrl).forward(request, response);
