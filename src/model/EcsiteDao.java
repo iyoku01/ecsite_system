@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Map;
 
 import database.Category_tblVo;
 import database.Hard_tblVo;
@@ -368,7 +369,7 @@ public class EcsiteDao implements AutoCloseable {
             throws SQLException {
         System.out.println("\n/// insertPersonalData()");
 
-        String sql = "INSERT INTO ecsite_db.personal_mst ( user_id, password, name, nickname, phone, postal_code, address )"
+        String sql = "INSERT INTO personal_mst ( user_id, password, name, nickname, phone, postal_code, address )"
                 + " VALUES (?,?,?,?,?,?,?)";
 
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
@@ -400,7 +401,7 @@ public class EcsiteDao implements AutoCloseable {
             throws SQLException {
         System.out.println("\n/// insertPersonalData()");
 
-        String sql = "UPDATE ecsite_db.personal_mst SET"
+        String sql = "UPDATE personal_mst SET"
                 + " password=?, name=?, nickname=?, phone=?, postal_code=?,address=? WHERE user_id=?";
 
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
@@ -570,11 +571,20 @@ public class EcsiteDao implements AutoCloseable {
         return reviewList;
     }
 
+    /***
+     * レビューを追加する
+     * @param product_id
+     * @param user_id
+     * @param nickname
+     * @param evaluation
+     * @param review
+     * @throws SQLException
+     */
     public void insertReview(String product_id, String user_id, String nickname, String evaluation, String review)
             throws SQLException {
         System.out.println("\n/// insertReview()");
 
-        String sql = "INSERT INTO ecsite_db.review_tbl (product_id, user_id, nickname, evaluation, review, date)"
+        String sql = "INSERT INTO review_tbl (product_id, user_id, nickname, evaluation, review, date)"
                 + " VALUES (?,?,?,?,?,now())";
 
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
@@ -588,4 +598,54 @@ public class EcsiteDao implements AutoCloseable {
         }
     }
 
+    /***
+     * 注文TBL、注文商品TBLに追加する
+     * @param user_id ユーザID
+     * @param cart カート情報
+     * @return 注文ID
+     * @throws SQLException
+     */
+    public int insertOrder(String user_id, Cart cart)
+            throws SQLException {
+        System.out.println("\n/// insertOrder()");
+
+        String sql;
+        int order_Id = 0;
+
+        connection.setAutoCommit(false);
+
+        sql = "INSERT INTO order_tbl (user_id, date, shipping)"
+                + " VALUES (?, now(), 0)";
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            pstatement.setString(1, user_id);
+            System.out.println("--- sql = " + pstatement);
+            pstatement.executeUpdate();
+        }
+
+        sql = "SELECT DISTINCT LAST_INSERT_ID() order_id FROM order_tbl";
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            System.out.println("--- sql = " + pstatement);
+            ResultSet rs = pstatement.executeQuery();
+            if (rs.next()) {
+                order_Id = rs.getInt("order_id");
+            }
+        }
+
+        sql = "INSERT INTO order_product_tbl (order_id, product_id, number)"
+                + " VALUES (?, ?, ?)";
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            for (Map.Entry<Integer, Integer> mapEntry : cart.getCartMap().entrySet()) {
+                pstatement.setInt(1, order_Id);
+                pstatement.setInt(2, mapEntry.getKey());
+                pstatement.setInt(3, mapEntry.getValue());
+                System.out.println("--- sql = " + pstatement);
+                pstatement.executeUpdate();
+            }
+        }
+
+        connection.commit();
+
+        return order_Id;
+
+    }
 }
