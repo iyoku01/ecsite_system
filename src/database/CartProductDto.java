@@ -1,6 +1,6 @@
 package database;
 
-public class CartDto {
+public class CartProductDto {
     private int product_id;
     private String product_name;
     private int price;
@@ -49,7 +49,7 @@ public class CartDto {
 
     @Override
     public String toString() {
-        return "CartDto [product_id=" + product_id + ", product_name=" + product_name + ", price=" + price
+        return "CartProductDto [product_id=" + product_id + ", product_name=" + product_name + ", price=" + price
                 + ", mainPic_file=" + mainPic_file + ", buy_count=" + buy_count + "]";
     }
 

@@ -1,6 +1,4 @@
 <%@ page contentType="text/html; charset=Windows-31J"%>
-<%@ page import="database.*"%>
-<%@ page import="java.util.*"%>
 
 <!-- El Start -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -15,13 +13,16 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
 <!-- スライドショー Start -->
+<!-- jQuery library (served from Google) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
 <script src="js/jquery.bxslider.min.js"></script>
 <link href="css/jquery.bxslider.css" rel="stylesheet" />
 <script type="text/javascript">
     $(document).ready(function() {
         $('.bxslider').bxSlider({
             auto : true,
+            randomStart: true,
         });
     });
 </script>

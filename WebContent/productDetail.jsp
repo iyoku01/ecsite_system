@@ -1,16 +1,25 @@
 <%@ page contentType="text/html; charset=Windows-31J"%>
-<%@ page import="database.*"%>
-<%@ page import="java.util.*"%>
 
 <!-- El Start -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!-- El End -->
 
 <!DOCTYPE html>
 <html>
 <head>
 <META charset="Windows-31J">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript">
+$(function(){
+ $('.subGazou img').click(function(){
+  var $thisImg = $(this).attr('src');
+  $('.mainGazou img').attr({src:$thisImg});
+ });
+});
+</script>
 
 <title>商品詳細</title>
 </head>
@@ -38,50 +47,82 @@
  -->
 
     <!-- 購入数のドロップダウンの最大値 -->
-    <c:set var="BUY_COUNT_MAX" value="9" />
+    <c:set var="BUY_COUNT_MAX" value="10" />
 
     <!-- 共通ヘッダー -->
     <jsp:include page="header.jsp" flush="true" />
 
     <!-- メイン画像 -->
-    ${product.mainPic_file}
-    <img src="${product.mainPic_file}" width="400" height="300">
+    <div class="mainGazou">
+        <!--画像   ${product.mainPic_file} -->
+        <img src="${product.mainPic_file}" width="400" height="300">
+    </div>
     <!-- サブ画像 -->
+<div class="subGazou">
+<img src="${product.mainPic_file}" width="400" height="300">
     <c:forEach var="i" items="${productPicSub}">
-        <p>${i}</p>
-        <img src="${i}" width="200" height="130">
+
+            <!--  <p>${i}</p> -->
+            <img src="${i}" width="200" height="130">
+
+
     </c:forEach>
+       </div>
+
 
     <!-- 商品タイトル -->
     <div class="productTitle">${product.product_name}</div>
-    <p>${product.hard_name}</p>
+    <div class="producthard">
+        <p>${product.hard_name}</p>
+    </div>
+    <!-- 評価 -->
+    <div class="ave_eval">
+        <c:forEach begin="1" end="${product.ave_eval}">
+        <img src="img\Hosi.png" width="50px">
+    </c:forEach>
+    </div>
+
     <!-- レビュー画面リンク -->
-    <a href="review.jsp"><%="？"%>のカスタマーレビュー</a>
+    <div class="review">
+        <!--  リンク先修正 -->
+        <a href="ReviewSelect.Control">${product.review_count}件のカスタマーレビュー</a>
+    </div>
 
     <!-- 金額表示 -->
-    ${product.price} 在庫あり
+    <div class="productPrice">
+        \
+        <fmt:formatNumber value="${product.price}" pattern="###,###" />
+    </div>
+    <div class="zaiko">在庫あり</div>
 
     <form action="CartAdd.Control" method="get">
         <!-- 商品ID（隠し項目） -->
         <input type="hidden" name="product_id" value="${product.product_id}">
 
         <!-- 購入数選択 -->
-        <select name="buy_count">
-            <c:forEach begin="1" end="${BUY_COUNT_MAX}" varStatus="status">
-                <option value="${status.index}">${status.index}</option>
-            </c:forEach>
-        </select> <input type="submit" value="カートに入れる">
+        <div class="kosuuSentaku">
+            <select name="buy_count">
+
+                <c:forEach begin="1" end="${BUY_COUNT_MAX}" varStatus="status">
+                    <option value="${status.index}">${status.index}</option>
+                </c:forEach>
+
+            </select>
+        </div>
+        <div class="cratkey">
+            <input type="submit" value="カートに入れる">
+        </div>
     </form>
 
     <!-- 商品説明 -->
-    <div class="productDatail">
-        ${product.info}
-    </div>
+    <div class="productDatail">${product.info}</div>
 
     <!-- 店長コメント -->
-    <div class="pReview">${product.comment}</div>
-    <p>${message}</p>
+    <div class="pReview">
+        店長コメント ${product.comment}
+        <p>${message}</p>
+    </div>
 
-    <!-- 共通フッター -->
-    <jsp:include page="footer.jsp" flush="true" />
 </body>
+</html>
+

@@ -11,10 +11,12 @@ import java.util.ArrayList;
 
 import database.Category_tblVo;
 import database.Hard_tblVo;
+import database.HistoryDto;
 import database.Personal_mstVo;
 import database.ProductDetailDto;
 import database.ProductTopDto;
 import database.Recommend_tblVo;
+import database.Review_tblVo;
 
 /***
  * Dao
@@ -463,4 +465,127 @@ public class EcsiteDao implements AutoCloseable {
         }
         return personal;
     }
+
+    /***
+     * 購入履歴の取得
+     * @param user_id
+     * @return 購入した商品リスト
+     * @throws SQLException
+     */
+    public ArrayList<HistoryDto> getHistoryList(String user_id) throws SQLException {
+        System.out.println("\n/// getHistoryList()");
+
+        ArrayList<HistoryDto> historyList;
+
+        String sql =
+                "SELECT date,order_tbl.order_id,product_mst.product_id,product_name,price,number,pic_file,shipping FROM personal_mst"
+                        + " JOIN order_tbl ON personal_mst.user_id=order_tbl.user_id"
+                        + " JOIN order_product_tbl ON order_tbl.order_id=order_product_tbl.order_id"
+                        + " JOIN product_mst ON order_product_tbl.product_id=product_mst.product_id"
+                        + " JOIN product_pic_tbl ON product_mst.product_id= product_pic_tbl.product_id"
+                        + " WHERE (order_tbl.user_id, pic_category) IN (SELECT ?,1 FROM order_tbl"
+                        + " JOIN order_product_tbl ON order_tbl.order_id=order_product_tbl.order_id"
+                        + " JOIN product_pic_tbl ON order_product_tbl.product_id=product_pic_tbl.product_id"
+                        + " GROUP BY order_product_tbl.product_id) ORDER BY date DESC";
+
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            pstatement.setString(1, user_id);
+            System.out.println("--- sql = " + pstatement);
+            ResultSet rs = pstatement.executeQuery();
+            historyList = new ArrayList<HistoryDto>();
+            if (rs.next()) {
+                HistoryDto ent = new HistoryDto();
+                ent.setDate(rs.getString("date"));
+                ent.setOrder_id(rs.getInt("order_id"));
+                ent.setProduct_id(rs.getInt("product_id"));
+                ent.setProduct_name(rs.getString("product_name"));
+                ent.setPrice(rs.getInt("price"));
+                ent.setNumber(rs.getInt("number"));
+                ent.setShipping(rs.getBoolean("shipping"));
+                historyList.add(ent);
+            }
+        }
+        return historyList;
+    }
+
+    /***
+     * レビュー記入用ユーザーが商品を購入しているかチェック
+     * @param user_id
+     * @param product_id
+     * @return 購入したことのある商品であればtrue そうでなければfalse
+     * @throws SQLException
+     */
+    public boolean checkWriteReview(String user_id, String product_id) throws SQLException {
+        System.out.println("\n/// checkWriteReview()");
+
+        boolean writeReview = false;
+        String sql =
+                "SELECT user_id FROM order_tbl"
+                        + " JOIN order_product_tbl ON order_tbl.order_id=order_product_tbl.order_id"
+                        + " WHERE user_id=? AND product_id=?";
+
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            pstatement.setString(1, user_id);
+            pstatement.setString(2, product_id);
+            System.out.println("--- sql = " + pstatement);
+            ResultSet rs = pstatement.executeQuery();
+
+            if (rs.next()) {
+                writeReview = true;
+            }
+        }
+        return writeReview;
+    }
+
+    /***
+     * 商品IDに対するレビュー一覧の取得
+     * @param product_id
+     * @return レビューのリスト
+     * @throws SQLException
+     */
+    public ArrayList<Review_tblVo> getReviewList(String product_id) throws
+            SQLException {
+        System.out.println("\n/// getReviewList()");
+
+        ArrayList<Review_tblVo> reviewList = null;
+        String sql = "SELECT review_id,product_id,user_id,evaluation,review,date FROM review_tbl"
+                + " WHERE product_id=? ORDER BY review_id DESC";
+
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            pstatement.setString(1, product_id);
+            System.out.println("--- sql = " + pstatement);
+            ResultSet rs = pstatement.executeQuery();
+            reviewList = new ArrayList<Review_tblVo>();
+            if (rs.next()) {
+                Review_tblVo ent = new Review_tblVo();
+                ent.setReview_id(rs.getInt("review_id"));
+                ent.setProduct_id(rs.getInt("product_id"));
+                ent.setUser_id(rs.getString("user_id"));
+                ent.setEvaluation(rs.getInt("evaluation"));
+                ent.setReview(rs.getString("review"));
+                ent.setDate(rs.getTimestamp("date"));
+                reviewList.add(ent);
+            }
+        }
+        return reviewList;
+    }
+
+    public void insertReview(String product_id, String user_id, String nickname, String evaluation, String review)
+            throws SQLException {
+        System.out.println("\n/// insertReview()");
+
+        String sql = "INSERT INTO ecsite_db.review_tbl (product_id, user_id, nickname, evaluation, review, date)"
+                + " VALUES (?,?,?,?,?,now())";
+
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            pstatement.setString(1, product_id);
+            pstatement.setString(2, user_id);
+            pstatement.setString(3, nickname);
+            pstatement.setString(4, evaluation);
+            pstatement.setString(5, review);
+            System.out.println("--- sql = " + pstatement);
+            pstatement.executeUpdate();
+        }
+    }
+
 }
