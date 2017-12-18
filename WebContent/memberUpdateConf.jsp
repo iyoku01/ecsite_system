@@ -33,33 +33,27 @@
         %>
 
 
-  <%--<p>ユーザーID：<%=session.getAttribute("user_id")%></p>
-    <p>名前：${name}</p>
-    <p>ニックネーム：${nickname}</p>
-    <p>電話番号：${phone}</p>
-    <p>郵便番号：${postal_code}</p>
-    <p> 住所：${address}</p>
- --%>
-
+ 
 
 <div class="memUpcon">
+<table>
+    <tr><td>ID：</td><td><%=session.getAttribute("user_id")%></td></tr>
 
-    <p>ユーザーID：<%=session.getAttribute("user_id")%></p>
+    <tr><td>名前：</td><td><%=name%></td></tr>
 
-    <p>名前：<%=name%></p>
+    <tr><td>ニックネーム：</td><td><%=nickname%></td></tr>
 
-    <p>ニックネーム：<%=nickname%></p>
+	<tr><td>郵便番号：</td><td><%=postal_code%></td></tr>
 
-    <p>電話番号：<%=phone%></p>
+   	<tr><td>住所：</td><td><%=address%></td></tr>
 
-    <p>郵便番号：<%=postal_code%></p>
+    <tr><td>電話番号：</td><td><%=phone%></td></tr>
 
-    <p> 住所：<%=address%></p>
-
-     <p>上記の情報でお間違いはございませんでしょうか</p>
+</table>
+    <p>上記の情報でお間違いはございませんでしょうか</p>
 
    <div class="formcenter">
-   
+
     <form action="memberUpdate.jsp" method="post">
             <input type=hidden name=password value=<%=password%>>
             <input type=hidden name=name value=<%=name%>>

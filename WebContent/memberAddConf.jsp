@@ -43,20 +43,22 @@
         String address = request.getParameter("address");
     %>
 <div class="memUpcon">
-    <p>
-        ユーザーID：<%=user_id%></p>
-    <p>
-        パスワード：<%=password%></p>
-    <p>
-        名前：<%=name%></p>
-    <p>
-        ニックネーム：<%=nickname%></p>
-    <p>
-        電話番号：<%=phone%></p>
-    <p>
-        郵便番号：<%=postal_code%></p>
-    <p>
-        住所：<%=address%></p>
+<table>
+   <tr><td>ID：<%=session.getAttribute("user_id")%></td></tr>
+
+    <tr><td>名前：</td><td><%=name%></td></tr>
+
+    <tr><td>ニックネーム：</td><td><%=nickname%></td></tr>
+
+	<tr><td>郵便番号：</td><td><%=postal_code%></td></tr>
+
+   	<tr><td>住所：</td><td><%=address%></td></tr>
+
+    <tr><td>電話番号：</td><td><%=phone%></td></tr>
+
+</table>
+
+
 
         <p>上記の情報でお間違いはございませんでしょうか</p>
 
