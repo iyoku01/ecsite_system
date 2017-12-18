@@ -43,21 +43,6 @@
             </tr>
         </c:forEach>
     </table>
-=======
-
-
-
-
-    <h2>
-        お買い上げいただき誠にありがとうございました。<br>購入番号：${order_id}
-    </h2>
-
-    <p class="text-danger">※購入番号はお問い合わせ時に必要になりますので大切に保管ください</p>
-
-    <a href=Top.Control> トップページに戻る </a>
-
-
->>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
 
 
     <!-- 共通フッター -->

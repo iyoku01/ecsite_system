@@ -20,7 +20,7 @@
 
     <!-- page[ -->
 
-
+<div class="Done">
     <h2>
         ‚¨”ƒ‚¢ã‚°‚¢‚½‚¾‚«½‚É‚ ‚è‚ª‚Æ‚¤‚²‚´‚¢‚Ü‚µ‚½B<br> w“ü”Ô†F${order_id}
     </h2>
