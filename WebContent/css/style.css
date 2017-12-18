@@ -189,7 +189,10 @@ h2 {
     top: 110px;
     left: 80px;
 }
-
+.subGazou{
+    position: absolute;
+width: 50px;
+}
 .subGazou img {
     position: relative;
     width: 50px;
@@ -201,29 +204,24 @@ h2 {
 .productTitle {
     position: relative;
     left: 600px;
-    top: -250px;
     font-size: 30px;
 }
 
 .producthard {
     position: relative;
     left: 600px;
-    top: -250px;
     font-size: 15px;
 }
 
 .review {
     position: relative;
     left: 790px;
-    top: -220px;
     font-size: 15px;
-    top: -220px;
 }
 
 .productPrice {
     position: relative;
     left: 600px;
-    top: -220px;
     font-size: 15px;
     color: red;
 }
@@ -231,7 +229,6 @@ h2 {
 .zaiko {
     position: relative;
     left: 600px;
-    top: -220px;
     font-size: 15px;
     color: green;
 }
@@ -239,28 +236,24 @@ h2 {
 .pReview {
     position: relative;
     left: 600px;
-    top: -60px;
     font-size: 15px;
-    width: 200px;
+    width: 400px;
 }
 
 .kosuuSentaku {
     position: relative;
     left: 750px;
-    top: -245px;
 }
 .cratkey{
     position: relative;
     left: 800px;
-    top: -270px;
 }
 .productDatail{
     position: relative;
     left: 600px;
-    top: -230px;
+    width: 400px;
 }
 .ave_eval{
     position: relative;
     left: 600px;
-    top: -230px;
 }
