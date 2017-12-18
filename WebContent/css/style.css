@@ -205,18 +205,21 @@ width: 50px;
     position: relative;
     left: 600px;
     font-size: 30px;
+    width: 400px;
 }
 
 .producthard {
     position: relative;
     left: 600px;
     font-size: 15px;
+    width: 400px;
 }
 
 .review {
     position: relative;
     left: 790px;
     font-size: 15px;
+    width: 400px;
 }
 
 .productPrice {
@@ -224,6 +227,7 @@ width: 50px;
     left: 600px;
     font-size: 15px;
     color: red;
+    width: 400px;
 }
 
 .zaiko {
@@ -231,22 +235,28 @@ width: 50px;
     left: 600px;
     font-size: 15px;
     color: green;
+    width: 400px;
 }
 
 .pReview {
+    margin: 0px;
     position: relative;
     left: 600px;
     font-size: 15px;
     width: 400px;
+
 }
 
 .kosuuSentaku {
     position: relative;
     left: 750px;
+    width: 400px;
 }
 .cratkey{
     position: relative;
     left: 800px;
+    width: 200px;
+    top: -20px;
 }
 .productDatail{
     position: relative;
@@ -256,4 +266,5 @@ width: 50px;
 .ave_eval{
     position: relative;
     left: 600px;
+    width: 400px;
 }
