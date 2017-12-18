@@ -9,10 +9,11 @@
 <html>
 <head>
 <META charset="Windows-31J">
-
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <title>購入確認</title>
 </head>
 <body>
+<div class="bodygray">
 
     <!-- 共通ヘッダー -->
     <jsp:include page="header_logoOnly.jsp" flush="true" />
@@ -47,7 +48,7 @@
 
 
 
-    <h2 style="position:relative;0%">
+    <h2>
         お買い上げいただき誠にありがとうございました。<br>購入番号：${order_id}
     </h2>
 
@@ -61,5 +62,6 @@
 
     <!-- 共通フッター -->
     <jsp:include page="footer.jsp" flush="true" />
+</div>
 </body>
 </html>
