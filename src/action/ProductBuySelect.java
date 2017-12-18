@@ -25,12 +25,13 @@ public class ProductBuySelect implements Action {
         String user_id = (String) session.getAttribute(SESSION_USER_ID);
         Cart cart = (Cart) session.getAttribute(SESSION_CART);
 
+        if (cart == null || cart.isEmpty()) {
+            //カートが空の場合、カート画面へ遷移
+            return "Cart.Control";
+        }
         if (user_id == null) {
             //未ログイン時、ログイン画面へ遷移
             return "login.jsp";
-        } else if (cart == null || cart.isEmpty()) {
-            //カートが空の場合、カート画面へ遷移
-            return "Cart.Control";
         }
 
         if (product_id == null) {

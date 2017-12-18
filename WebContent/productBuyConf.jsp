@@ -24,22 +24,26 @@
     <p>お届け先住所</p>
     <p>${personalData.postal_code}</p>
     <p>${personalData.address}</p>
+        <br>
     <p>名前</p>
     <p>${personalData.name}</p>
+        <br>
     <p>電話番号</p>
     <p>${personalData.phone}</p>
-    <p>
+        <br>
     <form action="productBuyDone.Control" method="get">
         <p>商品の小計</p>
         <p>${cart.sumPrice}</p>
-        <INPUT TYPE="submit" VALUE="注文を確定する">
+            <br> <INPUT TYPE="submit" VALUE="注文を確定する">
     </form>
-    <p>
+        <br> <br>
     <p>注文内容を確認</p>
     <table>
         <c:forEach var="i" items="${cart.cartProductList}">
             <tr>
-                <td>商品画像${i.mainPic_file} 商品名${i.product_name} 個数${i.buy_count} 値段${i.price}</td>
+                    <td>商品画像<br>
+                    <img title="product_id = ${i.product_id}" src="${i.mainPic_file}" width="200" height="150" /><br>商品名${i.product_name} <br>個数${i.buy_count} <br>値段${i.price}
+                    </td>
             </tr>
         </c:forEach>
     </table>
