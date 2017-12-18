@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,25 +33,11 @@ import exception.NotFoundServletException;
 public class ControlServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws
-            ServletException, IOException {
-        System.out.println("\n/// ControlServlet # doGet()");
-        doPost(request, response);
-    }
+    Map<String, Action> controllerMap = new HashMap<String, Action>();
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws
-            ServletException, IOException {
-        request.setCharacterEncoding("Windows-31J");
-
-        System.out.println("\n/// ControlServlet # doPost()");
-        System.out.println("getServletPath = " + request.getServletPath());
-        System.out.println("getQueryString = " + request.getQueryString());
-
+    public void init(ServletConfig config) throws ServletException {
         //êUï™ÇØêÊÇÃÉNÉâÉXìoò^
-        Map<String, Action> controllerMap = new HashMap<String, Action>();
-
         controllerMap.put("/Cart.Control", new CartSelect());
         controllerMap.put("/CartAdd.Control", new CartAdd());
         controllerMap.put("/CartDelete.Control", new CartDelete());
@@ -68,6 +55,23 @@ public class ControlServlet extends HttpServlet {
         controllerMap.put("/Purchase.Control", new CartAdd());
 
         controllerMap.put("/Top.Control", new TopSelect());
+    }
+
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws
+            ServletException, IOException {
+        System.out.println("\n/// ControlServlet # doGet()");
+        doPost(request, response);
+    }
+
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws
+            ServletException, IOException {
+        request.setCharacterEncoding("Windows-31J");
+
+        System.out.println("\n/// ControlServlet # doPost()");
+        System.out.println("getServletPath = " + request.getServletPath());
+        System.out.println("getQueryString = " + request.getQueryString());
 
         //êUï™ÇØ
         Action action = null;
