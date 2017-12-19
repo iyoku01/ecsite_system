@@ -228,7 +228,6 @@ public class EcsiteDaoTest {
     }
 
     @Test
-
     public void testGetReview() {
         try (EcsiteDao dao = new EcsiteDao()) {
             Review_tblVo ent;
@@ -250,7 +249,6 @@ public class EcsiteDaoTest {
         }
     }
 
-=======
     public void testInsertOrder() {
         Cart cart = new Cart();
         cart.add(1, 3);
@@ -263,5 +261,5 @@ public class EcsiteDaoTest {
             fail(e.getMessage());
         }
     }
->>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
+    //>>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
 }

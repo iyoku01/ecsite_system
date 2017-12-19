@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-//import java.util.Map;
+import java.util.Map;
 
 import database.Category_tblVo;
 import database.Hard_tblVo;
@@ -573,11 +573,11 @@ public class EcsiteDao implements AutoCloseable {
     }
 
     /***
-<<<<<<< HEAD
+    <<<<<<< HEAD
      * レビューの新規登録
-=======
+    =======
      * レビューを追加する
->>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
+    >>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
      * @param product_id
      * @param user_id
      * @param nickname
@@ -604,7 +604,7 @@ public class EcsiteDao implements AutoCloseable {
     }
 
     /***
-<<<<<<< HEAD
+    <<<<<<< HEAD
      * ログインユーザーのレビューを取得
      * @param product_id
      * @param user_id
@@ -676,13 +676,13 @@ public class EcsiteDao implements AutoCloseable {
         }
     }
 
-=======
-     * 注文TBL、注文商品TBLに追加する
-     * @param user_id ユーザID
-     * @param cart カート情報
-     * @return 注文ID
-     * @throws SQLException
-     */
+    /*
+         * 注文TBL、注文商品TBLに追加する
+         * @param user_id ユーザID
+         * @param cart カート情報
+         * @return 注文ID
+         * @throws SQLException
+         */
     public int insertOrder(String user_id, Cart cart)
             throws SQLException {
         System.out.println("\n/// insertOrder()");
@@ -726,5 +726,5 @@ public class EcsiteDao implements AutoCloseable {
         return order_Id;
 
     }
->>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
+    //>>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
 }

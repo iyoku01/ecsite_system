@@ -12,6 +12,11 @@
 <title>レビュー記入</title>
 </head>
 <body>
+
+<!-- 共通ヘッダー -->
+    <jsp:include page="header.jsp" flush="true" />
+
+
 <% request.setCharacterEncoding("Windows-31J");%>
 <div row>
   <p>${param.product_name}</p>

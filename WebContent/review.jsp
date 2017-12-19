@@ -13,6 +13,9 @@
 </head>
 <body>
 
+<!-- 共通ヘッダー -->
+    <jsp:include page="header.jsp" flush="true" />
+
 <!-- 商品情報 -->
 <div row>
   <p>${product.product_name}</p>
@@ -31,6 +34,13 @@
 <c:if test="${!empty writeReview}">
   <c:choose>
     <c:when test="${!empty review}" >
+    <!-- あれば自分のレビュー -->
+      <p>${review.product_id}</p>
+      <p>${review.user_id}</p>
+      <p>${review.nickname}</p>
+      <p>${review.evaluation}</p>
+      <p>${review.review}</p>
+      <p>${review.date}</p>
       <form action="reviewWrite.jsp" method="post">
         <input type=hidden name=product_id value="${review.product_id}">
         <input type=hidden name=nickname value="${review.nickname}">
@@ -46,13 +56,6 @@
         <input type=hidden name=update value="true">
         <input type=submit value=レビューを変更する>
       </form>
-      <!-- あれば自分のレビュー -->
-      <p>${review.product_id}</p>
-      <p>${review.user_id}</p>
-      <p>${review.nickname}</p>
-      <p>${review.evaluation}</p>
-      <p>${review.review}</p>
-      <p>${review.date}</p>
     </c:when>
     <c:otherwise>
       <p><a href=reviewWrite.jsp?product_id=${product_id}>レビューを書く</a></p>
