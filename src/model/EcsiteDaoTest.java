@@ -227,4 +227,39 @@ public class EcsiteDaoTest {
         }
     }
 
+    @Test
+    public void testGetReview() {
+        try (EcsiteDao dao = new EcsiteDao()) {
+            Review_tblVo ent;
+            ent = dao.getReview("2", "takehara");
+            System.out.println(ent);
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void testUpdateReview() {
+        try (EcsiteDao dao = new EcsiteDao()) {
+            dao.updateReview("2", "takehara", "’|", "5", "‚Æ‚Ä‚à‚Æ‚Ä‚à–Ê”’‚©‚Á‚½‚Å‚·");
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail(e.getMessage());
+        }
+    }
+
+    public void testInsertOrder() {
+        Cart cart = new Cart();
+        cart.add(1, 3);
+        cart.add(2, 4);
+
+        try (EcsiteDao dao = new EcsiteDao()) {
+            System.out.println("order_id = " + dao.insertOrder("agata1", cart));
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail(e.getMessage());
+        }
+    }
+    //>>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
 }

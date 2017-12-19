@@ -15,10 +15,10 @@
 <title>マイページ</title>
 </head>
 <body>
-
+<jsp:include page="header_logoOnly.jsp" flush="true" />
 
 <a href=http://localhost:8080/ecsite_system/memberUpdate.jsp>会員情報を変更する</a>
-
+${message}
 
 個人情報の取得
 <div class="row">

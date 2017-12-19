@@ -2,106 +2,146 @@ package database;
 
 /* Code Generator Information.
  * generator Version 1.0.0 release 2007/10/10
- * generated Date Mon Dec 04 11:18:17 JST 2017
+ * generated Date Mon Dec 18 11:36:48 JST 2017
  */
 import java.io.Serializable;
 
 /**
  * Review_tblVo.
  * @author ica
- * @version 1.0 
- * history 
+ * @version 1.0
+ * history
  * Symbol	Date		Person		Note
- * [1]		2017/12/04	ica		Generated.
+ * [1]		2017/12/18	ica		Generated.
  */
-public class Review_tblVo implements Serializable{
+public class Review_tblVo implements Serializable {
 
-	public static final String TABLE = "REVIEW_TBL";
+    public static final String TABLE = "REVIEW_TBL";
 
-	/**
-	 * レビューID:int(10) <Primary Key>
-	 */
-	private int review_id;
+    /**
+     * レビューID:int(10) <Primary Key>
+     */
+    private int review_id;
 
-	/**
-	 * 商品ID:int(10)
-	 */
-	private int product_id;
+    /**
+     * 商品ID:int(10)
+     */
+    private int product_id;
 
-	/**
-	 * ユーザーID:varchar(10)
-	 */
-	private String user_id;
+    /**
+     * ユーザーID:varchar(10)
+     */
+    private String user_id;
 
-	/**
-	 * 評価:int(10)
-	 */
-	private int evaluation;
+    /**
+     * ニックネーム:varchar(20)
+     */
+    private String nickname;
 
-	/**
-	 * レビュー:text(65535)
-	 */
-	private String review;
+    /**
+     * 評価:int(10)
+     */
+    private int evaluation;
 
-	/**
-	 * レビュー日時:datetime(0)
-	 */
-	private java.sql.Timestamp date;
+    /**
+     * レビュー:text(65535)
+     */
+    private String review;
 
-	/**
-	* Constractor
-	*/
-	public Review_tblVo(){}
+    /**
+     * レビュー日時:datetime(0)
+     */
+    private java.sql.Timestamp date;
 
-	/**
-	* Constractor
-	* @param <code>review_id</code>
-	*/
-	public Review_tblVo(int review_id){
-		this.review_id = review_id;
-	}
+    /**
+    * Constractor
+    */
+    public Review_tblVo() {
+    }
 
-	public int getReview_id(){ return this.review_id; }
+    /**
+    * Constractor
+    * @param <code>review_id</code>
+    */
+    public Review_tblVo(int review_id) {
+        this.review_id = review_id;
+    }
 
-	public void setReview_id(int review_id){ this.review_id = review_id; }
+    public int getReview_id() {
+        return this.review_id;
+    }
 
-	public int getProduct_id(){ return this.product_id; }
+    public void setReview_id(int review_id) {
+        this.review_id = review_id;
+    }
 
-	public void setProduct_id(int product_id){ this.product_id = product_id; }
+    public int getProduct_id() {
+        return this.product_id;
+    }
 
-	public String getUser_id(){ return this.user_id; }
+    public void setProduct_id(int product_id) {
+        this.product_id = product_id;
+    }
 
-	public void setUser_id(String user_id){ this.user_id = user_id; }
+    public String getUser_id() {
+        return this.user_id;
+    }
 
-	public int getEvaluation(){ return this.evaluation; }
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
 
-	public void setEvaluation(int evaluation){ this.evaluation = evaluation; }
+    public String getNickname() {
+        return this.nickname;
+    }
 
-	public String getReview(){ return this.review; }
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
 
-	public void setReview(String review){ this.review = review; }
+    public int getEvaluation() {
+        return this.evaluation;
+    }
 
-	public java.sql.Timestamp getDate(){ return this.date; }
+    public void setEvaluation(int evaluation) {
+        this.evaluation = evaluation;
+    }
 
-	public void setDate(java.sql.Timestamp date){ this.date = date; }
+    public String getReview() {
+        return this.review;
+    }
 
-	public String toString(){
-		StringBuffer buffer = new StringBuffer();
-		buffer.append("[Review_tblVo:");
-		buffer.append(" review_id: ");
-		buffer.append(review_id);
-		buffer.append(" product_id: ");
-		buffer.append(product_id);
-		buffer.append(" user_id: ");
-		buffer.append(user_id);
-		buffer.append(" evaluation: ");
-		buffer.append(evaluation);
-		buffer.append(" review: ");
-		buffer.append(review);
-		buffer.append(" date: ");
-		buffer.append(date);
-		buffer.append("]");
-		return buffer.toString();
-	}
+    public void setReview(String review) {
+        this.review = review;
+    }
+
+    public java.sql.Timestamp getDate() {
+        return this.date;
+    }
+
+    public void setDate(java.sql.Timestamp date) {
+        this.date = date;
+    }
+
+    public String toString() {
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("[Review_tblVo:");
+        buffer.append(" review_id: ");
+        buffer.append(review_id);
+        buffer.append(" product_id: ");
+        buffer.append(product_id);
+        buffer.append(" user_id: ");
+        buffer.append(user_id);
+        buffer.append(" nickname: ");
+        buffer.append(nickname);
+        buffer.append(" evaluation: ");
+        buffer.append(evaluation);
+        buffer.append(" review: ");
+        buffer.append(review);
+        buffer.append(" date: ");
+        buffer.append(date);
+        buffer.append("]");
+        return buffer.toString();
+    }
 
 }
