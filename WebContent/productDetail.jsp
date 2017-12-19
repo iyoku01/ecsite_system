@@ -81,6 +81,7 @@
                 \
                 <fmt:formatNumber value="${product.price}" pattern="###,###" />
             </div>
+            
             <div class="zaiko float">ç›å…Ç†ÇË</div>
 
             <form action="CartAdd.Control" method="get">

@@ -3,5 +3,6 @@
 <!DOCTYPE html>
 
     <header>
-    <a href=Top.Control><h3>[WATAZONƒƒS‰æ‘œ]</h3></a>
+    <a href=Top.Control> <img src="img\CompanyLogo\watazon_logo.png"
+            alt="Šé‹ÆƒƒS" height=70px></a>
     </header>

@@ -319,11 +319,11 @@ public class EcsiteDao implements AutoCloseable {
                 ent = new Personal_mstVo();
                 ent.setUser_id(rs.getString("user_id"));
                 ent.setPassword(rs.getString("password"));
-                ent.setName(rs.getString("name"));
-                ent.setNickname(rs.getString("nickname"));
+                ent.setName(escapeHtml(rs.getString("name")));
+                ent.setNickname(escapeHtml(rs.getString("nickname")));
                 ent.setPhone(rs.getString("phone"));
                 ent.setPostal_code(rs.getString("postal_code"));
-                ent.setAddress(rs.getString("address"));
+                ent.setAddress(escapeHtml(rs.getString("address")));
             }
         }
         return ent;
@@ -549,7 +549,7 @@ public class EcsiteDao implements AutoCloseable {
         System.out.println("\n/// getReviewList()");
 
         ArrayList<Review_tblVo> reviewList = null;
-        String sql = "SELECT review_id,product_id,user_id,evaluation,review,date FROM review_tbl"
+        String sql = "SELECT review_id,product_id,user_id,nickname,evaluation,review,date FROM review_tbl"
                 + " WHERE product_id=? ORDER BY review_id DESC";
 
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
@@ -557,13 +557,14 @@ public class EcsiteDao implements AutoCloseable {
             System.out.println("--- sql = " + pstatement);
             ResultSet rs = pstatement.executeQuery();
             reviewList = new ArrayList<Review_tblVo>();
-            if (rs.next()) {
+            while (rs.next()) {
                 Review_tblVo ent = new Review_tblVo();
                 ent.setReview_id(rs.getInt("review_id"));
                 ent.setProduct_id(rs.getInt("product_id"));
                 ent.setUser_id(rs.getString("user_id"));
+                ent.setNickname(escapeHtml(rs.getString("nickname")));
                 ent.setEvaluation(rs.getInt("evaluation"));
-                ent.setReview(rs.getString("review"));
+                ent.setReview(escapeHtml(rs.getString("review")));
                 ent.setDate(rs.getTimestamp("date"));
                 reviewList.add(ent);
             }
@@ -572,7 +573,11 @@ public class EcsiteDao implements AutoCloseable {
     }
 
     /***
+    <<<<<<< HEAD
+     * レビューの新規登録
+    =======
      * レビューを追加する
+    >>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
      * @param product_id
      * @param user_id
      * @param nickname
@@ -599,12 +604,85 @@ public class EcsiteDao implements AutoCloseable {
     }
 
     /***
-     * 注文TBL、注文商品TBLに追加する
-     * @param user_id ユーザID
-     * @param cart カート情報
-     * @return 注文ID
+    <<<<<<< HEAD
+     * ログインユーザーのレビューを取得
+     * @param product_id
+     * @param user_id
+     * @return 商品に対するログインユーザーのレビュー
      * @throws SQLException
      */
+    public Review_tblVo getReview(String product_id, String user_id) throws
+            SQLException {
+        System.out.println("\n/// getReview()");
+
+        Review_tblVo review = null;
+        String sql = "SELECT review_id,product_id,user_id,nickname,evaluation,review,date FROM review_tbl"
+                + " WHERE product_id=? AND user_id=?";
+
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            pstatement.setString(1, product_id);
+            pstatement.setString(2, user_id);
+            System.out.println("--- sql = " + pstatement);
+            ResultSet rs = pstatement.executeQuery();
+
+            if (rs.next()) {
+                review = new Review_tblVo();
+                review.setReview_id(rs.getInt("review_id"));
+                review.setProduct_id(rs.getInt("product_id"));
+                review.setUser_id(rs.getString("user_id"));
+                review.setNickname(escapeHtml(rs.getString("nickname")));
+                review.setEvaluation(rs.getInt("evaluation"));
+                review.setReview(escapeHtml(rs.getString("review")));
+                review.setDate(rs.getTimestamp("date"));
+            }
+        }
+        return review;
+    }
+
+    /***
+     * レビューの更新
+     * @param product_id
+     * @param user_id
+     * @param nickname
+     * @param evaluation
+     * @param review
+     * @throws SQLException
+     */
+    public void updateReview(String product_id, String user_id, String nickname, String evaluation, String review)
+            throws SQLException {
+        System.out.println("\n/// updataReview()");
+
+        String sql = "UPDATE review_tbl SET"
+                + " nickname=?, evaluation=?, review=?, date=now() WHERE user_id=? AND product_id=?";
+
+        System.out.println(product_id);
+        System.out.println(user_id);
+        System.out.println(nickname);
+        System.out.println(evaluation);
+        System.out.println(review);
+
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            pstatement.setString(1, nickname);
+            pstatement.setString(2, evaluation);
+            pstatement.setString(3, review);
+            pstatement.setString(4, user_id);
+            pstatement.setString(5, product_id);
+            System.out.println(product_id);
+            System.out.println(user_id);
+            System.out.println(nickname);
+            System.out.println(evaluation);
+            System.out.println(review);
+            pstatement.executeUpdate();
+        }
+    }
+
+    /*
+         * 注文TBL、注文商品TBLに追加する
+         * @param user_id ユーザID
+         * @param cart カート情報
+         * @return 注文ID
+         * @throws SQLException
+         */
     public int insertOrder(String user_id, Cart cart)
             throws SQLException {
         System.out.println("\n/// insertOrder()");
@@ -648,4 +726,5 @@ public class EcsiteDao implements AutoCloseable {
         return order_Id;
 
     }
+    //>>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
 }
