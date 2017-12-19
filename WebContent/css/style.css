@@ -26,17 +26,16 @@ header {
     background-color: #555555;
     height: 70px;
     width: 100%;
-
 }
 
 header a:link {
     color: #fff;
-     text-decoration: none;
+    text-decoration: none;
 }
 
 header a:visited {
     color: #fff;
-     text-decoration: none;
+    text-decoration: none;
 }
 
 header h3 {
@@ -89,7 +88,7 @@ header h3 {
 }
 
 #cartSuu {
-        top: -5px;
+    top: -5px;
     left: 7px;
     position: absolute;
 }
@@ -125,6 +124,9 @@ h2 {
     text-align: center;
 }
 
+/*---------------------------------------------------------------------*/
+/* カート */
+/*---------------------------------------------------------------------*/
 .cart {
     margin: auto;
     text-align: center;
@@ -132,14 +134,41 @@ h2 {
 
 .cart table {
     border: 1px solid black;
-    margin: 100px auto 20px;
-    text-align: center;
+    margin: 50px 50px;
     border-collapse: collapse;
 }
 
-.cart td {
+.cart td:nth-child(1) {
     border: 1px solid black;
-    padding: 30px;
+    padding: 5px;
+    text-align: left;
+    width: 400px;
+}
+
+.cart td:nth-child(2) {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: right;
+    width: 600px;
+}
+
+.cart img {
+    width: 70px;
+    height: 100px;
+}
+
+.cart p{
+    display:inline-block;
+    vertical-align:middle;
+    margin: 10px;
+}
+
+.cartbotton-delete {
+    text-align: center;
+    font-size: 17px;
+    width: 150px;
+    height: 40px;
+    background-color: WhiteSmoke;
 }
 
 .cartbotton {
@@ -149,38 +178,41 @@ h2 {
     width: 200px;
     height: 50px;
     background-color: orange;
+    border-radius: 30px;
 }
-.membotton{
-    margin:40px;
-    text-align:center;
-    font-size:15px;
+/*---------------------------------------------------------------------*/
+.membotton {
+    margin: 40px;
+    text-align: center;
+    font-size: 15px;
     width: 100px;
     height: 40px;
-    background-color:orange;
-	float:left;
+    background-color: orange;
+    float: left;
 }
 
-.membotton2{
-    margin:40px;
-    text-align:center;
-    font-size:15px;
+.membotton2 {
+    margin: 40px;
+    text-align: center;
+    font-size: 15px;
     width: 100px;
     height: 40px;
-    background-color:gray;
-	float:left;
-}
-.memUpcon{
-	text-align:center;
-	line-height: 300%;
+    background-color: gray;
+    float: left;
 }
 
-.formcenter{
-	margin:10px auto;
-	width: 370px;
+.memUpcon {
+    text-align: center;
+    line-height: 300%;
 }
 
-.memborder{
-	clear: both;
+.formcenter {
+    margin: 10px auto;
+    width: 370px;
+}
+
+.memborder {
+    clear: both;
 }
 /*商品詳細画面*/
 .mainGazou {
@@ -188,10 +220,12 @@ h2 {
     top: 110px;
     left: 80px;
 }
-.subGazou{
+
+.subGazou {
     position: absolute;
-width: 50px;
+    width: 50px;
 }
+
 .subGazou img {
     position: relative;
     width: 50px;
@@ -231,10 +265,10 @@ width: 50px;
     font-size: 15px;
     color: green;
 }
-.memUpcon td{
-width:200px;
-margin:auto;
 
+.memUpcon td {
+    width: 200px;
+    margin: auto;
 }
 
 .pReview {
@@ -244,26 +278,29 @@ margin:auto;
     width: 400px;
 }
 
-.memUpcon table{
-	padding:50px;
-	margin:auto;
-	text-align:center;
-
+.memUpcon table {
+    padding: 50px;
+    margin: auto;
+    text-align: center;
 }
+
 .kosuuSentaku {
     position: relative;
     left: 750px;
 }
-.cratkey{
+
+.cratkey {
     position: relative;
     left: 800px;
 }
-.productDatail{
+
+.productDatail {
     position: relative;
     left: 600px;
     width: 400px;
 }
-.ave_eval{
+
+.ave_eval {
     position: relative;
     left: 600px;
 }
