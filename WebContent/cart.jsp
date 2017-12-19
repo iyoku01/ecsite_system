@@ -3,12 +3,16 @@
 <!-- El Start -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!-- El End -->
 
 <!DOCTYPE html>
 <html>
 <head>
 <META charset="Windows-31J">
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
 
 <title>カート</title>
 </head>
@@ -21,37 +25,43 @@
 
     <div class="cart">
         <p>${message}</p>
-        <table>
-            <c:forEach var="i" items="${cart.cartProductList}">
+        <c:forEach var="i" items="${cart.cartProductList}">
+            <table>
                 <tr>
+                    <td><p><img title="product_id = ${i.product_id}" src="${i.mainPic_file}"/></p><p class="mozifont"> ${i.product_name}</p></td>
                     <td>
-                        <!-- 商品ID（隠し項目） --> <input type="hidden" name="product_id" value="${i.product_id}" form="cart-product">
-                        <img title="product_id = ${i.product_id}" src="${i.mainPic_file}" width="200" height="150" /> 商品名${i.product_name}
-                    </td>
-                    <td>値段${i.price} 個数${i.buy_count} <!-- 購入数選択 --> <select name="buy_count" form="cart-product">
-                            <c:forEach begin="1" end="${i.buy_count + BUY_COUNT_MAX}" varStatus="status">
-                                <option value="${status.index}" <c:if test="${status.index == i.buy_count}" >
-                                        selected
-                                        </c:if>>${status.index}</option>
-                            </c:forEach>
-                    </select>
-                        <form action="CartDelete.Control" method="get">
+                        <form action="CartDelete.Control" method="get" class="mozifont">
                             <!-- 商品ID（隠し項目） -->
-                            <input type="hidden" name="product_id" value="${i.product_id}"> <INPUT TYPE="submit" VALUE="削除">
+                            <input type="hidden" name="product_id" value="${i.product_id}" form="cart-product">
+                            <fmt:formatNumber value="${i.price}" pattern="\#,###(税込)" />
+                            個数
+                            <!-- 購入数選択 -->
+                            <select name="buy_count" form="cart-product">
+                                <c:forEach begin="1" end="${i.buy_count + BUY_COUNT_MAX}" varStatus="status">
+                                    <option value="${status.index}"
+                                        <c:if test="${status.index == i.buy_count}" >
+                                            selected
+                                        </c:if>>
+                                        ${status.index}
+                                    </option>
+                                </c:forEach>
+                            </select>
+                            <!-- 商品ID（隠し項目） -->
+                            <input type="hidden" name="product_id" value="${i.product_id}">
+                            <INPUT TYPE="submit" VALUE="削除" class="cartbotton-delete">
                         </form>
+                        <p>
                     </td>
                 </tr>
-            </c:forEach>
-        </table>
+            </table>
+        </c:forEach>
 
-        <form id="cart-product" action="productBuyConf.Control" method="get">
-            小計（商品${cart.sumBuyCount}点):￥${cart.sumPrice}(税込） <INPUT TYPE="submit" VALUE="レジに進む">
+        <form id="cart-product" action="productBuyConf.Control" method="get"  class="mozifont">
+            小計（商品${cart.sumBuyCount}点):
+            <fmt:formatNumber value="${cart.sumPrice}" pattern="\#,###" />
+            (税込） <INPUT TYPE="submit" VALUE="レジに進む" class="cartbotton">
         </form>
     </div>
-
-    <!-- 共通フッター -->
-    <jsp:include page="footer.jsp" flush="true" />
-
 
 </body>
 </html>
