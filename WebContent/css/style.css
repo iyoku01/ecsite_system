@@ -29,6 +29,7 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
 }
 
 .border {
+    box-sizing: border-box;
     border: solid;
     border-color: #dcdcdc;
     border-width: 2px;
@@ -46,14 +47,14 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
 }
 /*オレンジボタン*/
 .orange‐button {
-    margin:0px 0px 0px 10px;
+    margin: 0px 0px 0px 10px;
     box-sizing: border-box;
     text-align: center;
     font-size: 15px;
     background-color: orange;
     width: 150px;
     height: 30px;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px;
 }
 /*ここまで*/
 .bodygray {
@@ -137,44 +138,46 @@ header h3 {
     position: absolute;
 }
 /*トップ画面*/
-.gameLogo {
-    position: relative;
-    display: -webkit-flex;
-    display: flex;
-    width: 200px;
-    float: left;
-}
-
-.gameLogo img {
-    height: 100px;
-    width: 200px;
-    display: -webkit-flex;
-    display: flex;
-}
-
-.categoryList {
-    margin: 0px;
-    width: 300px;
-    float: left;
-    border: solid;
-}
-
-.obi {
-    margin: 0px 0px 20px 0px;
-    position: relative;
-    background-color: #ffc107;
-}
-
 .main-content-simple {
+    position: relative;
     overflow: hidden;
     width: 70%;
     float: right;
 }
 
 .side-content-simple {
-    min-width: 250px;
-    width: 30%;
+    width: 300px;
     float: left;
+    padding: 10px;
+}
+
+.bxslider img {
+    margin: 0 auto;
+    display: block;
+}
+
+.gameLogo {
+    box-sizing: border-box;
+    margin: 10px;
+    float: left;
+}
+
+.gameLogo img {
+    height: 100px;
+    width: 200px;
+}
+
+.categoryList {
+    float: left;
+}
+
+.obi {
+    box-sizing: border-box;
+    width: 90%;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 15px 13px 22px -5px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(white, gray);
 }
 
 h2 {
