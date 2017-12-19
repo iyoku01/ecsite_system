@@ -319,11 +319,11 @@ public class EcsiteDao implements AutoCloseable {
                 ent = new Personal_mstVo();
                 ent.setUser_id(rs.getString("user_id"));
                 ent.setPassword(rs.getString("password"));
-                ent.setName(rs.getString("name"));
-                ent.setNickname(rs.getString("nickname"));
+                ent.setName(escapeHtml(rs.getString("name")));
+                ent.setNickname(escapeHtml(rs.getString("nickname")));
                 ent.setPhone(rs.getString("phone"));
                 ent.setPostal_code(rs.getString("postal_code"));
-                ent.setAddress(rs.getString("address"));
+                ent.setAddress(escapeHtml(rs.getString("address")));
             }
         }
         return ent;
@@ -562,9 +562,9 @@ public class EcsiteDao implements AutoCloseable {
                 ent.setReview_id(rs.getInt("review_id"));
                 ent.setProduct_id(rs.getInt("product_id"));
                 ent.setUser_id(rs.getString("user_id"));
-                ent.setNickname(rs.getString("nickname"));
+                ent.setNickname(escapeHtml(rs.getString("nickname")));
                 ent.setEvaluation(rs.getInt("evaluation"));
-                ent.setReview(rs.getString("review"));
+                ent.setReview(escapeHtml(rs.getString("review")));
                 ent.setDate(rs.getTimestamp("date"));
                 reviewList.add(ent);
             }
@@ -630,9 +630,9 @@ public class EcsiteDao implements AutoCloseable {
                 review.setReview_id(rs.getInt("review_id"));
                 review.setProduct_id(rs.getInt("product_id"));
                 review.setUser_id(rs.getString("user_id"));
-                review.setNickname(rs.getString("nickname"));
+                review.setNickname(escapeHtml(rs.getString("nickname")));
                 review.setEvaluation(rs.getInt("evaluation"));
-                review.setReview(rs.getString("review"));
+                review.setReview(escapeHtml(rs.getString("review")));
                 review.setDate(rs.getTimestamp("date"));
             }
         }
