@@ -207,7 +207,7 @@ public class EcsiteDaoTest {
     public void testGetReviewList() {
         try (EcsiteDao dao = new EcsiteDao()) {
             ArrayList<Review_tblVo> entList;
-            entList = dao.getReviewList("3");
+            entList = dao.getReviewList("1");
             for (Review_tblVo ent : entList) {
                 System.out.println(ent);
             }
@@ -221,6 +221,28 @@ public class EcsiteDaoTest {
     public void testInsertReview() {
         try (EcsiteDao dao = new EcsiteDao()) {
             dao.insertReview("1", "takehara", "’|", "5", "‚Æ‚Ä‚à‚Æ‚Ä‚à–Ê”’‚©‚Á‚½‚Å‚·");
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void testGetReview() {
+        try (EcsiteDao dao = new EcsiteDao()) {
+            Review_tblVo ent;
+            ent = dao.getReview("2", "takehara");
+            System.out.println(ent);
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void testUpdateReview() {
+        try (EcsiteDao dao = new EcsiteDao()) {
+            dao.updateReview("2", "takehara", "’|", "5", "‚Æ‚Ä‚à‚Æ‚Ä‚à–Ê”’‚©‚Á‚½‚Å‚·");
         } catch (Exception e) {
             e.printStackTrace();
             fail(e.getMessage());

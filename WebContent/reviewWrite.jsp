@@ -12,19 +12,34 @@
 <title>レビュー記入</title>
 </head>
 <body>
+<% request.setCharacterEncoding("Windows-31J");%>
+<div row>
+  <p>${param.product_name}</p>
+  <p>${param.price}</p>
+  <p>${param.info}</p>
+  <p>${param.hard_name}</p>
+  <p>${param.ave_eval}</p>
+  <p>${param.mainPic_file}</p>
+  <p>${param.review_count}</p>
+</div>
+
 
 <form action=ReviewWrite.Control method=post>
 
-<select name="evaluation">
-    <option value="1">1
-    <option value="2">2
-    <option value="3">3
-    <option value="4">4
-    <option value="5">5
-</select>
-<p>ニックネーム：<input type=text name=nickname></p>
-<p>コメントを書く：<input type=textarea name=review></p>
+<p>評価：<select name="evaluation">
+<%for (int i=1; i<=5; i++) {%>
+    <%if (i == Integer.parseInt(request.getParameter("evaluation"))) { %>
+          <option value="<%=i%>" selected><%=i%>
+     <%} %>
+    <option value="<%=i%>"><%=i%>
+<%} %>
+</select></p>
+<p>ニックネーム：<input type=text name=nickname value=${param.nickname}></p>
+<p>コメントを書く：<textarea name=review>${param.review}</textarea></p>
 <input type=hidden name=product_id value="<%=request.getParameter("product_id")%>">
+<c:if test="${param.update}">
+  <input type=hidden name=update value="true">
+</c:if>
 <input type=submit value=送信>
 </form>
 

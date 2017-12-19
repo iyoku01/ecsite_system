@@ -282,10 +282,11 @@ INSERT INTO ecsite_db.order_product_tbl ( order_id, product_id, number ) VALUES 
 
 
 /*revuew_tbl*/
-INSERT INTO ecsite_db.review_tbl ( review_id, product_id, user_id, evaluation, review, date ) VALUES (1,1,'nakatomi',5,'面白かった&<>''\r\nです！','1988-08-10 13:49:22');
-INSERT INTO ecsite_db.review_tbl ( review_id, product_id, user_id, evaluation, review, date ) VALUES (2,2,'iyoku1',4,'結構面白かった','1988-01-20 13:22:34');
-INSERT INTO ecsite_db.review_tbl ( review_id, product_id, user_id, evaluation, review, date ) VALUES (3,1,'takehara',3,'普通でした','2000-01-01 23:22:22');
-INSERT INTO ecsite_db.review_tbl ( review_id, product_id, user_id, evaluation, review, date ) VALUES (4,3,'agata1',5,'最高ですー','2001-02-23 12:30:15');
-INSERT INTO ecsite_db.review_tbl ( review_id, product_id, user_id, evaluation, review, date ) VALUES (5,1,'watarai',2,'まぁまぁ','2001-12-31 13:24:24');
+INSERT INTO ecsite_db.review_tbl ( review_id, product_id, user_id, nickname, evaluation, review, date ) VALUES (1,1,'nakatomi','中冨',5,'面白かったです！','1988-08-10 13:49:22');
+INSERT INTO ecsite_db.review_tbl ( review_id, product_id, user_id, nickname, evaluation, review, date ) VALUES (2,2,'iyoku1','伊能',4,'結構面白かった','1988-01-20 13:22:34');
+INSERT INTO ecsite_db.review_tbl ( review_id, product_id, user_id, nickname, evaluation, review, date ) VALUES (3,1,'takehara','竹原',3,'普通でした','2000-01-01 23:22:22');
+INSERT INTO ecsite_db.review_tbl ( review_id, product_id, user_id, nickname, evaluation, review, date ) VALUES (4,3,'agata1','安形',5,'最高ですー','2001-02-23 12:30:15');
+INSERT INTO ecsite_db.review_tbl ( review_id, product_id, user_id, nickname, evaluation, review, date ) VALUES (5,1,'watarai','渡来',2,'まぁまぁ','2001-12-31 13:24:24');
+INSERT INTO ecsite_db.review_tbl ( review_id, product_id, user_id, nickname, evaluation, review, date ) VALUES (6,2,'takehara','竹',5,'やりたいやりたい','2017-12-18 10:32:08');
 
 
