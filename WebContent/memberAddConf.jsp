@@ -42,9 +42,12 @@
     <%
         String address = request.getParameter("address");
     %>
+
+    <span class="screenname">登録情報確認</span>
+
 <div class="memUpcon">
 <table>
-   <tr><td>ID：<%=session.getAttribute("user_id")%></td></tr>
+   <tr><td>ID：</td><td><%=session.getAttribute("user_id")%></td></tr>
 
     <tr><td>名前：</td><td><%=name%></td></tr>
 

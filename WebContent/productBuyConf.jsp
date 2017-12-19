@@ -13,44 +13,55 @@
 <title>購入確認</title>
 </head>
 <body>
-<div class="bodygray">
+<div class="productBuyConf">
 
     <!-- 共通ヘッダー -->
     <jsp:include page="header_logoOnly.jsp" flush="true" />
     <!-- pageー -->
     <p>${message}</p>
 
-<<<<<<< HEAD
-    <p>お届け先住所</p>
-    <p>${personalData.postal_code}</p>
-    <p>${personalData.address}</p>
-        <br>
-    <p>名前</p>
-    <p>${personalData.name}</p>
-        <br>
-    <p>電話番号</p>
-    <p>${personalData.phone}</p>
-        <br>
+
+<div class="pBC1">
+<table>
+    <td>お届け先住所<br>
+    ${personalData.postal_code}<br>
+    ${personalData.address}<br>
+    名前<br>
+    ${personalData.name}<br>
+    電話番号<br>
+    ${personalData.phone}</td>
+        </table>
+        </div>
+</div>
+<div class="float">
+<div class="pBC2">
+        <table>
     <form action="productBuyDone.Control" method="get">
-        <p>商品の小計</p>
-        <p>${cart.sumPrice}</p>
-            <br> <INPUT TYPE="submit" VALUE="注文を確定する">
+        <td>商品の小計<br>
+        ${cart.sumPrice}<br>
+        <INPUT TYPE="submit" VALUE="注文を確定する"></td>
     </form>
-        <br> <br>
-    <p>注文内容を確認</p>
-    <table>
+        </table>
+</div>
+
+
+        <div class="memborder">
+
+
+
+<div class="pBC3">
+        <table>
+    <td>注文内容を確認<br>
         <c:forEach var="i" items="${cart.cartProductList}">
-            <tr>
-                    <td>商品画像<br>
                     <img title="product_id = ${i.product_id}" src="${i.mainPic_file}" width="200" height="150" /><br>商品名${i.product_name} <br>個数${i.buy_count} <br>値段${i.price}
                     </td>
-            </tr>
         </c:forEach>
     </table>
-
-
+</div>
+</div>
     <!-- 共通フッター -->
     <jsp:include page="footer.jsp" flush="true" />
+
 </div>
 </body>
 </html>

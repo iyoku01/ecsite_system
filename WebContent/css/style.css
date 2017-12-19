@@ -23,7 +23,7 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
 }
 /*Ç±Ç±Ç©ÇÁÉwÉbÉ_Å[*/
 header {
-    background-color: #555555;
+    background-color: #333333;
     height: 70px;
     width: 100%;
 
@@ -245,7 +245,7 @@ margin:auto;
 }
 
 .memUpcon table{
-	padding:50px;
+	padding:50px 5opx 50px 0px;
 	margin:auto;
 	text-align:center;
 
@@ -266,4 +266,27 @@ margin:auto;
 .ave_eval{
     position: relative;
     left: 600px;
+}
+
+.productBuyConf table{
+	border: 1px solid black;
+    margin: auto;
+    text-align: center;
+}
+
+.productBuyConf td{
+	border: 1px solid black;
+    margin: auto ;
+    text-align: center;
+
+}
+.float{
+float:left;
+}
+.screenname{
+	border:1px black solid;
+	padding:6px;
+	margin:10px;
+	display:inline-block;
+	background-color:white;
 }
