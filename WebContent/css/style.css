@@ -11,7 +11,51 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
     font-size: 100%;
     vertical-align: baseline;
 }
+/*共通*/
+.mozifont {
+    font-family: "HGP創英角ﾎﾟｯﾌﾟ体";
+}
 
+.cursorPointer {
+    cursor: pointer;
+}
+
+.titleMojiFont {
+    font-size: 30px;
+}
+
+.font-size15px {
+    font-size: 15px;
+}
+
+.border {
+    border: solid;
+    border-color: #dcdcdc;
+    border-width: 2px;
+    padding: 10px;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.float {
+    float: left;
+}
+/*オレンジボタン*/
+.orange‐button {
+    margin:0px 0px 0px 10px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 15px;
+    background-color: orange;
+    width: 150px;
+    height: 30px;
+    border-radius: 10px 10px 10px 10px;
+}
+/*ここまで*/
 .bodygray {
     background-color: #EEEEEE;
     color: #333333;
@@ -26,17 +70,16 @@ header {
     background-color: #555555;
     height: 70px;
     width: 100%;
-
 }
 
 header a:link {
     color: #fff;
-     text-decoration: none;
+    text-decoration: none;
 }
 
 header a:visited {
     color: #fff;
-     text-decoration: none;
+    text-decoration: none;
 }
 
 header h3 {
@@ -89,11 +132,51 @@ header h3 {
 }
 
 #cartSuu {
-        top: -5px;
+    top: -5px;
     left: 7px;
     position: absolute;
 }
-/*ここまでヘッダー*/
+/*トップ画面*/
+.gameLogo {
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    width: 200px;
+    float: left;
+}
+
+.gameLogo img {
+    height: 100px;
+    width: 200px;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.categoryList {
+    margin: 0px;
+    width: 300px;
+    float: left;
+    border: solid;
+}
+
+.obi {
+    margin: 0px 0px 20px 0px;
+    position: relative;
+    background-color: #ffc107;
+}
+
+.main-content-simple {
+    overflow: hidden;
+    width: 70%;
+    float: right;
+}
+
+.side-content-simple {
+    min-width: 250px;
+    width: 30%;
+    float: left;
+}
+
 h2 {
     line-height: 50px;
     background-color: #ffffff;
@@ -150,131 +233,96 @@ h2 {
     height: 50px;
     background-color: orange;
 }
-.membotton{
-    margin:40px;
-    text-align:center;
-    font-size:15px;
+
+.membotton {
+    margin: 40px;
+    text-align: center;
+    font-size: 15px;
     width: 100px;
-    height: 40px;
-    background-color:orange;
-	float:left;
+    height: 30px;
+    background-color: orange;
+    float: left;
 }
 
-.membotton2{
-    margin:40px;
-    text-align:center;
-    font-size:15px;
+.membotton2 {
+    margin: 40px;
+    text-align: center;
+    font-size: 15px;
     width: 100px;
-    height: 40px;
-    background-color:gray;
-	float:left;
-}
-.memUpcon{
-	text-align:center;
-	line-height: 300%;
+    height: 30px;
+    background-color: gray;
+    float: left;
 }
 
-.formcenter{
-	margin:10px auto;
-	width: 370px;
+.memUpcon {
+    text-align: center;
+    line-height: 300%;
 }
 
-.memborder{
-	clear: both;
+.formcenter {
+    margin: 10px auto;
+    width: 370px;
+}
+
+.memborder {
+    clear: both;
 }
 /*商品詳細画面*/
+.productDatail-sub-content {
+    box-sizing: border-box;
+    width: 410px;
+    padding: 20px;
+    float: left;
+}
+
+.productDatail-main-content {
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 60%;
+    float: left;
+}
+
 .mainGazou {
-    position: absolute;
-    top: 110px;
+    top: 50px;
     left: 80px;
+    float: left;
 }
-.subGazou{
-    position: absolute;
-width: 50px;
+
+.mainGazou img {
+    width: 300px;
+    height: 400px;
 }
+
+.subGazou {
+    margin: 0px 5px;
+    width: 50px;
+    float: left;
+}
+
 .subGazou img {
-    position: relative;
     width: 50px;
     height: 50px;
-    left: 20px;
-    top: 50px;
-}
-
-.productTitle {
-    position: relative;
-    left: 600px;
-    font-size: 30px;
-    width: 400px;
-}
-
-.producthard {
-    position: relative;
-    left: 600px;
-    font-size: 15px;
-    width: 400px;
-}
-
-.review {
-    position: relative;
-    left: 790px;
-    font-size: 15px;
-    width: 400px;
 }
 
 .productPrice {
-    position: relative;
-    left: 600px;
-    font-size: 15px;
     color: red;
-    width: 400px;
 }
 
 .zaiko {
-    position: relative;
-    left: 600px;
-    font-size: 15px;
     color: green;
+    box-sizing: border-box;
     width: 400px;
 }
-.memUpcon td{
-width:200px;
-margin:auto;
 
+.productDatail {
+    margin: 20px 0px 0px 0px;
+}
+
+.ave_eval {
+    position: relative;
+    width: 400px;
 }
 
 .pReview {
-    margin: 0px;
-    position: relative;
-    left: 600px;
-    font-size: 15px;
-    width: 400px;
-
-}
-
-.memUpcon table{
-	padding:50px;
-	margin:auto;
-	text-align:center;
-
-}
-.kosuuSentaku {
-    position: relative;
-    left: 750px;
-    width: 400px;
-}
-.cratkey{
-    position: relative;
-    left: 800px;
-    width: 200px;
-    top: -20px;
-}
-.productDatail{
-    position: relative;
-    left: 600px;
-    width: 400px;
-}
-.ave_eval{
-    position: relative;
-    left: 600px;
-    width: 400px;
+    margin: 100px 0px 0px 0px;
 }
