@@ -28,24 +28,24 @@
         <c:forEach var="i" items="${cart.cartProductList}">
             <table>
                 <tr>
-                    <td><p><img title="product_id = ${i.product_id}" src="${i.mainPic_file}"/></p><p> ${i.product_name}</p></td>
+                    <td><p><img title="product_id = ${i.product_id}" src="${i.mainPic_file}"/></p><p class="mozifont"> ${i.product_name}</p></td>
                     <td>
-                        <!-- 商品ID（隠し項目） -->
-                        <input type="hidden" name="product_id" value="${i.product_id}" form="cart-product">
-                        <p><fmt:formatNumber value="${i.price}" pattern="\#,###(税込)" /></p>
-                        <p>個数
-                        <!-- 購入数選択 -->
-                        <select name="buy_count" form="cart-product">
-                            <c:forEach begin="1" end="${i.buy_count + BUY_COUNT_MAX}" varStatus="status">
-                                <option value="${status.index}"
-                                    <c:if test="${status.index == i.buy_count}" >
-                                        selected
-                                    </c:if>>
-                                    ${status.index}
-                                </option>
-                            </c:forEach>
-                        </select>
-                        <form action="CartDelete.Control" method="get">
+                        <form action="CartDelete.Control" method="get" class="mozifont">
+                            <!-- 商品ID（隠し項目） -->
+                            <input type="hidden" name="product_id" value="${i.product_id}" form="cart-product">
+                            <fmt:formatNumber value="${i.price}" pattern="\#,###(税込)" />
+                            個数
+                            <!-- 購入数選択 -->
+                            <select name="buy_count" form="cart-product">
+                                <c:forEach begin="1" end="${i.buy_count + BUY_COUNT_MAX}" varStatus="status">
+                                    <option value="${status.index}"
+                                        <c:if test="${status.index == i.buy_count}" >
+                                            selected
+                                        </c:if>>
+                                        ${status.index}
+                                    </option>
+                                </c:forEach>
+                            </select>
                             <!-- 商品ID（隠し項目） -->
                             <input type="hidden" name="product_id" value="${i.product_id}">
                             <INPUT TYPE="submit" VALUE="削除" class="cartbotton-delete">
@@ -56,7 +56,7 @@
             </table>
         </c:forEach>
 
-        <form id="cart-product" action="productBuyConf.Control" method="get">
+        <form id="cart-product" action="productBuyConf.Control" method="get"  class="mozifont">
             小計（商品${cart.sumBuyCount}点):
             <fmt:formatNumber value="${cart.sumPrice}" pattern="\#,###" />
             (税込） <INPUT TYPE="submit" VALUE="レジに進む" class="cartbotton">
