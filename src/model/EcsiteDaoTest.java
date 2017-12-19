@@ -207,7 +207,7 @@ public class EcsiteDaoTest {
     public void testGetReviewList() {
         try (EcsiteDao dao = new EcsiteDao()) {
             ArrayList<Review_tblVo> entList;
-            entList = dao.getReviewList("1");
+            entList = dao.getReviewList("3");
             for (Review_tblVo ent : entList) {
                 System.out.println(ent);
             }
@@ -228,7 +228,7 @@ public class EcsiteDaoTest {
     }
 
     @Test
-<<<<<<< HEAD
+
     public void testGetReview() {
         try (EcsiteDao dao = new EcsiteDao()) {
             Review_tblVo ent;
