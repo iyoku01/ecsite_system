@@ -22,12 +22,19 @@ public class ReviewDataSelect implements Action {
             HttpSession session = request.getSession();
             String user_id = (String) session.getAttribute("user_id");
             String product_id = request.getParameter("product_id");
-            if (product_id == null) {
-                product_id = request.getParameter(product_id);
-            }
+
+            //商品の詳細情報を取得
+            request.setAttribute("product", dao.getProductDetail(product_id));
+
+            //購入した商品かどうか判定
             writeReview = dao.checkWriteReview(user_id, product_id);
 
+            //レビューをしていれば取得
+            Review_tblVo review = dao.getReview(product_id, user_id);
+
+            //レビューのリストを取得
             reviewList = dao.getReviewList(product_id);
+
             if (reviewList.isEmpty()) {
                 request.setAttribute("message", "商品のレビューはありません");
             } else {
@@ -37,6 +44,10 @@ public class ReviewDataSelect implements Action {
             if (writeReview) {
                 request.setAttribute("writeReview", "true");
             }
+            if (review != null) {
+                request.setAttribute("review", review);
+            }
+
             request.setAttribute("product_id", product_id);
 
         } catch (NumberFormatException e) {

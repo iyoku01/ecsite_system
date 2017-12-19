@@ -23,18 +23,21 @@ public class ReviewDataInsert implements Action {
             String evaluation = request.getParameter("evaluation");
             String review = request.getParameter("review");
 
-            dao.insertReview(product_id, user_id, nickname, evaluation, review);
+            if (request.getParameter("update") != null) {
+
+                dao.updateReview(product_id, user_id, nickname, evaluation, review);
+            } else {
+                dao.insertReview(product_id, user_id, nickname, evaluation, review);
+            }
+
             request.setAttribute("product_id", product_id);
 
         } catch (ClassNotFoundException e) {
-
             e.printStackTrace();
         } catch (SQLException e) {
-
             e.printStackTrace();
         }
 
         return "ReviewSelect.Control";
     }
-
 }

@@ -14,15 +14,25 @@
 
 <!-- スライドショー Start -->
 <!-- jQuery library (served from Google) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 <script src="js/jquery.bxslider.min.js"></script>
 <link href="css/jquery.bxslider.css" rel="stylesheet" />
 <script type="text/javascript">
+    //スライドショー
     $(document).ready(function() {
         $('.bxslider').bxSlider({
             auto : true,
-            randomStart: true,
+            randomStart : true,
+        });
+    });
+</script>
+<script type="text/javascript">
+    //アコーディオン
+    $(function() {
+        $(".accordion").click(function() {
+            $(this).toggleClass("bg02").next().slideToggle();
         });
     });
 </script>
@@ -38,52 +48,48 @@
     <!-- 共通ヘッダー -->
     <jsp:include page="header.jsp" flush="true" />
 
-    <a href=http://localhost:8080/ecsite_system/Top.Control>サンプルURL</a>
 
-
-    <p>おすすめ商品-------------------------------------------------------------------------------------------</p>
-    <ul class="bxslider">
+    <!-- おすすめ商品 -->
+        <ul class="bxslider">
         <c:forEach var="i" items="${recommendList}" varStatus="st">
-            <li><a href=ProductDetail.Control?product_id=${i.product_id}><img title="product_id = ${i.product_id}" alt="" src="${i.recommend_pic}" width="590" height="300" /></a></li>
+            <li><a href=ProductDetail.Control?product_id=${i.product_id}><img
+                    title="product_id = ${i.product_id}" alt=""
+                    src="${i.recommend_pic}" width="590" height="300" /></a></li>
         </c:forEach>
     </ul>
+    <!-- サイドバー -->
+    <div class="side-content-simple">
+        <c:forEach var="i" items="${hardList}" varStatus="st">
 
-
-    <p>カテゴリー---------------------------------------------------------------------------------------------</p>
-    <c:forEach var="i" items="${categoryList}" varStatus="st">
-        <p>${i.category_name}</p>
-    </c:forEach>
-    <p>ハード----------------------------------------------------------------------------------------------------</p>
-    <c:forEach var="i" items="${hardList}" varStatus="st">
-        <p>
-            <a href=http://localhost:8080/ecsite_system/Top.Control?hard_id=${i.hard_id}>${i.hard_name}</a>
-        </p>
-    </c:forEach>
-    <p>商品リスト ※表示に使わない値は消してください----------------------------------------</p>
-    <c:forEach var="j" items="${productList}">
-        <p>------------------------------</p>
-        <p>${j.hard_id}</p>
-        <p>${j.hard_name}</p>
-        <p>------------------------------</p>
-        <c:forEach var="i" items="${j.tpd}">
-            <p>${i.product_id}</p>
-            <p>${i.product_name}</p>
-            <p>${i.price}</p>
-            <p>${i.stocks}</p>
-            <p>${i.comment}</p>
-            <p>${i.hard_id}</p>
-            <p>${i.category_id}</p>
-            <p>${i.ave_eval}</p>
-            <p>
-                <a href=ProductDetail.Control?product_id=${i.product_id}><img src="${i.pic_file}">${i.pic_file}</a>
-            </p>
-            <p>------------------------------------------------------------------------</p>
+            <h3 class="accordion">
+                <span> +${i.hard_name}</span> <a href="123">→</a>
+            </h3>
+            <div>
+                <c:forEach var="j" items="${categoryList}" varStatus="st">
+                    <p>
+                        <a
+                            href=Top.Control?hard_id=${i.hard_id}&category_id=${j.category_id}>${j.category_name}</a>
+                    </p>
+                </c:forEach>
+            </div>
         </c:forEach>
+    </div>
+    <!-- メイン（商品リスト）  -->
+    <div class="main-content-simple">
+    <c:forEach var="j" items="${productList}">
+        <div class="obi">${j.hard_name}</div>
+
+        <c:forEach var="i" items="${j.tpd}">
+            <div class="gameLogo">
+                <a href=ProductDetail.Control?product_id=${i.product_id}><img
+                    src="${i.pic_file}"></a>
+            </div>
+
+        </c:forEach>
+        <div class="clearfix"></div>
     </c:forEach>
 
     <p>${message}</p>
-
-    <!-- 共通フッター -->
-    <jsp:include page="footer.jsp" flush="true" />
+</div>
 </body>
 </html>
