@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +21,8 @@ import action.OrderHistorySelect;
 import action.PersonalDataInsert;
 import action.PersonalDataSelect;
 import action.PersonalIdCheck;
-import action.ProductBuySelect;
+import action.OrderHistoryAdd;
+import action.ProductBuyConfSelect;
 import action.ProductDatailSelect;
 import action.ReviewDataInsert;
 import action.ReviewDataSelect;
@@ -31,6 +33,28 @@ import exception.NotFoundServletException;
 @WebServlet(urlPatterns = { "*.Control" })
 public class ControlServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
+
+    Map<String, Action> controllerMap = new HashMap<String, Action>();
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        //êUï™ÇØêÊÇÃÉNÉâÉXìoò^
+        controllerMap.put("/Cart.Control", new CartSelect());
+        controllerMap.put("/CartAdd.Control", new CartAdd());
+        controllerMap.put("/CartDelete.Control", new CartDelete());
+        controllerMap.put("/Login.Control", new Login());
+        controllerMap.put("/Logout.Control", new Logout());
+        controllerMap.put("/MyPage.Control", new PersonalDataSelect());
+        controllerMap.put("/ProductDetail.Control", new ProductDatailSelect());
+        controllerMap.put("/CheckId.Control", new PersonalIdCheck());
+        controllerMap.put("/Regist.Control", new PersonalDataInsert());
+        controllerMap.put("/OrderHistory.Control", new OrderHistorySelect());
+        controllerMap.put("/ReviewSelect.Control", new ReviewDataSelect());
+        controllerMap.put("/ReviewWrite.Control", new ReviewDataInsert());
+        controllerMap.put("/productBuyConf.Control", new ProductBuyConfSelect());
+        controllerMap.put("/productBuyDone.Control", new OrderHistoryAdd());
+        controllerMap.put("/Top.Control", new TopSelect());
+    }
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws
@@ -47,27 +71,6 @@ public class ControlServlet extends HttpServlet {
         System.out.println("\n/// ControlServlet # doPost()");
         System.out.println("getServletPath = " + request.getServletPath());
         System.out.println("getQueryString = " + request.getQueryString());
-
-        //êUï™ÇØêÊÇÃÉNÉâÉXìoò^
-        Map<String, Action> controllerMap = new HashMap<String, Action>();
-
-        controllerMap.put("/Cart.Control", new CartSelect());
-        controllerMap.put("/CartAdd.Control", new CartAdd());
-        controllerMap.put("/CartDelete.Control", new CartDelete());
-        controllerMap.put("/Login.Control", new Login());
-        controllerMap.put("/Logout.Control", new Logout());
-        controllerMap.put("/MyPage.Control", new PersonalDataSelect());
-        controllerMap.put("/ProductDetail.Control", new ProductDatailSelect());
-        controllerMap.put("/CheckId.Control", new PersonalIdCheck());
-        controllerMap.put("/Regist.Control", new PersonalDataInsert());
-        controllerMap.put("/OrderHistory.Control", new OrderHistorySelect());
-        controllerMap.put("/ReviewSelect.Control", new ReviewDataSelect());
-        controllerMap.put("/ReviewWrite.Control", new ReviewDataInsert());
-
-        controllerMap.put("/productBuyConf.Control", new ProductBuySelect());
-        controllerMap.put("/Purchase.Control", new CartAdd());
-
-        controllerMap.put("/Top.Control", new TopSelect());
 
         //êUï™ÇØ
         Action action = null;

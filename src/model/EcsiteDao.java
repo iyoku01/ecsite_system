@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+//import java.util.Map;
 
 import database.Category_tblVo;
 import database.Hard_tblVo;
@@ -572,7 +573,11 @@ public class EcsiteDao implements AutoCloseable {
     }
 
     /***
+<<<<<<< HEAD
      * レビューの新規登録
+=======
+     * レビューを追加する
+>>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
      * @param product_id
      * @param user_id
      * @param nickname
@@ -584,7 +589,7 @@ public class EcsiteDao implements AutoCloseable {
             throws SQLException {
         System.out.println("\n/// insertReview()");
 
-        String sql = "INSERT INTO ecsite_db.review_tbl (product_id, user_id, nickname, evaluation, review, date)"
+        String sql = "INSERT INTO review_tbl (product_id, user_id, nickname, evaluation, review, date)"
                 + " VALUES (?,?,?,?,?,now())";
 
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
@@ -599,6 +604,7 @@ public class EcsiteDao implements AutoCloseable {
     }
 
     /***
+<<<<<<< HEAD
      * ログインユーザーのレビューを取得
      * @param product_id
      * @param user_id
@@ -670,4 +676,55 @@ public class EcsiteDao implements AutoCloseable {
         }
     }
 
+=======
+     * 注文TBL、注文商品TBLに追加する
+     * @param user_id ユーザID
+     * @param cart カート情報
+     * @return 注文ID
+     * @throws SQLException
+     */
+    public int insertOrder(String user_id, Cart cart)
+            throws SQLException {
+        System.out.println("\n/// insertOrder()");
+
+        String sql;
+        int order_Id = 0;
+
+        connection.setAutoCommit(false);
+
+        sql = "INSERT INTO order_tbl (user_id, date, shipping)"
+                + " VALUES (?, now(), 0)";
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            pstatement.setString(1, user_id);
+            System.out.println("--- sql = " + pstatement);
+            pstatement.executeUpdate();
+        }
+
+        sql = "SELECT DISTINCT LAST_INSERT_ID() order_id FROM order_tbl";
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            System.out.println("--- sql = " + pstatement);
+            ResultSet rs = pstatement.executeQuery();
+            if (rs.next()) {
+                order_Id = rs.getInt("order_id");
+            }
+        }
+
+        sql = "INSERT INTO order_product_tbl (order_id, product_id, number)"
+                + " VALUES (?, ?, ?)";
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            for (Map.Entry<Integer, Integer> mapEntry : cart.getCartMap().entrySet()) {
+                pstatement.setInt(1, order_Id);
+                pstatement.setInt(2, mapEntry.getKey());
+                pstatement.setInt(3, mapEntry.getValue());
+                System.out.println("--- sql = " + pstatement);
+                pstatement.executeUpdate();
+            }
+        }
+
+        connection.commit();
+
+        return order_Id;
+
+    }
+>>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
 }

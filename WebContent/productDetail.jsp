@@ -10,7 +10,16 @@
 <html>
 <head>
 <META charset="Windows-31J">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript">
+$(function(){
+ $('.subGazou img').click(function(){
+  var $thisImg = $(this).attr('src');
+  $('.mainGazou img').attr({src:$thisImg});
+ });
+});
+</script>
 
 <title>商品詳細</title>
 </head>
@@ -38,7 +47,7 @@
  -->
 
     <!-- 購入数のドロップダウンの最大値 -->
-    <c:set var="BUY_COUNT_MAX" value="9" />
+    <c:set var="BUY_COUNT_MAX" value="10" />
 
     <!-- 共通ヘッダー -->
     <jsp:include page="header.jsp" flush="true" />
@@ -49,14 +58,16 @@
         <img src="${product.mainPic_file}" width="400" height="300">
     </div>
     <!-- サブ画像 -->
-
+<div class="subGazou">
+<img src="${product.mainPic_file}" width="400" height="300">
     <c:forEach var="i" items="${productPicSub}">
-        <div class="subGazou">
+
             <!--  <p>${i}</p> -->
             <img src="${i}" width="200" height="130">
-        </div>
+
 
     </c:forEach>
+       </div>
 
 
     <!-- 商品タイトル -->
@@ -67,14 +78,14 @@
     <!-- 評価 -->
     <div class="ave_eval">
         <c:forEach begin="1" end="${product.ave_eval}">
-        ☆
+        <img src="img\Hosi.png" width="50px">
     </c:forEach>
     </div>
 
     <!-- レビュー画面リンク -->
     <div class="review">
         <!--  リンク先修正 -->
-        <a href="review.jsp">${product.review_count}件のカスタマーレビュー</a>
+        <a href="ReviewSelect.Control">${product.review_count}件のカスタマーレビュー</a>
     </div>
 
     <!-- 金額表示 -->
@@ -111,9 +122,6 @@
         店長コメント ${product.comment}
         <p>${message}</p>
     </div>
-
-    <!-- 共通フッター-->
-    <jsp:include page="footer.jsp" flush="true" />
 
 </body>
 </html>

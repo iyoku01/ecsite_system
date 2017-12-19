@@ -104,4 +104,12 @@ public class Cart {
         return cartMap.isEmpty();
     }
 
+    /***
+     * カート内の商品マップ<商品ID, 個数>を返す
+     * @return 商品マップ<商品ID, 個数>
+     */
+    public Map<Integer, Integer> getCartMap() {
+        return cartMap;
+    }
+
 }
