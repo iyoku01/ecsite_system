@@ -85,7 +85,7 @@ $(function(){
     <!-- レビュー画面リンク -->
     <div class="review">
         <!--  リンク先修正 -->
-        <a href="ReviewSelect.Control">${product.review_count}件のカスタマーレビュー</a>
+        <a href="ReviewSelect.Control?product_id=${product.product_id}">${product.review_count}件のカスタマーレビュー</a>
     </div>
 
     <!-- 金額表示 -->
