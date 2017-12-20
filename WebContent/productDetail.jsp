@@ -10,41 +10,24 @@
 <html>
 <head>
 <META charset="Windows-31J">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script type="text/javascript">
-$(function(){
- $('.subGazou img').click(function(){
-  var $thisImg = $(this).attr('src');
-  $('.mainGazou img').attr({src:$thisImg});
- });
-});
+    $(function() {
+        $('.subGazou img').click(function() {
+            var $thisImg = $(this).attr('src');
+            $('.mainGazou img').attr({
+                src : $thisImg
+            });
+        });
+    });
 </script>
 
 <title>商品詳細</title>
 </head>
 
 <body>
-    <!--
-    <p>---------------------------------------------------------------</p>
-    <p>- 値取得サンプル</p>
-    <p>---------------------------------------------------------------</p>
-    <a href=http://localhost:8080/ecsite_system/ProductDetail.Control?product_id=1>サンプルURL</a>
-    <p>${product.product_id}</p>
-    <p>${product.product_name}</p>
-    <p>${product.price}</p>
-    <p>${product.stocks}</p>
-    <p>${product.comment}</p>
-    <p>${product.hard_id}</p>
-    <p>${product.category_id}</p>
-    <p>${product.ave_eval}</p>
-    <p>${product.review_count}</p>
-    <p>${product.mainPic_file}</p>
-    <c:forEach var="i" items="${productPicSub}">
-        <p>${i}</p>
-    </c:forEach>
-    <p>---------------------------------------------------------------</p>
- -->
 
     <!-- 購入数のドロップダウンの最大値 -->
     <c:set var="BUY_COUNT_MAX" value="10" />
@@ -52,77 +35,81 @@ $(function(){
     <!-- 共通ヘッダー -->
     <jsp:include page="header.jsp" flush="true" />
 
-    <!-- メイン画像 -->
-    <div class="mainGazou">
-        <!--画像   ${product.mainPic_file} -->
-        <img src="${product.mainPic_file}" width="400" height="300">
-    </div>
-    <!-- サブ画像 -->
-<div class="subGazou">
-<img src="${product.mainPic_file}" width="400" height="300">
-    <c:forEach var="i" items="${productPicSub}">
 
-            <!--  <p>${i}</p> -->
-            <img src="${i}" width="200" height="130">
+    <div class="border clearfix">
+        <!--  サブコンテンツ（画面左）-->
+        <div class="productDatail-sub-content border clearfix">
+            <!-- サブ画像 -->
+            <div class="subGazou cursorPointer">
+                <img src="${product.mainPic_file}">
+                <c:forEach var="i" items="${productPicSub}">
 
-
-    </c:forEach>
-       </div>
+                    <!--  <p>${i}</p> -->
+                    <img src="${i}">
 
 
-    <!-- 商品タイトル -->
-    <div class="productTitle">${product.product_name}</div>
-    <div class="producthard">
-        <p>${product.hard_name}</p>
-    </div>
-    <!-- 評価 -->
-    <div class="ave_eval">
-        <c:forEach begin="1" end="${product.ave_eval}">
-        <img src="img\Hosi.png" width="50px">
-    </c:forEach>
-    </div>
-
-    <!-- レビュー画面リンク -->
-    <div class="review">
-        <!--  リンク先修正 -->
-        <a href="ReviewSelect.Control?product_id=${product.product_id}">${product.review_count}件のカスタマーレビュー</a>
-    </div>
-
-    <!-- 金額表示 -->
-    <div class="productPrice">
-        \
-        <fmt:formatNumber value="${product.price}" pattern="###,###" />
-    </div>
-    <div class="zaiko">在庫あり</div>
-
-    <form action="CartAdd.Control" method="get">
-        <!-- 商品ID（隠し項目） -->
-        <input type="hidden" name="product_id" value="${product.product_id}">
-
-        <!-- 購入数選択 -->
-        <div class="kosuuSentaku">
-            <select name="buy_count">
-
-                <c:forEach begin="1" end="${BUY_COUNT_MAX}" varStatus="status">
-                    <option value="${status.index}">${status.index}</option>
                 </c:forEach>
+            </div>
+            <!-- メイン画像 -->
+            <div class="mainGazou">
+                <!--画像   ${product.mainPic_file} -->
+                <img src="${product.mainPic_file}">
+            </div>
 
-            </select>
         </div>
-        <div class="cratkey">
-            <input type="submit" value="カートに入れる">
+
+        <!-- メインコンテンツ -->
+        <div class="productDatail-main-content border">
+            <!-- 商品タイトル -->
+            <div class="productTitle titleMojiFont mozifont">${product.product_name}</div>
+            <div class="producthard font-size15px mozifont">
+                <p>${product.hard_name}</p>
+            </div>
+            <!-- 評価 -->
+            <div class="ave_eval float">
+                <c:forEach begin="1" end="${product.ave_eval}">
+                    <img src="img\Hosi.png" width="50px">
+                </c:forEach>
+            </div>
+
+            <!-- レビュー画面リンク -->
+            <div class="review clearfix">
+                <a href="ReviewSelect.Control?product_id=${product.product_id}">${product.review_count}件のカスタマーレビュー</a>
+            </div>
+            <!-- 金額表示 -->
+            <div class="productPrice">
+                \
+                <fmt:formatNumber value="${product.price}" pattern="###,###" />
+            </div>
+            
+            <div class="zaiko float">在庫あり</div>
+
+            <form action="CartAdd.Control" method="get">
+                <!-- 商品ID（隠し項目） -->
+                <input type="hidden" name="product_id" value="${product.product_id}">
+
+                <!-- 購入数選択 -->
+                <select name="buy_count" class="float buy_count">
+
+                    <c:forEach begin="1" end="${BUY_COUNT_MAX}" varStatus="status">
+                        <option value="${status.index}">${status.index}</option>
+                    </c:forEach>
+                </select>
+                <div class="cratkey clearfix">
+                    <input class="orange‐button mozifont" type="submit" value="カートに入れる">
+                </div>
+            </form>
+
+            <!-- 商品説明 -->
+            <div class="productDatail">${product.info}</div>
+
+            <!-- 店長コメント -->
+            <div class="pReview border">
+                店長コメント:<br> ${product.comment}
+                <p>${message}</p>
+            </div>
         </div>
-    </form>
-
-    <!-- 商品説明 -->
-    <div class="productDatail">${product.info}</div>
-
-    <!-- 店長コメント -->
-    <div class="pReview">
-        店長コメント ${product.comment}
-        <p>${message}</p>
     </div>
-
 </body>
 </html>
 

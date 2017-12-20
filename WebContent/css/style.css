@@ -11,6 +11,10 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
     font-size: 100%;
     vertical-align: baseline;
 }
+/*‹¤’Ê*/
+.mozifont {
+    font-family: "HGP‘n‰pŠpÎß¯Ìß‘Ì";
+}
 
 .bodygray {
     background-color: #EEEEEE;
@@ -157,7 +161,7 @@ h2 {
     width: 100px;
     height: 40px;
     background-color:orange;
-    float:left;
+	float:left;
 }
 
 .membotton2{
@@ -167,20 +171,20 @@ h2 {
     width: 100px;
     height: 40px;
     background-color:gray;
-    float:left;
+	float:left;
 }
 .memUpcon{
-    text-align:center;
-    line-height: 300%;
+	text-align:center;
+	line-height: 300%;
 }
 
 .formcenter{
-    margin:10px auto;
-    width: 370px;
+	margin:10px auto;
+	width: 370px;
 }
 
 .memborder{
-    clear: both;
+	clear: both;
 }
 /*¤•iÚ×‰æ–Ê*/
 .mainGazou {
@@ -245,9 +249,9 @@ margin:auto;
 }
 
 .memUpcon table{
-    padding:50px;
-    margin:auto;
-    text-align:center;
+	padding:50px;
+	margin:auto;
+	text-align:center;
 
 }
 .kosuuSentaku {
@@ -267,7 +271,6 @@ margin:auto;
     position: relative;
     left: 600px;
 }
-
 /*ƒŒƒrƒ…[—p‚Ì¯*/
 .index-star {
   display: none;
@@ -291,3 +294,6 @@ margin:auto;
   color: #fc3;
 }
 
+=======
+}
+>>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
