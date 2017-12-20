@@ -157,7 +157,7 @@ h2 {
     width: 100px;
     height: 40px;
     background-color:orange;
-	float:left;
+    float:left;
 }
 
 .membotton2{
@@ -167,20 +167,20 @@ h2 {
     width: 100px;
     height: 40px;
     background-color:gray;
-	float:left;
+    float:left;
 }
 .memUpcon{
-	text-align:center;
-	line-height: 300%;
+    text-align:center;
+    line-height: 300%;
 }
 
 .formcenter{
-	margin:10px auto;
-	width: 370px;
+    margin:10px auto;
+    width: 370px;
 }
 
 .memborder{
-	clear: both;
+    clear: both;
 }
 /*商品詳細画面*/
 .mainGazou {
@@ -245,9 +245,9 @@ margin:auto;
 }
 
 .memUpcon table{
-	padding:50px;
-	margin:auto;
-	text-align:center;
+    padding:50px;
+    margin:auto;
+    text-align:center;
 
 }
 .kosuuSentaku {
@@ -267,3 +267,27 @@ margin:auto;
     position: relative;
     left: 600px;
 }
+
+/*レビュー用の星*/
+.index-star {
+  display: none;
+}
+.star {
+  position: relative;
+}
+.star > a {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.star > a:before {
+  content: "\f3ae";
+  font-family: "Ionicons";
+  font-size: 20px;
+  color: #aaa;
+}
+.star > a.on:before {
+  content: "\f2fc";
+  color: #fc3;
+}
+

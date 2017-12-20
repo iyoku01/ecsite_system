@@ -20,34 +20,46 @@
     <%
         request.setCharacterEncoding("Windows-31J");
     %>
-    <div row>
-        <p>${param.product_name}</p>
-        <p>${param.price}</p>
-        <p>${param.info}</p>
-        <p>${param.hard_name}</p>
-        <p>${param.ave_eval}</p>
-        <p>${param.mainPic_file}</p>
-        <p>${param.review_count}</p>
-    </div>
+    <!-- 商品情報 -->
+        <span>${product.product_name}</span>
+        <span>${product.ave_eval}</span>
+        <p>${product.hard_name}</p>
+        <img src="${product.mainPic_file}" width="100" >
+        <span>${product.price}</span>
+        <p class=info>${product.info}</p>
 
 
 
-    <form action=ReviewWrite.Control method=post>
+
+        <form action=ReviewWrite.Control method=post>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/jquery.bxslider.min.js"></script>
+        <link href="css/jquery.bxslider.css" rel="stylesheet" />
+        <script type="text/javascript">
+        $(function() {
+              $('.star').each(function() {
+                for (var i = 0; i < 5; i ++) {
+                  $(this).append('<a>');
+                }
+              });
+              $('.star>a').on('click', function() {
+                 var index = $(this).index();
+                $(this).siblings().removeClass('on');
+                 for (var i = 0; i < index; i++) {
+                    $(this).parent().find('a').eq(i).addClass('on');
+                 }
+                $(this).parent().find('.index-star').attr('value', index);
+              });
+            });
+        </script>
+        <div class="star">
+        <input type="range" min="1" max="5" name=evaluation value="" class="index-star" />
+        </div>
+
+        <span>
+            投稿者名：<input type=text name=nickname value="${param.nickname}">
+        </span>
         <p>
-            評価：<select name="evaluation">
-                <c:forEach begin="1" end="5" varStatus="i">
-                    <c:if test="${evaluation==i.index}">
-                        <option value="${i.index}" selected>${i.index}
-                    </c:if>
-                    <option value="${i.index}">${i.index}
-                </c:forEach>
-            </select>
-        </p>
-        <p>
-            ニックネーム：<input type=text name=nickname value="${param.nickname}">
-        </p>
-        <p>
-            コメントを書く：
             <textarea name=review>${param.review}</textarea>
         </p>
         <input type=hidden name=product_id
