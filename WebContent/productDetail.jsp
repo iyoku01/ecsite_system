@@ -81,7 +81,7 @@
                 \
                 <fmt:formatNumber value="${product.price}" pattern="###,###" />
             </div>
-            
+
             <div class="zaiko float">在庫あり</div>
 
             <form action="CartAdd.Control" method="get">
@@ -96,7 +96,7 @@
                     </c:forEach>
                 </select>
                 <div class="cratkey clearfix">
-                    <input class="orange‐button mozifont" type="submit" value="カートに入れる">
+                    <input class="orange-button mozifont" type="submit" value="カートに入れる">
                 </div>
             </form>
 
