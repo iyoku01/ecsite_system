@@ -21,12 +21,12 @@
         request.setCharacterEncoding("Windows-31J");
     %>
     <!-- ¤•iî•ñ -->
-        <span>${product.product_name}</span>
-        <span>${product.ave_eval}</span>
-        <p>${product.hard_name}</p>
-        <img src="${product.mainPic_file}" width="100" >
-        <span>${product.price}</span>
-        <p class=info>${product.info}</p>
+        <span>${param.product_name}</span>
+        <span>${param.ave_eval}</span>
+        <p>${param.hard_name}</p>
+        <img src="${param.mainPic_file}" width="100" >
+        <span>${param.price}</span>
+        <p class=info>${param.info}</p>
 
 
 
