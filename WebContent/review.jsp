@@ -9,6 +9,32 @@
 <html>
 <head>
 <META charset="Windows-31J">
+<link rel="stylesheet"
+    href="http://code.ionicframework.com/ionicons/1.4.1/css/ionicons.min.css">
+<script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/jquery.bxslider.min.js"></script>
+<link href="css/jquery.bxslider.css" rel="stylesheet" />
+<%
+    request.setCharacterEncoding("Windows-31J");
+%>
+<script type="text/javascript">
+    $(function() {
+        $('.star').each(function() {
+            for (var i = 0; i < 5; i++) {
+                $(this).append('<a>');
+            }
+            if ('${param.evaluation}' != null) {
+                var index = '${param.evaluation}';
+                $(this).siblings().removeClass('on');
+                for (var i = 0; i < index; i++) {
+                    $(this).parent().find('a').eq(i).addClass('on');
+                }
+                $(this).parent().find('.index-star').attr('value', index);
+            }
+        });
+    });
+</script>
 <title>レビュー</title>
 </head>
 <body>
@@ -17,73 +43,74 @@
     <jsp:include page="header.jsp" flush="true" />
 
     <!-- 商品情報 -->
-        <span>${product.product_name}</span>
-        <span>${product.ave_eval}</span>
+    <div class="revProduct clearfix">
+        <h3>${product.product_name}</h3>
+        <span class=star value=product.ave_eval> </span>
         <p>${product.hard_name}</p>
-        <img src="${product.mainPic_file}" width="100" >
-        <span>${product.price}</span>
-        <p class=info>${product.info}</p>
-        <form action="reviewWrite.jsp" method="post">
-                    <input type=hidden name=product_id value="${review.product_id}">
-                    <input type=hidden name=nickname value="${review.nickname}">
-                    <input type=hidden name=evaluation value="${review.evaluation}">
-                    <input type=hidden name=review value="${review.review}">
-                    <input type=hidden name=product_name value="${product.product_name}">
-                    <input type=hidden name=price value="${product.price}">
-                    <input type=hidden name=info value="${product.info}">
-                    <input type=hidden name=hard_name value="${product.hard_name}">
-                    <input type=hidden name=ave_eval value="${product.ave_eval}">
-                    <input type=hidden name=mainPic_file value="${product.mainPic_file}">
-                    <input type=hidden name=review_count value="${product.review_count}">
-                    <c:choose>
-                        <c:when test="${!empty review}">
-                            <input type=hidden name=update value="true">
-                            <input type=submit value=レビューを変更する>
-                        </c:when>
-                        <c:otherwise>
-                            <input type=submit value=レビューを書く>
-                        </c:otherwise>
-                    </c:choose>
-        </form>
-
-
-
-    <!-- レビューがまだ無ければメッセージ -->
-    <p>${message}</p>
-
-    <!-- 送信パラメータ -->
-    <c:if test="${!empty writeReview}">
+        <div class=innerElement>
+        <img src="${product.mainPic_file}" width="80"> <span
+            class=productPrice>\ ${product.price}</span> <span class=zaiko>在庫あり</span>
+    </div>
+    <p class="info float">${product.info}</p>
+    <!-- フォーム情報 -->
+    <form action="reviewWrite.jsp" method="post">
+        <input type=hidden name=product_id value="${review.product_id}">
+        <input type=hidden name=nickname value="${review.nickname}"> <input
+            type=hidden name=evaluation value="${review.evaluation}"> <input
+            type=hidden name=review value="${review.review}"> <input
+            type=hidden name=product_name value="${product.product_name}">
+        <input type=hidden name=price value="${product.price}"> <input
+            type=hidden name=info value="${product.info}"> <input
+            type=hidden name=hard_name value="${product.hard_name}"> <input
+            type=hidden name=ave_eval value="${product.ave_eval}"> <input
+            type=hidden name=mainPic_file value="${product.mainPic_file}">
+        <input type=hidden name=review_count value="${product.review_count}">
         <c:choose>
             <c:when test="${!empty review}">
-                <!-- あれば自分のレビュー -->
-                <p>このゲームに対するあなたのレビュー</p>
-                <div class="ownReview">
-                   <span>投稿者</span>
-                   <span>${review.nickname}</span>
-                   <span>${review.date}</span>
-                   <span class=evaluation>${review.evaluation}</span>
-                   <p>${review.review}</p>
-                </div>
+                <input type=hidden name=update value="true">
+                <input type=submit class=orange‐button value=レビューの編集>
             </c:when>
+            <c:otherwise>
+                <input type=submit class=orange‐button value=レビューを書く>
+            </c:otherwise>
         </c:choose>
-    </c:if>
+    </form>
+    </div>
+
+
+
+    <div class=reviewList>
+    <!-- レビューがまだ無ければメッセージ -->
+    <p>${message}</p>
+        <!-- 送信パラメータ -->
+        <c:if test="${!empty writeReview}">
+            <c:choose>
+                <c:when test="${!empty review}">
+                    <!-- あれば自分のレビュー -->
+                    <p>このゲームに対するあなたのレビュー</p>
+                    <div class="ownReview">
+                        <span>投稿者</span> <span>${review.nickname}</span> <span>${review.date}</span>
+                        <span class=evaluation>${review.evaluation}</span>
+                        <p>${review.review}</p>
+                    </div>
+                </c:when>
+            </c:choose>
+        </c:if>
 
 
 
 
-  <p>${product.review_count}件のカスタマーレビュー</p>
-    <!-- レビューのリスト -->
+        <p>${product.review_count}件のカスタマーレビュー</p>
+        <!-- レビューのリスト -->
         <c:forEach var="i" items="${reviewList}">
             <div class="oneReview">
-                  <span>投稿者</span>
-                  <span>${i.nickname}</span>
-                  <span>${i.date}</span>
-                  <span class=evaluation>${i.evaluation}</span>
-                  <p>${i.review}</p>
-             </div>
+                <span>投稿者</span> <span>${i.nickname}</span> <span>${i.date}</span> <span
+                    class=star value=${i.evaluation} ></span>
+                <p>${i.review}</p>
+            </div>
         </c:forEach>
 
-
+    </div>
 
 
 </body>

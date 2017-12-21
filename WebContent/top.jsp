@@ -43,7 +43,7 @@
 </head>
 
 
-<body class="bg-info top">
+<body>
 
     <!-- 共通ヘッダー -->
     <jsp:include page="header.jsp" flush="true" />
@@ -58,26 +58,27 @@
         </c:forEach>
     </ul>
     <!-- サイドバー -->
-    <div class="side-content-simple">
+    <div class="side-content-simple border">
         <c:forEach var="i" items="${hardList}" varStatus="st">
 
             <h3 class="accordion cursorPointer">
-                <span> +${i.hard_name}</span> <a href="123">→</a>
+                <span> +${i.hard_name}</span> <a
+                    href=Top.Control?hard_id=${i.hard_id}>→</a>
             </h3>
             <div>
                 <c:forEach var="j" items="${categoryList}" varStatus="st">
                     <p>
                         <a
-                            href=Top.Control?hard_id=${i.hard_id}&category_id=${j.category_id}>${j.category_name}</a>
+                            href=Top.Control?hard_id=${i.hard_id}&category_id=${j.category_id} class=kasen-sakuzixyo>${j.category_name} </a>
                     </p>
                 </c:forEach>
             </div>
         </c:forEach>
     </div>
     <!-- メイン（商品リスト）  -->
-    <div class="main-content-simple">
+    <div class="main-content-simple border">
         <c:forEach var="j" items="${productList}">
-            <div class="obi mozifont">${j.hard_name}</div>
+            <div class="obi${ fn:substring( j.hard_name , 0 , 3 ) } mozifont">${j.hard_name}</div>
 
             <c:forEach var="i" items="${j.tpd}">
                 <div class="gameLogo border">
@@ -90,6 +91,11 @@
         </c:forEach>
 
         <p>${message}</p>
+
     </div>
+    <div class="clearfix"></div>
+    <p class="pegemodori">
+        <a href=# class=kasen-sakuzixyo>ページ上部に戻る</a>
+    </p>
 </body>
 </html>
