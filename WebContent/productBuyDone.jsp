@@ -9,36 +9,25 @@
 <html>
 <head>
 <META charset="Windows-31J">
-<link rel="stylesheet" type="text/css" href="css/style1.css">
-<link rel="stylesheet" type="text/css" href="css/style2.css">
-<link rel="stylesheet" type="text/css" href="css/style3.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
 <title>購入完了</title>
 </head>
-<body>
-<div class="bodygray">
-<div class="Done">
+<body class="bodygray">
+    <div class="productBuyDone">
 
+        <!-- 共通ヘッダー -->
+        <jsp:include page="header_logoOnly.jsp" flush="true" />
 
-    <!-- 共通ヘッダー -->
-    <jsp:include page="header_logoOnly.jsp" flush="true" />
+        <!-- pageー -->
+        <h2>
+            お買い上げいただき誠にありがとうございました。<br> 購入番号：${order_Id}
+        </h2>
 
-    <!-- pageー -->
+        <p class="text-danger">※購入番号はお問い合わせ時に必要になりますので大切に保管ください</p>
 
+        <input type="button" value="トップページに戻る" onClick="location.href='Top.Control'" class="orange-button mozifont">
 
-    <h2>
-        お買い上げいただき誠にありがとうございました。<br> 購入番号：${order_Id}
-    </h2>
-
-    <p class="text-danger">※購入番号はお問い合わせ時に必要になりますので大切に保管ください</p>
-
-    <a href=Top.Control> トップページに戻る </a>
-
-
-
-
-    <!-- 共通フッター -->
-    <jsp:include page="footer.jsp" flush="true" />
-    </div>
     </div>
 </body>
 </html>
