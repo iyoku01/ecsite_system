@@ -394,29 +394,16 @@ header a:visited {
     margin: 20px 0px 0px 0px;
 }
 
-.ave_eval {
-    position: relative;
-    width: 400px;
-}
-
 .kosuuSentaku {
     position: relative;
     left: 750px;
 }
-.cratkey{
-    position: relative;
-    left: 800px;
-}
-.productDatail{
-    position: relative;
-    left: 600px;
-    width: 400px;
-}
-.ave_eval{
-    position: relative;
-    left: 600px;
 .pReview {
     margin: 100px 0px 0px 0px;
+}
+.review a{
+    float:right;
+
 }
 
 .productBuyConf table{
@@ -430,9 +417,6 @@ header a:visited {
     margin: auto ;
     text-align: center;
 
-}
-.float{
-float:left;
 }
 .screenname{
     border:1px black solid;
