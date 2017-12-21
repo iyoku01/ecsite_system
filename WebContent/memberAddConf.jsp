@@ -8,9 +8,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/style1.css">
-<link rel="stylesheet" type="text/css" href="css/style2.css">
-<link rel="stylesheet" type="text/css" href="css/style3.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
 <META charset="Windows-31J">
 <title>新規登録確認</title>
 </head>

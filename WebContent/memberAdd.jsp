@@ -9,9 +9,8 @@
 <html>
 <head>
 <META charset="Windows-31J">
-<link rel="stylesheet" type="text/css" href="css/style1.css">
-<link rel="stylesheet" type="text/css" href="css/style2.css">
-<link rel="stylesheet" type="text/css" href="css/style3.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
 <title>新規会員登録</title>
 </head>
 <body>
