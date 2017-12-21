@@ -1,26 +1,10 @@
 @charset "shift_jis";
 /*/////////////////////////////////////////////////////////////////////
-1) 商品購入
+1) 商品購入(1)
 -----------------------------------------------------------------------
 01.TOP
 02.商品詳細
-05.カート
-06.購入確認
-07.購入完了
 /////////////////////////////////////////////////////////////////////*/
-
-/* htmlのﾃﾞﾌｫﾙﾄの設定をﾘｾｯﾄ */
-html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,caption,tbody,tfoot,thead,tr,th,td
-    {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 100%;
-    /*vertical-align: baseline;*/
-}
-/*---------------------------------------------------------------------*/
 
 /*---------------------------------------------------------------------*/
 /*トップ画面*/
@@ -117,71 +101,6 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
     text-align: center;
 }
 
-/*---------------------------------------------------------------------*/
-/* カート */
-/*---------------------------------------------------------------------*/
-.cart {
-    margin: auto;
-    text-align: center;
-}
-
-.cart table {
-    border: 1px solid black;
-    margin: 50px 70px;
-    border-collapse: collapse;
-}
-
-.cart td:nth-child(1) {
-    border: 1px solid black;
-    padding: 5px;
-    text-align: left;
-    width: 400px;
-    font-size: 20px;
-}
-
-.cart td:nth-child(2) {
-    border: 1px solid black;
-    padding: 5px;
-    width: 700px;
-}
-
-.cart img {
-    width: 70px;
-    height: 100px;
-}
-
-.cart p {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 10px;
-}
-
-.cart form {
-    text-align: right;
-    margin: 50px 50px;
-}
-
-.cartbotton-delete {
-    text-align: center;
-    font-size: 17px;
-    width: 150px;
-    height: 40px;
-    background-color: WhiteSmoke;
-}
-
-.cartbotton {
-    margin: 40px;
-    text-align: center;
-    font-size: 25px;
-    width: 200px;
-    height: 50px;
-    background-color: orange;
-    border-radius: 10px;
-}
-
-
-
-/*---------------------------------------------------------------------*/
 /*---------------------------------------------------------------------*/
 /* 商品詳細画面 */
 /*---------------------------------------------------------------------*/

@@ -1,5 +1,6 @@
 @import url("reset.css");
 @import url("common.css");
-@import url("style1.css");
+@import url("style1_top.css");
+@import url("style1_cart.css");
 @import url("style2.css");
 @import url("style3.css");
