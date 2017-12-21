@@ -1,0 +1,89 @@
+@charset "shift_jis";
+/*/////////////////////////////////////////////////////////////////////
+/ 共通
+/////////////////////////////////////////////////////////////////////*/
+
+/*---------------------------------------------------------------------*/
+/*共通*/
+/*---------------------------------------------------------------------*/
+.mozifont {
+    font-family: "HGP創英角ﾎﾟｯﾌﾟ体";
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+.titleMojiFont {
+    font-size: 30px;
+}
+
+.font-size15px {
+    font-size: 15px;
+}
+
+.border {
+    box-sizing: border-box;
+    border: solid;
+    border-color: #dcdcdc;
+    border-width: 2px;
+    padding: 10px;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.float {
+    float: left;
+}
+
+.inline {
+    display:inline;
+}
+.screenname {
+    background-color:white;
+    display:inline-block;
+    border:1px solid black;
+    padding:5px 15px;
+    margin:10px auto 20px 30px;
+}
+
+/*オレンジボタン*/
+.orange-button {
+    margin: 0px 0px 0px 10px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 15px;
+    background-color: orange;
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+}
+/*グレーボタン*/
+.gray-button {
+    margin: 0px 0px 0px 10px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 15px;
+    background-color: silver;
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.kasen-sakuzixyo {
+    text-decoration: none;
+}
+
+.bodygray {
+    background-color: #EEEEEE;
+    color: #333333;
+}
+
+.bodywhite {
+    background-color: #FFFFFF;
+    color: #333333;
+}
