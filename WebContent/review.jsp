@@ -45,7 +45,8 @@
     <!-- 商品情報 -->
     <div class="revProduct clearfix">
         <h3>${product.product_name}</h3>
-        <span class=star value=product.ave_eval> </span>
+        <!-- 商品の平均評価の値を切り捨てて表示 -->
+        <span><c:forEach begin="1" end="5"  step="1" varStatus="status"><c:choose><c:when test="${status.index <= product.ave_eval}"><yellowStar>&#xf2fc;</yellowStar></c:when><c:otherwise><grayStar>&#xf2fc;</grayStar> </c:otherwise></c:choose></c:forEach></span>
         <p>${product.hard_name}</p>
         <div class=innerElement>
         <img src="${product.mainPic_file}" width="80"> <span
@@ -53,6 +54,7 @@
     </div>
     <p class="info float">${product.info}</p>
     <!-- フォーム情報 -->
+    <c:if test="${writeReview}">
     <form action="reviewWrite.jsp" method="post">
         <input type=hidden name=product_id value="${review.product_id}">
         <input type=hidden name=nickname value="${review.nickname}"> <input
@@ -75,6 +77,7 @@
             </c:otherwise>
         </c:choose>
     </form>
+    </c:if>
     </div>
 
 

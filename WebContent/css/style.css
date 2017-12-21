@@ -398,6 +398,17 @@ h2 {
     display: none;
 }
 
+grayStar {
+    font-family: "Ionicons";
+    color: #aaa;
+    font-size: 30px;;
+}
+yellowStar {
+    font-family: "Ionicons";
+    color: #fc3;
+    font-size: 30px;
+}
+
 .star {
     position: relative;
 }
