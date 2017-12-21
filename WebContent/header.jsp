@@ -20,29 +20,29 @@
                 src="img\CompanyLogo\watazon_logo.png" alt="企業ロゴ">
             </a>
         </div>
-            <form action="Top.Control" method="post" id="form1">
-                <table class="head-table float">
-                    <tr>
-                        <td class="kensakumozi">検索</td>
-                        <td class="search"><input type="text" name="search"
-                            placeholder="商品名を入力" required></td>
-                        <td><input class="searchAction"
-                            type="image" src="img\Header\search.png"></td>
+        <form action="Top.Control" method="post" id="form1">
+            <table class="head-table float">
+                <tr>
+                    <td class="kensakumozi">検索</td>
+                    <td class="search"><input type="text" name="search"
+                        placeholder="商品名を入力" required></td>
+                    <td><input class="searchAction" type="image"
+                        src="img\Header\search.png"></td>
 
-                    </tr>
-                </table>
-            </form>
+                </tr>
+            </table>
+        </form>
 
-        <div class="menu float">
+        <div class="menu float mozifont">
             <img src="img\Header\cart.png"> <a href=Cart.Control
-                id="cartSuu">${cart.sumBuyCount}</a>/
+                class="cartSuu">${cart.sumBuyCount}</a>
             <c:if test="${empty user_id }">
                 <a href=login.jsp>新規登録/ログイン</a>
             </c:if>
             <c:if test="${!empty user_id }">
                 <a href=Logout.Control>ログアウト</a>
             </c:if>
-            / <a href=MyPage.Control>マイページ</a>
+            <span class="mypage-kye"><a href=MyPage.Control>マイページ</a></span>
         </div>
     </header>
 </body>

@@ -154,7 +154,7 @@ header a:visited {
 
 .search input {
     box-sizing: border-box;
-    height: 27px;
+    height: 100%;
     width: 400px;
 }
 
@@ -173,14 +173,17 @@ header a:visited {
     margin:20px;
 }
 
+.mypage-kye{
+    margin:20px;
+}
 .menu img {
     width: 30px;
 }
 
-#cartSuu {
-    top: -5px;
-    left: 7px;
-    position: absolute;
+.cartSuu {
+    position:relative;
+    left: -35px;
+    top: -10px;
 }
 /*---------------------------------------------------------------------*/
 /*トップ画面*/
@@ -418,7 +421,6 @@ header a:visited {
     text-align: center;
 
 }
-<<<<<<< HEAD
 .screenname{
     border:1px black solid;
     padding:6px;
@@ -426,9 +428,7 @@ header a:visited {
     display:inline-block;
     background-color:white;
 }
-=======
 
->>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
 /*レビュー用の星*/
 .index-star {
     display: none;
