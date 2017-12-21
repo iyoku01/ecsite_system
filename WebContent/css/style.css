@@ -49,6 +49,13 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
 .inline {
     display:inline;
 }
+.screenname {
+    background-color:white;
+    display:inline-block;
+    border:1px solid black;
+    padding:5px 15px;
+    margin:10px auto 20px 30px;
+}
 
 /*オレンジボタン*/
 .orange-button {
@@ -301,6 +308,9 @@ header h3 {
     background-color: orange;
     border-radius: 10px;
 }
+
+
+/* ----------------------------------会員登録・更新・各完了---------------------------------- */
 .membotton{
     margin:40px;
     text-align:center;
@@ -308,7 +318,7 @@ header h3 {
     width: 100px;
     height: 40px;
     background-color:orange;
-	float:left;
+    float:left;
 }
 
 .membotton2{
@@ -318,20 +328,28 @@ header h3 {
     width: 100px;
     height: 40px;
     background-color:gray;
-	float:left;
+    float:left;
 }
 .memUpcon{
-	text-align:center;
-	line-height: 300%;
-}
+    text-align:center;
+    line-height: 300%;
 
+}
+.memUpcon table {
+    margin:0 auto;
+    padding:50px 5opx 50px 0px;
+    text-align:left;
+}
+.memUpcon th {
+    width:200px;
+}
 .formcenter{
-	margin:10px auto;
-	width: 370px;
+    margin:10px auto;
+    width: 370px;
 }
 
 .memborder{
-	clear: both;
+    clear: both;
 }
 /*-------------商品詳細画面--------------*/
 .productDatail-sub-content {
@@ -377,9 +395,7 @@ width: 50px;
     box-sizing: border-box;
     width: 400px;
 }
-.memUpcon td{
-width:200px;
-margin:auto;
+
 
 .productDatail {
     margin: 20px 0px 0px 0px;
@@ -390,13 +406,6 @@ margin:auto;
     width: 400px;
 }
 
-
-.memUpcon table{
-	padding:50px 5opx 50px 0px;
-	margin:auto;
-	text-align:center;
-
-}
 .kosuuSentaku {
     position: relative;
     left: 750px;
@@ -418,13 +427,13 @@ margin:auto;
 }
 
 .productBuyConf table{
-	border: 1px solid black;
+    border: 1px solid black;
     margin: auto;
     text-align: center;
 }
 
 .productBuyConf td{
-	border: 1px solid black;
+    border: 1px solid black;
     margin: auto ;
     text-align: center;
 
@@ -433,11 +442,11 @@ margin:auto;
 float:left;
 }
 .screenname{
-	border:1px black solid;
-	padding:6px;
-	margin:10px;
-	display:inline-block;
-	background-color:white;
+    border:1px black solid;
+    padding:6px;
+    margin:10px;
+    display:inline-block;
+    background-color:white;
 }
 /*レビュー用の星*/
 .index-star {
