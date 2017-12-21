@@ -9,7 +9,7 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
     font-style: normal;
     font-weight: normal;
     font-size: 100%;
-    vertical-align: baseline;
+    /*vertical-align: baseline;*/
 }
 /*共通*/
 .mozifont {
@@ -70,10 +70,10 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
     background-color: #FFFFFF;
     color: #333333;
 }
-/*ここからヘッダー*/
+/*-------------------ここからヘッダー----------------------*/
 header {
     background-color: #555555;
-    height: 70px;
+    height: 90px;
     width: 100%;
 }
 
@@ -87,61 +87,61 @@ header a:visited {
     text-decoration: none;
 }
 
-header h3 {
-    font-size: 30px;
+.CompanyLogo img {
+    box-sizing: border-box;
+    width: 200px;
 }
 
-.kensaku {
-    position: absolute;
+.head-table {
+    box-sizing: border-box;
+    height: 31px;
+    margin: 20px;
+}
+
+.CompanyLogo {
+    box-sizing: border-box;
+    width: 200px;
+}
+
+.kensakumozi {
+    box-sizing: border-box;
     background-color: #d2d2d2;
-    left: 180px;
-    top: 22px;
-    width: 45px;
     border-radius: 5px 0px 0px 5px;
+    width: 80px;
     text-align: center;
+
 }
 
-#form1 {
-    position: absolute;
+.search {
+    box-sizing: border-box;
 }
 
-#search {
-    position: absolute;
-    width: 182px;
-    height: 16px;
-    background: #fff;
-    border: none;
-    padding: 4px;
-    color: #000;
-    left: 222px;
-    top: -55px;
+.search input {
+    box-sizing: border-box;
+    height: 27px;
+    width: 400px;
 }
 
-#searchAction {
-    position: absolute;
-    top: -55px;
-    left: 412px;
-    max-width: 24px;
+.searchAction {
+    box-sizing: border-box;
     background-color: #ffc107;
     border-radius: 0px 5px 5px 0px;
 }
 
-#menu {
-    top: 10px;
-    left: 450px;
-    position: absolute;
+.searchAction[type="image"]{
+    width:30px;
 }
 
-#menu img {
+.menu {
+    box-sizing: border-box;
+    margin:20px;
+}
+
+.menu img {
     width: 30px;
 }
 
-#cartSuu {
-    top: -5px;
-    left: 7px;
-    position: absolute;
-}
-/*トップ画面*/
+/*-----------------------トップ画面---------------------*/
 .main-content-simple {
     position: relative;
     overflow: hidden;
