@@ -28,8 +28,13 @@
     margin:5px 50px 20px 0;
 }
 .revProduct .info{
-    width:65%;
+    width:70%;
     display:inline-block;
+}
+.revProduct form {
+    position:relative;
+    margin:40px 20px;
+    left:50px;
 }
 
 .revProduct .info .orangeÅ]button{

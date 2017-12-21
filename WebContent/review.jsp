@@ -70,10 +70,10 @@
         <c:choose>
             <c:when test="${!empty review}">
                 <input type=hidden name=update value="true">
-                <input type=submit class=orange‐button value=レビューの編集>
+                <input type=submit class=orange-button value=レビューの編集>
             </c:when>
             <c:otherwise>
-                <input type=submit class=orange‐button value=レビューを書く>
+                <input type=submit class=orange-button value=レビューを書く>
             </c:otherwise>
         </c:choose>
     </form>
