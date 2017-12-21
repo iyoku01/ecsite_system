@@ -10,7 +10,9 @@
 <head>
 <META charset="Windows-31J">
 
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/style1.css">
+<link rel="stylesheet" type="text/css" href="css/style2.css">
+<link rel="stylesheet" type="text/css" href="css/style3.css">
 
 <!-- スライドショー Start -->
 <!-- jQuery library (served from Google) -->
@@ -59,6 +61,7 @@
     </ul>
     <!-- サイドバー -->
     <div class="side-content-simple border">
+        <a href="Top.Control">全てのゲーム</a>
         <c:forEach var="i" items="${hardList}" varStatus="st">
 
             <h3 class="accordion cursorPointer">

@@ -1,6 +1,4 @@
 <%@ page contentType="text/html; charset=Windows-31J"%>
-<%@ page import="database.*"%>
-<%@ page import="java.util.*"%>
 
 <!-- El Start -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -10,7 +8,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/style1.css">
+<link rel="stylesheet" type="text/css" href="css/style2.css">
+<link rel="stylesheet" type="text/css" href="css/style3.css">
 <META charset="Windows-31J">
 <title>新規登録確認</title>
 </head>
@@ -53,9 +53,9 @@
 
     <tr><td>ニックネーム：</td><td><%=nickname%></td></tr>
 
-	<tr><td>郵便番号：</td><td><%=postal_code%></td></tr>
+    <tr><td>郵便番号：</td><td><%=postal_code%></td></tr>
 
-   	<tr><td>住所：</td><td><%=address%></td></tr>
+       <tr><td>住所：</td><td><%=address%></td></tr>
 
     <tr><td>電話番号：</td><td><%=phone%></td></tr>
 

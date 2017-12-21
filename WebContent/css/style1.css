@@ -1,4 +1,13 @@
 @charset "shift_jis";
+/*/////////////////////////////////////////////////////////////////////
+1) 商品購入
+-----------------------------------------------------------------------
+01.TOP
+02.商品詳細
+05.カート
+06.購入確認
+07.購入完了
+/////////////////////////////////////////////////////////////////////*/
 
 /* htmlのﾃﾞﾌｫﾙﾄの設定をﾘｾｯﾄ */
 html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,caption,tbody,tfoot,thead,tr,th,td
@@ -269,34 +278,6 @@ header a:visited {
 }
 
 /*---------------------------------------------------------------------*/
-/* ログイン */
-/*---------------------------------------------------------------------*/
-.login {
-    margin: auto;
-    text-align: center;
-}
-
-.login table {
-    margin: 50px auto;
-}
-
-.login td:nth-child(1) {
-    text-align: right;
-}
-
-.login p {
-    color: red;
-}
-
-.login input[type="text"], .login input[type="password"] {
-    border: 2px solid black;
-    margin: 10px 20px;
-}
-
-.login input[type="button"],.login input[type="submit"] {
-    margin: 30px 50px;
-}
-/*---------------------------------------------------------------------*/
 /* カート */
 /*---------------------------------------------------------------------*/
 .cart {
@@ -359,49 +340,7 @@ header a:visited {
 }
 
 
-/*---------------------------------------------------------------------*/
-/* 会員登録・更新・各完了 */
-/*---------------------------------------------------------------------*/
-.membotton {
-    margin: 40px;
-    text-align: center;
-    font-size: 15px;
-    width: 100px;
-    height: 40px;
-    background-color: orange;
-    float: left;
-}
 
-.membotton2 {
-    margin: 40px;
-    text-align: center;
-    font-size: 15px;
-    width: 100px;
-    height: 40px;
-    background-color: gray;
-    float: left;
-}
-
-.memUpcon {
-    text-align: center;
-    line-height: 300%;
-}
-.memUpcon table {
-    margin:0 auto;
-    padding:50px 5opx 50px 0px;
-    text-align:left;
-}
-.memUpcon th {
-    width:200px;
-}
-.formcenter {
-    margin: 10px auto;
-    width: 370px;
-}
-
-.memborder {
-    clear: both;
-}
 /*---------------------------------------------------------------------*/
 /* 商品詳細画面 */
 /*---------------------------------------------------------------------*/
@@ -539,61 +478,4 @@ yellowStar {
     content: "\f2fc";
     font-family: "Ionicons";
     color: #fc3;
-}/*レビュー画面、レビュー記入画面*/
-.revProduct {
-    margin:30px auto 10px;
-    padding:10px;
-    width:85%;
-    border:1px solid #999999;
-}
-.revProduct h3 {
-    font-size:24px;
-    text-align:left;
-    margin:5px 50px 15px 0;
-    display:inline-block;
-}
-.revProduct span {
-    font-size:16px;
-    margin:5px 50px 20px 0;
-}
-.revProduct .info{
-    width:65%;
-    display:inline-block;
-}
-
-.revProduct .info .orange‐button{
-    margin:auto 5px 5px auto;
-}
-.innerElement {
-    margin:0 auto 5px 10px;
-}
-
-.reviewList{
-    margin:10px auto 50px;
-    width:85%
-}
-.reviewList p{
-    margin:10px auto 10px 5px;
-}
-.ownReview {
-    border:2px solid #777777;
-    padding:5px;
-    margin:10px auto 30px;
-}
-.oneReview {
-    border:1px solid #999999;
-    padding:5px;
-    margin:10px auto;
-}
-.inputContent {
-    margin:30px auto 50px;
-    padding:10px;
-    width:85%;
-}
-.review {
-    margin:10px auto 20px;
-}
-.review textarea {
-    height:180px;
-    width:100%;
 }

@@ -1,8 +1,5 @@
 <%@ page contentType="text/html; charset=Windows-31J" %>
 
-<%@ page import="database.*"%>
-<%@ page import="java.util.*"%>
-
 <!-- El Start -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -12,6 +9,9 @@
 <html>
 <head>
 <META charset="Windows-31J">
+<link rel="stylesheet" type="text/css" href="css/style1.css">
+<link rel="stylesheet" type="text/css" href="css/style2.css">
+<link rel="stylesheet" type="text/css" href="css/style3.css">
 <title>会員情報変更</title>
 </head>
 <body>
@@ -25,7 +25,7 @@ String straddress="";
 
 
 request.setCharacterEncoding("Windows-31J");
-	String password = request.getParameter("password");
+    String password = request.getParameter("password");
 String name = request.getParameter("name");
 String nickname = request.getParameter("nickname");
 String phone = request.getParameter("phone");
@@ -45,7 +45,7 @@ straddress=address;
 
 
 
-		<form action="http://localhost:8080/ecsite_system/memberUpdateConf.jsp"
+        <form action="http://localhost:8080/ecsite_system/memberUpdateConf.jsp"
         method="post">
         <p>ユーザーID：<%=session.getAttribute("user_id")%></p>
         <p>パスワード<input type=text name=password value=<%=strPassword %>></p>
