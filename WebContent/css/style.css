@@ -60,7 +60,6 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
     color:red;
 }
 
-
 /*オレンジボタン*/
 .orange-button {
     margin:0px 0px 0px 10px;
@@ -491,7 +490,7 @@ yellowStar {
     color: #fc3;
 }
 
-/*------------------------レビュー画面、レビュー記入画面---------------------------*/
+/*レビュー画面、レビュー記入画面*/
 .revProduct {
     margin:30px auto 10px;
     padding:10px;
@@ -531,6 +530,11 @@ yellowStar {
     border:2px solid #777777;
     padding:5px;
     margin:10px auto 30px;
+}
+.oneReview {
+    border:1px solid #999999;
+    padding:5px;
+    margin:10px auto;
 }
 .inputContent {
     margin:30px auto 50px;
