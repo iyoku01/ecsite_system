@@ -67,4 +67,35 @@
     border-radius: 10px;
 }
 
+/*---------------------------------------------------------------------*/
+/* çwì¸ämîF */
+/*---------------------------------------------------------------------*/
+.productBuyDone {
+    text-align: center;
+}
+
+.productBuyDone h2 {
+    line-height: 50px;
+    background-color: #ffffff;
+    height: 10%;
+    width: 80%;
+    margin: 30px auto 0px;
+    padding: 10px;
+    font-size: 30px;
+    line-height: 60px;
+}
+
+.productBuyDone input[type="button"] {
+    margin: 120px auto;
+    font-size: 25px;
+    width: 250px;
+    height: 50px;
+    background-color: orange;
+    border-radius: 10px;
+}
+
+.productBuyDone p {
+    color: red;
+}
+
 
