@@ -93,7 +93,7 @@
                     <p>このゲームに対するあなたのレビュー</p>
                     <div class="ownReview">
                         <span>投稿者</span> <span>${review.nickname}</span> <span>${review.date}</span>
-                        <span class=evaluation>${review.evaluation}</span>
+                        <c:forEach begin="1" end="5"  step="1" varStatus="status"><c:choose><c:when test="${status.index <= review.evaluation}"><yellowStar>&#xf2fc;</yellowStar></c:when><c:otherwise><grayStar>&#xf2fc;</grayStar> </c:otherwise></c:choose></c:forEach></span>
                         <p>${review.review}</p>
                     </div>
                 </c:when>
@@ -107,8 +107,10 @@
         <!-- レビューのリスト -->
         <c:forEach var="i" items="${reviewList}">
             <div class="oneReview">
-                <span>投稿者</span> <span>${i.nickname}</span> <span>${i.date}</span> <span
-                    class=star value=${i.evaluation} ></span>
+                <span>投稿者</span>
+                <span>${i.nickname}</span>
+                <span>${i.date}</span>
+                <c:forEach begin="1" end="5"  step="1" varStatus="status"><c:choose><c:when test="${status.index <= i.evaluation}"><yellowStar>&#xf2fc;</yellowStar></c:when><c:otherwise><grayStar>&#xf2fc;</grayStar> </c:otherwise></c:choose></c:forEach></span>
                 <p>${i.review}</p>
             </div>
         </c:forEach>
