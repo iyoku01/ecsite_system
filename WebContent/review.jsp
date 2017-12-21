@@ -48,9 +48,9 @@
         <!-- 商品の平均評価の値を切り捨てて表示 -->
         <span><c:forEach begin="1" end="5"  step="1" varStatus="status"><c:choose><c:when test="${status.index <= product.ave_eval}"><yellowStar>&#xf2fc;</yellowStar></c:when><c:otherwise><grayStar>&#xf2fc;</grayStar> </c:otherwise></c:choose></c:forEach></span>
         <p>${product.hard_name}</p>
-        <div class=innerElement>
-        <img src="${product.mainPic_file}" width="80"> <span
-            class=productPrice>\ ${product.price}</span> <span class=zaiko>在庫あり</span>
+        <div class="innerElement clearfix">
+        <img class=float src="${product.mainPic_file}" width="80"> <p
+            class=productPrice>\ ${product.price}</p> <p class=zaiko>在庫あり</p>
     </div>
     <p class="info float">${product.info}</p>
     <!-- フォーム情報 -->

@@ -13,7 +13,7 @@
 /*---------------------------------------------------------------------*/
 .revProduct {
     margin:30px auto 10px;
-    padding:10px;
+    padding:10px 10px 30px;
     width:85%;
     border:1px solid #999999;
 }
@@ -36,12 +36,13 @@
     margin:40px 20px;
     left:50px;
 }
-
-.revProduct .info .orangeÅ]button{
-    margin:auto 5px 5px auto;
-}
 .innerElement {
-    margin:0 auto 5px 10px;
+    margin:0 auto 20px 10px;
+}
+.innerElement  p {
+    position:relative;
+    left:100px;
+    top:30px;
 }
 
 .reviewList{
@@ -69,7 +70,16 @@
 .review {
     margin:10px auto 20px;
 }
+
+.inputContent .star {
+    margin:0 auto 0 20px;
+}
+
+.inputContent input {
+    border:3px solid #ececec;
+}
 .review textarea {
     height:180px;
     width:100%;
+    border:3px solid #ececec;
 }
