@@ -182,6 +182,7 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
 
 
 /*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
 /* 商品詳細画面 */
 /*---------------------------------------------------------------------*/
 .productDatail-sub-content {
@@ -234,29 +235,16 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
     margin: 20px 0px 0px 0px;
 }
 
-.ave_eval {
-    position: relative;
-    width: 400px;
-}
-
 .kosuuSentaku {
     position: relative;
     left: 750px;
 }
-.cratkey{
-    position: relative;
-    left: 800px;
-}
-.productDatail{
-    position: relative;
-    left: 600px;
-    width: 400px;
-}
-.ave_eval{
-    position: relative;
-    left: 600px;
 .pReview {
     margin: 100px 0px 0px 0px;
+}
+.review a{
+    float:right;
+
 }
 
 .productBuyConf table{
@@ -271,7 +259,13 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
     text-align: center;
 
 }
-
+.screenname{
+    border:1px black solid;
+    padding:6px;
+    margin:10px;
+    display:inline-block;
+    background-color:white;
+}
 /*レビュー用の星*/
 .index-star {
     display: none;
