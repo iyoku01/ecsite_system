@@ -9,10 +9,12 @@
 <html>
 <head>
 <META charset="Windows-31J">
-
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <title>購入完了</title>
 </head>
 <body>
+<div class="bodygray">
+<div class="Done">
 
 
     <!-- 共通ヘッダー -->
@@ -34,5 +36,7 @@
 
     <!-- 共通フッター -->
     <jsp:include page="footer.jsp" flush="true" />
+    </div>
+    </div>
 </body>
 </html>

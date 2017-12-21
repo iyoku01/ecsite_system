@@ -52,7 +52,7 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
 
 /*オレンジボタン*/
 .orange-button {
-    margin: 0px 0px 0px 10px;
+    margin:0px 0px 0px 10px;
     box-sizing: border-box;
     text-align: center;
     font-size: 15px;
@@ -77,19 +77,20 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
 }
 /*ここからヘッダー*/
 header {
-    background-color: #555555;
+    background-color: #333333;
     height: 70px;
     width: 100%;
+
 }
 
 header a:link {
     color: #fff;
-    text-decoration: none;
+     text-decoration: none;
 }
 
 header a:visited {
     color: #fff;
-    text-decoration: none;
+     text-decoration: none;
 }
 
 header h3 {
@@ -142,7 +143,7 @@ header h3 {
 }
 
 #cartSuu {
-    top: -5px;
+        top: -5px;
     left: 7px;
     position: absolute;
 }
@@ -208,7 +209,7 @@ header h3 {
     text-align: right;
 }
 
-h2 {
+.Done h2 {
     line-height: 50px;
     background-color: #ffffff;
     height: 10%;
@@ -300,39 +301,37 @@ h2 {
     background-color: orange;
     border-radius: 10px;
 }
-/*---------------------------------------------------------------------*/
-.membotton {
-    margin: 40px;
-    text-align: center;
-    font-size: 15px;
+.membotton{
+    margin:40px;
+    text-align:center;
+    font-size:15px;
     width: 100px;
-    height: 30px;
-    background-color: orange;
-    float: left;
+    height: 40px;
+    background-color:orange;
+	float:left;
 }
 
-.membotton2 {
-    margin: 40px;
-    text-align: center;
-    font-size: 15px;
+.membotton2{
+    margin:40px;
+    text-align:center;
+    font-size:15px;
     width: 100px;
-    height: 30px;
-    background-color: gray;
-    float: left;
+    height: 40px;
+    background-color:gray;
+	float:left;
+}
+.memUpcon{
+	text-align:center;
+	line-height: 300%;
 }
 
-.memUpcon {
-    text-align: center;
-    line-height: 300%;
+.formcenter{
+	margin:10px auto;
+	width: 370px;
 }
 
-.formcenter {
-    margin: 10px auto;
-    width: 370px;
-}
-
-.memborder {
-    clear: both;
+.memborder{
+	clear: both;
 }
 /*-------------商品詳細画面--------------*/
 .productDatail-sub-content {
@@ -359,13 +358,11 @@ h2 {
     width: 300px;
     height: 400px;
 }
-
-.subGazou {
+.subGazou{
     margin: 0px 5px;
-    width: 50px;
+width: 50px;
     float: left;
 }
-
 .subGazou img {
     width: 50px;
     height: 50px;
@@ -380,6 +377,9 @@ h2 {
     box-sizing: border-box;
     width: 400px;
 }
+.memUpcon td{
+width:200px;
+margin:auto;
 
 .productDatail {
     margin: 20px 0px 0px 0px;
@@ -390,8 +390,54 @@ h2 {
     width: 400px;
 }
 
+
+.memUpcon table{
+	padding:50px 5opx 50px 0px;
+	margin:auto;
+	text-align:center;
+
+}
+.kosuuSentaku {
+    position: relative;
+    left: 750px;
+}
+.cratkey{
+    position: relative;
+    left: 800px;
+}
+.productDatail{
+    position: relative;
+    left: 600px;
+    width: 400px;
+}
+.ave_eval{
+    position: relative;
+    left: 600px;
 .pReview {
     margin: 100px 0px 0px 0px;
+}
+
+.productBuyConf table{
+	border: 1px solid black;
+    margin: auto;
+    text-align: center;
+}
+
+.productBuyConf td{
+	border: 1px solid black;
+    margin: auto ;
+    text-align: center;
+
+}
+.float{
+float:left;
+}
+.screenname{
+	border:1px black solid;
+	padding:6px;
+	margin:10px;
+	display:inline-block;
+	background-color:white;
 }
 /*レビュー用の星*/
 .index-star {
