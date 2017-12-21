@@ -33,24 +33,24 @@
         %>
 
 
- 
+<span class="screenname">登録情報確認</span>
 
 <div class="memUpcon">
 <table>
-    <tr><td>ID：</td><td><%=session.getAttribute("user_id")%></td></tr>
+    <tr><th>ID：</th><td><%=session.getAttribute("user_id")%></td></tr>
 
-    <tr><td>名前：</td><td><%=name%></td></tr>
+    <tr><th>名前：</th><td><%=name%></td></tr>
 
-    <tr><td>ニックネーム：</td><td><%=nickname%></td></tr>
+    <tr><th>ニックネーム：</th><td><%=nickname%></td></tr>
 
-	<tr><td>郵便番号：</td><td><%=postal_code%></td></tr>
+    <tr><th>郵便番号：</th><td>〒<%=postal_code%></td></tr>
 
-   	<tr><td>住所：</td><td><%=address%></td></tr>
+       <tr><th>住所：</th><td><%=address%></td></tr>
 
-    <tr><td>電話番号：</td><td><%=phone%></td></tr>
+    <tr><th>電話番号：</th><td><%=phone%></td></tr>
 
 </table>
-    <p>上記の情報でお間違いはございませんでしょうか</p>
+    <p>上記の情報でお間違いはございませんか？</p>
 
    <div class="formcenter">
 

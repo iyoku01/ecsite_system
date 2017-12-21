@@ -573,11 +573,7 @@ public class EcsiteDao implements AutoCloseable {
     }
 
     /***
-    <<<<<<< HEAD
-     * レビューの新規登録
-    =======
      * レビューを追加する
-    >>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
      * @param product_id
      * @param user_id
      * @param nickname
@@ -655,23 +651,12 @@ public class EcsiteDao implements AutoCloseable {
         String sql = "UPDATE review_tbl SET"
                 + " nickname=?, evaluation=?, review=?, date=now() WHERE user_id=? AND product_id=?";
 
-        System.out.println(product_id);
-        System.out.println(user_id);
-        System.out.println(nickname);
-        System.out.println(evaluation);
-        System.out.println(review);
-
         try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
             pstatement.setString(1, nickname);
             pstatement.setString(2, evaluation);
             pstatement.setString(3, review);
             pstatement.setString(4, user_id);
             pstatement.setString(5, product_id);
-            System.out.println(product_id);
-            System.out.println(user_id);
-            System.out.println(nickname);
-            System.out.println(evaluation);
-            System.out.println(review);
             pstatement.executeUpdate();
         }
     }
@@ -726,5 +711,23 @@ public class EcsiteDao implements AutoCloseable {
         return order_Id;
 
     }
-    //>>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
+
+    /***
+     * 指定した商品IDの評価平均を更新する
+     * @param product_id
+     * @throws SQLException
+     */
+    public void updateEvaluation(String product_id)
+            throws SQLException {
+        System.out.println("\n/// updataEvaluation()");
+
+        String sql = "UPDATE product_mst SET"
+                + " ave_eval=(SELECT AVG(evaluation) FROM review_tbl WHERE product_id=?) WHERE product_id=?";
+
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            pstatement.setString(1, product_id);
+            pstatement.setString(2, product_id);
+            pstatement.executeUpdate();
+        }
+    }
 }

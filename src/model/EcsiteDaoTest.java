@@ -261,5 +261,15 @@ public class EcsiteDaoTest {
             fail(e.getMessage());
         }
     }
-    //>>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
+
+    @Test
+    public void testUpdateEvaluation() {
+        try (EcsiteDao dao = new EcsiteDao()) {
+            dao.updateEvaluation("2");
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail(e.getMessage());
+        }
+    }
+
 }
