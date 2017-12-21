@@ -29,6 +29,7 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
 }
 
 .border {
+    box-sizing: border-box;
     border: solid;
     border-color: #dcdcdc;
     border-width: 2px;
@@ -44,8 +45,13 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
 .float {
     float: left;
 }
+
+.inline {
+    display:inline;
+}
+
 /*オレンジボタン*/
-.orange‐button {
+.orange-button {
     margin:0px 0px 0px 10px;
     box-sizing: border-box;
     text-align: center;
@@ -53,9 +59,13 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
     background-color: orange;
     width: 150px;
     height: 30px;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px;
 }
-/*ここまで*/
+
+.kasen-sakuzixyo {
+    text-decoration: none;
+}
+
 .bodygray {
     background-color: #EEEEEE;
     color: #333333;
@@ -138,44 +148,65 @@ header h3 {
     position: absolute;
 }
 /*トップ画面*/
-.gameLogo {
-    position: relative;
-    display: -webkit-flex;
-    display: flex;
-    width: 200px;
-    float: left;
-}
-
-.gameLogo img {
-    height: 100px;
-    width: 200px;
-    display: -webkit-flex;
-    display: flex;
-}
-
-.categoryList {
-    margin: 0px;
-    width: 300px;
-    float: left;
-    border: solid;
-}
-
-.obi {
-    margin: 0px 0px 20px 0px;
-    position: relative;
-    background-color: #ffc107;
-}
-
 .main-content-simple {
+    position: relative;
     overflow: hidden;
     width: 70%;
     float: right;
 }
 
 .side-content-simple {
-    min-width: 250px;
-    width: 30%;
+    width: 300px;
     float: left;
+    padding: 10px;
+}
+
+.side-content-simple p {
+    text-indent: 2em;
+}
+
+.bxslider img {
+    margin: 0 auto;
+    display: block;
+}
+
+.gameLogo {
+    box-sizing: border-box;
+    margin: 10px;
+    float: left;
+}
+
+.gameLogo img {
+    height: 100px;
+    width: 200px;
+}
+
+.categoryList {
+    float: left;
+}
+
+.obiNin {
+    box-sizing: border-box;
+    width: 90%;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 15px 13px 22px -5px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(#ff6f6f, #ff0b22);
+}
+
+.obiPla {
+    box-sizing: border-box;
+    width: 90%;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 15px 13px 22px -5px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(#5ae8ff, #015e88);
+}
+
+.pegemodori {
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: right;
 }
 
 .Done h2 {
@@ -209,6 +240,9 @@ header h3 {
     text-align: center;
 }
 
+/*---------------------------------------------------------------------*/
+/* カート */
+/*---------------------------------------------------------------------*/
 .cart {
     margin: auto;
     text-align: center;
@@ -216,14 +250,46 @@ header h3 {
 
 .cart table {
     border: 1px solid black;
-    margin: 100px auto 20px;
-    text-align: center;
+    margin: 50px 70px;
     border-collapse: collapse;
 }
 
-.cart td {
+.cart td:nth-child(1) {
     border: 1px solid black;
-    padding: 30px;
+    padding: 5px;
+    text-align: left;
+    width: 400px;
+    font-size: 20px;
+}
+
+.cart td:nth-child(2) {
+    border: 1px solid black;
+    padding: 5px;
+    width: 700px;
+}
+
+.cart img {
+    width: 70px;
+    height: 100px;
+}
+
+.cart p {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px;
+}
+
+.cart form {
+    text-align: right;
+    margin: 50px 50px;
+}
+
+.cartbotton-delete {
+    text-align: center;
+    font-size: 17px;
+    width: 150px;
+    height: 40px;
+    background-color: WhiteSmoke;
 }
 
 .cartbotton {
@@ -233,6 +299,7 @@ header h3 {
     width: 200px;
     height: 50px;
     background-color: orange;
+    border-radius: 10px;
 }
 .membotton{
     margin:40px;
@@ -266,7 +333,7 @@ header h3 {
 .memborder{
 	clear: both;
 }
-/*商品詳細画面*/
+/*-------------商品詳細画面--------------*/
 .productDatail-sub-content {
     box-sizing: border-box;
     width: 410px;
@@ -371,4 +438,90 @@ float:left;
 	margin:10px;
 	display:inline-block;
 	background-color:white;
+}
+/*レビュー用の星*/
+.index-star {
+    display: none;
+}
+
+.star {
+    position: relative;
+}
+
+.star>a {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.star>a:before {
+    content: "\f2fc";
+    font-family: "Ionicons";
+    font-size: 20px;
+    color: #aaa;
+}
+
+.star>a.on:before {
+    content: "\f2fc";
+    font-family: "Ionicons";
+    color: #fc3;
+}
+
+/*レビュー画面、レビュー記入画面*/
+.revProduct {
+    margin:30px auto 10px;
+    padding:10px;
+    width:85%;
+    border:1px solid #999999;
+}
+.revProduct h3 {
+    font-size:24px;
+    text-align:left;
+    margin:5px 50px 15px 0;
+    display:inline-block;
+}
+.revProduct span {
+    font-size:16px;
+    margin:5px 50px 20px 0;
+}
+.revProduct .info{
+    width:65%;
+    display:inline-block;
+}
+
+.revProduct .info .orange‐button{
+    margin:auto 5px 5px auto;
+}
+.innerElement {
+    margin:0 auto 5px 10px;
+}
+
+.reviewList{
+    margin:10px auto 50px;
+    width:85%
+}
+.reviewList p{
+    margin:10px auto 10px 5px;
+}
+.ownReview {
+    border:2px solid #777777;
+    padding:5px;
+    margin:10px auto 30px;
+}
+.oneReview {
+    border:1px solid #999999;
+    padding:5px;
+    margin:10px auto;
+}
+.inputContent {
+    margin:30px auto 50px;
+    padding:10px;
+    width:85%;
+}
+.review {
+    margin:10px auto 20px;
+}
+.review textarea {
+    height:180px;
+    width:100%;
 }

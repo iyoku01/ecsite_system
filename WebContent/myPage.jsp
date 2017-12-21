@@ -15,25 +15,45 @@
 <title>マイページ</title>
 </head>
 <body>
-<jsp:include page="header_logoOnly.jsp" flush="true" />
+    <jsp:include page="header_logoOnly.jsp" flush="true" />
 
-<a href=http://localhost:8080/ecsite_system/memberUpdate.jsp>会員情報を変更する</a>
-${message}
+    <p>マイページ</p>
 
-個人情報の取得
-<div class="row">
-     <p>${personalData.user_id}</p>
-    <p>${personalData.password}</p>
-    <p>${personalData.name}</p>
-    <p>${personalData.nickname}</p>
-    <p>${personalData.phone}</p>
-    <p>${personalData.postal_code}</p>
-    <p>${personalData.address}</p>
-
-</div>
+    <a href=http://localhost:8080/ecsite_system/memberUpdate.jsp>会員情報を変更する</a>${message}
 
 
-<a href=http://localhost:8080/ecsite_system/OrderHistory.Control?user_id=${personalData.user_id}>購入履歴を見る</a>
+    <div class="row">
+        <table>
+            <tr>
+                <th>ID</th>
+                <td>${personalData.user_id}</td>
+            </tr>
+            <tr>
+                <th>お名前</th>
+                <td>${personalData.name}</td>
+            </tr>
+            <tr>
+                <th>ニックネーム</th>
+                <td>${personalData.nickname}</td>
+            </tr>
+            <tr>
+                <th>郵便番号</th>
+                <td>${personalData.postal_code}</td>
+            </tr>
+            <tr>
+                <th>住所</th>
+                <td>${personalData.address}</td>
+            </tr>
+            <tr>
+                <th>電話番号</th>
+                <td>${personalData.phone}</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <a
+        href=http://localhost:8080/ecsite_system/OrderHistory.Control?user_id=${personalData.user_id}>購入履歴を見る</a>
 
 </body>
 </html>

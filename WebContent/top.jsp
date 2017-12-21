@@ -43,14 +43,14 @@
 </head>
 
 
-<body class="bg-info">
+<body>
 
     <!-- 共通ヘッダー -->
     <jsp:include page="header.jsp" flush="true" />
 
 
     <!-- おすすめ商品 -->
-        <ul class="bxslider">
+    <ul class="bxslider">
         <c:forEach var="i" items="${recommendList}" varStatus="st">
             <li><a href=ProductDetail.Control?product_id=${i.product_id}><img
                     title="product_id = ${i.product_id}" alt=""
@@ -58,38 +58,44 @@
         </c:forEach>
     </ul>
     <!-- サイドバー -->
-    <div class="side-content-simple">
+    <div class="side-content-simple border">
         <c:forEach var="i" items="${hardList}" varStatus="st">
 
-            <h3 class="accordion">
-                <span> +${i.hard_name}</span> <a href="123">→</a>
+            <h3 class="accordion cursorPointer">
+                <span> +${i.hard_name}</span> <a
+                    href=Top.Control?hard_id=${i.hard_id}>→</a>
             </h3>
             <div>
                 <c:forEach var="j" items="${categoryList}" varStatus="st">
                     <p>
                         <a
-                            href=Top.Control?hard_id=${i.hard_id}&category_id=${j.category_id}>${j.category_name}</a>
+                            href=Top.Control?hard_id=${i.hard_id}&category_id=${j.category_id} class=kasen-sakuzixyo>${j.category_name} </a>
                     </p>
                 </c:forEach>
             </div>
         </c:forEach>
     </div>
     <!-- メイン（商品リスト）  -->
-    <div class="main-content-simple">
-    <c:forEach var="j" items="${productList}">
-        <div class="obi">${j.hard_name}</div>
+    <div class="main-content-simple border">
+        <c:forEach var="j" items="${productList}">
+            <div class="obi${ fn:substring( j.hard_name , 0 , 3 ) } mozifont">${j.hard_name}</div>
 
-        <c:forEach var="i" items="${j.tpd}">
-            <div class="gameLogo">
-                <a href=ProductDetail.Control?product_id=${i.product_id}><img
-                    src="${i.pic_file}"></a>
-            </div>
+            <c:forEach var="i" items="${j.tpd}">
+                <div class="gameLogo border">
+                    <a href=ProductDetail.Control?product_id=${i.product_id}><img
+                        src="${i.pic_file}"></a>
+                </div>
 
+            </c:forEach>
+            <div class="clearfix"></div>
         </c:forEach>
-        <div class="clearfix"></div>
-    </c:forEach>
 
-    <p>${message}</p>
-</div>
+        <p>${message}</p>
+
+    </div>
+    <div class="clearfix"></div>
+    <p class="pegemodori">
+        <a href=# class=kasen-sakuzixyo>ページ上部に戻る</a>
+    </p>
 </body>
 </html>

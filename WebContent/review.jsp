@@ -9,77 +9,108 @@
 <html>
 <head>
 <META charset="Windows-31J">
+<link rel="stylesheet"
+    href="http://code.ionicframework.com/ionicons/1.4.1/css/ionicons.min.css">
+<script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/jquery.bxslider.min.js"></script>
+<link href="css/jquery.bxslider.css" rel="stylesheet" />
+<%
+    request.setCharacterEncoding("Windows-31J");
+%>
+<script type="text/javascript">
+    $(function() {
+        $('.star').each(function() {
+            for (var i = 0; i < 5; i++) {
+                $(this).append('<a>');
+            }
+            if ('${param.evaluation}' != null) {
+                var index = '${param.evaluation}';
+                $(this).siblings().removeClass('on');
+                for (var i = 0; i < index; i++) {
+                    $(this).parent().find('a').eq(i).addClass('on');
+                }
+                $(this).parent().find('.index-star').attr('value', index);
+            }
+        });
+    });
+</script>
 <title>レビュー</title>
 </head>
 <body>
 
-<!-- 共通ヘッダー -->
+    <!-- 共通ヘッダー -->
     <jsp:include page="header.jsp" flush="true" />
 
-<!-- 商品情報 -->
-<div row>
-  <p>${product.product_name}</p>
-  <p>${product.price}</p>
-  <p>${product.info}</p>
-  <p>${product.hard_name}</p>
-  <p>${product.ave_eval}</p>
-  <p>${product.mainPic_file}</p>
-  <p>${product.review_count}</p>
-</div>
-
-<!-- レビューがまだ無ければメッセージ -->
-<p>${message}</p>
-
-<!-- 送信パラメータ -->
-<c:if test="${!empty writeReview}">
-  <c:choose>
-    <c:when test="${!empty review}" >
-    <!-- あれば自分のレビュー -->
-      <p>${review.product_id}</p>
-      <p>${review.user_id}</p>
-      <p>${review.nickname}</p>
-      <p>${review.evaluation}</p>
-      <p>${review.review}</p>
-      <p>${review.date}</p>
-      <form action="reviewWrite.jsp" method="post">
+    <!-- 商品情報 -->
+    <div class="revProduct clearfix">
+        <h3>${product.product_name}</h3>
+        <span class=star value=product.ave_eval> </span>
+        <p>${product.hard_name}</p>
+        <div class=innerElement>
+        <img src="${product.mainPic_file}" width="80"> <span
+            class=productPrice>\ ${product.price}</span> <span class=zaiko>在庫あり</span>
+    </div>
+    <p class="info float">${product.info}</p>
+    <!-- フォーム情報 -->
+    <form action="reviewWrite.jsp" method="post">
         <input type=hidden name=product_id value="${review.product_id}">
-        <input type=hidden name=nickname value="${review.nickname}">
-        <input type=hidden name=evaluation value="${review.evaluation}">
-        <input type=hidden name=review value="${review.review}">
-        <input type=hidden name=product_name value="${product.product_name}">
-        <input type=hidden name=price value="${product.price}">
-        <input type=hidden name=info value="${product.info}">
-        <input type=hidden name=hard_name value="${product.hard_name}">
-        <input type=hidden name=ave_eval value="${product.ave_eval}">
-        <input type=hidden name=mainPic_file value="${product.mainPic_file}">
+        <input type=hidden name=nickname value="${review.nickname}"> <input
+            type=hidden name=evaluation value="${review.evaluation}"> <input
+            type=hidden name=review value="${review.review}"> <input
+            type=hidden name=product_name value="${product.product_name}">
+        <input type=hidden name=price value="${product.price}"> <input
+            type=hidden name=info value="${product.info}"> <input
+            type=hidden name=hard_name value="${product.hard_name}"> <input
+            type=hidden name=ave_eval value="${product.ave_eval}"> <input
+            type=hidden name=mainPic_file value="${product.mainPic_file}">
         <input type=hidden name=review_count value="${product.review_count}">
-        <input type=hidden name=update value="true">
-        <input type=submit value=レビューを変更する>
-      </form>
-    </c:when>
-    <c:otherwise>
-      <p><a href=reviewWrite.jsp?product_id=${product_id}>レビューを書く</a></p>
-    </c:otherwise>
-  </c:choose>
-</c:if>
+        <c:choose>
+            <c:when test="${!empty review}">
+                <input type=hidden name=update value="true">
+                <input type=submit class=orange‐button value=レビューの編集>
+            </c:when>
+            <c:otherwise>
+                <input type=submit class=orange‐button value=レビューを書く>
+            </c:otherwise>
+        </c:choose>
+    </form>
+    </div>
+
+
+
+    <div class=reviewList>
+    <!-- レビューがまだ無ければメッセージ -->
+    <p>${message}</p>
+        <!-- 送信パラメータ -->
+        <c:if test="${!empty writeReview}">
+            <c:choose>
+                <c:when test="${!empty review}">
+                    <!-- あれば自分のレビュー -->
+                    <p>このゲームに対するあなたのレビュー</p>
+                    <div class="ownReview">
+                        <span>投稿者</span> <span>${review.nickname}</span> <span>${review.date}</span>
+                        <span class=evaluation>${review.evaluation}</span>
+                        <p>${review.review}</p>
+                    </div>
+                </c:when>
+            </c:choose>
+        </c:if>
 
 
 
 
+        <p>${product.review_count}件のカスタマーレビュー</p>
+        <!-- レビューのリスト -->
+        <c:forEach var="i" items="${reviewList}">
+            <div class="oneReview">
+                <span>投稿者</span> <span>${i.nickname}</span> <span>${i.date}</span> <span
+                    class=star value=${i.evaluation} ></span>
+                <p>${i.review}</p>
+            </div>
+        </c:forEach>
 
-<!-- レビューのリスト -->
-<div class="row">
-<c:forEach var="i" items="${reviewList}">
-    <p>${i.product_id}</p>
-    <p>${i.user_id}</p>
-    <p>${i.nickname}</p>
-    <p>${i.evaluation}</p>
-    <p>${i.review}</p>
-    <p>${i.date}</p>
-</c:forEach>
-</div>
-
-
+    </div>
 
 
 </body>
