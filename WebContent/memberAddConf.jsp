@@ -47,7 +47,7 @@
 
 <div class="memUpcon">
 <table>
-   <tr><td>ID：</td><td><%=session.getAttribute("user_id")%></td></tr>
+   <tr><td>ID：</td><td><%=user_id%></td></tr>
 
     <tr><td>名前：</td><td><%=name%></td></tr>
 
@@ -67,7 +67,8 @@
 
 <div class="formcenter">
 
-     <form action="memberUpdate.jsp" method="post">
+     <form action="memberAdd.jsp" method="post">
+            <input type=hidden name=user_id value=<%=user_id%>>
             <input type=hidden name=password value=<%=password%>>
             <input type=hidden name=name value=<%=name%>>
             <input type=hidden name=nickname value=<%=nickname%>>

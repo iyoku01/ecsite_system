@@ -418,6 +418,7 @@ header a:visited {
     text-align: center;
 
 }
+<<<<<<< HEAD
 .screenname{
     border:1px black solid;
     padding:6px;
@@ -425,6 +426,9 @@ header a:visited {
     display:inline-block;
     background-color:white;
 }
+=======
+
+>>>>>>> branch 'master' of https://github.com/iyoku01/ecsite_system.git
 /*ƒŒƒrƒ…[—p‚Ì¯*/
 .index-star {
     display: none;
