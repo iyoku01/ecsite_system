@@ -87,3 +87,86 @@
     background-color: #FFFFFF;
     color: #333333;
 }
+/*---------------------------------------------------------------------*/
+/* ÉwÉbÉ_Å[*/
+/*---------------------------------------------------------------------*/
+header {
+    background-color: #333333;
+    height: 90px;
+    width: 100%;
+}
+
+header a:link {
+    color: #fff;
+    text-decoration: none;
+}
+
+header a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+.CompanyLogo img {
+    box-sizing: border-box;
+    width: 200px;
+}
+
+.head-table {
+    box-sizing: border-box;
+    margin: 20px;
+}
+
+.CompanyLogo {
+    box-sizing: border-box;
+    width: 200px;
+}
+
+.kensakumozi {
+    box-sizing: border-box;
+    background-color: #d2d2d2;
+    border-radius: 5px 0px 0px 5px;
+    width: 80px;
+    height: 37px;
+    vertical-align: top;
+
+}
+
+.search {
+    box-sizing: border-box;
+}
+
+.search input {
+    box-sizing: border-box;
+    height: 37px;
+    width: 400px;
+}
+
+.searchAction {
+    box-sizing: border-box;
+    background-color: #ffc107;
+    border-radius: 0px 5px 5px 0px;
+    height:37px;
+    vertical-align: top;
+}
+
+.searchAction[type="image"]{
+    width:37px;
+}
+
+.menu {
+    box-sizing: border-box;
+    margin:20px;
+}
+
+.mypage-kye{
+    margin:20px;
+}
+.menu img {
+    width: 30px;
+}
+
+.cartSuu {
+    position:relative;
+    left: -30px;
+    top: -10px;
+}

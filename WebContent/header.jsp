@@ -20,7 +20,7 @@
         <form action="Top.Control" method="post" id="form1">
             <table class="head-table float">
                 <tr>
-                    <td class="kensakumozi">åüçı</td>
+                    <td><input  class="kensakumozi" type="image" src="img\Header\kensaku.jpg"></td>
                     <td class="search"><input type="text" name="search"
                         placeholder="è§ïiñºÇì¸óÕ" required></td>
                     <td><input class="searchAction" type="image"
