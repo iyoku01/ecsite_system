@@ -1,0 +1,82 @@
+@charset "shift_jis";
+/*/////////////////////////////////////////////////////////////////////
+2) ログイン、マイページ、会員登録
+-----------------------------------------------------------------------
+08.ログイン
+11.マイページ
+09.新規会員登録
+10.新規登録確認
+12.会員情報変更
+13.会員登録変更確認
+/////////////////////////////////////////////////////////////////////*/
+/*---------------------------------------------------------------------*/
+/* ログイン */
+/*---------------------------------------------------------------------*/
+.login {
+    margin: auto;
+    text-align: center;
+}
+
+.login table {
+    margin: 50px auto;
+}
+
+.login td:nth-child(1) {
+    text-align: right;
+}
+
+.login p {
+    color: red;
+}
+
+.login input[type="text"], .login input[type="password"] {
+    border: 2px solid black;
+    margin: 10px 20px;
+}
+
+.login input[type="button"],.login input[type="submit"] {
+    margin: 30px 50px;
+}
+/*---------------------------------------------------------------------*/
+/* 会員登録・更新・各完了 */
+/*---------------------------------------------------------------------*/
+.membotton {
+    margin: 40px;
+    text-align: center;
+    font-size: 15px;
+    width: 100px;
+    height: 40px;
+    background-color: orange;
+    float: left;
+}
+
+.membotton2 {
+    margin: 40px;
+    text-align: center;
+    font-size: 15px;
+    width: 100px;
+    height: 40px;
+    background-color: gray;
+    float: left;
+}
+
+.memUpcon {
+    text-align: center;
+    line-height: 300%;
+}
+.memUpcon table {
+    margin:0 auto;
+    padding:50px 5opx 50px 0px;
+    text-align:left;
+}
+.memUpcon th {
+    width:200px;
+}
+.formcenter {
+    margin: 10px auto;
+    width: 370px;
+}
+
+.memborder {
+    clear: both;
+}

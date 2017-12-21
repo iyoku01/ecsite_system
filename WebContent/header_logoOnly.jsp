@@ -1,5 +1,4 @@
 <%@ page contentType="text/html; charset=Windows-31J"%>
-<link rel="stylesheet" type="text/css" href="css/style.css">
 <!DOCTYPE html>
 
     <header>

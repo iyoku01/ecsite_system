@@ -3,12 +3,14 @@
 <!-- El Start -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!-- El End -->
 
 <!DOCTYPE html>
 <html>
 <head>
 <META charset="Windows-31J">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 
 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.4.1/css/ionicons.min.css">
 <script
@@ -58,8 +60,10 @@
     <!-- 商品情報 -->
     <div class="revProduct clearfix">
     <h3>${param.product_name}</h3>
-     <span class=star value="${param.ave_eval}"> </span>
-    <p>${param.hard_name}</p>
+    <!-- 平均評価を星で出す(getaParameterした値はキャストが必要) -->
+    <fmt:parseNumber var="ave_eval" value="${param.ave_eval}" />
+    <span><c:forEach begin="1" end="5"  step="1" varStatus="status"><c:choose><c:when test="${status.index <= ave_eval}"><yellowStar>&#xf2fc;</yellowStar></c:when><c:otherwise><grayStar>&#xf2fc;</grayStar></c:otherwise></c:choose></c:forEach></span>
+         <p>${param.hard_name}</p>
     <div class=innerElement>
     <img src="${param.mainPic_file}" width="80">
     <span class=productPrice>\ ${param.price}</span> <span class=zaiko>在庫あり</span>

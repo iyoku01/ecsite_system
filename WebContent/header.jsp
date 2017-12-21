@@ -8,33 +8,39 @@
 <html>
 <head>
 <title>ヘッダー</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
     <header>
-        <a href="Top.Control"> <img src="img\CompanyLogo\watazon_logo.png"
-            alt="企業ロゴ" height=70px>
-        </a>
-        <div class="kensaku">
-        <p>検索</p>
+        <div class="CompanyLogo float">
+            <a href="Top.Control"> <img
+                src="img\CompanyLogo\watazon_logo.png" alt="企業ロゴ">
+            </a>
         </div>
         <form action="Top.Control" method="post" id="form1">
-            <input type="text" id="search" name="search" placeholder="商品名を入力"
-                required> <input type="image" src="img\Header\search.png"
-                id="searchAction" value="">
+            <table class="head-table float">
+                <tr>
+                    <td class="kensakumozi">検索</td>
+                    <td class="search"><input type="text" name="search"
+                        placeholder="商品名を入力" required></td>
+                    <td><input class="searchAction" type="image"
+                        src="img\Header\search.png"></td>
+
+                </tr>
+            </table>
         </form>
-        <div id="menu">
-            <img src="img\Header\cart.png"> <a
-                href=Cart.Control id="cartSuu">${cart.sumBuyCount}</a>/
+
+        <div class="menu float mozifont">
+            <img src="img\Header\cart.png"> <a href=Cart.Control
+                class="cartSuu">${cart.sumBuyCount}</a>
             <c:if test="${empty user_id }">
                 <a href=login.jsp>新規登録/ログイン</a>
             </c:if>
             <c:if test="${!empty user_id }">
                 <a href=Logout.Control>ログアウト</a>
             </c:if>
-            / <a href=MyPage.Control>マイページ</a>
+            <span class="mypage-kye"><a href=MyPage.Control>マイページ</a></span>
         </div>
-</header>
+    </header>
 </body>
 </html>

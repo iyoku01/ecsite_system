@@ -1,6 +1,4 @@
 <%@ page contentType="text/html; charset=Windows-31J"%>
-<%@ page import="database.*"%>
-<%@ page import="java.util.*"%>
 
 <!-- El Start -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -11,10 +9,14 @@
 <html>
 <head>
 <META charset="Windows-31J">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 
 <title>Error</title>
 </head>
 <body>
+    <!-- 共通ヘッダー -->
+    <jsp:include page="header.jsp" flush="true" />
+
     <h1>エラーページ</h1>
 
     <p>${message}</p>

@@ -1,0 +1,373 @@
+@charset "shift_jis";
+/*/////////////////////////////////////////////////////////////////////
+1) 商品購入
+-----------------------------------------------------------------------
+01.TOP
+02.商品詳細
+05.カート
+06.購入確認
+07.購入完了
+/////////////////////////////////////////////////////////////////////*/
+/*---------------------------------------------------------------------*/
+/* ヘッダー*/
+/*---------------------------------------------------------------------*/
+header {
+    background-color: #333333;
+    height: 90px;
+    width: 100%;
+}
+
+header a:link {
+    color: #fff;
+    text-decoration: none;
+}
+
+header a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+.CompanyLogo img {
+    box-sizing: border-box;
+    width: 200px;
+}
+
+.head-table {
+    box-sizing: border-box;
+    height: 31px;
+    margin: 20px;
+}
+
+.CompanyLogo {
+    box-sizing: border-box;
+    width: 200px;
+}
+
+.kensakumozi {
+    box-sizing: border-box;
+    background-color: #d2d2d2;
+    border-radius: 5px 0px 0px 5px;
+    width: 80px;
+    text-align: center;
+
+}
+
+.search {
+    box-sizing: border-box;
+}
+
+.search input {
+    box-sizing: border-box;
+    height: 100%;
+    width: 400px;
+}
+
+.searchAction {
+    box-sizing: border-box;
+    background-color: #ffc107;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.searchAction[type="image"]{
+    width:30px;
+}
+
+.menu {
+    box-sizing: border-box;
+    margin:20px;
+}
+
+.mypage-kye{
+    margin:20px;
+}
+.menu img {
+    width: 30px;
+}
+
+.cartSuu {
+    position:relative;
+    left: -35px;
+    top: -10px;
+}
+/*---------------------------------------------------------------------*/
+/*トップ画面*/
+/*---------------------------------------------------------------------*/
+.main-content-simple {
+    position: relative;
+    overflow: hidden;
+    width: 70%;
+    float: right;
+}
+
+.side-content-simple {
+    width: 300px;
+    float: left;
+    padding: 10px;
+}
+
+.side-content-simple p {
+    text-indent: 2em;
+}
+
+.bxslider img {
+    margin: 0 auto;
+    display: block;
+}
+
+.gameLogo {
+    box-sizing: border-box;
+    margin: 10px;
+    float: left;
+}
+
+.gameLogo img {
+    height: 100px;
+    width: 200px;
+}
+
+.categoryList {
+    float: left;
+}
+
+.obiNin {
+    box-sizing: border-box;
+    width: 90%;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 15px 13px 22px -5px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(#ff6f6f, #ff0b22);
+}
+
+.obiPla {
+    box-sizing: border-box;
+    width: 90%;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 15px 13px 22px -5px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(#5ae8ff, #015e88);
+}
+
+.pegemodori {
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: right;
+}
+
+.Done h2 {
+    line-height: 50px;
+    background-color: #ffffff;
+    height: 10%;
+    width: 80%;
+    margin: 30px auto 0px;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    line-height: 40px;
+}
+
+.purchaseComp INPUT {
+    margin: 40px;
+    text-align: center;
+    font-size: 25px;
+    width: 250px;
+    height: 50px;
+    background-color: orange;
+}
+
+.text-danger {
+    text-align: center;
+    color: red;
+}
+
+.center {
+    margin: auto;
+    text-align: center;
+}
+
+/*---------------------------------------------------------------------*/
+/* カート */
+/*---------------------------------------------------------------------*/
+.cart {
+    margin: auto;
+    text-align: center;
+}
+
+.cart table {
+    border: 1px solid black;
+    margin: 50px 70px;
+    border-collapse: collapse;
+}
+
+.cart td:nth-child(1) {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: left;
+    width: 400px;
+    font-size: 20px;
+}
+
+.cart td:nth-child(2) {
+    border: 1px solid black;
+    padding: 5px;
+    width: 700px;
+}
+
+.cart img {
+    width: 70px;
+    height: 100px;
+}
+
+.cart p {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px;
+}
+
+.cart form {
+    text-align: right;
+    margin: 50px 50px;
+}
+
+.cartbotton-delete {
+    text-align: center;
+    font-size: 17px;
+    width: 150px;
+    height: 40px;
+    background-color: WhiteSmoke;
+}
+
+.cartbotton {
+    margin: 40px;
+    text-align: center;
+    font-size: 25px;
+    width: 200px;
+    height: 50px;
+    background-color: orange;
+    border-radius: 10px;
+}
+
+
+
+/*---------------------------------------------------------------------*/
+/* 商品詳細画面 */
+/*---------------------------------------------------------------------*/
+.productDatail-sub-content {
+    box-sizing: border-box;
+    width: 410px;
+    padding: 20px;
+    float: left;
+}
+
+.productDatail-main-content {
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 60%;
+    float: left;
+}
+
+.mainGazou {
+    top: 50px;
+    left: 80px;
+    float: left;
+}
+
+.mainGazou img {
+    width: 300px;
+    height: 400px;
+}
+
+.subGazou {
+    margin: 0px 5px;
+    width: 50px;
+    float: left;
+}
+
+.subGazou img {
+    width: 50px;
+    height: 50px;
+}
+
+.productPrice {
+    color: red;
+}
+
+.zaiko {
+    color: green;
+    box-sizing: border-box;
+    width: 400px;
+}
+
+.productDatail {
+    margin: 20px 0px 0px 0px;
+}
+
+.kosuuSentaku {
+    position: relative;
+    left: 750px;
+}
+.pReview {
+    margin: 100px 0px 0px 0px;
+}
+.review a{
+    float:right;
+
+}
+
+.productBuyConf table{
+    border: 1px solid black;
+    margin: auto;
+    text-align: center;
+}
+
+.productBuyConf td{
+    border: 1px solid black;
+    margin: auto ;
+    text-align: center;
+
+}
+.screenname{
+    border:1px black solid;
+    padding:6px;
+    margin:10px;
+    display:inline-block;
+    background-color:white;
+}
+
+/*レビュー用の星*/
+.index-star {
+    display: none;
+}
+
+grayStar {
+    font-family: "Ionicons";
+    color: #aaa;
+    font-size: 30px;;
+}
+yellowStar {
+    font-family: "Ionicons";
+    color: #fc3;
+    font-size: 30px;
+}
+
+.star {
+    position: relative;
+}
+
+.star>a {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.star>a:before {
+    content: "\f2fc";
+    font-family: "Ionicons";
+    font-size: 20px;
+    color: #aaa;
+}
+
+.star>a.on:before {
+    content: "\f2fc";
+    font-family: "Ionicons";
+    color: #fc3;
+}

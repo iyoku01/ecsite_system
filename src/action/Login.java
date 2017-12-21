@@ -28,6 +28,8 @@ public class Login implements Action {
                 System.out.println(user_id);//š
             } else {
                 request.setAttribute("message", "“ü—Í‚³‚ê‚½ƒf[ƒ^‚Í‘¶İ‚µ‚Ü‚¹‚ñ");
+                request.setAttribute("user_id", user_id);
+                return "login.jsp";
             }
 
         } catch (NumberFormatException e) {
