@@ -183,6 +183,10 @@ INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stock
 INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (8, 'ペルソナ5 (Persona5)', 8800, '前作『ペルソナ４』から約8年。｢ペルソナ｣シリーズのナンバリング最新作であるPlayStaion4ソフトウェア『ペルソナ５』が、ついに発売。', 999, '独特な世界観とかデザインがステキな作品です。最近ではFF、ドラクエに次ぐ3作目の大作RPGなんて呼ばれるようにもなって来ました( ^ω^ )！世界での評価も高いようなので、今後のペルソナシリーズにますます期待大です♪', 2, 1, 0, 0);
 INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (9, 'ゼルダの伝説 ブレス オブ ザ ワイルド', 6980, 'ハイラル王国は遙か昔、神話の時代から、何度も何度も魔王ガノンの厄災に見舞われてきた。その度に退魔の力を持つ騎士と、聖なる力を持つ姫によって封印されてきた。', 999, 'やって損などなし！', 1, 1, 0, 0);
 INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (10, 'バイオハザード7 (BIO HAZARD 7)', 7990, 'すべては“恐怖"のために。新生するバイオハザード7。', 999, 'ちびります・・・', 2, 5, 0, 0);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (11, 'マインクラフト(Minecraft)', 2592, '箱庭のような1つの世界の中に用意された素材やアイテムを用いて、自由に遊び方を考え、実行できるサンドボックス型ゲーム。広大な世界は立方体のブロックでできている。ブロックを設置して何かを作るもブロックを壊して素材を入手するもプレイヤー次第。暗い夜や洞窟にはたくさんのモンスターが待ち構えている。世界のどこかにはモンスターや宝が眠る「異世界」があるという噂も。', 999, '一人で延々と楽しむ感じのゲームですね前にこれと似たようなゲームをパソコンでやった事があるのですがPS4にもあったのは、知らなかったです。値段がとにかく安いので、気軽に楽しんでできるコストパフォーマンスがいいですね。', 2, 4, 0, 0);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (12, 'アンチャーテッド4(Uncharted4)', 4900, '18世紀に存在した海賊王「ヘンリー・エイブリー」の秘宝が眠る海賊たちの国を目指して冒険するアクションアドベンチャー。さまざまな場所を登り、飛び、鉤付きロープを引っ掛けるなど、「アンチャーテッド」シリーズならではのアクションを楽しめる。マルチプレイでは、ピンチのときにプレイヤーを助ける仲間を呼び出すことができ、神秘的な秘宝を使って超自然的能力も使える。', 999, 'プレイする映画とまで言わており、高評価のようですが、個人的にはそんなにストーリーに没頭させれる、引き込んでくるような事はありませんでした。今までいろんなオープンワールドタイプのゲームをプレイしたせいか、窮屈に感じます。この当たりは、個人差があるので、なんとも言えませんが、PSユーザーにも高評価らしいですが、一部に人にはそんな大作とは思わない人達もいるかと思います。決して、つまらないゲームではないですが、またプレイしたい、またプレイとまでは思わないゲームと私は感じました。', 2, 2, 0, 0);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (13, 'マインクラフト(Minecraft)', 2592, '箱庭のような1つの世界の中に用意された素材やアイテムを用いて、自由に遊び方を考え、実行できるサンドボックス型ゲーム。広大な世界は立方体のブロックでできている。ブロックを設置して何かを作るもブロックを壊して素材を入手するもプレイヤー次第。暗い夜や洞窟にはたくさんのモンスターが待ち構えている。世界のどこかにはモンスターや宝が眠る「異世界」があるという噂も。', 999, '一人で延々と楽しむ感じのゲームですね前にこれと似たようなゲームをパソコンでやった事があるのですがPS4にもあったのは、知らなかったです。値段がとにかく安いので、気軽に楽しんでできるコストパフォーマンスがいいですね。', 1, 4, 0, 0);
+INSERT INTO `product_mst` (`product_id`, `product_name`, `price`, `info`, `stocks`, `comment`, `hard_id`, `category_id`, `ave_eval`, `review_count`) VALUES (14, 'ARMS(アームズ)', 4980, '手の動きに合わせてファイターが動き、のびるウデ「アーム」でパンチや多彩なアクションを繰り出す格闘スポーツ。能力の異なる個性豊かなファイターたちと、左右別々に付け替えられるアームの組み合わせで、自分好みのスタイルや戦術を追求。相手をリングに放り込む「バスケット」や、「バレーボール」「マトアテ」「100人組手」など、ARMS能力を生かしたゲームを収録。', 999, '操作に若干クセがあるけどJoy-Conをもって体を動かしているだけで楽しく、いかにもSwitchらしいゲーム。遊ぶとほかのゲームより疲れることを配慮しつつも、Switchらしいゲームを探している人は最初に選ぶべきゲームだと思います。', 1, 2, 0, 0);
 
 
 /*product_pic_tbl*/
@@ -256,19 +260,51 @@ INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_
 INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (10, 2, 3, 'img\\sub\\Bio7_Sub3.jpg');
 INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (10, 2, 4, 'img\\sub\\Bio7_Sub4.jpg');
 INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (10, 2, 5, 'img\\sub\\Bio7_Sub5.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (11, 0, 0, 'img\\logo\\Minecraft_logo.png');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (11, 1, 0, 'img\\main\\Minecraft_main.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (11, 2, 1, 'img\\sub\\Minecraft_Sub.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (11, 2, 2, 'img\\sub\\Minecraft_Sub2.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (11, 2, 3, 'img\\sub\\Minecraft_Sub3.png');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (11, 2, 4, 'img\\sub\\Minecraft_Sub4.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (11, 2, 5, 'img\\sub\\Minecraft_Sub5.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (12, 0, 0, 'img\\logo\\Uncharted4_logo.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (12, 1, 0, 'img\\main\\Uncharted4_main.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (12, 2, 1, 'img\\sub\\Uncharted4_Sub.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (12, 2, 2, 'img\\sub\\Uncharted4_Sub2.png');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (12, 2, 3, 'img\\sub\\Uncharted4_Sub3.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (12, 2, 4, 'img\\sub\\Uncharted4_Sub4.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (12, 2, 5, 'img\\sub\\Uncharted4_Sub5.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (13, 0, 0, 'img\\logo\\Minecraft_logo.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (13, 1, 0, 'img\\logo\\Minecraft_switch_main.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (13, 2, 1, 'img\\sub\\Minecraft_Sub.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (13, 2, 2, 'img\\sub\\Minecraft_Sub2.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (13, 2, 3, 'img\\sub\\Minecraft_Sub3.png');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (13, 2, 4, 'img\\sub\\Minecraft_Sub4.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (13, 2, 5, 'img\\sub\\Minecraft_Sub5.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (14, 0, 0, 'img\\logo\\Arms_logo.png');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (14, 1, 0, 'img\\main\\Arms_main.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (14, 2, 1, 'img\\sub\\Arms_Sub.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (14, 2, 2, 'img\\sub\\Arms_Sub2.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (14, 2, 3, 'img\\sub\\Arms_Sub3.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (14, 2, 4, 'img\\sub\\Arms_Sub4.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (14, 2, 5, 'img\\sub\\Arms_Sub5.jpg');
 
 
 /*conversion_tbl*/
 INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (1, 'COD CODWW2 コールオブデューティー CALLOFDUTYWWⅡ');
-INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (2, 'FF15  ファイナルファンタジー15　FINAL FANTASY 15');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (2, 'FF15  ファイナルファンタジー15　FINAL FANTASY ファイファン');
 INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (3, 'DQ11　ドラゴンクエスト11　DRAGON QUEST 11');
-INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (4, 'Splatoon2 スプラトゥーン2');
-INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (5, 'ゼノブレイド２ Xenoblade2');
-INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (6, 'マリオカートデラックス8  Mario Cart Deluxe8');
-INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (7, 'スーパーマリオオデッセイ　Super Mario Odyssey');
-INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (8, 'ペルソナ5　Persona5');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (4, 'Splatoon2 スプラトゥーン2 イカ');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (5, 'ゼノブレイド２ Xenoblade2　ゼノギアス　ゼノサーガ');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (6, 'マリオカートデラックス8  Mario Cart Deluxe8　マリカ');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (7, 'スーパーマリオオデッセイ　Super Mario Odyssey　スーマリ');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (8, 'ペルソナ　ペルソナ5　Persona5');
 INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (9, 'ゼルダの伝説 ブレス オブ ザ ワイルド Legend of Zelda');
 INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (10, 'biohazard7 バイオ　resident evil 7 バイオハザード');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (11, 'マイクラ　マインクラフト　Minecraft');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (12, 'アンチャ　アンチャーテッド　Uncharted　アンチャ4');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (14, 'アームズ　arms');
+INSERT INTO `conversion_tbl` (`product_id`, `conversion_word`) VALUES (13, 'マイクラ　マインクラフト　Minecraft');
 
 
 /*recommend_tbl*/
@@ -280,6 +316,11 @@ INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (5, 'img\\rec
 INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (6, 'img\\reccomend\\MarioCart8_image.png');
 INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (7, 'img\\reccomend\\Mario_image.png');
 INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (8, 'img\\reccomend\\Persona5_image.jpg');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (9, 'img\\reccomend\\Zelda_image.png');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (10, 'img\\reccomend\\BIO7_image.jpg');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (11, 'img\\reccomend\\Minecraft_image.jpg');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (12, 'img\\reccomend\\Uncharted4_image.jpg');
+INSERT INTO `recommend_tbl` (`product_id`, `recommend_pic`) VALUES (14, 'img\\reccomend\\Arms_image.png');
 
 
 /*order_tbl*/
