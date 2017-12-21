@@ -37,7 +37,7 @@
     margin: 30px 50px;
 }
 /*---------------------------------------------------------------------*/
-/* 会員登録・更新・各完了 */
+/* 会員登録・更新(確認) */
 /*---------------------------------------------------------------------*/
 .membotton {
     margin: 40px;
@@ -76,6 +76,40 @@
     width: 370px;
 }
 
-.memborder {
-    clear: both;
+
+
+/*---------------------------------------------------------------------*/
+/* 会員登録・更新(入力) */
+/*---------------------------------------------------------------------*/
+
+.inputForm {
+    font-size:14px;
+    text-align:center;
 }
+.inputForm table {
+    width:800px;
+    margin:0 auto;
+    border-collapse:separate;
+    border-spacing: 10px 20px;
+    text-align:left;
+}
+
+ .inputForm input[type="text"] {
+    border:1px solid black;
+    width:450px;
+    height: 20px;
+};
+
+ .inputForm .orange-button {
+    height:30px;
+    width:200px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 20px;
+    background-color:orange;
+    width: 300px;
+    height: 60px;
+    border-radius: 10px;
+};
+
+
