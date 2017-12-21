@@ -1,4 +1,13 @@
 @charset "shift_jis";
+/*/////////////////////////////////////////////////////////////////////
+1) 商品購入
+-----------------------------------------------------------------------
+01.TOP
+02.商品詳細
+05.カート
+06.購入確認
+07.購入完了
+/////////////////////////////////////////////////////////////////////*/
 
 /* htmlのﾃﾞﾌｫﾙﾄの設定をﾘｾｯﾄ */
 html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,caption,tbody,tfoot,thead,tr,th,td
@@ -9,9 +18,11 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
     font-style: normal;
     font-weight: normal;
     font-size: 100%;
-    vertical-align: baseline;
+    /*vertical-align: baseline;*/
 }
+/*---------------------------------------------------------------------*/
 /*共通*/
+/*---------------------------------------------------------------------*/
 .mozifont {
     font-family: "HGP創英角ﾎﾟｯﾌﾟ体";
 }
@@ -56,17 +67,25 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
     padding:5px 15px;
     margin:10px auto 20px 30px;
 }
-.message {
-    color:red;
-}
 
 /*オレンジボタン*/
 .orange-button {
-    margin:0px 0px 0px 10px;
+    margin: 0px 0px 0px 10px;
     box-sizing: border-box;
     text-align: center;
     font-size: 15px;
     background-color: orange;
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+}
+/*グレーボタン*/
+.gray-button {
+    margin: 0px 0px 0px 10px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 15px;
+    background-color: silver;
     width: 150px;
     height: 30px;
     border-radius: 10px;
@@ -85,79 +104,87 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,table,ca
     background-color: #FFFFFF;
     color: #333333;
 }
-/*ここからヘッダー*/
+/*---------------------------------------------------------------------*/
+/* ヘッダー*/
+/*---------------------------------------------------------------------*/
 header {
     background-color: #333333;
-    height: 70px;
+    height: 90px;
     width: 100%;
-
 }
 
 header a:link {
     color: #fff;
-     text-decoration: none;
+    text-decoration: none;
 }
 
 header a:visited {
     color: #fff;
-     text-decoration: none;
+    text-decoration: none;
 }
 
-header h3 {
-    font-size: 30px;
+.CompanyLogo img {
+    box-sizing: border-box;
+    width: 200px;
 }
 
-.kensaku {
-    position: absolute;
+.head-table {
+    box-sizing: border-box;
+    height: 31px;
+    margin: 20px;
+}
+
+.CompanyLogo {
+    box-sizing: border-box;
+    width: 200px;
+}
+
+.kensakumozi {
+    box-sizing: border-box;
     background-color: #d2d2d2;
-    left: 180px;
-    top: 22px;
-    width: 45px;
     border-radius: 5px 0px 0px 5px;
+    width: 80px;
     text-align: center;
+
 }
 
-#form1 {
-    position: absolute;
+.search {
+    box-sizing: border-box;
 }
 
-#search {
-    position: absolute;
-    width: 182px;
-    height: 16px;
-    background: #fff;
-    border: none;
-    padding: 4px;
-    color: #000;
-    left: 222px;
-    top: -55px;
+.search input {
+    box-sizing: border-box;
+    height: 27px;
+    width: 400px;
 }
 
-#searchAction {
-    position: absolute;
-    top: -55px;
-    left: 412px;
-    max-width: 24px;
+.searchAction {
+    box-sizing: border-box;
     background-color: #ffc107;
     border-radius: 0px 5px 5px 0px;
 }
 
-#menu {
-    top: 10px;
-    left: 450px;
-    position: absolute;
+.searchAction[type="image"]{
+    width:30px;
 }
 
-#menu img {
+.menu {
+    box-sizing: border-box;
+    margin:20px;
+}
+
+.menu img {
     width: 30px;
 }
 
 #cartSuu {
-        top: -5px;
+    top: -5px;
     left: 7px;
     position: absolute;
 }
+/*---------------------------------------------------------------------*/
 /*トップ画面*/
+/*---------------------------------------------------------------------*/
 .main-content-simple {
     position: relative;
     overflow: hidden;
@@ -313,48 +340,10 @@ header h3 {
 }
 
 
-/* ----------------------------------会員登録・更新・各完了---------------------------------- */
-.membotton{
-    margin:40px;
-    text-align:center;
-    font-size:15px;
-    width: 100px;
-    height: 40px;
-    background-color:orange;
-    float:left;
-}
 
-.membotton2{
-    margin:40px;
-    text-align:center;
-    font-size:15px;
-    width: 100px;
-    height: 40px;
-    background-color:gray;
-    float:left;
-}
-.memUpcon{
-    text-align:center;
-    line-height: 300%;
-
-}
-.memUpcon table {
-    margin:0 auto;
-    padding:50px 5opx 50px 0px;
-    text-align:left;
-}
-.memUpcon th {
-    width:200px;
-}
-.formcenter{
-    margin:10px auto;
-    width: 370px;
-}
-
-.memborder{
-    clear: both;
-}
-/*-------------商品詳細画面--------------*/
+/*---------------------------------------------------------------------*/
+/* 商品詳細画面 */
+/*---------------------------------------------------------------------*/
 .productDatail-sub-content {
     box-sizing: border-box;
     width: 410px;
@@ -379,11 +368,13 @@ header h3 {
     width: 300px;
     height: 400px;
 }
-.subGazou{
+
+.subGazou {
     margin: 0px 5px;
-width: 50px;
+    width: 50px;
     float: left;
 }
+
 .subGazou img {
     width: 50px;
     height: 50px;
@@ -398,7 +389,6 @@ width: 50px;
     box-sizing: border-box;
     width: 400px;
 }
-
 
 .productDatail {
     margin: 20px 0px 0px 0px;
@@ -488,63 +478,4 @@ yellowStar {
     content: "\f2fc";
     font-family: "Ionicons";
     color: #fc3;
-}
-
-/*レビュー画面、レビュー記入画面*/
-.revProduct {
-    margin:30px auto 10px;
-    padding:10px;
-    width:85%;
-    border:1px solid #999999;
-}
-.revProduct h3 {
-    font-size:24px;
-    text-align:left;
-    margin:5px 50px 15px 0;
-    display:inline-block;
-}
-.revProduct span {
-    font-size:16px;
-    margin:5px 50px 20px 0;
-}
-.revProduct .info{
-    width:65%;
-    display:inline-block;
-}
-
-.revProduct .info .orange‐button{
-    margin:auto 5px 5px auto;
-}
-.innerElement {
-    margin:0 auto 5px 10px;
-}
-
-.reviewList{
-    margin:10px auto 50px;
-    width:85%
-}
-.reviewList p{
-    margin:10px auto 10px 5px;
-}
-.ownReview {
-    border:2px solid #777777;
-    padding:5px;
-    margin:10px auto 30px;
-}
-.oneReview {
-    border:1px solid #999999;
-    padding:5px;
-    margin:10px auto;
-}
-.inputContent {
-    margin:30px auto 50px;
-    padding:10px;
-    width:85%;
-}
-.review {
-    margin:10px auto 20px;
-}
-.review textarea {
-    height:180px;
-    width:100%;
 }

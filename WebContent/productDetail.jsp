@@ -10,6 +10,9 @@
 <html>
 <head>
 <META charset="Windows-31J">
+<link rel="stylesheet" type="text/css" href="css/style1.css">
+<link rel="stylesheet" type="text/css" href="css/style2.css">
+<link rel="stylesheet" type="text/css" href="css/style3.css">
 <script
     src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/style.css">

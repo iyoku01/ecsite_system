@@ -1,0 +1,69 @@
+/*/////////////////////////////////////////////////////////////////////
+3) レビュー、社員管理
+-----------------------------------------------------------------------
+03.レビュー
+04.レビュー記入
+14.購入履歴
+15.社員用ログインページ
+16.社員用管理画面
+/////////////////////////////////////////////////////////////////////*/
+/*---------------------------------------------------------------------*/
+/*レビュー画面、レビュー記入画面*/
+/*---------------------------------------------------------------------*/
+.revProduct {
+    margin:30px auto 10px;
+    padding:10px;
+    width:85%;
+    border:1px solid #999999;
+}
+.revProduct h3 {
+    font-size:24px;
+    text-align:left;
+    margin:5px 50px 15px 0;
+    display:inline-block;
+}
+.revProduct span {
+    font-size:16px;
+    margin:5px 50px 20px 0;
+}
+.revProduct .info{
+    width:65%;
+    display:inline-block;
+}
+
+.revProduct .info .orange‐button{
+    margin:auto 5px 5px auto;
+}
+.innerElement {
+    margin:0 auto 5px 10px;
+}
+
+.reviewList{
+    margin:10px auto 50px;
+    width:85%
+}
+.reviewList p{
+    margin:10px auto 10px 5px;
+}
+.ownReview {
+    border:2px solid #777777;
+    padding:5px;
+    margin:10px auto 30px;
+}
+.oneReview {
+    border:1px solid #999999;
+    padding:5px;
+    margin:10px auto;
+}
+.inputContent {
+    margin:30px auto 50px;
+    padding:10px;
+    width:85%;
+}
+.review {
+    margin:10px auto 20px;
+}
+.review textarea {
+    height:180px;
+    width:100%;
+}

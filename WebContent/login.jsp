@@ -1,6 +1,4 @@
 <%@ page contentType="text/html; charset=Windows-31J"%>
-<%@ page import="database.*"%>
-<%@ page import="java.util.*"%>
 
 <!-- El Start -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -11,6 +9,9 @@
 <html>
 <head>
 <META charset="Windows-31J">
+<link rel="stylesheet" type="text/css" href="css/style1.css">
+<link rel="stylesheet" type="text/css" href="css/style2.css">
+<link rel="stylesheet" type="text/css" href="css/style3.css">
 
 <title>ログイン</title>
 </head>
