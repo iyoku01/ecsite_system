@@ -431,16 +431,7 @@ header a:visited {
     text-align: center;
 
 }
-.float{
-float:left;
-}
-.screenname{
-    border:1px black solid;
-    padding:6px;
-    margin:10px;
-    display:inline-block;
-    background-color:white;
-}
+
 /*ƒŒƒrƒ…[—p‚Ì¯*/
 .index-star {
     display: none;
