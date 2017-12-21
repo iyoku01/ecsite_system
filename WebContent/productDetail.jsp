@@ -11,6 +11,8 @@
 <head>
 <META charset="Windows-31J">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet"
+    href="http://code.ionicframework.com/ionicons/1.4.1/css/ionicons.min.css">
 
 <script
     src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -23,7 +25,9 @@
             });
         });
     });
+
 </script>
+
 
 <title>商品詳細</title>
 </head>
@@ -68,9 +72,19 @@
             </div>
             <!-- 評価 -->
             <div class="ave_eval float">
-                <c:forEach begin="1" end="${product.ave_eval}">
-                    <img src="img\Hosi.png" width="50px">
-                </c:forEach>
+
+                    <span><c:forEach begin="1" end="5" step="1"
+                            varStatus="status">
+                            <c:choose>
+                                <c:when test="${status.index <= product.ave_eval}">
+                                    <yellowStar>&#xf2fc;</yellowStar>
+                                </c:when>
+                                <c:otherwise>
+                                    <grayStar>&#xf2fc;</grayStar>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach></span>
+
             </div>
 
             <!-- レビュー画面リンク -->
