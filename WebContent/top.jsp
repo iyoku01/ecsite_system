@@ -58,7 +58,7 @@
     </ul>
     <!-- サイドバー -->
     <div class="side-content-simple border">
-        <a href="Top.Control">全てのゲーム</a>
+        <a href="Top.Control" class="kasen-sakuzixyo">全てのゲーム</a>
         <c:forEach var="i" items="${hardList}" varStatus="st">
 
             <h3 class="accordion cursorPointer">
