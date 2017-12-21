@@ -12,14 +12,12 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
 <link rel="stylesheet"
-    href="http://code.ionicframework.com/ionicons/1.4.1/css/ionicons.min.css">
+    href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <script
     src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="js/jquery.bxslider.min.js"></script>
 <link href="css/jquery.bxslider.css" rel="stylesheet" />
-<%
-    request.setCharacterEncoding("Windows-31J");
-%>
+
 <script type="text/javascript">
     $(function() {
         $('.star').each(function() {

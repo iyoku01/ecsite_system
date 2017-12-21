@@ -13,37 +13,68 @@
 
 <title>新規会員登録</title>
 </head>
-<body>
+<body class=bodygray>
+    <jsp:include page="header_logoOnly.jsp" flush="true" />
+    <span class="screenname">新規会員登録画面</span>
 
-<%request.setCharacterEncoding("Windows-31J"); %>
-    <form action="CheckId.Control" method="post">
+    <div class=inputForm>
+        <%
+            request.setCharacterEncoding("Windows-31J");
+        %>
 
-        <p>
-            ユーザーID<input type=text name=user_id value="${param.user_id}">
-        </p>
-        <p>
-            パスワード<input type=text name=password value="${param.password}">
-        </p>
-        <p>
-            名前<input type=text name=name value ="${param.name}">
-        </p>
-        <p>
-            ニックネーム<input type=text name=nickname value ="${param.nickname}">
-        </p>
-        <p>
-            電話番号<input type=text name=phone value ="${param.phone}">
-        </p>
-        <p>
-            郵便番号<input type=text name=postal_code value ="${param.postal_code}">
-        </p>
-        <p>
-            住所<input type=text name=address value ="${param.address}">
-        </p>
-         <input type=submit value=確認画面へ>
-    </form>
+        <p class=message>${message}</p>
 
-    <!-- 共通フッター -->
-    <jsp:include page="footer.jsp" flush="true" />
+        <form action="CheckId.Control" method="post">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <td><input type=text name=user_id value="${param.user_id}"></td>
+                    <td>半角英数6～10文字</td>
+                </tr>
+                <tr>
+                    <th>名前</th>
+                    <td><input type=text name=name value="${param.name}"></td>
+                    <td>30文字まで</td>
+                </tr>
+                <tr>
+                    <th>ニックネーム</th>
+                    <td><input type=text name=nickname value="${param.nickname}"></td>
+                    <td>20文字まで</td>
+                </tr>
+                <tr>
+                    <th>郵便番号</th>
+                    <td><input type=text name=postal_code
+                        value="${param.postal_code}"></td>
+                    <td>ハイフン無し 7桁</td>
+                </tr>
+                <tr>
+                    <th>住所</th>
+                    <td><input type=text name=address value="${param.address}"></td>
+                    <td>50文字まで</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>※マンション名、部屋番号まで正しく記入してください。</td>
+                </tr>
+                <tr>
+                    <th>電話番号</th>
+                    <td><input type=text name=phone value="${param.phone}"></td>
+                    <td>ハイフン無し 12桁</td>
+                </tr>
+                <tr>
+                    <th>パスワード</th>
+                    <td><input type=text name=password value="${param.password }"></td>
+                    <td>半角英数8～24桁</td>
+                </tr>
+                <tr>
+                    <th>パスワード確認</th>
+                    <td><input type=text name=password value="${param.password }"></td>
+                    <td>もう一度入力して下さい</td>
+            </table>
+            <input type=submit class=orange-button value=確認画面に進む>
+        </form>
+
+    </div>
 
 </body>
 </html>

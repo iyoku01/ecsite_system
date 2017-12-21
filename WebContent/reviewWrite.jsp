@@ -12,7 +12,7 @@
 <META charset="Windows-31J">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
-<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.4.1/css/ionicons.min.css">
+<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <script
     src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="js/jquery.bxslider.min.js"></script>
