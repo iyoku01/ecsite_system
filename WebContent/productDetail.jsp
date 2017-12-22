@@ -98,7 +98,7 @@
 
             <div class="zaiko float">ç›å…Ç†ÇË</div>
 
-            <form action="CartAdd.Control" method="get">
+            <form action="CartAdd.Control" method="post">
                 <!-- è§ïiIDÅiâBÇµçÄñ⁄Åj -->
                 <input type="hidden" name="product_id" value="${product.product_id}">
 
