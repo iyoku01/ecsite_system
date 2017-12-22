@@ -65,7 +65,7 @@ public class HistoryDto {
         return pic_file;
     }
 
-    public void setPic_filer(String pic_file) {
+    public void setPic_file(String pic_file) {
         this.pic_file = pic_file;
     }
 

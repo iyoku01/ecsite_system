@@ -19,25 +19,29 @@
     <span class=title>íçï∂óöó</span>
 
 
-    <div class="oneHistory clearfix">
+
         <c:forEach var="i" items="${historyList}">
+        <div class="oneHistory clearfix">
             <span>${i.date}</span>
             <span>çwì¸î‘çÜÅF${i.order_id}</span>
             <p class=weight>${i.product_name}</p>
 
             <p class=float>
-                <a href=ProductDetail.Control?product_id=${i.product_id}><img class=float src="${product.mainPic_file}" width="80"></a>
+                <a href=ProductDetail.Control?product_id=${i.product_id}><img class=float src="${i.pic_file}" width="60"></a>
             </p>
+            <div class=innerElement>
             <p class=productPrice>${i.price}</p>
             <p class=zaiko>${i.shipping}</p>
+            </div>
             <div class=right>
             <form action=ReviewSelect.Control method=post>
                 <input type=hidden name=product_id value="${i.product_id}">
                 <input type=submit class=orange-button value="ÉåÉrÉÖÅ[ÇèëÇ≠">
             </form>
             </div>
+            </div>
         </c:forEach>
-    </div>
+
 
 
 </body>
