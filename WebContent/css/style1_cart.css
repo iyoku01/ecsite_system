@@ -44,6 +44,11 @@
     margin: 10px;
 }
 
+.product-title {
+    display: inline-block;
+    width: 200px;
+}
+
 .cart form {
     text-align: right;
     margin: 50px 50px;
