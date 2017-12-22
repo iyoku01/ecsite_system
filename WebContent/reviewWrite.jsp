@@ -75,8 +75,6 @@
 
 <div class=inputContent>
     <form action=ReviewWrite.Control method=post>
-
-
         <span> ìäçeé“ñºÅF<input type=text class=inline name=nickname
             value="${param.nickname}">
         </span>
@@ -87,8 +85,7 @@
         <p class=review>
             <textarea name=review>${param.review}</textarea>
         </p>
-        <input type=hidden name=product_id
-            value="<%=request.getParameter("product_id")%>">
+        <input type=hidden name=product_id value="${param.product_id}">
         <c:if test="${param.update}">
             <input type=hidden name=update value="true">
         </c:if>

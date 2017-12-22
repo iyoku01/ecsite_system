@@ -74,6 +74,7 @@
 
             <form action="Regist.Control" method="post">
                 <input type=hidden name=password value="${param.password}">
+                <input type=hidden name=checkPassword value="${param.checkPassword}">
                 <input type=hidden name=name value="${param.name}"> <input
                     type=hidden name=nickname value="${param.nickname}"> <input
                     type=hidden name=phone value="${param.phone}"> <input

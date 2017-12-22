@@ -35,23 +35,23 @@
                 </tr>
                 <tr>
                     <th>名前</th>
-                    <td><input type=text name=name value="${param.name}" required></td>
+                    <td><input type=text name=name value="${param.name}" pattern=.{1,30} title="指定している文字数内で入力して下さい" required></td>
                     <td>30文字まで</td>
                 </tr>
                 <tr>
                     <th>ニックネーム</th>
-                    <td><input type=text name=nickname value="${param.nickname}" required></td>
+                    <td><input type=text name=nickname value="${param.nickname}" pattern=.{1,20} title="指定している文字数内で入力して下さい" required required></td>
                     <td>20文字まで</td>
                 </tr>
                 <tr>
                     <th>郵便番号</th>
                     <td><input type=text name=postal_code
-                        value="${param.postal_code}" required></td>
+                        value="${param.postal_code}" pattern=\d{7} title="" required></td>
                     <td>ハイフン無し 7桁</td>
                 </tr>
                 <tr>
                     <th>住所</th>
-                    <td><input type=text name=address value="${param.address}" required></td>
+                    <td><input type=text name=address value="${param.address}" pattern=.{1,50} title="指定している文字数内で入力して下さい" required></td>
                     <td>50文字まで</td>
                 </tr>
                 <tr>
@@ -60,17 +60,17 @@
                 </tr>
                 <tr>
                     <th>電話番号</th>
-                    <td><input type=text name=phone value="${param.phone}" required></td>
-                    <td>ハイフン無し 12桁</td>
+                    <td><input type=text name=phone value="${param.phone}" pattern=\d{10,12} title="" required></td>
+                    <td>ハイフン無し 10～12桁</td>
                 </tr>
                 <tr>
                     <th>パスワード</th>
-                    <td><input type=text name=password value="${param.password }" required></td>
+                    <td><input type=text name=password value="${param.password }" pattern=^([a-zA-Z0-9]{8,24})$ title="" required></td>
                     <td>半角英数8～24桁</td>
                 </tr>
                 <tr>
                     <th>パスワード確認</th>
-                    <td><input type=text name=checkPassword value="${param.checkPassword }" required></td>
+                    <td><input type=text name=checkPassword value="${param.checkPassword }" pattern=^([a-zA-Z0-9]{8,24})$ title="" required></td>
                     <td>もう一度入力して下さい</td>
             </table>
             <input type=submit class=orange-button value=確認画面に進む>
