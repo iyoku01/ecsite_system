@@ -13,7 +13,7 @@
 
 <title>マイページ</title>
 </head>
-<body>
+<body class="body_mypage">
     <jsp:include page="header_logoOnly.jsp" flush="true" />
 
     <p class="border_mypage local-section-mypage">マイページ</p>
