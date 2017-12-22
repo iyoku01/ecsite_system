@@ -35,6 +35,11 @@ public class ReviewDataSelect implements Action {
             //レビューのリストを取得
             reviewList = dao.getReviewList(product_id);
 
+            String nickname = dao.getNickname(user_id);
+
+            if (nickname != null) {
+                request.setAttribute("nickname", nickname);
+            }
             if (reviewList.isEmpty()) {
                 request.setAttribute("message", "商品のレビューはありません");
             } else {

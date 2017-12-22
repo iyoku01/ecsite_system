@@ -57,7 +57,14 @@
     <c:if test="${writeReview}">
     <form action="reviewWrite.jsp" method="post">
         <input type=hidden name=product_id value="${product.product_id}">
-        <input type=hidden name=nickname value="${review.nickname}"> <input
+        <c:choose>
+        <c:when test="${!empty review}">
+          <input type=hidden name=nickname value="${review.nickname}">
+         </c:when>
+         <c:otherwise>
+         <input type=hidden name=nickname value="${nickname}">
+         </c:otherwise>
+         </c:choose><input
             type=hidden name=evaluation value="${review.evaluation}"> <input
             type=hidden name=review value="${review.review}"> <input
             type=hidden name=product_name value="${product.product_name}">

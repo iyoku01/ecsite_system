@@ -731,4 +731,49 @@ public class EcsiteDao implements AutoCloseable {
             pstatement.executeUpdate();
         }
     }
+
+    /***
+     * 指定した商品IDのレビューの数を更新する
+     * @param product_id
+     * @throws SQLException
+     */
+    public void updateReviewCount(String product_id)
+            throws SQLException {
+        System.out.println("\n/// updateReviewCount()");
+
+        String sql = "UPDATE product_mst SET"
+                + " review_count=(SELECT COUNT(*) FROM review_tbl WHERE product_id=?) WHERE product_id=?";
+
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            pstatement.setString(1, product_id);
+            pstatement.setString(2, product_id);
+            pstatement.executeUpdate();
+        }
+    }
+
+    /***
+     * ニックネームの取得
+     * @param user_id
+     * @param password
+     * @return ニックネーム
+     * @throws SQLException
+     */
+    public String getNickname(String user_id) throws
+            SQLException {
+        System.out.println("\n/// getNickname()");
+
+        String nickname = null;
+        String sql = "SELECT nickname FROM personal_mst WHERE user_id=?";
+
+        try (PreparedStatement pstatement = connection.prepareStatement(sql)) {
+            pstatement.setString(1, user_id);
+            System.out.println("--- sql = " + pstatement);
+            ResultSet rs = pstatement.executeQuery();
+            if (rs.next()) {
+                nickname = rs.getString("nickname");
+            }
+        }
+        return nickname;
+    }
+
 }
