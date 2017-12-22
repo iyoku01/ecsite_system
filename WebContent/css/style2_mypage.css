@@ -29,6 +29,9 @@
     top: 30px;
     left: 50px;
 }
+.detail th{
+text-align:left;
+}
 .local-section-henkou{
     position: relative;
     left:80px;
@@ -37,6 +40,7 @@
     position: relative;
     top:40px;
     left:80px;
+    font-size:12px;
 }
 .local-message{
     position: relative;
