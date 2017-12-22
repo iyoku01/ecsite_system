@@ -3,6 +3,7 @@
 <!-- El Start -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!-- El End -->
 
 <!DOCTYPE html>
@@ -13,56 +14,62 @@
 
 <title>購入確認</title>
 </head>
-<body>
-<div class="productBuyConf">
+<body class="bodywhite">
 
     <!-- 共通ヘッダー -->
     <jsp:include page="header_logoOnly.jsp" flush="true" />
     <!-- pageー -->
-    <p>${message}</p>
+    <div class="productBuyConf">
+        <div class="float productBuyConf_Box">
 
+            <p>${message}</p>
 
-<div class="pBC1">
-<table>
-    <td>お届け先住所<br>
-    ${personalData.postal_code}<br>
-    ${personalData.address}<br>
-    名前<br>
-    ${personalData.name}<br>
-    電話番号<br>
-    ${personalData.phone}</td>
-        </table>
+            <div class="float">
+                <label>お届け先住所</label>
+                <p>${personalData.postal_code}</p>
+                <p>${personalData.address}</p>
+                <label>名前</label>
+                <p>${personalData.name}</p>
+                <label> 電話番号</label>
+                <p>${personalData.phone}</p>
+            </div>
         </div>
-</div>
-<div class="float">
-<div class="pBC2">
-        <table>
-    <form action="productBuyDone.Control" method="get">
-        <td>商品の小計<br>
-        ${cart.sumPrice}<br>
-        <INPUT TYPE="submit" VALUE="注文を確定する"></td>
-    </form>
-        </table>
-</div>
+        <div class="float productBuyConf_Box">
+            <table>
+                <tr>
+                    <td>商品の小計：</td>
+                    <td><fmt:formatNumber value="${cart.sumPrice}" pattern="\#,###(税込)" /></td>
+                </tr>
+                <tr>
+                    <td>配送料：</td>
+                    <td>\0</td>
+                </tr>
+                <tr class="productBuyConf_tableSum">
+                    <td>ご請求額：</td>
+                    <td><fmt:formatNumber value="${cart.sumPrice}" pattern="\#,###(税込)" /></td>
+                </tr>
+            </table>
 
+            <form action="productBuyDone.Control" method="get">
+                <INPUT TYPE="submit" VALUE="注文を確定する">
+            </form>
+        </div>
 
-        <div class="memborder">
+        <div class="clearfix"></div>
 
+        <div class="productBuyConf_Box">
+            <label class="productBuyConf_ListTitle">注文内容を確認</label>
+            <table>
+                <c:forEach var="i" items="${cart.cartProductList}">
+                    <tr>
+                        <td><img src="${i.mainPic_file}" width="70" height="90" /> </td>
+                        <td><span class="mozifont">商品名${i.product_name}</span><br><br>
+                        数量：${i.buy_count} &nbsp;&nbsp;&nbsp; 価格：<fmt:formatNumber value="${i.price}" pattern="\#,###" /></td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+    </div>
 
-
-<div class="pBC3">
-        <table>
-    <td>注文内容を確認<br>
-        <c:forEach var="i" items="${cart.cartProductList}">
-                    <img title="product_id = ${i.product_id}" src="${i.mainPic_file}" width="200" height="150" /><br>商品名${i.product_name} <br>個数${i.buy_count} <br>値段${i.price}
-                    </td>
-        </c:forEach>
-    </table>
-</div>
-</div>
-    <!-- 共通フッター -->
-    <jsp:include page="footer.jsp" flush="true" />
-
-</div>
 </body>
 </html>
