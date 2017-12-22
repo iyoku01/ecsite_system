@@ -63,7 +63,7 @@
                 <c:forEach var="i" items="${cart.cartProductList}">
                     <tr>
                         <td><img src="${i.mainPic_file}" width="70" height="90" /> </td>
-                        <td><span class="mozifont">è§ïiñº${i.product_name}</span><br><br>
+                        <td><span class="mozifont">${i.product_name}</span><br><br>
                         êîó ÅF${i.buy_count} &nbsp;&nbsp;&nbsp; âøäiÅF<fmt:formatNumber value="${i.price}" pattern="\#,###" /></td>
                     </tr>
                 </c:forEach>
