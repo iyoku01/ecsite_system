@@ -109,6 +109,7 @@
     width: 410px;
     padding: 20px;
     float: left;
+    margin: 20px 20px;
 }
 
 .productDatail-main-content {
@@ -116,6 +117,7 @@
     box-sizing: border-box;
     width: 60%;
     float: left;
+    margin: 20px 0px;
 }
 
 .mainGazou {
@@ -165,26 +167,6 @@
     float:right;
 
 }
-
-.productBuyConf table{
-    border: 1px solid black;
-    margin: auto;
-    text-align: center;
-}
-
-.productBuyConf td{
-    border: 1px solid black;
-    margin: auto ;
-    text-align: center;
-
-}
-.screenname{
-    border:1px black solid;
-    padding:6px;
-    margin:10px;
-    display:inline-block;
-    background-color:white;
-}
 /*ƒŒƒrƒ…[—p‚Ì¯*/
 .index-star {
     display: none;
@@ -207,14 +189,14 @@ yellowStar {
 
 .star>a {
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }
 
 .star>a:before {
     content: "\f2fc";
     font-family: "Ionicons";
-    font-size: 20px;
+    font-size: 30px;
     color: #aaa;
 }
 

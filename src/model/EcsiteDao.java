@@ -494,7 +494,7 @@ public class EcsiteDao implements AutoCloseable {
             System.out.println("--- sql = " + pstatement);
             ResultSet rs = pstatement.executeQuery();
             historyList = new ArrayList<HistoryDto>();
-            if (rs.next()) {
+            while (rs.next()) {
                 HistoryDto ent = new HistoryDto();
                 ent.setDate(rs.getString("date"));
                 ent.setOrder_id(rs.getInt("order_id"));
@@ -502,6 +502,7 @@ public class EcsiteDao implements AutoCloseable {
                 ent.setProduct_name(rs.getString("product_name"));
                 ent.setPrice(rs.getInt("price"));
                 ent.setNumber(rs.getInt("number"));
+                ent.setPic_file(rs.getString("pic_file"));
                 ent.setShipping(rs.getBoolean("shipping"));
                 historyList.add(ent);
             }

@@ -13,16 +13,20 @@
 
 <title>マイページ</title>
 </head>
-<body>
+<body class="body_mypage">
     <jsp:include page="header_logoOnly.jsp" flush="true" />
 
-    <p>マイページ</p>
+    <p class="border_mypage local-section-mypage">マイページ</p>
+    <!-- リンク 会員情報変更 -->
+    <div class="local-section-henkou">
+        <a href=http://localhost:8080/ecsite_system/memberUpdate.jsp>会員情報を変更する</a>
+    </div>
+    <!-- 変更完了メッセージ -->
+    <div class="local-message titleMojiFont">${message}</div>
 
-    <a href=http://localhost:8080/ecsite_system/memberUpdate.jsp>会員情報を変更する</a>${message}
 
-
-    <div class="row">
-        <table>
+    <div class="detail">
+        <table cellspacing="30px">
             <tr>
                 <th>ID</th>
                 <td>${personalData.user_id}</td>
@@ -37,7 +41,7 @@
             </tr>
             <tr>
                 <th>郵便番号</th>
-                <td>${personalData.postal_code}</td>
+                <td>〒${personalData.postal_code}</td>
             </tr>
             <tr>
                 <th>住所</th>
@@ -51,8 +55,9 @@
     </div>
 
 
-    <a
-        href=http://localhost:8080/ecsite_system/OrderHistory.Control?user_id=${personalData.user_id}>購入履歴を見る</a>
-
+    <div class="local-section-rireki">
+        <a
+            href=http://localhost:8080/ecsite_system/OrderHistory.Control?user_id=${personalData.user_id}>購入履歴を見る</a>
+    </div>
 </body>
 </html>

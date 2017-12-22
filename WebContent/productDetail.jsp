@@ -25,7 +25,6 @@
             });
         });
     });
-
 </script>
 
 
@@ -41,7 +40,7 @@
     <jsp:include page="header.jsp" flush="true" />
 
 
-    <div class="border clearfix">
+    <div class="clearfix">
         <!--  サブコンテンツ（画面左）-->
         <div class="productDatail-sub-content border clearfix">
             <!-- サブ画像 -->
@@ -73,17 +72,17 @@
             <!-- 評価 -->
             <div class="ave_eval float">
 
-                    <span><c:forEach begin="1" end="5" step="1"
-                            varStatus="status">
-                            <c:choose>
-                                <c:when test="${status.index <= product.ave_eval}">
-                                    <yellowStar>&#xf2fc;</yellowStar>
-                                </c:when>
-                                <c:otherwise>
-                                    <grayStar>&#xf2fc;</grayStar>
-                                </c:otherwise>
-                            </c:choose>
-                        </c:forEach></span>
+                <span><c:forEach begin="1" end="5" step="1"
+                        varStatus="status">
+                        <c:choose>
+                            <c:when test="${status.index <= product.ave_eval}">
+                                <yellowStar>&#xf2fc;</yellowStar>
+                            </c:when>
+                            <c:otherwise>
+                                <grayStar>&#xf2fc;</grayStar>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach></span>
 
             </div>
 
@@ -99,7 +98,7 @@
 
             <div class="zaiko float">在庫あり</div>
 
-            <form action="CartAdd.Control" method="get">
+            <form action="CartAdd.Control" method="post">
                 <!-- 商品ID（隠し項目） -->
                 <input type="hidden" name="product_id" value="${product.product_id}">
 

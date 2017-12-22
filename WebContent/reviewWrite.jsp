@@ -64,9 +64,9 @@
     <fmt:parseNumber var="ave_eval" value="${param.ave_eval}" />
     <span><c:forEach begin="1" end="5"  step="1" varStatus="status"><c:choose><c:when test="${status.index <= ave_eval}"><yellowStar>&#xf2fc;</yellowStar></c:when><c:otherwise><grayStar>&#xf2fc;</grayStar></c:otherwise></c:choose></c:forEach></span>
          <p>${param.hard_name}</p>
-    <div class=innerElement>
-    <img src="${param.mainPic_file}" width="80">
-    <span class=productPrice>\ ${param.price}</span> <span class=zaiko>ç›å…Ç†ÇË</span>
+    <div class="innerElement clearfix">
+    <img class=float src="${param.mainPic_file}" width="80">
+    <p class=productPrice>\ ${param.price}</p> <p class=zaiko>ç›å…Ç†ÇË</p>
     </div>
     <p class=info>${param.info}</p>
 </div>
@@ -75,8 +75,6 @@
 
 <div class=inputContent>
     <form action=ReviewWrite.Control method=post>
-
-
         <span> ìäçeé“ñºÅF<input type=text class=inline name=nickname
             value="${param.nickname}">
         </span>
@@ -87,12 +85,13 @@
         <p class=review>
             <textarea name=review>${param.review}</textarea>
         </p>
-        <input type=hidden name=product_id
-            value="<%=request.getParameter("product_id")%>">
+        <input type=hidden name=product_id value="${param.product_id}">
         <c:if test="${param.update}">
             <input type=hidden name=update value="true">
         </c:if>
-        <input type=submit value=ëóêM>
+        <div class=right>
+        <input class=orange-button  type=submit value=ëóêM>
+        </div>
     </form>
 </div>
 </body>

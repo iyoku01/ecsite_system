@@ -13,7 +13,7 @@
 /*---------------------------------------------------------------------*/
 .revProduct {
     margin:30px auto 10px;
-    padding:10px;
+    padding:10px 10px 30px;
     width:85%;
     border:1px solid #999999;
 }
@@ -28,15 +28,21 @@
     margin:5px 50px 20px 0;
 }
 .revProduct .info{
-    width:65%;
+    width:70%;
     display:inline-block;
 }
-
-.revProduct .info .orangeÅ]button{
-    margin:auto 5px 5px auto;
+.revProduct form {
+    position:relative;
+    margin:40px 20px;
+    left:50px;
 }
 .innerElement {
-    margin:0 auto 5px 10px;
+    margin:0 auto 20px 10px;
+}
+.innerElement  p {
+    position:relative;
+    left:100px;
+    top:30px;
 }
 
 .reviewList{
@@ -64,7 +70,42 @@
 .review {
     margin:10px auto 20px;
 }
+
+.inputContent .star {
+    margin:0 auto 0 20px;
+}
+
+.inputContent input {
+    border:3px solid #ececec;
+}
 .review textarea {
     height:180px;
     width:100%;
+    border:3px solid #ececec;
+}
+
+/*---------------------------------------------------------------------*/
+/*çwì¸óöóâÊñ */
+/*---------------------------------------------------------------------*/
+.oneHistory {
+    width:90%;
+    margin:20px auto 40px;
+}
+.oneHistory span {
+    margin:20px;
+}
+.oneHistory .weight {
+    font-weight: 700;
+    margin:5px auto 5px 40px;
+}
+.oneHistory img {
+    margin: 0 auto 10px 70px;
+}
+
+.title {
+    border:none;
+    display:inline-block;
+    padding:5px 15px;
+    margin:30px auto 20px 50px;
+    font-weight: 800;
 }
