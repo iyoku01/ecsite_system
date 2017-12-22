@@ -1,0 +1,45 @@
+@charset "shift_jis";
+/*/////////////////////////////////////////////////////////////////////
+2) ログイン、マイページ、会員登録
+-----------------------------------------------------------------------
+11.マイページ
+/////////////////////////////////////////////////////////////////////*/
+.body_mypage {
+    background-color: #EEEEEE;
+}
+
+.border_mypage {
+    box-sizing: border-box;
+    border: solid;
+    border-color: #000;
+    border-width: 2px;
+    padding: 10px;
+}
+
+.local-section-mypage {
+    box-sizing: border-box;;
+    width: 140px;
+    background-color: #fff;
+    text-align: center;
+    margin:20px;
+}
+
+.detail {
+    position: relative;
+    top: 30px;
+    left: 50px;
+}
+.local-section-henkou{
+    position: relative;
+    left:80px;
+}
+.local-section-rireki{
+    position: relative;
+    top:40px;
+    left:80px;
+}
+.local-message{
+    position: relative;
+    color: red;
+    left:400px;
+}
