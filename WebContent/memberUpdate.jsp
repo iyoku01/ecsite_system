@@ -12,6 +12,12 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
 <title>会員情報変更</title>
+<script type="text/javascript">
+function errorcheck(){
+    if (form1.password.value !== form1.checkPassword.value) return false;
+    }
+</script>
+
 </head>
 <body class=bodygray>
 
@@ -24,9 +30,7 @@
         <%
             request.setCharacterEncoding("Windows-31J");
         %>
-
-
-        <form
+        <form id=form1
             action="http://localhost:8080/ecsite_system/memberUpdateConf.jsp"
             method="post">
             <table>
@@ -65,7 +69,7 @@
                 </tr>
                 <tr>
                     <th>パスワード</th>
-                    <td><input type=text name=password value="${param.password }" pattern=^([a-zA-Z0-9]{8,24})$ title="" required></td>
+                    <td><input type=text name=password value="${param.password }" pattern=^([a-zA-Z0-9]{8,24})$ title="" required onblur="blank_alert()"></td>
                     <td>半角英数8～24桁</td>
                 </tr>
                 <tr>
@@ -73,7 +77,7 @@
                     <td><input type=text name=checkPassword value="${param.checkPassword }" pattern=^([a-zA-Z0-9]{8,24})$ title="" required></td>
                     <td>もう一度入力して下さい</td>
             </table>
-            <input type=submit class=orange-button value=確認画面に進む>
+            <input type=submit class=orange-button value=確認画面に進む onclick="errorcheck()">
         </form>
     </div>
 

@@ -18,6 +18,7 @@ public class PersonalDataInsert implements Action {
 
         try (EcsiteDao dao = new EcsiteDao()) {
             String user_id = request.getParameter("user_id");
+            System.out.println("š" + user_id);
             String password = request.getParameter("password");
             String name = request.getParameter("name");
             String nickname = request.getParameter("nickname");
@@ -32,6 +33,7 @@ public class PersonalDataInsert implements Action {
                         phone, postal_code, address);
                 request.setAttribute("message", "•ÏX‚ªŠ®—¹‚µ‚Ü‚µ‚½I");
             } else {
+                System.out.println("šš" + user_id);
                 dao.insertPersonalData(user_id, password, name, nickname,
                         phone, postal_code, address);
                 session.setAttribute("user_id", user_id);

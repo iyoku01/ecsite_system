@@ -30,6 +30,7 @@ public class ReviewDataInsert implements Action {
                 dao.insertReview(product_id, user_id, nickname, evaluation, review);
             }
             dao.updateEvaluation(product_id);
+            dao.updateReviewCount(product_id);
             request.setAttribute("product_id", product_id);
 
         } catch (ClassNotFoundException e) {
