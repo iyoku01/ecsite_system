@@ -3,6 +3,7 @@
 <!-- El Start -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!-- El End -->
 
 <!DOCTYPE html>
@@ -30,7 +31,7 @@
                 <a href=ProductDetail.Control?product_id=${i.product_id}><img class=float src="${i.pic_file}" width="60"></a>
             </p>
             <div class=innerElement>
-            <p class=productPrice>${i.price}</p>
+            <p class=productPrice> <fmt:formatNumber value="${i.price}" pattern="\#,###" /></p>
             <p class=zaiko>${i.shipping}</p>
             </div>
             <div class=right>
