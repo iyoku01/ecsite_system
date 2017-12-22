@@ -6,6 +6,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!-- El End -->
 
+<%@ page import="model.Util.*" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,13 +19,11 @@
 <body>
 <jsp:include page="header_logoOnly.jsp" flush="true" />
 
-    <span class=title>’•¶—š—ğ</span>
-
-
+    <span class=title>w“ü—š—ğ</span>
 
         <c:forEach var="i" items="${historyList}">
         <div class="oneHistory clearfix">
-            <span>${i.date}</span>
+            <span>w“ü“úF${i.date}</span>
             <span>w“ü”Ô†F${i.order_id}</span>
             <p class=weight>${i.product_name}</p>
 
