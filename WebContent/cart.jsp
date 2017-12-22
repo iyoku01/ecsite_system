@@ -26,7 +26,7 @@
         <c:forEach var="i" items="${cart.cartProductList}">
             <table>
                 <tr>
-                    <td><p><img title="product_id = ${i.product_id}" src="${i.mainPic_file}"/></p><p class="mozifont"> ${i.product_name}</p></td>
+                    <td><p><img title="product_id = ${i.product_id}" src="${i.mainPic_file}"/></p><p class="mozifont product-title "> ${i.product_name}</p></td>
                     <td>
                         <form action="CartDelete.Control" method="get" class="mozifont">
                             <!-- ¤•iIDi‰B‚µ€–Új -->
@@ -48,7 +48,6 @@
                             <input type="hidden" name="product_id" value="${i.product_id}">
                             <INPUT TYPE="submit" VALUE="íœ" class="cartbotton-delete">
                         </form>
-                        <p>
                     </td>
                 </tr>
             </table>
