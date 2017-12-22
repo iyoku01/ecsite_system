@@ -35,23 +35,23 @@
                 </tr>
                 <tr>
                     <th>名前</th>
-                    <td><input type=text name=name value="${param.name}"></td>
+                    <td><input type=text name=name value="${param.name}" required></td>
                     <td>30文字まで</td>
                 </tr>
                 <tr>
                     <th>ニックネーム</th>
-                    <td><input type=text name=nickname value="${param.nickname}"></td>
+                    <td><input type=text name=nickname value="${param.nickname}" required></td>
                     <td>20文字まで</td>
                 </tr>
                 <tr>
                     <th>郵便番号</th>
                     <td><input type=text name=postal_code
-                        value="${param.postal_code}"></td>
+                        value="${param.postal_code}" required></td>
                     <td>ハイフン無し 7桁</td>
                 </tr>
                 <tr>
                     <th>住所</th>
-                    <td><input type=text name=address value="${param.address}"></td>
+                    <td><input type=text name=address value="${param.address}" required></td>
                     <td>50文字まで</td>
                 </tr>
                 <tr>
@@ -60,17 +60,17 @@
                 </tr>
                 <tr>
                     <th>電話番号</th>
-                    <td><input type=text name=phone value="${param.phone}"></td>
+                    <td><input type=text name=phone value="${param.phone}" required></td>
                     <td>ハイフン無し 12桁</td>
                 </tr>
                 <tr>
                     <th>パスワード</th>
-                    <td><input type=text name=password value="${param.password }"></td>
+                    <td><input type=text name=password value="${param.password }" required></td>
                     <td>半角英数8～24桁</td>
                 </tr>
                 <tr>
                     <th>パスワード確認</th>
-                    <td><input type=text name=password value="${param.password }"></td>
+                    <td><input type=text name=checkPassword value="${param.checkPassword }" required></td>
                     <td>もう一度入力して下さい</td>
             </table>
             <input type=submit class=orange-button value=確認画面に進む>
