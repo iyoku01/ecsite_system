@@ -16,7 +16,7 @@
 <body>
     <jsp:include page="header_logoOnly.jsp" flush="true" />
 
-    <p class="border local-section-mypage">マイページ</p>
+    <p class="border_mypage local-section-mypage">マイページ</p>
     <!-- リンク 会員情報変更 -->
     <div class="local-section-henkou">
         <a href=http://localhost:8080/ecsite_system/memberUpdate.jsp>会員情報を変更する</a>
