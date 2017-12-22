@@ -44,7 +44,7 @@
                 <tr>
                     <th>郵便番号</th>
                     <td><input type=text name=postal_code
-                        value="${param.postal_code}" pattern=\d{7} title="" required></td>
+                        value="${param.postal_code}" pattern=\d{7} title="半角数字7桁で入力して下さい" required></td>
                     <td>ハイフン無し 7桁</td>
                 </tr>
                 <tr>
@@ -58,17 +58,17 @@
                 </tr>
                 <tr>
                     <th>電話番号</th>
-                    <td><input type=text name=phone value="${param.phone}" pattern=\d{10,12} title="" required></td>
+                    <td><input type=text name=phone value="${param.phone}" pattern=\d{10,12} title="半角数字12桁で入力して下さい" required></td>
                     <td>ハイフン無し 12桁</td>
                 </tr>
                 <tr>
                     <th>パスワード</th>
-                    <td><input type=text name=password value="${param.password}" pattern=^([a-zA-Z0-9]{8,24})$ title="" required></td>
+                    <td><input type=text name=password value="${param.password}" pattern=^([a-zA-Z0-9]{8,24})$ title="半角英数8～24桁で入力して下さい" required></td>
                     <td>半角英数8～24桁</td>
                 </tr>
                 <tr>
                     <th>パスワード確認</th>
-                    <td><input type=text name=checkPassword value="${param.checkPassword}" pattern=^([a-zA-Z0-9]{8,24})$ title="" required></td>
+                    <td><input type=text name=checkPassword value="${param.checkPassword}" pattern=^([a-zA-Z0-9]{8,24})$ title="ﾊﾟｽﾜｰﾄﾞと同じ内容で入力して下さい" required></td>
                     <td>もう一度入力して下さい</td>
             </table>
             <input type=submit class=orange-button value=確認画面に進む>

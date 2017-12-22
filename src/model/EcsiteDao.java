@@ -496,7 +496,8 @@ public class EcsiteDao implements AutoCloseable {
             historyList = new ArrayList<HistoryDto>();
             while (rs.next()) {
                 HistoryDto ent = new HistoryDto();
-                ent.setDate(rs.getString("date"));
+                ent.setDate(convertStringFromTimestamp(convertTimestampFromString(rs.getString("date")),
+                        "yyyy”NMŒŽd“ú"));
                 ent.setOrder_id(rs.getInt("order_id"));
                 ent.setProduct_id(rs.getInt("product_id"));
                 ent.setProduct_name(rs.getString("product_name"));

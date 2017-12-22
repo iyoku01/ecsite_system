@@ -41,7 +41,7 @@
             </tr>
             <tr>
                 <th>óXï÷î‘çÜ</th>
-                <td>${personalData.postal_code}</td>
+                <td>Åß${personalData.postal_code}</td>
             </tr>
             <tr>
                 <th>èZèä</th>

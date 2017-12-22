@@ -3,7 +3,10 @@
 <!-- El Start -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!-- El End -->
+
+<%@ page import="model.Util.*" %>
 
 <!DOCTYPE html>
 <html>
@@ -16,13 +19,11 @@
 <body>
 <jsp:include page="header_logoOnly.jsp" flush="true" />
 
-    <span class=title>’•¶—š—ğ</span>
-
-
+    <span class=title>w“ü—š—ğ</span>
 
         <c:forEach var="i" items="${historyList}">
         <div class="oneHistory clearfix">
-            <span>${i.date}</span>
+            <span>w“ü“úF${i.date}</span>
             <span>w“ü”Ô†F${i.order_id}</span>
             <p class=weight>${i.product_name}</p>
 
@@ -30,7 +31,7 @@
                 <a href=ProductDetail.Control?product_id=${i.product_id}><img class=float src="${i.pic_file}" width="60"></a>
             </p>
             <div class=innerElement>
-            <p class=productPrice>${i.price}</p>
+            <p class=productPrice> <fmt:formatNumber value="${i.price}" pattern="\#,###" /></p>
             <p class=zaiko>${i.shipping}</p>
             </div>
             <div class=right>
