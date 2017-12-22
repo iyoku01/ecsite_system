@@ -83,7 +83,7 @@
                 class="index-star" />
         </div>
         <p class=review>
-            <textarea name=review>${param.review}</textarea>
+            <textarea required name=review>${param.review}</textarea>
         </p>
         <input type=hidden name=product_id value="${param.product_id}">
         <c:if test="${param.update}">
