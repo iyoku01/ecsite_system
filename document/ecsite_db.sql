@@ -274,8 +274,8 @@ INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_
 INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (12, 2, 3, 'img\\sub\\Uncharted4_Sub3.jpg');
 INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (12, 2, 4, 'img\\sub\\Uncharted4_Sub4.jpg');
 INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (12, 2, 5, 'img\\sub\\Uncharted4_Sub5.jpg');
-INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (13, 0, 0, 'img\\logo\\Minecraft_logo.jpg');
-INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (13, 1, 0, 'img\\logo\\Minecraft_switch_main.jpg');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (13, 0, 0, 'img\\logo\\Minecraft_logo.png');
+INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (13, 1, 0, 'img\\main\\Minecraft_switch_main.jpg');
 INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (13, 2, 1, 'img\\sub\\Minecraft_Sub.jpg');
 INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (13, 2, 2, 'img\\sub\\Minecraft_Sub2.jpg');
 INSERT INTO `product_pic_tbl` (`product_id`, `pic_category`, `pic_number`, `pic_file`) VALUES (13, 2, 3, 'img\\sub\\Minecraft_Sub3.png');
