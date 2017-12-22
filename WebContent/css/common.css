@@ -39,7 +39,9 @@
 .float {
     float: left;
 }
-
+.right {
+    text-align:right;
+}
 .inline {
     display:inline;
 }
