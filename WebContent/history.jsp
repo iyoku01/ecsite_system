@@ -14,20 +14,30 @@
 <title>購入履歴</title>
 </head>
 <body>
+<jsp:include page="header_logoOnly.jsp" flush="true" />
 
-<div class="row">
-<c:forEach var="i" items="${historyList}">
-    <p>${i.date}</p>
-    <p>${i.order_id}</p>
-    <p>${i.product_name}</p>
-    <p>${i.price}</p>
-    <p>${i.number}</p>
-    <p>${i.pic_file}</p>
-    <p>${i.shipping}</p>
-    <p><a href=ProductDetail.Control?product_id=${i.product_id}>商品詳細画面へ</a></p>
-    <p><a href=http://localhost:8080/ecsite_system/ReviewSelect.Control?product_id=${i.product_id}>レビューを書く</a></p>
-</c:forEach>
-</div>
+    <span class=title>注文履歴</span>
+
+
+    <div class="oneHistory clearfix">
+        <c:forEach var="i" items="${historyList}">
+            <span>${i.date}</span>
+            <span>購入番号：${i.order_id}</span>
+            <p class=weight>${i.product_name}</p>
+
+            <p class=float>
+                <a href=ProductDetail.Control?product_id=${i.product_id}><img class=float src="${product.mainPic_file}" width="80"></a>
+            </p>
+            <p class=productPrice>${i.price}</p>
+            <p class=zaiko>${i.shipping}</p>
+            <div class=right>
+            <form action=ReviewSelect.Control method=post>
+                <input type=hidden name=product_id value="${i.product_id}">
+                <input type=submit class=orange-button value="レビューを書く">
+            </form>
+            </div>
+        </c:forEach>
+    </div>
 
 
 </body>
