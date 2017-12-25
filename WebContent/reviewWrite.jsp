@@ -59,11 +59,11 @@
     %>
     <!-- 商品情報 -->
     <div class="revProduct clearfix">
-    <h3>${param.product_name}</h3>
+    <h3 class="mozifont">${param.product_name}</h3>
     <!-- 平均評価を星で出す(getaParameterした値はキャストが必要) -->
     <fmt:parseNumber var="ave_eval" value="${param.ave_eval}" />
     <span><c:forEach begin="1" end="5"  step="1" varStatus="status"><c:choose><c:when test="${status.index <= ave_eval}"><yellowStar>&#xf2fc;</yellowStar></c:when><c:otherwise><grayStar>&#xf2fc;</grayStar></c:otherwise></c:choose></c:forEach></span>
-         <p>${param.hard_name}</p>
+         <p class="mozifont">${param.hard_name}</p>
     <div class="innerElement clearfix">
     <img class=float src="${param.mainPic_file}" width="80">
     <p class=productPrice>\ ${param.price}</p> <p class=zaiko>在庫あり</p>
@@ -83,7 +83,7 @@
                 class="index-star" />
         </div>
         <p class=review>
-            <textarea name=review>${param.review}</textarea>
+            <textarea required name=review>${param.review}</textarea>
         </p>
         <input type=hidden name=product_id value="${param.product_id}">
         <c:if test="${param.update}">

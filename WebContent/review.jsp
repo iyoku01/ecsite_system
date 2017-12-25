@@ -3,6 +3,7 @@
 <!-- El Start -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!-- El End -->
 
 <!DOCTYPE html>
@@ -44,10 +45,10 @@
 
     <!-- 商品情報 -->
     <div class="revProduct clearfix">
-        <h3>${product.product_name}</h3>
+        <h3 class="mozifont">${product.product_name}</h3>
         <!-- 商品の平均評価の値を切り捨てて表示 -->
         <span><c:forEach begin="1" end="5"  step="1" varStatus="status"><c:choose><c:when test="${status.index <= product.ave_eval}"><yellowStar>&#xf2fc;</yellowStar></c:when><c:otherwise><grayStar>&#xf2fc;</grayStar> </c:otherwise></c:choose></c:forEach></span>
-        <p>${product.hard_name}</p>
+        <p class="mozifont">${product.hard_name}</p>
         <div class="innerElement clearfix">
         <img class=float src="${product.mainPic_file}" width="80"> <p
             class=productPrice>\ ${product.price}</p> <p class=zaiko>在庫あり</p>
@@ -99,7 +100,10 @@
                     <!-- あれば自分のレビュー -->
                     <p>このゲームに対するあなたのレビュー</p>
                     <div class="ownReview">
-                        <span>投稿者</span> <span>${review.nickname}</span> <span>${review.date}</span>
+                        <span class="mozifont" >投稿者</span> <span class="mozifont reviewList_bluecolor">${review.nickname}</span> <span class="mozifont"><fmt:formatDate value="${review.date}" type="DATE" dateStyle="FULL" /></span>
+
+
+
                         <c:forEach begin="1" end="5"  step="1" varStatus="status"><c:choose><c:when test="${status.index <= review.evaluation}"><yellowStar>&#xf2fc;</yellowStar></c:when><c:otherwise><grayStar>&#xf2fc;</grayStar> </c:otherwise></c:choose></c:forEach></span>
                         <p>${review.review}</p>
                     </div>
@@ -114,9 +118,9 @@
         <!-- レビューのリスト -->
         <c:forEach var="i" items="${reviewList}">
             <div class="oneReview">
-                <span>投稿者</span>
-                <span>${i.nickname}</span>
-                <span>${i.date}</span>
+                <span class="mozifont">投稿者</span>
+                <span class="mozifont reviewList_bluecolor">${i.nickname}</span>
+                <span class="mozifont"><fmt:formatDate value="${i.date}" type="DATE" dateStyle="FULL" /></span>
                 <c:forEach begin="1" end="5"  step="1" varStatus="status"><c:choose><c:when test="${status.index <= i.evaluation}"><yellowStar>&#xf2fc;</yellowStar></c:when><c:otherwise><grayStar>&#xf2fc;</grayStar> </c:otherwise></c:choose></c:forEach></span>
                 <p>${i.review}</p>
             </div>
