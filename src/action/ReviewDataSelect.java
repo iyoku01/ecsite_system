@@ -49,6 +49,7 @@ public class ReviewDataSelect implements Action {
             if (writeReview) {
                 request.setAttribute("writeReview", "true");
             }
+            //既にレビューしていればリクエスト変数reviewをセット
             if (review != null) {
                 request.setAttribute("review", review);
             }

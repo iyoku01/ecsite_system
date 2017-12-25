@@ -14,18 +14,20 @@
 <title>マイページ</title>
 </head>
 <body class="body_mypage">
+<!-- ヘッダー(ロゴ無し) -->
     <jsp:include page="header_logoOnly.jsp" flush="true" />
 
     <p class="border_mypage local-section-mypage">マイページ</p>
     <!-- リンク 会員情報変更 -->
     <div class="local-section-henkou">
-        <a href=http://localhost:8080/ecsite_system/memberUpdate.jsp>会員情報を変更する</a>
+        <a href=memberUpdate.jsp>会員情報を変更する</a>
     </div>
     <!-- 変更完了メッセージ -->
     <div class="local-message titleMojiFont">${message}</div>
 
 
     <div class="detail">
+    <!-- 会員情報の表示 -->
         <table cellspacing="30px">
             <tr>
                 <th>ID</th>
@@ -56,8 +58,7 @@
 
 
     <div class="local-section-rireki">
-        <a
-            href=http://localhost:8080/ecsite_system/OrderHistory.Control?user_id=${personalData.user_id}>購入履歴を見る</a>
+        <a href=OrderHistory.Control?user_id=${personalData.user_id}>購入履歴を見る</a>
     </div>
 </body>
 </html>

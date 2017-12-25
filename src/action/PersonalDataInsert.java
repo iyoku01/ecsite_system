@@ -16,9 +16,9 @@ public class PersonalDataInsert implements Action {
             HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("Windows-31J");
 
+        //入力内容を取得
         try (EcsiteDao dao = new EcsiteDao()) {
             String user_id = request.getParameter("user_id");
-            System.out.println("★" + user_id);
             String password = request.getParameter("password");
             String name = request.getParameter("name");
             String nickname = request.getParameter("nickname");
@@ -27,13 +27,16 @@ public class PersonalDataInsert implements Action {
             String address = request.getParameter("address");
             HttpSession session = request.getSession();
 
+            //セッション変数user_idを取得できる(ログインしている)
+            //  →個人情報の変更
             if (session.getAttribute("user_id") != null) {
                 user_id = (String) session.getAttribute("user_id");
                 dao.updataPersonalData(user_id, password, name, nickname,
                         phone, postal_code, address);
                 request.setAttribute("message", "変更が完了しました！");
+                //セッション変数user_idを取得できない(ログインしてない)
+                //  →個人情報の登録
             } else {
-                System.out.println("★★" + user_id);
                 dao.insertPersonalData(user_id, password, name, nickname,
                         phone, postal_code, address);
                 session.setAttribute("user_id", user_id);
@@ -43,7 +46,6 @@ public class PersonalDataInsert implements Action {
             request.setAttribute("message", "数値を入力して下さい");
         } catch (SQLException | ClassNotFoundException e) {
             request.setAttribute("message", "JDBC のエラーです : " + e.getMessage());
-            System.out.println("★SQLEx CNFEx" + e);
         }
 
         return "MyPage.Control";

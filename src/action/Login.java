@@ -24,9 +24,9 @@ public class Login implements Action {
                 //存在していればセッション変数user_idを登録
                 HttpSession session = request.getSession();
                 session.setAttribute("user_id", user_id);
-                System.out.print("★personal==trueルート:");//★
-                System.out.println(user_id);//★
+
             } else {
+                //存在していなければメッセージが表示される
                 request.setAttribute("message", "入力されたデータは存在しません");
                 request.setAttribute("user_id", user_id);
                 return "login.jsp";

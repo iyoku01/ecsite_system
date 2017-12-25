@@ -15,7 +15,9 @@ public class ProductDatailSelect implements Action {
         String product_id = request.getParameter("product_id");
 
         try (EcsiteDao dao = new EcsiteDao()) {
+            //商品の詳細情報の取得・リクエスト変数に登録
             request.setAttribute("product", dao.getProductDetail(product_id));
+            //商品の画像も取得・登録
             request.setAttribute("productPicSub", dao.getProductSubPicList(product_id));
         } catch (NumberFormatException e) {
             request.setAttribute("message", "数値を入力して下さい");

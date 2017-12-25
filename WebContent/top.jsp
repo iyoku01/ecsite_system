@@ -69,7 +69,8 @@
                 <c:forEach var="j" items="${categoryList}" varStatus="st">
                     <p>
                         <a
-                            href=Top.Control?hard_id=${i.hard_id}&category_id=${j.category_id} class=kasen-sakuzixyo>${j.category_name} </a>
+                            href=Top.Control?hard_id=${i.hard_id}&category_id=${j.category_id}
+                            class=kasen-sakuzixyo>${j.category_name} </a>
                     </p>
                 </c:forEach>
             </div>

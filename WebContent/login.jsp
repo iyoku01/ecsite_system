@@ -18,6 +18,7 @@
     <!-- ヘッダー -->
     <jsp:include page="header_logoOnly.jsp" flush="true" />
 
+<!-- 入力したID・パスワードと一致するレコードがDBにログイン -->
     <div class="login bodywhite mozifont">
         <form action="Login.Control">
             <table>

@@ -23,19 +23,22 @@ public class TopSelect implements Action {
             String category_id = request.getParameter("category_id");
             String search = request.getParameter("search");
 
-            //カテゴリー
+            //カテゴリーの取得
             ArrayList<Category_tblVo> categoryList;
             categoryList = dao.getCategoryList();
             request.setAttribute("categoryList", categoryList);
-            //ハード
+
+            //ハードの取得
             ArrayList<Hard_tblVo> hardList;
             hardList = dao.getHardList(null);
             request.setAttribute("hardList", hardList);
-            //おすすめ商品
+
+            //おすすめ商品の取得
             ArrayList<Recommend_tblVo> recommendList;
             recommendList = dao.getRecommendList();
             request.setAttribute("recommendList", recommendList);
-            //商品一覧
+
+            //表示する商品一覧の取得
             ArrayList<ListTop> hardProductList = new ArrayList<ListTop>();
             for (Hard_tblVo hard : hardList) {
                 ListTop hardProduct = new ListTop();

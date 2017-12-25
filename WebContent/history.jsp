@@ -17,10 +17,12 @@
 <title>w“ü—š—ğ</title>
 </head>
 <body>
+<!-- ƒwƒbƒ_[(ƒƒS–³‚µ) -->
 <jsp:include page="header_logoOnly.jsp" flush="true" />
 
     <span class=title>w“ü—š—ğ</span>
 
+<!-- w“ü‚µ‚½¤•i‚ÌƒŠƒXƒg -->
         <c:forEach var="i" items="${historyList}">
         <div class="oneHistory clearfix">
             <span>w“ü“úF${i.date}</span>

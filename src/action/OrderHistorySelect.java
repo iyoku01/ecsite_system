@@ -22,6 +22,7 @@ public class OrderHistorySelect implements Action {
             HttpSession session = request.getSession();
             String user_id = (String) session.getAttribute("user_id");
 
+            //ƒ†[ƒU[‚Ìw“ü—š—ğ‚ğæ“¾
             ArrayList<HistoryDto> historyList = dao.getHistoryList(user_id);
 
             if (historyList.isEmpty()) {

@@ -22,9 +22,10 @@
 
     <span class="screenname">登録情報確認</span>
 
-        <%
-            request.setCharacterEncoding("Windows-31J");
-        %>
+    <%
+        request.setCharacterEncoding("Windows-31J");
+    %>
+    <!-- 入力した情報の表示 -->
     <div class="memUpcon">
         <table>
             <tr>
@@ -61,7 +62,7 @@
         <p>上記の情報でお間違いはございませんか？</p>
 
         <div class="formcenter">
-
+            <!-- 入力画面へ値の送信 -->
             <form action="memberUpdate.jsp" method="post">
                 <input type=hidden name=password value="${param.password}">
                 <input type=hidden name=checkPassword value="${param.checkPassword}">
@@ -73,6 +74,7 @@
                     class="membotton2" type=submit value=修正>
             </form>
 
+            <!-- コントロールへ値の送信 -->
             <form action="Regist.Control" method="post">
                 <input type=hidden name=password value="${param.password}">
                 <input type=hidden name=checkPassword value="${param.checkPassword}">

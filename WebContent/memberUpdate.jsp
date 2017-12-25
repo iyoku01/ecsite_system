@@ -16,17 +16,18 @@
 
 </head>
 <body class=bodygray>
-
+    <!-- ヘッダー(ロゴ無し) -->
     <jsp:include page="header_logoOnly.jsp" flush="true" />
     <span class="screenname">会員情報変更画面</span>
+
 
     <div class=inputForm>
         <%
             request.setCharacterEncoding("Windows-31J");
         %>
+        <!-- 情報変更の入力フォーム -->
         <form onSubmit="return CheckPassword()" id=form
-            action="memberUpdateConf.jsp"
-            method="post">
+            action="memberUpdateConf.jsp" method="post">
             <table>
                 <tr>
                     <th>ID</th>
@@ -68,9 +69,9 @@
                 </tr>
                 <tr>
                     <th>パスワード</th>
-                    <td><input type=text name="password" id="password" value="${param.password }"
-                        pattern=^([a-zA-Z0-9]{8,24})$ title="" required
-                        onblur="blank_alert()"></td>
+                    <td><input type=text name="password" id="password"
+                        value="${param.password }" pattern=^([a-zA-Z0-9]{8,24})$ title=""
+                        required onblur="blank_alert()"></td>
                     <td>半角英数8～24桁</td>
                 </tr>
                 <tr>
@@ -85,18 +86,18 @@
         </form>
     </div>
 
-<script>
-function CheckPassword(input) {
-    var password = document.forms.form.password.value;
-    var checkPassword =document.forms.form.checkPassword.value;
-    if (password != checkPassword){
-      alert("パスワードと確認用パスワードが一致しません");
-      return false;
-    }else{
-      return true;
-    }
-  };
-</script>
+    <script>
+        function CheckPassword(input) {
+            var password = document.forms.form.password.value;
+            var checkPassword = document.forms.form.checkPassword.value;
+            if (password != checkPassword) {
+                alert("パスワードと確認用パスワードが一致しません");
+                return false;
+            } else {
+                return true;
+            }
+        };
+    </script>
 
 </body>
 </html>

@@ -15,6 +15,7 @@ public class ReviewDataInsert implements Action {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("Windows-31J");
         try (EcsiteDao dao = new EcsiteDao()) {
+
             HttpSession session = request.getSession();
             String user_id = (String) session.getAttribute("user_id");
 
@@ -23,12 +24,14 @@ public class ReviewDataInsert implements Action {
             String evaluation = request.getParameter("evaluation");
             String review = request.getParameter("review");
 
+            //レビュー更新時
             if (request.getParameter("update") != null) {
-
                 dao.updateReview(product_id, user_id, nickname, evaluation, review);
+                //レビュー登録時
             } else {
                 dao.insertReview(product_id, user_id, nickname, evaluation, review);
             }
+            //レビューされた商品のレビュー数と評価平均の更新
             dao.updateEvaluation(product_id);
             dao.updateReviewCount(product_id);
             request.setAttribute("product_id", product_id);
